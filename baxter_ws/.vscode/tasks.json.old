@@ -1,15 +1,16 @@
 {
-	"version": "2.0.0",
+	"version": "0.1.0",
 	"command": "bash",
 	"args": [
 		"-c"
 	],
+	"isShellCommand": true,
+	"showOutput": "always",
+	"suppressTaskName": true,
 	"tasks": [
 		{
-			"label": "Debug",
-			"type": "shell",
+			"taskName": "Debug",
 			"args": [
-				"-c",
 				"catkin_make -C ${workspaceRoot} -DCMAKE_BUILD_TYPE=Debug"
 			],
 			"problemMatcher": [
@@ -103,10 +104,8 @@
 			]
 		},
 		{
-			"label": "Release",
-			"type": "shell",
+			"taskName": "Release",
 			"args": [
-				"-c",
 				"catkin_make -C ${workspaceRoot}"
 			],
 			"problemMatcher": [
@@ -200,10 +199,8 @@
 			]
 		},
 		{
-			"label": "Debug (isolated)",
-			"type": "shell",
+			"taskName": "Debug (isolated)",
 			"args": [
-				"-c",
 				"catkin_make_isolated -C ${workspaceRoot} -DCMAKE_BUILD_TYPE=Debug"
 			],
 			"problemMatcher": [
@@ -297,10 +294,8 @@
 			]
 		},
 		{
-			"label": "Release (isolated)",
-			"type": "shell",
+			"taskName": "Release (isolated)",
 			"args": [
-				"-c",
 				"catkin_make_isolated -C ${workspaceRoot}"
 			],
 			"problemMatcher": [
@@ -394,10 +389,8 @@
 			]
 		},
 		{
-			"label": "Debug (remote)",
-			"type": "shell",
+			"taskName": "Debug (remote)",
 			"args": [
-				"-c",
 				"echo \"Remote Arguments not configured!\""
 			],
 			"problemMatcher": [
@@ -491,10 +484,8 @@
 			]
 		},
 		{
-			"label": "Release (remote)",
-			"type": "shell",
+			"taskName": "Release (remote)",
 			"args": [
-				"-c",
 				"echo \"Remote Arguments not configured!\""
 			],
 			"problemMatcher": [
@@ -588,10 +579,8 @@
 			]
 		},
 		{
-			"label": "Debug (remote isolated)",
-			"type": "shell",
+			"taskName": "Debug (remote isolated)",
 			"args": [
-				"-c",
 				"echo \"Remote Arguments not configured!\""
 			],
 			"problemMatcher": [
@@ -685,10 +674,8 @@
 			]
 		},
 		{
-			"label": "Release (remote isolated)",
-			"type": "shell",
+			"taskName": "Release (remote isolated)",
 			"args": [
-				"-c",
 				"echo \"Remote Arguments not configured!\""
 			],
 			"problemMatcher": [
@@ -782,10 +769,8 @@
 			]
 		},
 		{
-			"label": "Debug (catkin)",
-			"type": "shell",
+			"taskName": "Debug (catkin)",
 			"args": [
-				"-c",
 				"catkin build -w ${workspaceRoot} -DCMAKE_BUILD_TYPE=Debug"
 			],
 			"problemMatcher": [
@@ -879,10 +864,8 @@
 			]
 		},
 		{
-			"label": "Release (catkin)",
-			"type": "shell",
+			"taskName": "Release (catkin)",
 			"args": [
-				"-c",
 				"catkin build -w ${workspaceRoot}"
 			],
 			"problemMatcher": [
@@ -976,10 +959,8 @@
 			]
 		},
 		{
-			"label": "Debug (remote catkin)",
-			"type": "shell",
+			"taskName": "Debug (remote catkin)",
 			"args": [
-				"-c",
 				"echo \"Remote Arguments not configured!\""
 			],
 			"problemMatcher": [
@@ -1073,10 +1054,8 @@
 			]
 		},
 		{
-			"label": "Release (remote catkin)",
-			"type": "shell",
+			"taskName": "Release (remote catkin)",
 			"args": [
-				"-c",
 				"echo \"Remote Arguments not configured!\""
 			],
 			"problemMatcher": [
@@ -1170,17 +1149,11 @@
 			]
 		},
 		{
-			"label": "Remote Deploy",
-			"type": "shell",
+			"taskName": "Remote Deploy",
 			"args": [
-				"-c",
 				"echo \"Remote Arguments not configured!\""
 			],
-			"problemMatcher": [],
-			"group": {
-				"_id": "build",
-				"isDefault": false
-			}
+			"isBuildCommand": true
 		}
 	]
 }

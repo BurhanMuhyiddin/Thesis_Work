@@ -1,25 +1,81 @@
 #include <ros/ros.h>
-#include "baxter_control_mine/PositionCommandMine.h"
 
-bool command_position_clb(baxter_control_mine::PositionCommandMineRequest &req,
-                            baxter_control_mine::PositionCommandMineResponse &res)
+#include <geometry_msgs/Pose.h>
+#include <geometry_msgs/PoseStamped.h>
+#include <geometry_msgs/Point.h>
+#include <geometry_msgs/Quaternion.h>
+
+#include <std_msgs/Header.h>
+
+#include <baxter_core_msgs/SolvePositionIK.h>
+// #include <baxter_core_msgs/SolvePositionIKRequest.h>
+
+#include <string>
+
+bool ik_test(ros::NodeHandle &n)
 {
-    ROS_INFO("request: %s\n", (req.position_command).c_str());
-    res.success = true;
+    const std::string limb = "left";
 
-    return true;
+    std::string ns = "ExternalTools/" + limb + "/PositionKinematicsNode/IKService";
+
+    ros::ServiceClient iksvc = n.serviceClient<baxter_core_msgs::SolvePositionIK>(ns);
+
+    baxter_core_msgs::SolvePositionIK ikreq;
+
+    std_msgs::Header hdr;
+    hdr.stamp = ros::Time::now();
+    hdr.frame_id = "base";
+
+    geometry_msgs::PoseStamped pose;
+    pose.header = hdr;
+    pose.pose.position.x = 0.657579481614;
+    pose.pose.position.y = 0.851981417433;
+    pose.pose.position.z = 0.0388352386502;
+    pose.pose.orientation.x = -0.366894936773;
+    pose.pose.orientation.y = 0.885980397775;
+    pose.pose.orientation.z = 0.108155782462;
+    pose.pose.orientation.w = 0.262162481772;
+
+    ikreq.request.pose_stamp.push_back(pose);
+
+    if (iksvc.call(ikreq))
+    {
+        ROS_INFO("Calculated IK...");
+    }
+
+    for (int i = 0; i < ikreq.response.result_type.size(); i++)
+    {
+        ROS_INFO("%d", ikreq.response.result_type[i]);
+    }
+
+    for (int i = 0; i < ikreq.response.joints.size(); i++)
+    {
+        for(int j = 0; j < ikreq.response.joints[i].position.size(); j++)
+        {
+            ROS_INFO("%f", ikreq.response.joints[i].position[j]);
+        }
+    }
+
+    // if(ikreq.response.)
+    // {
+    //     ROS_INFO("Valid IK...");
+    //     return true;
+    // }
+    // else
+    // {
+    //     ROS_INFO("Invalid IK...");
+    //     return false;
+    // }
 }
 
 int main(int argc, char **argv)
 {
-    ros::init(argc, argv, "test_node");
-
+    ros::init(argc, argv, "rsdk_ik_service_client");
     ros::NodeHandle n;
 
-    ros::ServiceServer service = n.advertiseService("comand_position", command_position_clb);
+    bool res = ik_test(n);
 
-    ros::spin();
-
+    ROS_INFO("res: %s", (res ? "true" : "false"));
 
     return 0;
 }
