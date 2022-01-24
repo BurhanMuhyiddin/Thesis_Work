@@ -1,0 +1,8 @@
+prefix=/home/lar/ros/baxter_ws/install
+
+Name: baxter_control
+Description: Description of baxter_control
+Version: 0.3.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -lbaxter_utilities -lbaxter_to_csv -larm_interface
+Requires: std_msgs roscpp baxter_core_msgs controller_manager transmission_interface hardware_interface sensor_msgs joint_limits_interface trajectory_msgs
