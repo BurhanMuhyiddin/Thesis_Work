@@ -54,6 +54,7 @@ CMAKE_BINARY_DIR = /home/lar/ros/test_ws/build
 include baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_cpp.dir/progress.make
 
 baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_cpp: /home/lar/ros/test_ws/devel/include/baxter_control_mine/PositionCommandMine.h
+baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_cpp: /home/lar/ros/test_ws/devel/include/baxter_control_mine/CalculateIK.h
 
 
 /home/lar/ros/test_ws/devel/include/baxter_control_mine/PositionCommandMine.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
@@ -61,10 +62,23 @@ baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_cpp: /home/
 /home/lar/ros/test_ws/devel/include/baxter_control_mine/PositionCommandMine.h: /opt/ros/kinetic/share/gencpp/msg.h.template
 /home/lar/ros/test_ws/devel/include/baxter_control_mine/PositionCommandMine.h: /opt/ros/kinetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from baxter_control_mine/PositionCommandMine.srv"
-	cd /home/lar/ros/test_ws/src/baxter_control_mine && /home/lar/ros/test_ws/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/lar/ros/test_ws/src/baxter_control_mine/srv/PositionCommandMine.srv -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_control_mine -o /home/lar/ros/test_ws/devel/include/baxter_control_mine -e /opt/ros/kinetic/share/gencpp/cmake/..
+	cd /home/lar/ros/test_ws/src/baxter_control_mine && /home/lar/ros/test_ws/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/lar/ros/test_ws/src/baxter_control_mine/srv/PositionCommandMine.srv -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p baxter_control_mine -o /home/lar/ros/test_ws/devel/include/baxter_control_mine -e /opt/ros/kinetic/share/gencpp/cmake/..
+
+/home/lar/ros/test_ws/devel/include/baxter_control_mine/CalculateIK.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/lar/ros/test_ws/devel/include/baxter_control_mine/CalculateIK.h: /home/lar/ros/test_ws/src/baxter_control_mine/srv/CalculateIK.srv
+/home/lar/ros/test_ws/devel/include/baxter_control_mine/CalculateIK.h: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
+/home/lar/ros/test_ws/devel/include/baxter_control_mine/CalculateIK.h: /opt/ros/kinetic/share/geometry_msgs/msg/Quaternion.msg
+/home/lar/ros/test_ws/devel/include/baxter_control_mine/CalculateIK.h: /opt/ros/kinetic/share/geometry_msgs/msg/Pose.msg
+/home/lar/ros/test_ws/devel/include/baxter_control_mine/CalculateIK.h: /opt/ros/kinetic/share/geometry_msgs/msg/Point.msg
+/home/lar/ros/test_ws/devel/include/baxter_control_mine/CalculateIK.h: /opt/ros/kinetic/share/sensor_msgs/msg/JointState.msg
+/home/lar/ros/test_ws/devel/include/baxter_control_mine/CalculateIK.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+/home/lar/ros/test_ws/devel/include/baxter_control_mine/CalculateIK.h: /opt/ros/kinetic/share/gencpp/srv.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from baxter_control_mine/CalculateIK.srv"
+	cd /home/lar/ros/test_ws/src/baxter_control_mine && /home/lar/ros/test_ws/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/lar/ros/test_ws/src/baxter_control_mine/srv/CalculateIK.srv -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p baxter_control_mine -o /home/lar/ros/test_ws/devel/include/baxter_control_mine -e /opt/ros/kinetic/share/gencpp/cmake/..
 
 baxter_control_mine_generate_messages_cpp: baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_cpp
 baxter_control_mine_generate_messages_cpp: /home/lar/ros/test_ws/devel/include/baxter_control_mine/PositionCommandMine.h
+baxter_control_mine_generate_messages_cpp: /home/lar/ros/test_ws/devel/include/baxter_control_mine/CalculateIK.h
 baxter_control_mine_generate_messages_cpp: baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_cpp.dir/build.make
 
 .PHONY : baxter_control_mine_generate_messages_cpp

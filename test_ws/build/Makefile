@@ -478,6 +478,19 @@ actionlib_generate_messages_lisp/fast:
 .PHONY : actionlib_generate_messages_lisp/fast
 
 #=============================================================================
+# Target rules for targets named go_to_goal_server
+
+# Build rule for target.
+go_to_goal_server: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 go_to_goal_server
+.PHONY : go_to_goal_server
+
+# fast build rule for target.
+go_to_goal_server/fast:
+	$(MAKE) -f baxter_control_mine/CMakeFiles/go_to_goal_server.dir/build.make baxter_control_mine/CMakeFiles/go_to_goal_server.dir/build
+.PHONY : go_to_goal_server/fast
+
+#=============================================================================
 # Target rules for targets named actionlib_msgs_generate_messages_cpp
 
 # Build rule for target.
@@ -684,6 +697,19 @@ shape_msgs_generate_messages_cpp: cmake_check_build_system
 shape_msgs_generate_messages_cpp/fast:
 	$(MAKE) -f baxter_control_mine/CMakeFiles/shape_msgs_generate_messages_cpp.dir/build.make baxter_control_mine/CMakeFiles/shape_msgs_generate_messages_cpp.dir/build
 .PHONY : shape_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named calculate_ik_server
+
+# Build rule for target.
+calculate_ik_server: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 calculate_ik_server
+.PHONY : calculate_ik_server
+
+# fast build rule for target.
+calculate_ik_server/fast:
+	$(MAKE) -f baxter_control_mine/CMakeFiles/calculate_ik_server.dir/build.make baxter_control_mine/CMakeFiles/calculate_ik_server.dir/build
+.PHONY : calculate_ik_server/fast
 
 #=============================================================================
 # Target rules for targets named sensor_msgs_generate_messages_py
@@ -1024,19 +1050,6 @@ std_msgs_generate_messages_lisp/fast:
 .PHONY : std_msgs_generate_messages_lisp/fast
 
 #=============================================================================
-# Target rules for targets named baxter_control_mine_generate_messages_cpp
-
-# Build rule for target.
-baxter_control_mine_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine_generate_messages_cpp
-.PHONY : baxter_control_mine_generate_messages_cpp
-
-# fast build rule for target.
-baxter_control_mine_generate_messages_cpp/fast:
-	$(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_cpp.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_cpp.dir/build
-.PHONY : baxter_control_mine_generate_messages_cpp/fast
-
-#=============================================================================
 # Target rules for targets named sensor_msgs_generate_messages_cpp
 
 # Build rule for target.
@@ -1180,6 +1193,58 @@ moveit_msgs_generate_messages_py/fast:
 .PHONY : moveit_msgs_generate_messages_py/fast
 
 #=============================================================================
+# Target rules for targets named baxter_control_mine_generate_messages_cpp
+
+# Build rule for target.
+baxter_control_mine_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine_generate_messages_cpp
+.PHONY : baxter_control_mine_generate_messages_cpp
+
+# fast build rule for target.
+baxter_control_mine_generate_messages_cpp/fast:
+	$(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_cpp.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_cpp.dir/build
+.PHONY : baxter_control_mine_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named _baxter_control_mine_generate_messages_check_deps_CalculateIK
+
+# Build rule for target.
+_baxter_control_mine_generate_messages_check_deps_CalculateIK: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _baxter_control_mine_generate_messages_check_deps_CalculateIK
+.PHONY : _baxter_control_mine_generate_messages_check_deps_CalculateIK
+
+# fast build rule for target.
+_baxter_control_mine_generate_messages_check_deps_CalculateIK/fast:
+	$(MAKE) -f baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_CalculateIK.dir/build.make baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_CalculateIK.dir/build
+.PHONY : _baxter_control_mine_generate_messages_check_deps_CalculateIK/fast
+
+#=============================================================================
+# Target rules for targets named baxter_control_mine_generate_messages_nodejs
+
+# Build rule for target.
+baxter_control_mine_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine_generate_messages_nodejs
+.PHONY : baxter_control_mine_generate_messages_nodejs
+
+# fast build rule for target.
+baxter_control_mine_generate_messages_nodejs/fast:
+	$(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_nodejs.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_nodejs.dir/build
+.PHONY : baxter_control_mine_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named trajectory_msgs_generate_messages_eus
+
+# Build rule for target.
+trajectory_msgs_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 trajectory_msgs_generate_messages_eus
+.PHONY : trajectory_msgs_generate_messages_eus
+
+# fast build rule for target.
+trajectory_msgs_generate_messages_eus/fast:
+	$(MAKE) -f baxter_control_mine/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/build.make baxter_control_mine/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/build
+.PHONY : trajectory_msgs_generate_messages_eus/fast
+
+#=============================================================================
 # Target rules for targets named trajectory_msgs_generate_messages_lisp
 
 # Build rule for target.
@@ -1269,32 +1334,6 @@ octomap_msgs_generate_messages_eus: cmake_check_build_system
 octomap_msgs_generate_messages_eus/fast:
 	$(MAKE) -f baxter_control_mine/CMakeFiles/octomap_msgs_generate_messages_eus.dir/build.make baxter_control_mine/CMakeFiles/octomap_msgs_generate_messages_eus.dir/build
 .PHONY : octomap_msgs_generate_messages_eus/fast
-
-#=============================================================================
-# Target rules for targets named trajectory_msgs_generate_messages_eus
-
-# Build rule for target.
-trajectory_msgs_generate_messages_eus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 trajectory_msgs_generate_messages_eus
-.PHONY : trajectory_msgs_generate_messages_eus
-
-# fast build rule for target.
-trajectory_msgs_generate_messages_eus/fast:
-	$(MAKE) -f baxter_control_mine/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/build.make baxter_control_mine/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/build
-.PHONY : trajectory_msgs_generate_messages_eus/fast
-
-#=============================================================================
-# Target rules for targets named baxter_control_mine_generate_messages_nodejs
-
-# Build rule for target.
-baxter_control_mine_generate_messages_nodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine_generate_messages_nodejs
-.PHONY : baxter_control_mine_generate_messages_nodejs
-
-# fast build rule for target.
-baxter_control_mine_generate_messages_nodejs/fast:
-	$(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_nodejs.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_nodejs.dir/build
-.PHONY : baxter_control_mine_generate_messages_nodejs/fast
 
 #=============================================================================
 # Target rules for targets named object_recognition_msgs_generate_messages_eus
@@ -1621,6 +1660,240 @@ baxter_control_mine_genlisp/fast:
 	$(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_mine_genlisp.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_mine_genlisp.dir/build
 .PHONY : baxter_control_mine_genlisp/fast
 
+#=============================================================================
+# Target rules for targets named _baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal
+
+# Build rule for target.
+_baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal
+.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal
+
+# fast build rule for target.
+_baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal/fast:
+	$(MAKE) -f baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal.dir/build.make baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal.dir/build
+.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal/fast
+
+#=============================================================================
+# Target rules for targets named _baxter_msgs_mine_generate_messages_check_deps_GoToPointActionGoal
+
+# Build rule for target.
+_baxter_msgs_mine_generate_messages_check_deps_GoToPointActionGoal: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _baxter_msgs_mine_generate_messages_check_deps_GoToPointActionGoal
+.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GoToPointActionGoal
+
+# fast build rule for target.
+_baxter_msgs_mine_generate_messages_check_deps_GoToPointActionGoal/fast:
+	$(MAKE) -f baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointActionGoal.dir/build.make baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointActionGoal.dir/build
+.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GoToPointActionGoal/fast
+
+#=============================================================================
+# Target rules for targets named baxter_msgs_mine_generate_messages_cpp
+
+# Build rule for target.
+baxter_msgs_mine_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine_generate_messages_cpp
+.PHONY : baxter_msgs_mine_generate_messages_cpp
+
+# fast build rule for target.
+baxter_msgs_mine_generate_messages_cpp/fast:
+	$(MAKE) -f baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp.dir/build.make baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp.dir/build
+.PHONY : baxter_msgs_mine_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named _baxter_msgs_mine_generate_messages_check_deps_GoToPointActionResult
+
+# Build rule for target.
+_baxter_msgs_mine_generate_messages_check_deps_GoToPointActionResult: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _baxter_msgs_mine_generate_messages_check_deps_GoToPointActionResult
+.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GoToPointActionResult
+
+# fast build rule for target.
+_baxter_msgs_mine_generate_messages_check_deps_GoToPointActionResult/fast:
+	$(MAKE) -f baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointActionResult.dir/build.make baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointActionResult.dir/build
+.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GoToPointActionResult/fast
+
+#=============================================================================
+# Target rules for targets named _baxter_msgs_mine_generate_messages_check_deps_GoToPointAction
+
+# Build rule for target.
+_baxter_msgs_mine_generate_messages_check_deps_GoToPointAction: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _baxter_msgs_mine_generate_messages_check_deps_GoToPointAction
+.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GoToPointAction
+
+# fast build rule for target.
+_baxter_msgs_mine_generate_messages_check_deps_GoToPointAction/fast:
+	$(MAKE) -f baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointAction.dir/build.make baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointAction.dir/build
+.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GoToPointAction/fast
+
+#=============================================================================
+# Target rules for targets named _baxter_msgs_mine_generate_messages_check_deps_GoToPointFeedback
+
+# Build rule for target.
+_baxter_msgs_mine_generate_messages_check_deps_GoToPointFeedback: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _baxter_msgs_mine_generate_messages_check_deps_GoToPointFeedback
+.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GoToPointFeedback
+
+# fast build rule for target.
+_baxter_msgs_mine_generate_messages_check_deps_GoToPointFeedback/fast:
+	$(MAKE) -f baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointFeedback.dir/build.make baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointFeedback.dir/build
+.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GoToPointFeedback/fast
+
+#=============================================================================
+# Target rules for targets named _baxter_msgs_mine_generate_messages_check_deps_GoToPointResult
+
+# Build rule for target.
+_baxter_msgs_mine_generate_messages_check_deps_GoToPointResult: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _baxter_msgs_mine_generate_messages_check_deps_GoToPointResult
+.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GoToPointResult
+
+# fast build rule for target.
+_baxter_msgs_mine_generate_messages_check_deps_GoToPointResult/fast:
+	$(MAKE) -f baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointResult.dir/build.make baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointResult.dir/build
+.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GoToPointResult/fast
+
+#=============================================================================
+# Target rules for targets named baxter_msgs_mine_generate_messages
+
+# Build rule for target.
+baxter_msgs_mine_generate_messages: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine_generate_messages
+.PHONY : baxter_msgs_mine_generate_messages
+
+# fast build rule for target.
+baxter_msgs_mine_generate_messages/fast:
+	$(MAKE) -f baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages.dir/build.make baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages.dir/build
+.PHONY : baxter_msgs_mine_generate_messages/fast
+
+#=============================================================================
+# Target rules for targets named _baxter_msgs_mine_generate_messages_check_deps_GoToPointActionFeedback
+
+# Build rule for target.
+_baxter_msgs_mine_generate_messages_check_deps_GoToPointActionFeedback: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _baxter_msgs_mine_generate_messages_check_deps_GoToPointActionFeedback
+.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GoToPointActionFeedback
+
+# fast build rule for target.
+_baxter_msgs_mine_generate_messages_check_deps_GoToPointActionFeedback/fast:
+	$(MAKE) -f baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointActionFeedback.dir/build.make baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointActionFeedback.dir/build
+.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GoToPointActionFeedback/fast
+
+#=============================================================================
+# Target rules for targets named baxter_msgs_mine_generate_messages_lisp
+
+# Build rule for target.
+baxter_msgs_mine_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine_generate_messages_lisp
+.PHONY : baxter_msgs_mine_generate_messages_lisp
+
+# fast build rule for target.
+baxter_msgs_mine_generate_messages_lisp/fast:
+	$(MAKE) -f baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_lisp.dir/build.make baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_lisp.dir/build
+.PHONY : baxter_msgs_mine_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named baxter_msgs_mine_gencpp
+
+# Build rule for target.
+baxter_msgs_mine_gencpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine_gencpp
+.PHONY : baxter_msgs_mine_gencpp
+
+# fast build rule for target.
+baxter_msgs_mine_gencpp/fast:
+	$(MAKE) -f baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_gencpp.dir/build.make baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_gencpp.dir/build
+.PHONY : baxter_msgs_mine_gencpp/fast
+
+#=============================================================================
+# Target rules for targets named baxter_msgs_mine_generate_messages_eus
+
+# Build rule for target.
+baxter_msgs_mine_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine_generate_messages_eus
+.PHONY : baxter_msgs_mine_generate_messages_eus
+
+# fast build rule for target.
+baxter_msgs_mine_generate_messages_eus/fast:
+	$(MAKE) -f baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_eus.dir/build.make baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_eus.dir/build
+.PHONY : baxter_msgs_mine_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named baxter_msgs_mine_geneus
+
+# Build rule for target.
+baxter_msgs_mine_geneus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine_geneus
+.PHONY : baxter_msgs_mine_geneus
+
+# fast build rule for target.
+baxter_msgs_mine_geneus/fast:
+	$(MAKE) -f baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_geneus.dir/build.make baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_geneus.dir/build
+.PHONY : baxter_msgs_mine_geneus/fast
+
+#=============================================================================
+# Target rules for targets named baxter_msgs_mine_generate_messages_nodejs
+
+# Build rule for target.
+baxter_msgs_mine_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine_generate_messages_nodejs
+.PHONY : baxter_msgs_mine_generate_messages_nodejs
+
+# fast build rule for target.
+baxter_msgs_mine_generate_messages_nodejs/fast:
+	$(MAKE) -f baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_nodejs.dir/build.make baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_nodejs.dir/build
+.PHONY : baxter_msgs_mine_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named baxter_msgs_mine_gennodejs
+
+# Build rule for target.
+baxter_msgs_mine_gennodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine_gennodejs
+.PHONY : baxter_msgs_mine_gennodejs
+
+# fast build rule for target.
+baxter_msgs_mine_gennodejs/fast:
+	$(MAKE) -f baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_gennodejs.dir/build.make baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_gennodejs.dir/build
+.PHONY : baxter_msgs_mine_gennodejs/fast
+
+#=============================================================================
+# Target rules for targets named baxter_msgs_mine_genlisp
+
+# Build rule for target.
+baxter_msgs_mine_genlisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine_genlisp
+.PHONY : baxter_msgs_mine_genlisp
+
+# fast build rule for target.
+baxter_msgs_mine_genlisp/fast:
+	$(MAKE) -f baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_genlisp.dir/build.make baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_genlisp.dir/build
+.PHONY : baxter_msgs_mine_genlisp/fast
+
+#=============================================================================
+# Target rules for targets named baxter_msgs_mine_generate_messages_py
+
+# Build rule for target.
+baxter_msgs_mine_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine_generate_messages_py
+.PHONY : baxter_msgs_mine_generate_messages_py
+
+# fast build rule for target.
+baxter_msgs_mine_generate_messages_py/fast:
+	$(MAKE) -f baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py.dir/build.make baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py.dir/build
+.PHONY : baxter_msgs_mine_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named baxter_msgs_mine_genpy
+
+# Build rule for target.
+baxter_msgs_mine_genpy: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine_genpy
+.PHONY : baxter_msgs_mine_genpy
+
+# fast build rule for target.
+baxter_msgs_mine_genpy/fast:
+	$(MAKE) -f baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_genpy.dir/build.make baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_genpy.dir/build
+.PHONY : baxter_msgs_mine_genpy/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1658,6 +1931,7 @@ help:
 	@echo "... _baxter_control_mine_generate_messages_check_deps_PositionCommandMine"
 	@echo "... actionlib_msgs_generate_messages_eus"
 	@echo "... actionlib_generate_messages_lisp"
+	@echo "... go_to_goal_server"
 	@echo "... actionlib_msgs_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_eus"
 	@echo "... baxter_control_mine_gennodejs"
@@ -1674,6 +1948,7 @@ help:
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... rosgraph_msgs_generate_messages_eus"
 	@echo "... shape_msgs_generate_messages_cpp"
+	@echo "... calculate_ik_server"
 	@echo "... sensor_msgs_generate_messages_py"
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... baxter_control_mine_generate_messages_py"
@@ -1700,7 +1975,6 @@ help:
 	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_lisp"
-	@echo "... baxter_control_mine_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... visualization_msgs_generate_messages_nodejs"
 	@echo "... sensor_msgs_generate_messages_lisp"
@@ -1712,6 +1986,10 @@ help:
 	@echo "... tf_generate_messages_lisp"
 	@echo "... moveit_msgs_generate_messages_nodejs"
 	@echo "... moveit_msgs_generate_messages_py"
+	@echo "... baxter_control_mine_generate_messages_cpp"
+	@echo "... _baxter_control_mine_generate_messages_check_deps_CalculateIK"
+	@echo "... baxter_control_mine_generate_messages_nodejs"
+	@echo "... trajectory_msgs_generate_messages_eus"
 	@echo "... trajectory_msgs_generate_messages_lisp"
 	@echo "... trajectory_msgs_generate_messages_nodejs"
 	@echo "... trajectory_msgs_generate_messages_py"
@@ -1719,8 +1997,6 @@ help:
 	@echo "... actionlib_generate_messages_nodejs"
 	@echo "... object_recognition_msgs_generate_messages_cpp"
 	@echo "... octomap_msgs_generate_messages_eus"
-	@echo "... trajectory_msgs_generate_messages_eus"
-	@echo "... baxter_control_mine_generate_messages_nodejs"
 	@echo "... object_recognition_msgs_generate_messages_eus"
 	@echo "... object_recognition_msgs_generate_messages_nodejs"
 	@echo "... tf_generate_messages_py"
@@ -1746,6 +2022,24 @@ help:
 	@echo "... actionlib_generate_messages_py"
 	@echo "... baxter_control_mine_geneus"
 	@echo "... baxter_control_mine_genlisp"
+	@echo "... _baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal"
+	@echo "... _baxter_msgs_mine_generate_messages_check_deps_GoToPointActionGoal"
+	@echo "... baxter_msgs_mine_generate_messages_cpp"
+	@echo "... _baxter_msgs_mine_generate_messages_check_deps_GoToPointActionResult"
+	@echo "... _baxter_msgs_mine_generate_messages_check_deps_GoToPointAction"
+	@echo "... _baxter_msgs_mine_generate_messages_check_deps_GoToPointFeedback"
+	@echo "... _baxter_msgs_mine_generate_messages_check_deps_GoToPointResult"
+	@echo "... baxter_msgs_mine_generate_messages"
+	@echo "... _baxter_msgs_mine_generate_messages_check_deps_GoToPointActionFeedback"
+	@echo "... baxter_msgs_mine_generate_messages_lisp"
+	@echo "... baxter_msgs_mine_gencpp"
+	@echo "... baxter_msgs_mine_generate_messages_eus"
+	@echo "... baxter_msgs_mine_geneus"
+	@echo "... baxter_msgs_mine_generate_messages_nodejs"
+	@echo "... baxter_msgs_mine_gennodejs"
+	@echo "... baxter_msgs_mine_genlisp"
+	@echo "... baxter_msgs_mine_generate_messages_py"
+	@echo "... baxter_msgs_mine_genpy"
 .PHONY : help
 
 

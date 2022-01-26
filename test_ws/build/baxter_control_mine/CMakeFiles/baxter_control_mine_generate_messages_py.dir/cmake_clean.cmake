@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/baxter_control_mine_generate_messages_py"
   "/home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_control_mine/srv/_PositionCommandMine.py"
+  "/home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_control_mine/srv/_CalculateIK.py"
   "/home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_control_mine/srv/__init__.py"
 )
 

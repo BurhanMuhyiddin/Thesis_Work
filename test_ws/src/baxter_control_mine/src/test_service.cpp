@@ -28,13 +28,13 @@ bool ik_test(ros::NodeHandle &n)
 
     geometry_msgs::PoseStamped pose;
     pose.header = hdr;
-    pose.pose.position.x = 0.657579481614;
-    pose.pose.position.y = 0.851981417433;
-    pose.pose.position.z = 0.0388352386502;
-    pose.pose.orientation.x = -0.366894936773;
-    pose.pose.orientation.y = 0.885980397775;
-    pose.pose.orientation.z = 0.108155782462;
-    pose.pose.orientation.w = 0.262162481772;
+    pose.pose.position.x = 1.0368; // 0.657579481614;
+    pose.pose.position.y = 0.48103;// 0.851981417433;
+    pose.pose.position.z = 0.2028;// 0.0388352386502;
+    pose.pose.orientation.x = -0.10694;// -0.366894936773;
+    pose.pose.orientation.y = 0.949063;// 0.885980397775;
+    pose.pose.orientation.z = 0.0331717;// 0.108155782462;
+    pose.pose.orientation.w = 0.294521;// 0.262162481772;
 
     ikreq.request.pose_stamp.push_back(pose);
 
@@ -55,17 +55,6 @@ bool ik_test(ros::NodeHandle &n)
             ROS_INFO("%f", ikreq.response.joints[i].position[j]);
         }
     }
-
-    // if(ikreq.response.)
-    // {
-    //     ROS_INFO("Valid IK...");
-    //     return true;
-    // }
-    // else
-    // {
-    //     ROS_INFO("Invalid IK...");
-    //     return false;
-    // }
 }
 
 int main(int argc, char **argv)
