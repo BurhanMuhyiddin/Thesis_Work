@@ -1,0 +1,11 @@
+<launch>
+
+    <!-- <include file="$(find baxter_control_mine)/launch/control_baxter.launch" /> -->
+
+    <node name="calculate_ik_server" pkg="baxter_control_mine" type="calculate_ik_server" />
+
+    <node name="go_to_goal_server" pkg="baxter_control_mine" type="go_to_goal_server" />
+
+    <!-- <node name="baxter_fsm" pkg="baxter_control_mine" type="baxter_fsm.py" /> -->
+
+</launch>
