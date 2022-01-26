@@ -19,12 +19,15 @@ find_package(catkin REQUIRED COMPONENTS
 
 add_service_files(FILES
   PositionCommandMine.srv
+  CalculateIK.srv
 )
 
 find_package(Eigen3 REQUIRED)
 
 generate_messages(DEPENDENCIES
   std_msgs
+  sensor_msgs
+  geometry_msgs
 )
 
 catkin_package(
@@ -45,3 +48,9 @@ target_link_libraries(rviz_converter_node ${catkin_LIBRARIES})
 
 add_executable(test_node src/test_service.cpp)
 target_link_libraries(test_node ${catkin_LIBRARIES})
+
+add_executable(go_to_goal_server src/go_to_goal_server.cpp)
+target_link_libraries(go_to_goal_server ${catkin_LIBRARIES})
+
+add_executable(calculate_ik_server src/calculate_ik_server.cpp)
+target_link_libraries(calculate_ik_server ${catkin_LIBRARIES})

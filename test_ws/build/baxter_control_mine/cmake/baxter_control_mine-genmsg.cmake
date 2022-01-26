@@ -1,8 +1,8 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "baxter_control_mine: 0 messages, 1 services")
+message(STATUS "baxter_control_mine: 0 messages, 2 services")
 
-set(MSG_I_FLAGS "-Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg")
+set(MSG_I_FLAGS "-Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg;-Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg;-Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg")
 
 # Find all generators
 find_package(gencpp REQUIRED)
@@ -22,6 +22,11 @@ add_custom_target(_baxter_control_mine_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "baxter_control_mine" "/home/lar/ros/test_ws/src/baxter_control_mine/srv/PositionCommandMine.srv" ""
 )
 
+get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_control_mine/srv/CalculateIK.srv" NAME_WE)
+add_custom_target(_baxter_control_mine_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "baxter_control_mine" "/home/lar/ros/test_ws/src/baxter_control_mine/srv/CalculateIK.srv" "std_msgs/Header:geometry_msgs/Quaternion:geometry_msgs/Pose:geometry_msgs/Point:sensor_msgs/JointState"
+)
+
 #
 #  langs = gencpp;geneus;genlisp;gennodejs;genpy
 #
@@ -34,6 +39,12 @@ _generate_srv_cpp(baxter_control_mine
   "/home/lar/ros/test_ws/src/baxter_control_mine/srv/PositionCommandMine.srv"
   "${MSG_I_FLAGS}"
   ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/baxter_control_mine
+)
+_generate_srv_cpp(baxter_control_mine
+  "/home/lar/ros/test_ws/src/baxter_control_mine/srv/CalculateIK.srv"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/kinetic/share/sensor_msgs/cmake/../msg/JointState.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/baxter_control_mine
 )
 
@@ -50,6 +61,8 @@ add_dependencies(baxter_control_mine_generate_messages baxter_control_mine_gener
 
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_control_mine/srv/PositionCommandMine.srv" NAME_WE)
+add_dependencies(baxter_control_mine_generate_messages_cpp _baxter_control_mine_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_control_mine/srv/CalculateIK.srv" NAME_WE)
 add_dependencies(baxter_control_mine_generate_messages_cpp _baxter_control_mine_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -69,6 +82,12 @@ _generate_srv_eus(baxter_control_mine
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/baxter_control_mine
 )
+_generate_srv_eus(baxter_control_mine
+  "/home/lar/ros/test_ws/src/baxter_control_mine/srv/CalculateIK.srv"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/kinetic/share/sensor_msgs/cmake/../msg/JointState.msg"
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/baxter_control_mine
+)
 
 ### Generating Module File
 _generate_module_eus(baxter_control_mine
@@ -83,6 +102,8 @@ add_dependencies(baxter_control_mine_generate_messages baxter_control_mine_gener
 
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_control_mine/srv/PositionCommandMine.srv" NAME_WE)
+add_dependencies(baxter_control_mine_generate_messages_eus _baxter_control_mine_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_control_mine/srv/CalculateIK.srv" NAME_WE)
 add_dependencies(baxter_control_mine_generate_messages_eus _baxter_control_mine_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -102,6 +123,12 @@ _generate_srv_lisp(baxter_control_mine
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/baxter_control_mine
 )
+_generate_srv_lisp(baxter_control_mine
+  "/home/lar/ros/test_ws/src/baxter_control_mine/srv/CalculateIK.srv"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/kinetic/share/sensor_msgs/cmake/../msg/JointState.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/baxter_control_mine
+)
 
 ### Generating Module File
 _generate_module_lisp(baxter_control_mine
@@ -116,6 +143,8 @@ add_dependencies(baxter_control_mine_generate_messages baxter_control_mine_gener
 
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_control_mine/srv/PositionCommandMine.srv" NAME_WE)
+add_dependencies(baxter_control_mine_generate_messages_lisp _baxter_control_mine_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_control_mine/srv/CalculateIK.srv" NAME_WE)
 add_dependencies(baxter_control_mine_generate_messages_lisp _baxter_control_mine_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -135,6 +164,12 @@ _generate_srv_nodejs(baxter_control_mine
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/baxter_control_mine
 )
+_generate_srv_nodejs(baxter_control_mine
+  "/home/lar/ros/test_ws/src/baxter_control_mine/srv/CalculateIK.srv"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/kinetic/share/sensor_msgs/cmake/../msg/JointState.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/baxter_control_mine
+)
 
 ### Generating Module File
 _generate_module_nodejs(baxter_control_mine
@@ -149,6 +184,8 @@ add_dependencies(baxter_control_mine_generate_messages baxter_control_mine_gener
 
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_control_mine/srv/PositionCommandMine.srv" NAME_WE)
+add_dependencies(baxter_control_mine_generate_messages_nodejs _baxter_control_mine_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_control_mine/srv/CalculateIK.srv" NAME_WE)
 add_dependencies(baxter_control_mine_generate_messages_nodejs _baxter_control_mine_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -168,6 +205,12 @@ _generate_srv_py(baxter_control_mine
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/baxter_control_mine
 )
+_generate_srv_py(baxter_control_mine
+  "/home/lar/ros/test_ws/src/baxter_control_mine/srv/CalculateIK.srv"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/kinetic/share/sensor_msgs/cmake/../msg/JointState.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/baxter_control_mine
+)
 
 ### Generating Module File
 _generate_module_py(baxter_control_mine
@@ -182,6 +225,8 @@ add_dependencies(baxter_control_mine_generate_messages baxter_control_mine_gener
 
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_control_mine/srv/PositionCommandMine.srv" NAME_WE)
+add_dependencies(baxter_control_mine_generate_messages_py _baxter_control_mine_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_control_mine/srv/CalculateIK.srv" NAME_WE)
 add_dependencies(baxter_control_mine_generate_messages_py _baxter_control_mine_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -203,6 +248,12 @@ endif()
 if(TARGET std_msgs_generate_messages_cpp)
   add_dependencies(baxter_control_mine_generate_messages_cpp std_msgs_generate_messages_cpp)
 endif()
+if(TARGET sensor_msgs_generate_messages_cpp)
+  add_dependencies(baxter_control_mine_generate_messages_cpp sensor_msgs_generate_messages_cpp)
+endif()
+if(TARGET geometry_msgs_generate_messages_cpp)
+  add_dependencies(baxter_control_mine_generate_messages_cpp geometry_msgs_generate_messages_cpp)
+endif()
 
 if(geneus_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/baxter_control_mine)
   # install generated code
@@ -213,6 +264,12 @@ if(geneus_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/ba
 endif()
 if(TARGET std_msgs_generate_messages_eus)
   add_dependencies(baxter_control_mine_generate_messages_eus std_msgs_generate_messages_eus)
+endif()
+if(TARGET sensor_msgs_generate_messages_eus)
+  add_dependencies(baxter_control_mine_generate_messages_eus sensor_msgs_generate_messages_eus)
+endif()
+if(TARGET geometry_msgs_generate_messages_eus)
+  add_dependencies(baxter_control_mine_generate_messages_eus geometry_msgs_generate_messages_eus)
 endif()
 
 if(genlisp_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/baxter_control_mine)
@@ -225,6 +282,12 @@ endif()
 if(TARGET std_msgs_generate_messages_lisp)
   add_dependencies(baxter_control_mine_generate_messages_lisp std_msgs_generate_messages_lisp)
 endif()
+if(TARGET sensor_msgs_generate_messages_lisp)
+  add_dependencies(baxter_control_mine_generate_messages_lisp sensor_msgs_generate_messages_lisp)
+endif()
+if(TARGET geometry_msgs_generate_messages_lisp)
+  add_dependencies(baxter_control_mine_generate_messages_lisp geometry_msgs_generate_messages_lisp)
+endif()
 
 if(gennodejs_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/baxter_control_mine)
   # install generated code
@@ -235,6 +298,12 @@ if(gennodejs_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_D
 endif()
 if(TARGET std_msgs_generate_messages_nodejs)
   add_dependencies(baxter_control_mine_generate_messages_nodejs std_msgs_generate_messages_nodejs)
+endif()
+if(TARGET sensor_msgs_generate_messages_nodejs)
+  add_dependencies(baxter_control_mine_generate_messages_nodejs sensor_msgs_generate_messages_nodejs)
+endif()
+if(TARGET geometry_msgs_generate_messages_nodejs)
+  add_dependencies(baxter_control_mine_generate_messages_nodejs geometry_msgs_generate_messages_nodejs)
 endif()
 
 if(genpy_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/baxter_control_mine)
@@ -247,4 +316,10 @@ if(genpy_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/baxt
 endif()
 if(TARGET std_msgs_generate_messages_py)
   add_dependencies(baxter_control_mine_generate_messages_py std_msgs_generate_messages_py)
+endif()
+if(TARGET sensor_msgs_generate_messages_py)
+  add_dependencies(baxter_control_mine_generate_messages_py sensor_msgs_generate_messages_py)
+endif()
+if(TARGET geometry_msgs_generate_messages_py)
+  add_dependencies(baxter_control_mine_generate_messages_py geometry_msgs_generate_messages_py)
 endif()

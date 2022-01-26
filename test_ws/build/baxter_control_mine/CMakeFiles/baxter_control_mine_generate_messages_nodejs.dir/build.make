@@ -54,15 +54,27 @@ CMAKE_BINARY_DIR = /home/lar/ros/test_ws/build
 include baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_nodejs.dir/progress.make
 
 baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_nodejs: /home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_control_mine/srv/PositionCommandMine.js
+baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_nodejs: /home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_control_mine/srv/CalculateIK.js
 
 
 /home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_control_mine/srv/PositionCommandMine.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
 /home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_control_mine/srv/PositionCommandMine.js: /home/lar/ros/test_ws/src/baxter_control_mine/srv/PositionCommandMine.srv
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from baxter_control_mine/PositionCommandMine.srv"
-	cd /home/lar/ros/test_ws/build/baxter_control_mine && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/lar/ros/test_ws/src/baxter_control_mine/srv/PositionCommandMine.srv -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_control_mine -o /home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_control_mine/srv
+	cd /home/lar/ros/test_ws/build/baxter_control_mine && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/lar/ros/test_ws/src/baxter_control_mine/srv/PositionCommandMine.srv -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p baxter_control_mine -o /home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_control_mine/srv
+
+/home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_control_mine/srv/CalculateIK.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
+/home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_control_mine/srv/CalculateIK.js: /home/lar/ros/test_ws/src/baxter_control_mine/srv/CalculateIK.srv
+/home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_control_mine/srv/CalculateIK.js: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
+/home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_control_mine/srv/CalculateIK.js: /opt/ros/kinetic/share/geometry_msgs/msg/Quaternion.msg
+/home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_control_mine/srv/CalculateIK.js: /opt/ros/kinetic/share/geometry_msgs/msg/Pose.msg
+/home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_control_mine/srv/CalculateIK.js: /opt/ros/kinetic/share/geometry_msgs/msg/Point.msg
+/home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_control_mine/srv/CalculateIK.js: /opt/ros/kinetic/share/sensor_msgs/msg/JointState.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Javascript code from baxter_control_mine/CalculateIK.srv"
+	cd /home/lar/ros/test_ws/build/baxter_control_mine && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/lar/ros/test_ws/src/baxter_control_mine/srv/CalculateIK.srv -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p baxter_control_mine -o /home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_control_mine/srv
 
 baxter_control_mine_generate_messages_nodejs: baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_nodejs
 baxter_control_mine_generate_messages_nodejs: /home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_control_mine/srv/PositionCommandMine.js
+baxter_control_mine_generate_messages_nodejs: /home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_control_mine/srv/CalculateIK.js
 baxter_control_mine_generate_messages_nodejs: baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_nodejs.dir/build.make
 
 .PHONY : baxter_control_mine_generate_messages_nodejs

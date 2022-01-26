@@ -54,20 +54,32 @@ CMAKE_BINARY_DIR = /home/lar/ros/test_ws/build
 include baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_eus.dir/progress.make
 
 baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_eus: /home/lar/ros/test_ws/devel/share/roseus/ros/baxter_control_mine/srv/PositionCommandMine.l
+baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_eus: /home/lar/ros/test_ws/devel/share/roseus/ros/baxter_control_mine/srv/CalculateIK.l
 baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_eus: /home/lar/ros/test_ws/devel/share/roseus/ros/baxter_control_mine/manifest.l
 
 
 /home/lar/ros/test_ws/devel/share/roseus/ros/baxter_control_mine/srv/PositionCommandMine.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
 /home/lar/ros/test_ws/devel/share/roseus/ros/baxter_control_mine/srv/PositionCommandMine.l: /home/lar/ros/test_ws/src/baxter_control_mine/srv/PositionCommandMine.srv
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp code from baxter_control_mine/PositionCommandMine.srv"
-	cd /home/lar/ros/test_ws/build/baxter_control_mine && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/lar/ros/test_ws/src/baxter_control_mine/srv/PositionCommandMine.srv -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_control_mine -o /home/lar/ros/test_ws/devel/share/roseus/ros/baxter_control_mine/srv
+	cd /home/lar/ros/test_ws/build/baxter_control_mine && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/lar/ros/test_ws/src/baxter_control_mine/srv/PositionCommandMine.srv -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p baxter_control_mine -o /home/lar/ros/test_ws/devel/share/roseus/ros/baxter_control_mine/srv
+
+/home/lar/ros/test_ws/devel/share/roseus/ros/baxter_control_mine/srv/CalculateIK.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
+/home/lar/ros/test_ws/devel/share/roseus/ros/baxter_control_mine/srv/CalculateIK.l: /home/lar/ros/test_ws/src/baxter_control_mine/srv/CalculateIK.srv
+/home/lar/ros/test_ws/devel/share/roseus/ros/baxter_control_mine/srv/CalculateIK.l: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
+/home/lar/ros/test_ws/devel/share/roseus/ros/baxter_control_mine/srv/CalculateIK.l: /opt/ros/kinetic/share/geometry_msgs/msg/Quaternion.msg
+/home/lar/ros/test_ws/devel/share/roseus/ros/baxter_control_mine/srv/CalculateIK.l: /opt/ros/kinetic/share/geometry_msgs/msg/Pose.msg
+/home/lar/ros/test_ws/devel/share/roseus/ros/baxter_control_mine/srv/CalculateIK.l: /opt/ros/kinetic/share/geometry_msgs/msg/Point.msg
+/home/lar/ros/test_ws/devel/share/roseus/ros/baxter_control_mine/srv/CalculateIK.l: /opt/ros/kinetic/share/sensor_msgs/msg/JointState.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp code from baxter_control_mine/CalculateIK.srv"
+	cd /home/lar/ros/test_ws/build/baxter_control_mine && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/lar/ros/test_ws/src/baxter_control_mine/srv/CalculateIK.srv -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p baxter_control_mine -o /home/lar/ros/test_ws/devel/share/roseus/ros/baxter_control_mine/srv
 
 /home/lar/ros/test_ws/devel/share/roseus/ros/baxter_control_mine/manifest.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp manifest code for baxter_control_mine"
-	cd /home/lar/ros/test_ws/build/baxter_control_mine && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/lar/ros/test_ws/devel/share/roseus/ros/baxter_control_mine baxter_control_mine std_msgs
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating EusLisp manifest code for baxter_control_mine"
+	cd /home/lar/ros/test_ws/build/baxter_control_mine && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/lar/ros/test_ws/devel/share/roseus/ros/baxter_control_mine baxter_control_mine std_msgs sensor_msgs geometry_msgs
 
 baxter_control_mine_generate_messages_eus: baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_eus
 baxter_control_mine_generate_messages_eus: /home/lar/ros/test_ws/devel/share/roseus/ros/baxter_control_mine/srv/PositionCommandMine.l
+baxter_control_mine_generate_messages_eus: /home/lar/ros/test_ws/devel/share/roseus/ros/baxter_control_mine/srv/CalculateIK.l
 baxter_control_mine_generate_messages_eus: /home/lar/ros/test_ws/devel/share/roseus/ros/baxter_control_mine/manifest.l
 baxter_control_mine_generate_messages_eus: baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_eus.dir/build.make
 

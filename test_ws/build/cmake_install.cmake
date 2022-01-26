@@ -129,6 +129,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/lar/ros/test_ws/build/baxter_description/cmake_install.cmake")
   include("/home/lar/ros/test_ws/build/baxter_moveit_config/cmake_install.cmake")
   include("/home/lar/ros/test_ws/build/baxter_control_mine/cmake_install.cmake")
+  include("/home/lar/ros/test_ws/build/baxter_msgs_mine/cmake_install.cmake")
 
 endif()
 

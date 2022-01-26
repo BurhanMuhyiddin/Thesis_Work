@@ -54,21 +54,34 @@ CMAKE_BINARY_DIR = /home/lar/ros/test_ws/build
 include baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_py.dir/progress.make
 
 baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_control_mine/srv/_PositionCommandMine.py
+baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_control_mine/srv/_CalculateIK.py
 baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_control_mine/srv/__init__.py
 
 
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_control_mine/srv/_PositionCommandMine.py: /opt/ros/kinetic/lib/genpy/gensrv_py.py
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_control_mine/srv/_PositionCommandMine.py: /home/lar/ros/test_ws/src/baxter_control_mine/srv/PositionCommandMine.srv
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python code from SRV baxter_control_mine/PositionCommandMine"
-	cd /home/lar/ros/test_ws/build/baxter_control_mine && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/lar/ros/test_ws/src/baxter_control_mine/srv/PositionCommandMine.srv -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_control_mine -o /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_control_mine/srv
+	cd /home/lar/ros/test_ws/build/baxter_control_mine && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/lar/ros/test_ws/src/baxter_control_mine/srv/PositionCommandMine.srv -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p baxter_control_mine -o /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_control_mine/srv
+
+/home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_control_mine/srv/_CalculateIK.py: /opt/ros/kinetic/lib/genpy/gensrv_py.py
+/home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_control_mine/srv/_CalculateIK.py: /home/lar/ros/test_ws/src/baxter_control_mine/srv/CalculateIK.srv
+/home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_control_mine/srv/_CalculateIK.py: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
+/home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_control_mine/srv/_CalculateIK.py: /opt/ros/kinetic/share/geometry_msgs/msg/Quaternion.msg
+/home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_control_mine/srv/_CalculateIK.py: /opt/ros/kinetic/share/geometry_msgs/msg/Pose.msg
+/home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_control_mine/srv/_CalculateIK.py: /opt/ros/kinetic/share/geometry_msgs/msg/Point.msg
+/home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_control_mine/srv/_CalculateIK.py: /opt/ros/kinetic/share/sensor_msgs/msg/JointState.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python code from SRV baxter_control_mine/CalculateIK"
+	cd /home/lar/ros/test_ws/build/baxter_control_mine && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/lar/ros/test_ws/src/baxter_control_mine/srv/CalculateIK.srv -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p baxter_control_mine -o /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_control_mine/srv
 
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_control_mine/srv/__init__.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_control_mine/srv/__init__.py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_control_mine/srv/_PositionCommandMine.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python srv __init__.py for baxter_control_mine"
+/home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_control_mine/srv/__init__.py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_control_mine/srv/_CalculateIK.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python srv __init__.py for baxter_control_mine"
 	cd /home/lar/ros/test_ws/build/baxter_control_mine && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_control_mine/srv --initpy
 
 baxter_control_mine_generate_messages_py: baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_py
 baxter_control_mine_generate_messages_py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_control_mine/srv/_PositionCommandMine.py
+baxter_control_mine_generate_messages_py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_control_mine/srv/_CalculateIK.py
 baxter_control_mine_generate_messages_py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_control_mine/srv/__init__.py
 baxter_control_mine_generate_messages_py: baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_py.dir/build.make
 
