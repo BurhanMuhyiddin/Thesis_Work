@@ -48,7 +48,7 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/baxter_moveit_config" TYPE DIRECTORY FILES "/home/lar/ros/baxter_ws/src/baxter_moveit_config/launch")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/baxter_moveit_config" TYPE DIRECTORY FILES "/home/lar/ros/baxter_ws/src/baxter_moveit_config/launch" REGEX "/setup\\_assistant\\.launch$" EXCLUDE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")

@@ -24,8 +24,8 @@ class HOME(smach.State):
         
         self.client.wait_for_server()
 
-        goal_pose.desired_pose = Pose(Point(0.106153, 0.708761, -0.384312), Quaternion(-0.661702, 0.726757, -0.124059, -0.136325))
-
+        # goal_pose.desired_pose = Pose(Point(0.106153, 0.708761, -0.384312), Quaternion(-0.661702, 0.726757, -0.124059, -0.136325))
+        goal_pose.desired_pose = Pose(Point(0.7500, 0.480976, 0.203003), Quaternion(-0.106929, 0.949026, 0.0331254, 0.294651))
         self.client.send_goal(goal_pose)
 
         self.client.wait_for_result()

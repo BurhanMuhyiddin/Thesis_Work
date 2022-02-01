@@ -2,4 +2,4 @@
 source_root_dir = '/home/lar/ros/test_ws/src'
 whitelisted_packages = ''.split(';') if '' != '' else []
 blacklisted_packages = ''.split(';') if '' != '' else []
-underlay_workspaces = '/home/lar/ros/test_ws/devel;/home/lar/ros/baxter_ws/devel;/opt/ros/kinetic'.split(';') if '/home/lar/ros/test_ws/devel;/home/lar/ros/baxter_ws/devel;/opt/ros/kinetic' != '' else []
+underlay_workspaces = '/home/lar/ros/test_ws/devel;/opt/ros/kinetic'.split(';') if '/home/lar/ros/test_ws/devel;/opt/ros/kinetic' != '' else []

@@ -246,7 +246,7 @@ gtest/preinstall: gtest/gtest/preinstall
 gtest/CMakeFiles/gmock.dir/all:
 	$(MAKE) -f gtest/CMakeFiles/gmock.dir/build.make gtest/CMakeFiles/gmock.dir/depend
 	$(MAKE) -f gtest/CMakeFiles/gmock.dir/build.make gtest/CMakeFiles/gmock.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=54,55,56 "Built target gmock"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=53,54,55 "Built target gmock"
 .PHONY : gtest/CMakeFiles/gmock.dir/all
 
 # Build rule for subdir invocation for target.
@@ -278,7 +278,7 @@ clean: gtest/CMakeFiles/gmock.dir/clean
 gtest/CMakeFiles/gmock_main.dir/all:
 	$(MAKE) -f gtest/CMakeFiles/gmock_main.dir/build.make gtest/CMakeFiles/gmock_main.dir/depend
 	$(MAKE) -f gtest/CMakeFiles/gmock_main.dir/build.make gtest/CMakeFiles/gmock_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=57,58,59,60 "Built target gmock_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=56,57,58,59 "Built target gmock_main"
 .PHONY : gtest/CMakeFiles/gmock_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -329,7 +329,7 @@ gtest/gtest/preinstall:
 gtest/gtest/CMakeFiles/gtest.dir/all:
 	$(MAKE) -f gtest/gtest/CMakeFiles/gtest.dir/build.make gtest/gtest/CMakeFiles/gtest.dir/depend
 	$(MAKE) -f gtest/gtest/CMakeFiles/gtest.dir/build.make gtest/gtest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=63,64 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=62,63 "Built target gtest"
 .PHONY : gtest/gtest/CMakeFiles/gtest.dir/all
 
 # Build rule for subdir invocation for target.
@@ -361,7 +361,7 @@ clean: gtest/gtest/CMakeFiles/gtest.dir/clean
 gtest/gtest/CMakeFiles/gtest_main.dir/all: gtest/gtest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f gtest/gtest/CMakeFiles/gtest_main.dir/build.make gtest/gtest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) -f gtest/gtest/CMakeFiles/gtest_main.dir/build.make gtest/gtest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=65,66 "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=64,65 "Built target gtest_main"
 .PHONY : gtest/gtest/CMakeFiles/gtest_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -437,40 +437,36 @@ clean: baxter_description/CMakeFiles/_catkin_empty_exported_target.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Directory level rules for directory baxter_moveit_config
+# Directory level rules for directory rethink_ee_description
 
 # Convenience name for "all" pass in the directory.
-baxter_moveit_config/all:
+rethink_ee_description/all:
 
-.PHONY : baxter_moveit_config/all
+.PHONY : rethink_ee_description/all
 
 # Convenience name for "clean" pass in the directory.
-baxter_moveit_config/clean:
+rethink_ee_description/clean:
 
-.PHONY : baxter_moveit_config/clean
+.PHONY : rethink_ee_description/clean
 
 # Convenience name for "preinstall" pass in the directory.
-baxter_moveit_config/preinstall:
+rethink_ee_description/preinstall:
 
-.PHONY : baxter_moveit_config/preinstall
+.PHONY : rethink_ee_description/preinstall
 
 #=============================================================================
 # Directory level rules for directory baxter_control_mine
 
 # Convenience name for "all" pass in the directory.
-baxter_control_mine/all: baxter_control_mine/CMakeFiles/test_node.dir/all
-baxter_control_mine/all: baxter_control_mine/CMakeFiles/rviz_converter_node.dir/all
 baxter_control_mine/all: baxter_control_mine/CMakeFiles/go_to_goal_server.dir/all
-baxter_control_mine/all: baxter_control_mine/CMakeFiles/baxter_control_node.dir/all
+baxter_control_mine/all: baxter_control_mine/CMakeFiles/test_node.dir/all
 baxter_control_mine/all: baxter_control_mine/CMakeFiles/calculate_ik_server.dir/all
-baxter_control_mine/all: baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages.dir/all
+baxter_control_mine/all: baxter_control_mine/CMakeFiles/rviz_converter_node.dir/all
+baxter_control_mine/all: baxter_control_mine/CMakeFiles/baxter_control_node.dir/all
 
 .PHONY : baxter_control_mine/all
 
 # Convenience name for "clean" pass in the directory.
-baxter_control_mine/clean: baxter_control_mine/CMakeFiles/test_node.dir/clean
-baxter_control_mine/clean: baxter_control_mine/CMakeFiles/rviz_converter_node.dir/clean
-baxter_control_mine/clean: baxter_control_mine/CMakeFiles/baxter_control_mine_genpy.dir/clean
 baxter_control_mine/clean: baxter_control_mine/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/clean
 baxter_control_mine/clean: baxter_control_mine/CMakeFiles/shape_msgs_generate_messages_lisp.dir/clean
 baxter_control_mine/clean: baxter_control_mine/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/clean
@@ -479,19 +475,16 @@ baxter_control_mine/clean: baxter_control_mine/CMakeFiles/shape_msgs_generate_me
 baxter_control_mine/clean: baxter_control_mine/CMakeFiles/moveit_ros_planning_gencfg.dir/clean
 baxter_control_mine/clean: baxter_control_mine/CMakeFiles/visualization_msgs_generate_messages_eus.dir/clean
 baxter_control_mine/clean: baxter_control_mine/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/clean
-baxter_control_mine/clean: baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_PositionCommandMine.dir/clean
 baxter_control_mine/clean: baxter_control_mine/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/clean
 baxter_control_mine/clean: baxter_control_mine/CMakeFiles/actionlib_generate_messages_lisp.dir/clean
+baxter_control_mine/clean: baxter_control_mine/CMakeFiles/actionlib_generate_messages_py.dir/clean
 baxter_control_mine/clean: baxter_control_mine/CMakeFiles/go_to_goal_server.dir/clean
 baxter_control_mine/clean: baxter_control_mine/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/clean
 baxter_control_mine/clean: baxter_control_mine/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean
-baxter_control_mine/clean: baxter_control_mine/CMakeFiles/baxter_control_mine_gennodejs.dir/clean
 baxter_control_mine/clean: baxter_control_mine/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/clean
-baxter_control_mine/clean: baxter_control_mine/CMakeFiles/baxter_control_node.dir/clean
-baxter_control_mine/clean: baxter_control_mine/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean
-baxter_control_mine/clean: baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_lisp.dir/clean
 baxter_control_mine/clean: baxter_control_mine/CMakeFiles/visualization_msgs_generate_messages_py.dir/clean
 baxter_control_mine/clean: baxter_control_mine/CMakeFiles/shape_msgs_generate_messages_py.dir/clean
+baxter_control_mine/clean: baxter_control_mine/CMakeFiles/test_node.dir/clean
 baxter_control_mine/clean: baxter_control_mine/CMakeFiles/baxter_core_msgs_generate_messages_cpp.dir/clean
 baxter_control_mine/clean: baxter_control_mine/CMakeFiles/roscpp_generate_messages_py.dir/clean
 baxter_control_mine/clean: baxter_control_mine/CMakeFiles/tf_generate_messages_nodejs.dir/clean
@@ -499,10 +492,9 @@ baxter_control_mine/clean: baxter_control_mine/CMakeFiles/graph_msgs_generate_me
 baxter_control_mine/clean: baxter_control_mine/CMakeFiles/std_msgs_generate_messages_py.dir/clean
 baxter_control_mine/clean: baxter_control_mine/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean
 baxter_control_mine/clean: baxter_control_mine/CMakeFiles/shape_msgs_generate_messages_cpp.dir/clean
-baxter_control_mine/clean: baxter_control_mine/CMakeFiles/calculate_ik_server.dir/clean
 baxter_control_mine/clean: baxter_control_mine/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
+baxter_control_mine/clean: baxter_control_mine/CMakeFiles/calculate_ik_server.dir/clean
 baxter_control_mine/clean: baxter_control_mine/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean
-baxter_control_mine/clean: baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_py.dir/clean
 baxter_control_mine/clean: baxter_control_mine/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/clean
 baxter_control_mine/clean: baxter_control_mine/CMakeFiles/moveit_msgs_generate_messages_cpp.dir/clean
 baxter_control_mine/clean: baxter_control_mine/CMakeFiles/shape_msgs_generate_messages_nodejs.dir/clean
@@ -510,6 +502,7 @@ baxter_control_mine/clean: baxter_control_mine/CMakeFiles/actionlib_msgs_generat
 baxter_control_mine/clean: baxter_control_mine/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/clean
 baxter_control_mine/clean: baxter_control_mine/CMakeFiles/geometry_msgs_generate_messages_eus.dir/clean
 baxter_control_mine/clean: baxter_control_mine/CMakeFiles/roscpp_generate_messages_cpp.dir/clean
+baxter_control_mine/clean: baxter_control_mine/CMakeFiles/rviz_converter_node.dir/clean
 baxter_control_mine/clean: baxter_control_mine/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean
 baxter_control_mine/clean: baxter_control_mine/CMakeFiles/object_recognition_msgs_generate_messages_lisp.dir/clean
 baxter_control_mine/clean: baxter_control_mine/CMakeFiles/graph_msgs_generate_messages_cpp.dir/clean
@@ -525,21 +518,15 @@ baxter_control_mine/clean: baxter_control_mine/CMakeFiles/actionlib_generate_mes
 baxter_control_mine/clean: baxter_control_mine/CMakeFiles/std_msgs_generate_messages_eus.dir/clean
 baxter_control_mine/clean: baxter_control_mine/CMakeFiles/geometry_msgs_generate_messages_py.dir/clean
 baxter_control_mine/clean: baxter_control_mine/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean
-baxter_control_mine/clean: baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean
 baxter_control_mine/clean: baxter_control_mine/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
 baxter_control_mine/clean: baxter_control_mine/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/clean
 baxter_control_mine/clean: baxter_control_mine/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean
 baxter_control_mine/clean: baxter_control_mine/CMakeFiles/object_recognition_msgs_generate_messages_py.dir/clean
-baxter_control_mine/clean: baxter_control_mine/CMakeFiles/baxter_control_mine_gencpp.dir/clean
 baxter_control_mine/clean: baxter_control_mine/CMakeFiles/tf2_msgs_generate_messages_py.dir/clean
-baxter_control_mine/clean: baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages.dir/clean
 baxter_control_mine/clean: baxter_control_mine/CMakeFiles/moveit_msgs_generate_messages_lisp.dir/clean
 baxter_control_mine/clean: baxter_control_mine/CMakeFiles/tf_generate_messages_lisp.dir/clean
 baxter_control_mine/clean: baxter_control_mine/CMakeFiles/moveit_msgs_generate_messages_nodejs.dir/clean
 baxter_control_mine/clean: baxter_control_mine/CMakeFiles/moveit_msgs_generate_messages_py.dir/clean
-baxter_control_mine/clean: baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_cpp.dir/clean
-baxter_control_mine/clean: baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_CalculateIK.dir/clean
-baxter_control_mine/clean: baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_nodejs.dir/clean
 baxter_control_mine/clean: baxter_control_mine/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/clean
 baxter_control_mine/clean: baxter_control_mine/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/clean
 baxter_control_mine/clean: baxter_control_mine/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/clean
@@ -569,10 +556,9 @@ baxter_control_mine/clean: baxter_control_mine/CMakeFiles/graph_msgs_generate_me
 baxter_control_mine/clean: baxter_control_mine/CMakeFiles/baxter_core_msgs_generate_messages_nodejs.dir/clean
 baxter_control_mine/clean: baxter_control_mine/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/clean
 baxter_control_mine/clean: baxter_control_mine/CMakeFiles/baxter_core_msgs_generate_messages_py.dir/clean
-baxter_control_mine/clean: baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_eus.dir/clean
-baxter_control_mine/clean: baxter_control_mine/CMakeFiles/actionlib_generate_messages_py.dir/clean
-baxter_control_mine/clean: baxter_control_mine/CMakeFiles/baxter_control_mine_geneus.dir/clean
-baxter_control_mine/clean: baxter_control_mine/CMakeFiles/baxter_control_mine_genlisp.dir/clean
+baxter_control_mine/clean: baxter_control_mine/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean
+baxter_control_mine/clean: baxter_control_mine/CMakeFiles/baxter_control_node.dir/clean
+baxter_control_mine/clean: baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean
 
 .PHONY : baxter_control_mine/clean
 
@@ -580,112 +566,6 @@ baxter_control_mine/clean: baxter_control_mine/CMakeFiles/baxter_control_mine_ge
 baxter_control_mine/preinstall:
 
 .PHONY : baxter_control_mine/preinstall
-
-#=============================================================================
-# Target rules for target baxter_control_mine/CMakeFiles/test_node.dir
-
-# All Build rule for target.
-baxter_control_mine/CMakeFiles/test_node.dir/all:
-	$(MAKE) -f baxter_control_mine/CMakeFiles/test_node.dir/build.make baxter_control_mine/CMakeFiles/test_node.dir/depend
-	$(MAKE) -f baxter_control_mine/CMakeFiles/test_node.dir/build.make baxter_control_mine/CMakeFiles/test_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=69,70 "Built target test_node"
-.PHONY : baxter_control_mine/CMakeFiles/test_node.dir/all
-
-# Include target in all.
-all: baxter_control_mine/CMakeFiles/test_node.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-baxter_control_mine/CMakeFiles/test_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/test_node.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 0
-.PHONY : baxter_control_mine/CMakeFiles/test_node.dir/rule
-
-# Convenience name for target.
-test_node: baxter_control_mine/CMakeFiles/test_node.dir/rule
-
-.PHONY : test_node
-
-# clean rule for target.
-baxter_control_mine/CMakeFiles/test_node.dir/clean:
-	$(MAKE) -f baxter_control_mine/CMakeFiles/test_node.dir/build.make baxter_control_mine/CMakeFiles/test_node.dir/clean
-.PHONY : baxter_control_mine/CMakeFiles/test_node.dir/clean
-
-# clean rule for target.
-clean: baxter_control_mine/CMakeFiles/test_node.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target baxter_control_mine/CMakeFiles/rviz_converter_node.dir
-
-# All Build rule for target.
-baxter_control_mine/CMakeFiles/rviz_converter_node.dir/all:
-	$(MAKE) -f baxter_control_mine/CMakeFiles/rviz_converter_node.dir/build.make baxter_control_mine/CMakeFiles/rviz_converter_node.dir/depend
-	$(MAKE) -f baxter_control_mine/CMakeFiles/rviz_converter_node.dir/build.make baxter_control_mine/CMakeFiles/rviz_converter_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=67,68 "Built target rviz_converter_node"
-.PHONY : baxter_control_mine/CMakeFiles/rviz_converter_node.dir/all
-
-# Include target in all.
-all: baxter_control_mine/CMakeFiles/rviz_converter_node.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-baxter_control_mine/CMakeFiles/rviz_converter_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/rviz_converter_node.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 0
-.PHONY : baxter_control_mine/CMakeFiles/rviz_converter_node.dir/rule
-
-# Convenience name for target.
-rviz_converter_node: baxter_control_mine/CMakeFiles/rviz_converter_node.dir/rule
-
-.PHONY : rviz_converter_node
-
-# clean rule for target.
-baxter_control_mine/CMakeFiles/rviz_converter_node.dir/clean:
-	$(MAKE) -f baxter_control_mine/CMakeFiles/rviz_converter_node.dir/build.make baxter_control_mine/CMakeFiles/rviz_converter_node.dir/clean
-.PHONY : baxter_control_mine/CMakeFiles/rviz_converter_node.dir/clean
-
-# clean rule for target.
-clean: baxter_control_mine/CMakeFiles/rviz_converter_node.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target baxter_control_mine/CMakeFiles/baxter_control_mine_genpy.dir
-
-# All Build rule for target.
-baxter_control_mine/CMakeFiles/baxter_control_mine_genpy.dir/all: baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_py.dir/all
-	$(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_mine_genpy.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_mine_genpy.dir/depend
-	$(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_mine_genpy.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_mine_genpy.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num= "Built target baxter_control_mine_genpy"
-.PHONY : baxter_control_mine/CMakeFiles/baxter_control_mine_genpy.dir/all
-
-# Build rule for subdir invocation for target.
-baxter_control_mine/CMakeFiles/baxter_control_mine_genpy.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 3
-	$(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/baxter_control_mine_genpy.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 0
-.PHONY : baxter_control_mine/CMakeFiles/baxter_control_mine_genpy.dir/rule
-
-# Convenience name for target.
-baxter_control_mine_genpy: baxter_control_mine/CMakeFiles/baxter_control_mine_genpy.dir/rule
-
-.PHONY : baxter_control_mine_genpy
-
-# clean rule for target.
-baxter_control_mine/CMakeFiles/baxter_control_mine_genpy.dir/clean:
-	$(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_mine_genpy.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_mine_genpy.dir/clean
-.PHONY : baxter_control_mine/CMakeFiles/baxter_control_mine_genpy.dir/clean
-
-# clean rule for target.
-clean: baxter_control_mine/CMakeFiles/baxter_control_mine_genpy.dir/clean
-
-.PHONY : clean
 
 #=============================================================================
 # Target rules for target baxter_control_mine/CMakeFiles/visualization_msgs_generate_messages_cpp.dir
@@ -944,38 +824,6 @@ clean: baxter_control_mine/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_PositionCommandMine.dir
-
-# All Build rule for target.
-baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_PositionCommandMine.dir/all:
-	$(MAKE) -f baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_PositionCommandMine.dir/build.make baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_PositionCommandMine.dir/depend
-	$(MAKE) -f baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_PositionCommandMine.dir/build.make baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_PositionCommandMine.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num= "Built target _baxter_control_mine_generate_messages_check_deps_PositionCommandMine"
-.PHONY : baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_PositionCommandMine.dir/all
-
-# Build rule for subdir invocation for target.
-baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_PositionCommandMine.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_PositionCommandMine.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 0
-.PHONY : baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_PositionCommandMine.dir/rule
-
-# Convenience name for target.
-_baxter_control_mine_generate_messages_check_deps_PositionCommandMine: baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_PositionCommandMine.dir/rule
-
-.PHONY : _baxter_control_mine_generate_messages_check_deps_PositionCommandMine
-
-# clean rule for target.
-baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_PositionCommandMine.dir/clean:
-	$(MAKE) -f baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_PositionCommandMine.dir/build.make baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_PositionCommandMine.dir/clean
-.PHONY : baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_PositionCommandMine.dir/clean
-
-# clean rule for target.
-clean: baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_PositionCommandMine.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
 # Target rules for target baxter_control_mine/CMakeFiles/actionlib_msgs_generate_messages_eus.dir
 
 # All Build rule for target.
@@ -1040,13 +888,45 @@ clean: baxter_control_mine/CMakeFiles/actionlib_generate_messages_lisp.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target baxter_control_mine/CMakeFiles/actionlib_generate_messages_py.dir
+
+# All Build rule for target.
+baxter_control_mine/CMakeFiles/actionlib_generate_messages_py.dir/all:
+	$(MAKE) -f baxter_control_mine/CMakeFiles/actionlib_generate_messages_py.dir/build.make baxter_control_mine/CMakeFiles/actionlib_generate_messages_py.dir/depend
+	$(MAKE) -f baxter_control_mine/CMakeFiles/actionlib_generate_messages_py.dir/build.make baxter_control_mine/CMakeFiles/actionlib_generate_messages_py.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num= "Built target actionlib_generate_messages_py"
+.PHONY : baxter_control_mine/CMakeFiles/actionlib_generate_messages_py.dir/all
+
+# Build rule for subdir invocation for target.
+baxter_control_mine/CMakeFiles/actionlib_generate_messages_py.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/actionlib_generate_messages_py.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 0
+.PHONY : baxter_control_mine/CMakeFiles/actionlib_generate_messages_py.dir/rule
+
+# Convenience name for target.
+actionlib_generate_messages_py: baxter_control_mine/CMakeFiles/actionlib_generate_messages_py.dir/rule
+
+.PHONY : actionlib_generate_messages_py
+
+# clean rule for target.
+baxter_control_mine/CMakeFiles/actionlib_generate_messages_py.dir/clean:
+	$(MAKE) -f baxter_control_mine/CMakeFiles/actionlib_generate_messages_py.dir/build.make baxter_control_mine/CMakeFiles/actionlib_generate_messages_py.dir/clean
+.PHONY : baxter_control_mine/CMakeFiles/actionlib_generate_messages_py.dir/clean
+
+# clean rule for target.
+clean: baxter_control_mine/CMakeFiles/actionlib_generate_messages_py.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target baxter_control_mine/CMakeFiles/go_to_goal_server.dir
 
 # All Build rule for target.
 baxter_control_mine/CMakeFiles/go_to_goal_server.dir/all:
 	$(MAKE) -f baxter_control_mine/CMakeFiles/go_to_goal_server.dir/build.make baxter_control_mine/CMakeFiles/go_to_goal_server.dir/depend
 	$(MAKE) -f baxter_control_mine/CMakeFiles/go_to_goal_server.dir/build.make baxter_control_mine/CMakeFiles/go_to_goal_server.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=61,62 "Built target go_to_goal_server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=60,61 "Built target go_to_goal_server"
 .PHONY : baxter_control_mine/CMakeFiles/go_to_goal_server.dir/all
 
 # Include target in all.
@@ -1141,38 +1021,6 @@ clean: baxter_control_mine/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clea
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target baxter_control_mine/CMakeFiles/baxter_control_mine_gennodejs.dir
-
-# All Build rule for target.
-baxter_control_mine/CMakeFiles/baxter_control_mine_gennodejs.dir/all: baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_nodejs.dir/all
-	$(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_mine_gennodejs.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_mine_gennodejs.dir/depend
-	$(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_mine_gennodejs.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_mine_gennodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num= "Built target baxter_control_mine_gennodejs"
-.PHONY : baxter_control_mine/CMakeFiles/baxter_control_mine_gennodejs.dir/all
-
-# Build rule for subdir invocation for target.
-baxter_control_mine/CMakeFiles/baxter_control_mine_gennodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/baxter_control_mine_gennodejs.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 0
-.PHONY : baxter_control_mine/CMakeFiles/baxter_control_mine_gennodejs.dir/rule
-
-# Convenience name for target.
-baxter_control_mine_gennodejs: baxter_control_mine/CMakeFiles/baxter_control_mine_gennodejs.dir/rule
-
-.PHONY : baxter_control_mine_gennodejs
-
-# clean rule for target.
-baxter_control_mine/CMakeFiles/baxter_control_mine_gennodejs.dir/clean:
-	$(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_mine_gennodejs.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_mine_gennodejs.dir/clean
-.PHONY : baxter_control_mine/CMakeFiles/baxter_control_mine_gennodejs.dir/clean
-
-# clean rule for target.
-clean: baxter_control_mine/CMakeFiles/baxter_control_mine_gennodejs.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
 # Target rules for target baxter_control_mine/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir
 
 # All Build rule for target.
@@ -1201,111 +1049,6 @@ baxter_control_mine/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/clean
 
 # clean rule for target.
 clean: baxter_control_mine/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target baxter_control_mine/CMakeFiles/baxter_control_node.dir
-
-# All Build rule for target.
-baxter_control_mine/CMakeFiles/baxter_control_node.dir/all:
-	$(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_node.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_node.dir/depend
-	$(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_node.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=13,14 "Built target baxter_control_node"
-.PHONY : baxter_control_mine/CMakeFiles/baxter_control_node.dir/all
-
-# Include target in all.
-all: baxter_control_mine/CMakeFiles/baxter_control_node.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-baxter_control_mine/CMakeFiles/baxter_control_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/baxter_control_node.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 0
-.PHONY : baxter_control_mine/CMakeFiles/baxter_control_node.dir/rule
-
-# Convenience name for target.
-baxter_control_node: baxter_control_mine/CMakeFiles/baxter_control_node.dir/rule
-
-.PHONY : baxter_control_node
-
-# clean rule for target.
-baxter_control_mine/CMakeFiles/baxter_control_node.dir/clean:
-	$(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_node.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_node.dir/clean
-.PHONY : baxter_control_mine/CMakeFiles/baxter_control_node.dir/clean
-
-# clean rule for target.
-clean: baxter_control_mine/CMakeFiles/baxter_control_node.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target baxter_control_mine/CMakeFiles/std_msgs_generate_messages_nodejs.dir
-
-# All Build rule for target.
-baxter_control_mine/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all:
-	$(MAKE) -f baxter_control_mine/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make baxter_control_mine/CMakeFiles/std_msgs_generate_messages_nodejs.dir/depend
-	$(MAKE) -f baxter_control_mine/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make baxter_control_mine/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num= "Built target std_msgs_generate_messages_nodejs"
-.PHONY : baxter_control_mine/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
-
-# Build rule for subdir invocation for target.
-baxter_control_mine/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 0
-.PHONY : baxter_control_mine/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_nodejs: baxter_control_mine/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : std_msgs_generate_messages_nodejs
-
-# clean rule for target.
-baxter_control_mine/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean:
-	$(MAKE) -f baxter_control_mine/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make baxter_control_mine/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean
-.PHONY : baxter_control_mine/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean
-
-# clean rule for target.
-clean: baxter_control_mine/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_lisp.dir
-
-# All Build rule for target.
-baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_lisp.dir/all: baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_PositionCommandMine.dir/all
-baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_lisp.dir/all: baxter_control_mine/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all
-baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_lisp.dir/all: baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
-baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_lisp.dir/all: baxter_control_mine/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
-baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_lisp.dir/all: baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_CalculateIK.dir/all
-	$(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_lisp.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_lisp.dir/depend
-	$(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_lisp.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=6,7 "Built target baxter_control_mine_generate_messages_lisp"
-.PHONY : baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_lisp.dir/all
-
-# Build rule for subdir invocation for target.
-baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_lisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_lisp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 0
-.PHONY : baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-baxter_control_mine_generate_messages_lisp: baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_lisp.dir/rule
-
-.PHONY : baxter_control_mine_generate_messages_lisp
-
-# clean rule for target.
-baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_lisp.dir/clean:
-	$(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_lisp.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_lisp.dir/clean
-.PHONY : baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_lisp.dir/clean
-
-# clean rule for target.
-clean: baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_lisp.dir/clean
 
 .PHONY : clean
 
@@ -1370,6 +1113,43 @@ baxter_control_mine/CMakeFiles/shape_msgs_generate_messages_py.dir/clean:
 
 # clean rule for target.
 clean: baxter_control_mine/CMakeFiles/shape_msgs_generate_messages_py.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target baxter_control_mine/CMakeFiles/test_node.dir
+
+# All Build rule for target.
+baxter_control_mine/CMakeFiles/test_node.dir/all:
+	$(MAKE) -f baxter_control_mine/CMakeFiles/test_node.dir/build.make baxter_control_mine/CMakeFiles/test_node.dir/depend
+	$(MAKE) -f baxter_control_mine/CMakeFiles/test_node.dir/build.make baxter_control_mine/CMakeFiles/test_node.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=68,69 "Built target test_node"
+.PHONY : baxter_control_mine/CMakeFiles/test_node.dir/all
+
+# Include target in all.
+all: baxter_control_mine/CMakeFiles/test_node.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+baxter_control_mine/CMakeFiles/test_node.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/test_node.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 0
+.PHONY : baxter_control_mine/CMakeFiles/test_node.dir/rule
+
+# Convenience name for target.
+test_node: baxter_control_mine/CMakeFiles/test_node.dir/rule
+
+.PHONY : test_node
+
+# clean rule for target.
+baxter_control_mine/CMakeFiles/test_node.dir/clean:
+	$(MAKE) -f baxter_control_mine/CMakeFiles/test_node.dir/build.make baxter_control_mine/CMakeFiles/test_node.dir/clean
+.PHONY : baxter_control_mine/CMakeFiles/test_node.dir/clean
+
+# clean rule for target.
+clean: baxter_control_mine/CMakeFiles/test_node.dir/clean
 
 .PHONY : clean
 
@@ -1598,43 +1378,6 @@ clean: baxter_control_mine/CMakeFiles/shape_msgs_generate_messages_cpp.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target baxter_control_mine/CMakeFiles/calculate_ik_server.dir
-
-# All Build rule for target.
-baxter_control_mine/CMakeFiles/calculate_ik_server.dir/all:
-	$(MAKE) -f baxter_control_mine/CMakeFiles/calculate_ik_server.dir/build.make baxter_control_mine/CMakeFiles/calculate_ik_server.dir/depend
-	$(MAKE) -f baxter_control_mine/CMakeFiles/calculate_ik_server.dir/build.make baxter_control_mine/CMakeFiles/calculate_ik_server.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=52,53 "Built target calculate_ik_server"
-.PHONY : baxter_control_mine/CMakeFiles/calculate_ik_server.dir/all
-
-# Include target in all.
-all: baxter_control_mine/CMakeFiles/calculate_ik_server.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-baxter_control_mine/CMakeFiles/calculate_ik_server.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/calculate_ik_server.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 0
-.PHONY : baxter_control_mine/CMakeFiles/calculate_ik_server.dir/rule
-
-# Convenience name for target.
-calculate_ik_server: baxter_control_mine/CMakeFiles/calculate_ik_server.dir/rule
-
-.PHONY : calculate_ik_server
-
-# clean rule for target.
-baxter_control_mine/CMakeFiles/calculate_ik_server.dir/clean:
-	$(MAKE) -f baxter_control_mine/CMakeFiles/calculate_ik_server.dir/build.make baxter_control_mine/CMakeFiles/calculate_ik_server.dir/clean
-.PHONY : baxter_control_mine/CMakeFiles/calculate_ik_server.dir/clean
-
-# clean rule for target.
-clean: baxter_control_mine/CMakeFiles/calculate_ik_server.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
 # Target rules for target baxter_control_mine/CMakeFiles/sensor_msgs_generate_messages_py.dir
 
 # All Build rule for target.
@@ -1667,6 +1410,43 @@ clean: baxter_control_mine/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target baxter_control_mine/CMakeFiles/calculate_ik_server.dir
+
+# All Build rule for target.
+baxter_control_mine/CMakeFiles/calculate_ik_server.dir/all:
+	$(MAKE) -f baxter_control_mine/CMakeFiles/calculate_ik_server.dir/build.make baxter_control_mine/CMakeFiles/calculate_ik_server.dir/depend
+	$(MAKE) -f baxter_control_mine/CMakeFiles/calculate_ik_server.dir/build.make baxter_control_mine/CMakeFiles/calculate_ik_server.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=51,52 "Built target calculate_ik_server"
+.PHONY : baxter_control_mine/CMakeFiles/calculate_ik_server.dir/all
+
+# Include target in all.
+all: baxter_control_mine/CMakeFiles/calculate_ik_server.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+baxter_control_mine/CMakeFiles/calculate_ik_server.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/calculate_ik_server.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 0
+.PHONY : baxter_control_mine/CMakeFiles/calculate_ik_server.dir/rule
+
+# Convenience name for target.
+calculate_ik_server: baxter_control_mine/CMakeFiles/calculate_ik_server.dir/rule
+
+.PHONY : calculate_ik_server
+
+# clean rule for target.
+baxter_control_mine/CMakeFiles/calculate_ik_server.dir/clean:
+	$(MAKE) -f baxter_control_mine/CMakeFiles/calculate_ik_server.dir/build.make baxter_control_mine/CMakeFiles/calculate_ik_server.dir/clean
+.PHONY : baxter_control_mine/CMakeFiles/calculate_ik_server.dir/clean
+
+# clean rule for target.
+clean: baxter_control_mine/CMakeFiles/calculate_ik_server.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target baxter_control_mine/CMakeFiles/roscpp_generate_messages_nodejs.dir
 
 # All Build rule for target.
@@ -1695,42 +1475,6 @@ baxter_control_mine/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean:
 
 # clean rule for target.
 clean: baxter_control_mine/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_py.dir
-
-# All Build rule for target.
-baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_py.dir/all: baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_PositionCommandMine.dir/all
-baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_py.dir/all: baxter_control_mine/CMakeFiles/std_msgs_generate_messages_py.dir/all
-baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_py.dir/all: baxter_control_mine/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
-baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_py.dir/all: baxter_control_mine/CMakeFiles/geometry_msgs_generate_messages_py.dir/all
-baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_py.dir/all: baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_CalculateIK.dir/all
-	$(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_py.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_py.dir/depend
-	$(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_py.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=10,11,12 "Built target baxter_control_mine_generate_messages_py"
-.PHONY : baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_py.dir/all
-
-# Build rule for subdir invocation for target.
-baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 3
-	$(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_py.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 0
-.PHONY : baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_py.dir/rule
-
-# Convenience name for target.
-baxter_control_mine_generate_messages_py: baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_py.dir/rule
-
-.PHONY : baxter_control_mine_generate_messages_py
-
-# clean rule for target.
-baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_py.dir/clean:
-	$(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_py.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_py.dir/clean
-.PHONY : baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_py.dir/clean
-
-# clean rule for target.
-clean: baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_py.dir/clean
 
 .PHONY : clean
 
@@ -1955,6 +1699,43 @@ baxter_control_mine/CMakeFiles/roscpp_generate_messages_cpp.dir/clean:
 
 # clean rule for target.
 clean: baxter_control_mine/CMakeFiles/roscpp_generate_messages_cpp.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target baxter_control_mine/CMakeFiles/rviz_converter_node.dir
+
+# All Build rule for target.
+baxter_control_mine/CMakeFiles/rviz_converter_node.dir/all:
+	$(MAKE) -f baxter_control_mine/CMakeFiles/rviz_converter_node.dir/build.make baxter_control_mine/CMakeFiles/rviz_converter_node.dir/depend
+	$(MAKE) -f baxter_control_mine/CMakeFiles/rviz_converter_node.dir/build.make baxter_control_mine/CMakeFiles/rviz_converter_node.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=66,67 "Built target rviz_converter_node"
+.PHONY : baxter_control_mine/CMakeFiles/rviz_converter_node.dir/all
+
+# Include target in all.
+all: baxter_control_mine/CMakeFiles/rviz_converter_node.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+baxter_control_mine/CMakeFiles/rviz_converter_node.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/rviz_converter_node.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 0
+.PHONY : baxter_control_mine/CMakeFiles/rviz_converter_node.dir/rule
+
+# Convenience name for target.
+rviz_converter_node: baxter_control_mine/CMakeFiles/rviz_converter_node.dir/rule
+
+.PHONY : rviz_converter_node
+
+# clean rule for target.
+baxter_control_mine/CMakeFiles/rviz_converter_node.dir/clean:
+	$(MAKE) -f baxter_control_mine/CMakeFiles/rviz_converter_node.dir/build.make baxter_control_mine/CMakeFiles/rviz_converter_node.dir/clean
+.PHONY : baxter_control_mine/CMakeFiles/rviz_converter_node.dir/clean
+
+# clean rule for target.
+clean: baxter_control_mine/CMakeFiles/rviz_converter_node.dir/clean
 
 .PHONY : clean
 
@@ -2439,38 +2220,6 @@ clean: baxter_control_mine/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/c
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir
-
-# All Build rule for target.
-baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/all:
-	$(MAKE) -f baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/depend
-	$(MAKE) -f baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num= "Built target std_msgs_generate_messages_lisp"
-.PHONY : baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
-
-# Build rule for subdir invocation for target.
-baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 0
-.PHONY : baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_lisp: baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : std_msgs_generate_messages_lisp
-
-# clean rule for target.
-baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean:
-	$(MAKE) -f baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean
-.PHONY : baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean
-
-# clean rule for target.
-clean: baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
 # Target rules for target baxter_control_mine/CMakeFiles/sensor_msgs_generate_messages_cpp.dir
 
 # All Build rule for target.
@@ -2599,38 +2348,6 @@ clean: baxter_control_mine/CMakeFiles/object_recognition_msgs_generate_messages_
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target baxter_control_mine/CMakeFiles/baxter_control_mine_gencpp.dir
-
-# All Build rule for target.
-baxter_control_mine/CMakeFiles/baxter_control_mine_gencpp.dir/all: baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_cpp.dir/all
-	$(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_mine_gencpp.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_mine_gencpp.dir/depend
-	$(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_mine_gencpp.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_mine_gencpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num= "Built target baxter_control_mine_gencpp"
-.PHONY : baxter_control_mine/CMakeFiles/baxter_control_mine_gencpp.dir/all
-
-# Build rule for subdir invocation for target.
-baxter_control_mine/CMakeFiles/baxter_control_mine_gencpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/baxter_control_mine_gencpp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 0
-.PHONY : baxter_control_mine/CMakeFiles/baxter_control_mine_gencpp.dir/rule
-
-# Convenience name for target.
-baxter_control_mine_gencpp: baxter_control_mine/CMakeFiles/baxter_control_mine_gencpp.dir/rule
-
-.PHONY : baxter_control_mine_gencpp
-
-# clean rule for target.
-baxter_control_mine/CMakeFiles/baxter_control_mine_gencpp.dir/clean:
-	$(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_mine_gencpp.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_mine_gencpp.dir/clean
-.PHONY : baxter_control_mine/CMakeFiles/baxter_control_mine_gencpp.dir/clean
-
-# clean rule for target.
-clean: baxter_control_mine/CMakeFiles/baxter_control_mine_gencpp.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
 # Target rules for target baxter_control_mine/CMakeFiles/tf2_msgs_generate_messages_py.dir
 
 # All Build rule for target.
@@ -2659,47 +2376,6 @@ baxter_control_mine/CMakeFiles/tf2_msgs_generate_messages_py.dir/clean:
 
 # clean rule for target.
 clean: baxter_control_mine/CMakeFiles/tf2_msgs_generate_messages_py.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages.dir
-
-# All Build rule for target.
-baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages.dir/all: baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_lisp.dir/all
-baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages.dir/all: baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_py.dir/all
-baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages.dir/all: baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_cpp.dir/all
-baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages.dir/all: baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_nodejs.dir/all
-baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages.dir/all: baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_eus.dir/all
-	$(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages.dir/depend
-	$(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num= "Built target baxter_control_mine_generate_messages"
-.PHONY : baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages.dir/all
-
-# Include target in all.
-all: baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 12
-	$(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 0
-.PHONY : baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages.dir/rule
-
-# Convenience name for target.
-baxter_control_mine_generate_messages: baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages.dir/rule
-
-.PHONY : baxter_control_mine_generate_messages
-
-# clean rule for target.
-baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages.dir/clean:
-	$(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages.dir/clean
-.PHONY : baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages.dir/clean
-
-# clean rule for target.
-clean: baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages.dir/clean
 
 .PHONY : clean
 
@@ -2828,110 +2504,6 @@ baxter_control_mine/CMakeFiles/moveit_msgs_generate_messages_py.dir/clean:
 
 # clean rule for target.
 clean: baxter_control_mine/CMakeFiles/moveit_msgs_generate_messages_py.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_cpp.dir
-
-# All Build rule for target.
-baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_cpp.dir/all: baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_PositionCommandMine.dir/all
-baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_cpp.dir/all: baxter_control_mine/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
-baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_cpp.dir/all: baxter_control_mine/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
-baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_cpp.dir/all: baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_CalculateIK.dir/all
-baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_cpp.dir/all: baxter_control_mine/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
-	$(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_cpp.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_cpp.dir/depend
-	$(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_cpp.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=1,2 "Built target baxter_control_mine_generate_messages_cpp"
-.PHONY : baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_cpp.dir/all
-
-# Build rule for subdir invocation for target.
-baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_cpp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 0
-.PHONY : baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-baxter_control_mine_generate_messages_cpp: baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_cpp.dir/rule
-
-.PHONY : baxter_control_mine_generate_messages_cpp
-
-# clean rule for target.
-baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_cpp.dir/clean:
-	$(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_cpp.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_cpp.dir/clean
-.PHONY : baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_cpp.dir/clean
-
-# clean rule for target.
-clean: baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_cpp.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_CalculateIK.dir
-
-# All Build rule for target.
-baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_CalculateIK.dir/all:
-	$(MAKE) -f baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_CalculateIK.dir/build.make baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_CalculateIK.dir/depend
-	$(MAKE) -f baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_CalculateIK.dir/build.make baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_CalculateIK.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num= "Built target _baxter_control_mine_generate_messages_check_deps_CalculateIK"
-.PHONY : baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_CalculateIK.dir/all
-
-# Build rule for subdir invocation for target.
-baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_CalculateIK.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_CalculateIK.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 0
-.PHONY : baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_CalculateIK.dir/rule
-
-# Convenience name for target.
-_baxter_control_mine_generate_messages_check_deps_CalculateIK: baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_CalculateIK.dir/rule
-
-.PHONY : _baxter_control_mine_generate_messages_check_deps_CalculateIK
-
-# clean rule for target.
-baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_CalculateIK.dir/clean:
-	$(MAKE) -f baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_CalculateIK.dir/build.make baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_CalculateIK.dir/clean
-.PHONY : baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_CalculateIK.dir/clean
-
-# clean rule for target.
-clean: baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_CalculateIK.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_nodejs.dir
-
-# All Build rule for target.
-baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_nodejs.dir/all: baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_PositionCommandMine.dir/all
-baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_nodejs.dir/all: baxter_control_mine/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
-baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_nodejs.dir/all: baxter_control_mine/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all
-baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_nodejs.dir/all: baxter_control_mine/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
-baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_nodejs.dir/all: baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_CalculateIK.dir/all
-	$(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_nodejs.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_nodejs.dir/depend
-	$(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_nodejs.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=8,9 "Built target baxter_control_mine_generate_messages_nodejs"
-.PHONY : baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_nodejs.dir/all
-
-# Build rule for subdir invocation for target.
-baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_nodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_nodejs.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 0
-.PHONY : baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-baxter_control_mine_generate_messages_nodejs: baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_nodejs.dir/rule
-
-.PHONY : baxter_control_mine_generate_messages_nodejs
-
-# clean rule for target.
-baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_nodejs.dir/clean:
-	$(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_nodejs.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_nodejs.dir/clean
-.PHONY : baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_nodejs.dir/clean
-
-# clean rule for target.
-clean: baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_nodejs.dir/clean
 
 .PHONY : clean
 
@@ -3864,134 +3436,103 @@ clean: baxter_control_mine/CMakeFiles/baxter_core_msgs_generate_messages_py.dir/
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_eus.dir
+# Target rules for target baxter_control_mine/CMakeFiles/std_msgs_generate_messages_nodejs.dir
 
 # All Build rule for target.
-baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_eus.dir/all: baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_PositionCommandMine.dir/all
-baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_eus.dir/all: baxter_control_mine/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
-baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_eus.dir/all: baxter_control_mine/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
-baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_eus.dir/all: baxter_control_mine/CMakeFiles/std_msgs_generate_messages_eus.dir/all
-baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_eus.dir/all: baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_CalculateIK.dir/all
-	$(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_eus.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_eus.dir/depend
-	$(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_eus.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=3,4,5 "Built target baxter_control_mine_generate_messages_eus"
-.PHONY : baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_eus.dir/all
+baxter_control_mine/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all:
+	$(MAKE) -f baxter_control_mine/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make baxter_control_mine/CMakeFiles/std_msgs_generate_messages_nodejs.dir/depend
+	$(MAKE) -f baxter_control_mine/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make baxter_control_mine/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num= "Built target std_msgs_generate_messages_nodejs"
+.PHONY : baxter_control_mine/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
-baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_eus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 3
-	$(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_eus.dir/all
+baxter_control_mine/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 0
-.PHONY : baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_eus.dir/rule
+	$(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 0
+.PHONY : baxter_control_mine/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-baxter_control_mine_generate_messages_eus: baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_eus.dir/rule
+std_msgs_generate_messages_nodejs: baxter_control_mine/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
 
-.PHONY : baxter_control_mine_generate_messages_eus
-
-# clean rule for target.
-baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_eus.dir/clean:
-	$(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_eus.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_eus.dir/clean
-.PHONY : baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_eus.dir/clean
+.PHONY : std_msgs_generate_messages_nodejs
 
 # clean rule for target.
-clean: baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_eus.dir/clean
+baxter_control_mine/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean:
+	$(MAKE) -f baxter_control_mine/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make baxter_control_mine/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean
+.PHONY : baxter_control_mine/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean
+
+# clean rule for target.
+clean: baxter_control_mine/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target baxter_control_mine/CMakeFiles/actionlib_generate_messages_py.dir
+# Target rules for target baxter_control_mine/CMakeFiles/baxter_control_node.dir
 
 # All Build rule for target.
-baxter_control_mine/CMakeFiles/actionlib_generate_messages_py.dir/all:
-	$(MAKE) -f baxter_control_mine/CMakeFiles/actionlib_generate_messages_py.dir/build.make baxter_control_mine/CMakeFiles/actionlib_generate_messages_py.dir/depend
-	$(MAKE) -f baxter_control_mine/CMakeFiles/actionlib_generate_messages_py.dir/build.make baxter_control_mine/CMakeFiles/actionlib_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num= "Built target actionlib_generate_messages_py"
-.PHONY : baxter_control_mine/CMakeFiles/actionlib_generate_messages_py.dir/all
+baxter_control_mine/CMakeFiles/baxter_control_node.dir/all:
+	$(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_node.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_node.dir/depend
+	$(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_node.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_node.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=1,2 "Built target baxter_control_node"
+.PHONY : baxter_control_mine/CMakeFiles/baxter_control_node.dir/all
+
+# Include target in all.
+all: baxter_control_mine/CMakeFiles/baxter_control_node.dir/all
+
+.PHONY : all
 
 # Build rule for subdir invocation for target.
-baxter_control_mine/CMakeFiles/actionlib_generate_messages_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/actionlib_generate_messages_py.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 0
-.PHONY : baxter_control_mine/CMakeFiles/actionlib_generate_messages_py.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_py: baxter_control_mine/CMakeFiles/actionlib_generate_messages_py.dir/rule
-
-.PHONY : actionlib_generate_messages_py
-
-# clean rule for target.
-baxter_control_mine/CMakeFiles/actionlib_generate_messages_py.dir/clean:
-	$(MAKE) -f baxter_control_mine/CMakeFiles/actionlib_generate_messages_py.dir/build.make baxter_control_mine/CMakeFiles/actionlib_generate_messages_py.dir/clean
-.PHONY : baxter_control_mine/CMakeFiles/actionlib_generate_messages_py.dir/clean
-
-# clean rule for target.
-clean: baxter_control_mine/CMakeFiles/actionlib_generate_messages_py.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target baxter_control_mine/CMakeFiles/baxter_control_mine_geneus.dir
-
-# All Build rule for target.
-baxter_control_mine/CMakeFiles/baxter_control_mine_geneus.dir/all: baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_eus.dir/all
-	$(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_mine_geneus.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_mine_geneus.dir/depend
-	$(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_mine_geneus.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_mine_geneus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num= "Built target baxter_control_mine_geneus"
-.PHONY : baxter_control_mine/CMakeFiles/baxter_control_mine_geneus.dir/all
-
-# Build rule for subdir invocation for target.
-baxter_control_mine/CMakeFiles/baxter_control_mine_geneus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 3
-	$(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/baxter_control_mine_geneus.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 0
-.PHONY : baxter_control_mine/CMakeFiles/baxter_control_mine_geneus.dir/rule
-
-# Convenience name for target.
-baxter_control_mine_geneus: baxter_control_mine/CMakeFiles/baxter_control_mine_geneus.dir/rule
-
-.PHONY : baxter_control_mine_geneus
-
-# clean rule for target.
-baxter_control_mine/CMakeFiles/baxter_control_mine_geneus.dir/clean:
-	$(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_mine_geneus.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_mine_geneus.dir/clean
-.PHONY : baxter_control_mine/CMakeFiles/baxter_control_mine_geneus.dir/clean
-
-# clean rule for target.
-clean: baxter_control_mine/CMakeFiles/baxter_control_mine_geneus.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target baxter_control_mine/CMakeFiles/baxter_control_mine_genlisp.dir
-
-# All Build rule for target.
-baxter_control_mine/CMakeFiles/baxter_control_mine_genlisp.dir/all: baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_lisp.dir/all
-	$(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_mine_genlisp.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_mine_genlisp.dir/depend
-	$(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_mine_genlisp.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_mine_genlisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num= "Built target baxter_control_mine_genlisp"
-.PHONY : baxter_control_mine/CMakeFiles/baxter_control_mine_genlisp.dir/all
-
-# Build rule for subdir invocation for target.
-baxter_control_mine/CMakeFiles/baxter_control_mine_genlisp.dir/rule: cmake_check_build_system
+baxter_control_mine/CMakeFiles/baxter_control_node.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/baxter_control_mine_genlisp.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/baxter_control_node.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 0
-.PHONY : baxter_control_mine/CMakeFiles/baxter_control_mine_genlisp.dir/rule
+.PHONY : baxter_control_mine/CMakeFiles/baxter_control_node.dir/rule
 
 # Convenience name for target.
-baxter_control_mine_genlisp: baxter_control_mine/CMakeFiles/baxter_control_mine_genlisp.dir/rule
+baxter_control_node: baxter_control_mine/CMakeFiles/baxter_control_node.dir/rule
 
-.PHONY : baxter_control_mine_genlisp
-
-# clean rule for target.
-baxter_control_mine/CMakeFiles/baxter_control_mine_genlisp.dir/clean:
-	$(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_mine_genlisp.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_mine_genlisp.dir/clean
-.PHONY : baxter_control_mine/CMakeFiles/baxter_control_mine_genlisp.dir/clean
+.PHONY : baxter_control_node
 
 # clean rule for target.
-clean: baxter_control_mine/CMakeFiles/baxter_control_mine_genlisp.dir/clean
+baxter_control_mine/CMakeFiles/baxter_control_node.dir/clean:
+	$(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_node.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_node.dir/clean
+.PHONY : baxter_control_mine/CMakeFiles/baxter_control_node.dir/clean
+
+# clean rule for target.
+clean: baxter_control_mine/CMakeFiles/baxter_control_node.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir
+
+# All Build rule for target.
+baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/all:
+	$(MAKE) -f baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/depend
+	$(MAKE) -f baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num= "Built target std_msgs_generate_messages_lisp"
+.PHONY : baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
+
+# Build rule for subdir invocation for target.
+baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 0
+.PHONY : baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+std_msgs_generate_messages_lisp: baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : std_msgs_generate_messages_lisp
+
+# clean rule for target.
+baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean:
+	$(MAKE) -f baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean
+.PHONY : baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean
+
+# clean rule for target.
+clean: baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean
 
 .PHONY : clean
 
@@ -4006,6 +3547,7 @@ baxter_msgs_mine/all: baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_mess
 # Convenience name for "clean" pass in the directory.
 baxter_msgs_mine/clean: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal.dir/clean
 baxter_msgs_mine/clean: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointActionGoal.dir/clean
+baxter_msgs_mine/clean: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_PositionCommandMine.dir/clean
 baxter_msgs_mine/clean: baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp.dir/clean
 baxter_msgs_mine/clean: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointActionResult.dir/clean
 baxter_msgs_mine/clean: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointAction.dir/clean
@@ -4017,6 +3559,7 @@ baxter_msgs_mine/clean: baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_me
 baxter_msgs_mine/clean: baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_gencpp.dir/clean
 baxter_msgs_mine/clean: baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_eus.dir/clean
 baxter_msgs_mine/clean: baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_geneus.dir/clean
+baxter_msgs_mine/clean: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_CalculateIK.dir/clean
 baxter_msgs_mine/clean: baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_nodejs.dir/clean
 baxter_msgs_mine/clean: baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_gennodejs.dir/clean
 baxter_msgs_mine/clean: baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_genlisp.dir/clean
@@ -4095,27 +3638,62 @@ clean: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_dep
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_PositionCommandMine.dir
+
+# All Build rule for target.
+baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_PositionCommandMine.dir/all:
+	$(MAKE) -f baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_PositionCommandMine.dir/build.make baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_PositionCommandMine.dir/depend
+	$(MAKE) -f baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_PositionCommandMine.dir/build.make baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_PositionCommandMine.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num= "Built target _baxter_msgs_mine_generate_messages_check_deps_PositionCommandMine"
+.PHONY : baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_PositionCommandMine.dir/all
+
+# Build rule for subdir invocation for target.
+baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_PositionCommandMine.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_PositionCommandMine.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 0
+.PHONY : baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_PositionCommandMine.dir/rule
+
+# Convenience name for target.
+_baxter_msgs_mine_generate_messages_check_deps_PositionCommandMine: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_PositionCommandMine.dir/rule
+
+.PHONY : _baxter_msgs_mine_generate_messages_check_deps_PositionCommandMine
+
+# clean rule for target.
+baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_PositionCommandMine.dir/clean:
+	$(MAKE) -f baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_PositionCommandMine.dir/build.make baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_PositionCommandMine.dir/clean
+.PHONY : baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_PositionCommandMine.dir/clean
+
+# clean rule for target.
+clean: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_PositionCommandMine.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp.dir
 
 # All Build rule for target.
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp.dir/all: baxter_control_mine/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/all
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp.dir/all: baxter_control_mine/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp.dir/all: baxter_control_mine/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp.dir/all: baxter_control_mine/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp.dir/all: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal.dir/all
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp.dir/all: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointActionGoal.dir/all
+baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp.dir/all: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_PositionCommandMine.dir/all
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp.dir/all: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointActionResult.dir/all
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp.dir/all: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointAction.dir/all
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp.dir/all: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointFeedback.dir/all
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp.dir/all: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointResult.dir/all
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp.dir/all: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointActionFeedback.dir/all
+baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp.dir/all: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_CalculateIK.dir/all
 	$(MAKE) -f baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp.dir/build.make baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp.dir/depend
 	$(MAKE) -f baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp.dir/build.make baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=15,16,17,18,19,20,21 "Built target baxter_msgs_mine_generate_messages_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=3,4,5,6,7,8,9,10,11 "Built target baxter_msgs_mine_generate_messages_cpp"
 .PHONY : baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 9
 	$(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 0
 .PHONY : baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp.dir/rule
@@ -4284,7 +3862,7 @@ all: baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages.dir/all
 
 # Build rule for subdir invocation for target.
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 37
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 48
 	$(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 0
 .PHONY : baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages.dir/rule
@@ -4342,22 +3920,25 @@ clean: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_dep
 # All Build rule for target.
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_lisp.dir/all: baxter_control_mine/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/all
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_lisp.dir/all: baxter_control_mine/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all
+baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_lisp.dir/all: baxter_control_mine/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_lisp.dir/all: baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_lisp.dir/all: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal.dir/all
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_lisp.dir/all: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointActionGoal.dir/all
+baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_lisp.dir/all: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_PositionCommandMine.dir/all
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_lisp.dir/all: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointActionResult.dir/all
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_lisp.dir/all: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointAction.dir/all
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_lisp.dir/all: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointFeedback.dir/all
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_lisp.dir/all: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointResult.dir/all
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_lisp.dir/all: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointActionFeedback.dir/all
+baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_lisp.dir/all: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_CalculateIK.dir/all
 	$(MAKE) -f baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_lisp.dir/build.make baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_lisp.dir/depend
 	$(MAKE) -f baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_lisp.dir/build.make baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=30,31,32,33,34,35,36 "Built target baxter_msgs_mine_generate_messages_lisp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=22,23,24,25,26,27,28,29,30 "Built target baxter_msgs_mine_generate_messages_lisp"
 .PHONY : baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_lisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 9
 	$(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_lisp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 0
 .PHONY : baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_lisp.dir/rule
@@ -4389,7 +3970,7 @@ baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_gencpp.dir/all: baxter_msgs_mine/CM
 
 # Build rule for subdir invocation for target.
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_gencpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 9
 	$(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_gencpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 0
 .PHONY : baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_gencpp.dir/rule
@@ -4414,23 +3995,26 @@ clean: baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_gencpp.dir/clean
 
 # All Build rule for target.
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_eus.dir/all: baxter_control_mine/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/all
+baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_eus.dir/all: baxter_control_mine/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_eus.dir/all: baxter_control_mine/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_eus.dir/all: baxter_control_mine/CMakeFiles/std_msgs_generate_messages_eus.dir/all
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_eus.dir/all: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal.dir/all
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_eus.dir/all: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointActionGoal.dir/all
+baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_eus.dir/all: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_PositionCommandMine.dir/all
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_eus.dir/all: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointActionResult.dir/all
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_eus.dir/all: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointAction.dir/all
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_eus.dir/all: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointFeedback.dir/all
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_eus.dir/all: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointResult.dir/all
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_eus.dir/all: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointActionFeedback.dir/all
+baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_eus.dir/all: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_CalculateIK.dir/all
 	$(MAKE) -f baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_eus.dir/build.make baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_eus.dir/depend
 	$(MAKE) -f baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_eus.dir/build.make baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=22,23,24,25,26,27,28,29 "Built target baxter_msgs_mine_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=12,13,14,15,16,17,18,19,20,21 "Built target baxter_msgs_mine_generate_messages_eus"
 .PHONY : baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_eus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 10
 	$(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_eus.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 0
 .PHONY : baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_eus.dir/rule
@@ -4462,7 +4046,7 @@ baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_geneus.dir/all: baxter_msgs_mine/CM
 
 # Build rule for subdir invocation for target.
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_geneus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 10
 	$(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_geneus.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 0
 .PHONY : baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_geneus.dir/rule
@@ -4483,27 +4067,62 @@ clean: baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_geneus.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_CalculateIK.dir
+
+# All Build rule for target.
+baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_CalculateIK.dir/all:
+	$(MAKE) -f baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_CalculateIK.dir/build.make baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_CalculateIK.dir/depend
+	$(MAKE) -f baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_CalculateIK.dir/build.make baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_CalculateIK.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num= "Built target _baxter_msgs_mine_generate_messages_check_deps_CalculateIK"
+.PHONY : baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_CalculateIK.dir/all
+
+# Build rule for subdir invocation for target.
+baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_CalculateIK.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_CalculateIK.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 0
+.PHONY : baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_CalculateIK.dir/rule
+
+# Convenience name for target.
+_baxter_msgs_mine_generate_messages_check_deps_CalculateIK: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_CalculateIK.dir/rule
+
+.PHONY : _baxter_msgs_mine_generate_messages_check_deps_CalculateIK
+
+# clean rule for target.
+baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_CalculateIK.dir/clean:
+	$(MAKE) -f baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_CalculateIK.dir/build.make baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_CalculateIK.dir/clean
+.PHONY : baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_CalculateIK.dir/clean
+
+# clean rule for target.
+clean: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_CalculateIK.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_nodejs.dir
 
 # All Build rule for target.
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_nodejs.dir/all: baxter_control_mine/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/all
-baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_nodejs.dir/all: baxter_control_mine/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_nodejs.dir/all: baxter_control_mine/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all
+baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_nodejs.dir/all: baxter_control_mine/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
+baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_nodejs.dir/all: baxter_control_mine/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_nodejs.dir/all: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal.dir/all
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_nodejs.dir/all: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointActionGoal.dir/all
+baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_nodejs.dir/all: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_PositionCommandMine.dir/all
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_nodejs.dir/all: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointActionResult.dir/all
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_nodejs.dir/all: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointAction.dir/all
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_nodejs.dir/all: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointFeedback.dir/all
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_nodejs.dir/all: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointResult.dir/all
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_nodejs.dir/all: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointActionFeedback.dir/all
+baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_nodejs.dir/all: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_CalculateIK.dir/all
 	$(MAKE) -f baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_nodejs.dir/build.make baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_nodejs.dir/depend
 	$(MAKE) -f baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_nodejs.dir/build.make baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=37,38,39,40,41,42,43 "Built target baxter_msgs_mine_generate_messages_nodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=31,32,33,34,35,36,37,38,39 "Built target baxter_msgs_mine_generate_messages_nodejs"
 .PHONY : baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_nodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 9
 	$(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_nodejs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 0
 .PHONY : baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_nodejs.dir/rule
@@ -4535,7 +4154,7 @@ baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_gennodejs.dir/all: baxter_msgs_mine
 
 # Build rule for subdir invocation for target.
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_gennodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 9
 	$(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_gennodejs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 0
 .PHONY : baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_gennodejs.dir/rule
@@ -4567,7 +4186,7 @@ baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_genlisp.dir/all: baxter_msgs_mine/C
 
 # Build rule for subdir invocation for target.
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_genlisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 9
 	$(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_genlisp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 0
 .PHONY : baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_genlisp.dir/rule
@@ -4592,23 +4211,26 @@ clean: baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_genlisp.dir/clean
 
 # All Build rule for target.
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py.dir/all: baxter_control_mine/CMakeFiles/std_msgs_generate_messages_py.dir/all
+baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py.dir/all: baxter_control_mine/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py.dir/all: baxter_control_mine/CMakeFiles/actionlib_msgs_generate_messages_py.dir/all
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py.dir/all: baxter_control_mine/CMakeFiles/geometry_msgs_generate_messages_py.dir/all
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py.dir/all: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal.dir/all
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py.dir/all: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointActionGoal.dir/all
+baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py.dir/all: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_PositionCommandMine.dir/all
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py.dir/all: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointActionResult.dir/all
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py.dir/all: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointAction.dir/all
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py.dir/all: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointFeedback.dir/all
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py.dir/all: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointResult.dir/all
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py.dir/all: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointActionFeedback.dir/all
+baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py.dir/all: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_CalculateIK.dir/all
 	$(MAKE) -f baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py.dir/build.make baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py.dir/depend
 	$(MAKE) -f baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py.dir/build.make baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=44,45,46,47,48,49,50,51 "Built target baxter_msgs_mine_generate_messages_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=40,41,42,43,44,45,46,47,48,49,50 "Built target baxter_msgs_mine_generate_messages_py"
 .PHONY : baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 11
 	$(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 0
 .PHONY : baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py.dir/rule
@@ -4640,7 +4262,7 @@ baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_genpy.dir/all: baxter_msgs_mine/CMa
 
 # Build rule for subdir invocation for target.
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_genpy.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 11
 	$(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_genpy.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 0
 .PHONY : baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_genpy.dir/rule

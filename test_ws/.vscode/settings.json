@@ -62,7 +62,6 @@
         "cinttypes": "cpp",
         "utility": "cpp",
         "typeindex": "cpp",
-        "typeinfo": "cpp",
-        "string": "cpp"
+        "typeinfo": "cpp"
     }
 }

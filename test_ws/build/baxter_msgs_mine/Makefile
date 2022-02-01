@@ -78,16 +78,6 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
@@ -98,6 +88,16 @@ test:
 test/fast: test
 
 .PHONY : test/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
 
 # Special rule for the target install
 install: preinstall
@@ -194,6 +194,21 @@ _baxter_msgs_mine_generate_messages_check_deps_GoToPointActionGoal: baxter_msgs_
 _baxter_msgs_mine_generate_messages_check_deps_GoToPointActionGoal/fast:
 	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointActionGoal.dir/build.make baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointActionGoal.dir/build
 .PHONY : _baxter_msgs_mine_generate_messages_check_deps_GoToPointActionGoal/fast
+
+# Convenience name for target.
+baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_PositionCommandMine.dir/rule:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_PositionCommandMine.dir/rule
+.PHONY : baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_PositionCommandMine.dir/rule
+
+# Convenience name for target.
+_baxter_msgs_mine_generate_messages_check_deps_PositionCommandMine: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_PositionCommandMine.dir/rule
+
+.PHONY : _baxter_msgs_mine_generate_messages_check_deps_PositionCommandMine
+
+# fast build rule for target.
+_baxter_msgs_mine_generate_messages_check_deps_PositionCommandMine/fast:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_PositionCommandMine.dir/build.make baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_PositionCommandMine.dir/build
+.PHONY : _baxter_msgs_mine_generate_messages_check_deps_PositionCommandMine/fast
 
 # Convenience name for target.
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp.dir/rule:
@@ -361,6 +376,21 @@ baxter_msgs_mine_geneus/fast:
 .PHONY : baxter_msgs_mine_geneus/fast
 
 # Convenience name for target.
+baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_CalculateIK.dir/rule:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_CalculateIK.dir/rule
+.PHONY : baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_CalculateIK.dir/rule
+
+# Convenience name for target.
+_baxter_msgs_mine_generate_messages_check_deps_CalculateIK: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_CalculateIK.dir/rule
+
+.PHONY : _baxter_msgs_mine_generate_messages_check_deps_CalculateIK
+
+# fast build rule for target.
+_baxter_msgs_mine_generate_messages_check_deps_CalculateIK/fast:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_CalculateIK.dir/build.make baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_CalculateIK.dir/build
+.PHONY : _baxter_msgs_mine_generate_messages_check_deps_CalculateIK/fast
+
+# Convenience name for target.
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_nodejs.dir/rule:
 	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_nodejs.dir/rule
 .PHONY : baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_nodejs.dir/rule
@@ -442,12 +472,14 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
+	@echo "... edit_cache"
+	@echo "... test"
 	@echo "... _baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal"
 	@echo "... _baxter_msgs_mine_generate_messages_check_deps_GoToPointActionGoal"
+	@echo "... _baxter_msgs_mine_generate_messages_check_deps_PositionCommandMine"
 	@echo "... baxter_msgs_mine_generate_messages_cpp"
 	@echo "... _baxter_msgs_mine_generate_messages_check_deps_GoToPointActionResult"
 	@echo "... _baxter_msgs_mine_generate_messages_check_deps_GoToPointAction"
-	@echo "... edit_cache"
 	@echo "... list_install_components"
 	@echo "... _baxter_msgs_mine_generate_messages_check_deps_GoToPointFeedback"
 	@echo "... _baxter_msgs_mine_generate_messages_check_deps_GoToPointResult"
@@ -455,9 +487,9 @@ help:
 	@echo "... _baxter_msgs_mine_generate_messages_check_deps_GoToPointActionFeedback"
 	@echo "... baxter_msgs_mine_generate_messages_lisp"
 	@echo "... baxter_msgs_mine_gencpp"
-	@echo "... test"
 	@echo "... baxter_msgs_mine_generate_messages_eus"
 	@echo "... baxter_msgs_mine_geneus"
+	@echo "... _baxter_msgs_mine_generate_messages_check_deps_CalculateIK"
 	@echo "... baxter_msgs_mine_generate_messages_nodejs"
 	@echo "... install"
 	@echo "... baxter_msgs_mine_gennodejs"
