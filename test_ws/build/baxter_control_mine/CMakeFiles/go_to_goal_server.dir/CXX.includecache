@@ -6,15 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/lar/ros/test_ws/devel/include/baxter_control_mine/CalculateIK.h
+/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/CalculateIK.h
 ros/service_traits.h
 -
-baxter_control_mine/CalculateIKRequest.h
+baxter_msgs_mine/CalculateIKRequest.h
 -
-baxter_control_mine/CalculateIKResponse.h
+baxter_msgs_mine/CalculateIKResponse.h
 -
 
-/home/lar/ros/test_ws/devel/include/baxter_control_mine/CalculateIKRequest.h
+/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/CalculateIKRequest.h
 string
 -
 vector
@@ -32,7 +32,7 @@ ros/message_operations.h
 geometry_msgs/Pose.h
 -
 
-/home/lar/ros/test_ws/devel/include/baxter_control_mine/CalculateIKResponse.h
+/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/CalculateIKResponse.h
 string
 -
 vector
@@ -217,7 +217,7 @@ baxter_msgs_mine/GoToPointResult.h
 -
 baxter_msgs_mine/GoToPointFeedback.h
 -
-baxter_control_mine/CalculateIK.h
+baxter_msgs_mine/CalculateIK.h
 -
 
 /opt/ros/kinetic/include/actionlib/action_definition.h

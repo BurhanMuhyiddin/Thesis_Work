@@ -79,6 +79,16 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -89,6 +99,17 @@ install/local: preinstall
 install/local/fast: install/local
 
 .PHONY : install/local/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
@@ -101,16 +122,6 @@ install/strip/fast: install/strip
 
 .PHONY : install/strip/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -121,17 +132,6 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -164,51 +164,6 @@ preinstall/fast:
 depend:
 	cd /home/lar/ros/test_ws/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
-
-# Convenience name for target.
-baxter_control_mine/CMakeFiles/test_node.dir/rule:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/test_node.dir/rule
-.PHONY : baxter_control_mine/CMakeFiles/test_node.dir/rule
-
-# Convenience name for target.
-test_node: baxter_control_mine/CMakeFiles/test_node.dir/rule
-
-.PHONY : test_node
-
-# fast build rule for target.
-test_node/fast:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_control_mine/CMakeFiles/test_node.dir/build.make baxter_control_mine/CMakeFiles/test_node.dir/build
-.PHONY : test_node/fast
-
-# Convenience name for target.
-baxter_control_mine/CMakeFiles/rviz_converter_node.dir/rule:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/rviz_converter_node.dir/rule
-.PHONY : baxter_control_mine/CMakeFiles/rviz_converter_node.dir/rule
-
-# Convenience name for target.
-rviz_converter_node: baxter_control_mine/CMakeFiles/rviz_converter_node.dir/rule
-
-.PHONY : rviz_converter_node
-
-# fast build rule for target.
-rviz_converter_node/fast:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_control_mine/CMakeFiles/rviz_converter_node.dir/build.make baxter_control_mine/CMakeFiles/rviz_converter_node.dir/build
-.PHONY : rviz_converter_node/fast
-
-# Convenience name for target.
-baxter_control_mine/CMakeFiles/baxter_control_mine_genpy.dir/rule:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/baxter_control_mine_genpy.dir/rule
-.PHONY : baxter_control_mine/CMakeFiles/baxter_control_mine_genpy.dir/rule
-
-# Convenience name for target.
-baxter_control_mine_genpy: baxter_control_mine/CMakeFiles/baxter_control_mine_genpy.dir/rule
-
-.PHONY : baxter_control_mine_genpy
-
-# fast build rule for target.
-baxter_control_mine_genpy/fast:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_mine_genpy.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_mine_genpy.dir/build
-.PHONY : baxter_control_mine_genpy/fast
 
 # Convenience name for target.
 baxter_control_mine/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule:
@@ -331,21 +286,6 @@ actionlib_msgs_generate_messages_lisp/fast:
 .PHONY : actionlib_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
-baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_PositionCommandMine.dir/rule:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_PositionCommandMine.dir/rule
-.PHONY : baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_PositionCommandMine.dir/rule
-
-# Convenience name for target.
-_baxter_control_mine_generate_messages_check_deps_PositionCommandMine: baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_PositionCommandMine.dir/rule
-
-.PHONY : _baxter_control_mine_generate_messages_check_deps_PositionCommandMine
-
-# fast build rule for target.
-_baxter_control_mine_generate_messages_check_deps_PositionCommandMine/fast:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_PositionCommandMine.dir/build.make baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_PositionCommandMine.dir/build
-.PHONY : _baxter_control_mine_generate_messages_check_deps_PositionCommandMine/fast
-
-# Convenience name for target.
 baxter_control_mine/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule:
 	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
 .PHONY : baxter_control_mine/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
@@ -374,6 +314,21 @@ actionlib_generate_messages_lisp: baxter_control_mine/CMakeFiles/actionlib_gener
 actionlib_generate_messages_lisp/fast:
 	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_control_mine/CMakeFiles/actionlib_generate_messages_lisp.dir/build.make baxter_control_mine/CMakeFiles/actionlib_generate_messages_lisp.dir/build
 .PHONY : actionlib_generate_messages_lisp/fast
+
+# Convenience name for target.
+baxter_control_mine/CMakeFiles/actionlib_generate_messages_py.dir/rule:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/actionlib_generate_messages_py.dir/rule
+.PHONY : baxter_control_mine/CMakeFiles/actionlib_generate_messages_py.dir/rule
+
+# Convenience name for target.
+actionlib_generate_messages_py: baxter_control_mine/CMakeFiles/actionlib_generate_messages_py.dir/rule
+
+.PHONY : actionlib_generate_messages_py
+
+# fast build rule for target.
+actionlib_generate_messages_py/fast:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_control_mine/CMakeFiles/actionlib_generate_messages_py.dir/build.make baxter_control_mine/CMakeFiles/actionlib_generate_messages_py.dir/build
+.PHONY : actionlib_generate_messages_py/fast
 
 # Convenience name for target.
 baxter_control_mine/CMakeFiles/go_to_goal_server.dir/rule:
@@ -421,21 +376,6 @@ sensor_msgs_generate_messages_eus/fast:
 .PHONY : sensor_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
-baxter_control_mine/CMakeFiles/baxter_control_mine_gennodejs.dir/rule:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/baxter_control_mine_gennodejs.dir/rule
-.PHONY : baxter_control_mine/CMakeFiles/baxter_control_mine_gennodejs.dir/rule
-
-# Convenience name for target.
-baxter_control_mine_gennodejs: baxter_control_mine/CMakeFiles/baxter_control_mine_gennodejs.dir/rule
-
-.PHONY : baxter_control_mine_gennodejs
-
-# fast build rule for target.
-baxter_control_mine_gennodejs/fast:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_mine_gennodejs.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_mine_gennodejs.dir/build
-.PHONY : baxter_control_mine_gennodejs/fast
-
-# Convenience name for target.
 baxter_control_mine/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule:
 	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
 .PHONY : baxter_control_mine/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
@@ -449,51 +389,6 @@ actionlib_msgs_generate_messages_nodejs: baxter_control_mine/CMakeFiles/actionli
 actionlib_msgs_generate_messages_nodejs/fast:
 	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_control_mine/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build.make baxter_control_mine/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build
 .PHONY : actionlib_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-baxter_control_mine/CMakeFiles/baxter_control_node.dir/rule:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/baxter_control_node.dir/rule
-.PHONY : baxter_control_mine/CMakeFiles/baxter_control_node.dir/rule
-
-# Convenience name for target.
-baxter_control_node: baxter_control_mine/CMakeFiles/baxter_control_node.dir/rule
-
-.PHONY : baxter_control_node
-
-# fast build rule for target.
-baxter_control_node/fast:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_node.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_node.dir/build
-.PHONY : baxter_control_node/fast
-
-# Convenience name for target.
-baxter_control_mine/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-.PHONY : baxter_control_mine/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_nodejs: baxter_control_mine/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : std_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-std_msgs_generate_messages_nodejs/fast:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_control_mine/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make baxter_control_mine/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
-.PHONY : std_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_lisp.dir/rule:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_lisp.dir/rule
-.PHONY : baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-baxter_control_mine_generate_messages_lisp: baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_lisp.dir/rule
-
-.PHONY : baxter_control_mine_generate_messages_lisp
-
-# fast build rule for target.
-baxter_control_mine_generate_messages_lisp/fast:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_lisp.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_lisp.dir/build
-.PHONY : baxter_control_mine_generate_messages_lisp/fast
 
 # Convenience name for target.
 baxter_control_mine/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule:
@@ -524,6 +419,21 @@ shape_msgs_generate_messages_py: baxter_control_mine/CMakeFiles/shape_msgs_gener
 shape_msgs_generate_messages_py/fast:
 	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_control_mine/CMakeFiles/shape_msgs_generate_messages_py.dir/build.make baxter_control_mine/CMakeFiles/shape_msgs_generate_messages_py.dir/build
 .PHONY : shape_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+baxter_control_mine/CMakeFiles/test_node.dir/rule:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/test_node.dir/rule
+.PHONY : baxter_control_mine/CMakeFiles/test_node.dir/rule
+
+# Convenience name for target.
+test_node: baxter_control_mine/CMakeFiles/test_node.dir/rule
+
+.PHONY : test_node
+
+# fast build rule for target.
+test_node/fast:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_control_mine/CMakeFiles/test_node.dir/build.make baxter_control_mine/CMakeFiles/test_node.dir/build
+.PHONY : test_node/fast
 
 # Convenience name for target.
 baxter_control_mine/CMakeFiles/baxter_core_msgs_generate_messages_cpp.dir/rule:
@@ -631,21 +541,6 @@ shape_msgs_generate_messages_cpp/fast:
 .PHONY : shape_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
-baxter_control_mine/CMakeFiles/calculate_ik_server.dir/rule:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/calculate_ik_server.dir/rule
-.PHONY : baxter_control_mine/CMakeFiles/calculate_ik_server.dir/rule
-
-# Convenience name for target.
-calculate_ik_server: baxter_control_mine/CMakeFiles/calculate_ik_server.dir/rule
-
-.PHONY : calculate_ik_server
-
-# fast build rule for target.
-calculate_ik_server/fast:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_control_mine/CMakeFiles/calculate_ik_server.dir/build.make baxter_control_mine/CMakeFiles/calculate_ik_server.dir/build
-.PHONY : calculate_ik_server/fast
-
-# Convenience name for target.
 baxter_control_mine/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule:
 	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
 .PHONY : baxter_control_mine/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
@@ -661,6 +556,21 @@ sensor_msgs_generate_messages_py/fast:
 .PHONY : sensor_msgs_generate_messages_py/fast
 
 # Convenience name for target.
+baxter_control_mine/CMakeFiles/calculate_ik_server.dir/rule:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/calculate_ik_server.dir/rule
+.PHONY : baxter_control_mine/CMakeFiles/calculate_ik_server.dir/rule
+
+# Convenience name for target.
+calculate_ik_server: baxter_control_mine/CMakeFiles/calculate_ik_server.dir/rule
+
+.PHONY : calculate_ik_server
+
+# fast build rule for target.
+calculate_ik_server/fast:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_control_mine/CMakeFiles/calculate_ik_server.dir/build.make baxter_control_mine/CMakeFiles/calculate_ik_server.dir/build
+.PHONY : calculate_ik_server/fast
+
+# Convenience name for target.
 baxter_control_mine/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule:
 	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
 .PHONY : baxter_control_mine/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
@@ -674,21 +584,6 @@ roscpp_generate_messages_nodejs: baxter_control_mine/CMakeFiles/roscpp_generate_
 roscpp_generate_messages_nodejs/fast:
 	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_control_mine/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make baxter_control_mine/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
 .PHONY : roscpp_generate_messages_nodejs/fast
-
-# Convenience name for target.
-baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_py.dir/rule:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_py.dir/rule
-.PHONY : baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_py.dir/rule
-
-# Convenience name for target.
-baxter_control_mine_generate_messages_py: baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_py.dir/rule
-
-.PHONY : baxter_control_mine_generate_messages_py
-
-# fast build rule for target.
-baxter_control_mine_generate_messages_py/fast:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_py.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_py.dir/build
-.PHONY : baxter_control_mine_generate_messages_py/fast
 
 # Convenience name for target.
 baxter_control_mine/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule:
@@ -794,6 +689,21 @@ roscpp_generate_messages_cpp: baxter_control_mine/CMakeFiles/roscpp_generate_mes
 roscpp_generate_messages_cpp/fast:
 	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_control_mine/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make baxter_control_mine/CMakeFiles/roscpp_generate_messages_cpp.dir/build
 .PHONY : roscpp_generate_messages_cpp/fast
+
+# Convenience name for target.
+baxter_control_mine/CMakeFiles/rviz_converter_node.dir/rule:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/rviz_converter_node.dir/rule
+.PHONY : baxter_control_mine/CMakeFiles/rviz_converter_node.dir/rule
+
+# Convenience name for target.
+rviz_converter_node: baxter_control_mine/CMakeFiles/rviz_converter_node.dir/rule
+
+.PHONY : rviz_converter_node
+
+# fast build rule for target.
+rviz_converter_node/fast:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_control_mine/CMakeFiles/rviz_converter_node.dir/build.make baxter_control_mine/CMakeFiles/rviz_converter_node.dir/build
+.PHONY : rviz_converter_node/fast
 
 # Convenience name for target.
 baxter_control_mine/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule:
@@ -1021,21 +931,6 @@ geometry_msgs_generate_messages_lisp/fast:
 .PHONY : geometry_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
-baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-.PHONY : baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_lisp: baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : std_msgs_generate_messages_lisp
-
-# fast build rule for target.
-std_msgs_generate_messages_lisp/fast:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
-.PHONY : std_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
 baxter_control_mine/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule:
 	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
 .PHONY : baxter_control_mine/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
@@ -1096,21 +991,6 @@ object_recognition_msgs_generate_messages_py/fast:
 .PHONY : object_recognition_msgs_generate_messages_py/fast
 
 # Convenience name for target.
-baxter_control_mine/CMakeFiles/baxter_control_mine_gencpp.dir/rule:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/baxter_control_mine_gencpp.dir/rule
-.PHONY : baxter_control_mine/CMakeFiles/baxter_control_mine_gencpp.dir/rule
-
-# Convenience name for target.
-baxter_control_mine_gencpp: baxter_control_mine/CMakeFiles/baxter_control_mine_gencpp.dir/rule
-
-.PHONY : baxter_control_mine_gencpp
-
-# fast build rule for target.
-baxter_control_mine_gencpp/fast:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_mine_gencpp.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_mine_gencpp.dir/build
-.PHONY : baxter_control_mine_gencpp/fast
-
-# Convenience name for target.
 baxter_control_mine/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule:
 	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule
 .PHONY : baxter_control_mine/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule
@@ -1124,21 +1004,6 @@ tf2_msgs_generate_messages_py: baxter_control_mine/CMakeFiles/tf2_msgs_generate_
 tf2_msgs_generate_messages_py/fast:
 	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_control_mine/CMakeFiles/tf2_msgs_generate_messages_py.dir/build.make baxter_control_mine/CMakeFiles/tf2_msgs_generate_messages_py.dir/build
 .PHONY : tf2_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages.dir/rule:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages.dir/rule
-.PHONY : baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages.dir/rule
-
-# Convenience name for target.
-baxter_control_mine_generate_messages: baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages.dir/rule
-
-.PHONY : baxter_control_mine_generate_messages
-
-# fast build rule for target.
-baxter_control_mine_generate_messages/fast:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages.dir/build
-.PHONY : baxter_control_mine_generate_messages/fast
 
 # Convenience name for target.
 baxter_control_mine/CMakeFiles/moveit_msgs_generate_messages_lisp.dir/rule:
@@ -1199,51 +1064,6 @@ moveit_msgs_generate_messages_py: baxter_control_mine/CMakeFiles/moveit_msgs_gen
 moveit_msgs_generate_messages_py/fast:
 	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_control_mine/CMakeFiles/moveit_msgs_generate_messages_py.dir/build.make baxter_control_mine/CMakeFiles/moveit_msgs_generate_messages_py.dir/build
 .PHONY : moveit_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_cpp.dir/rule:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_cpp.dir/rule
-.PHONY : baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-baxter_control_mine_generate_messages_cpp: baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_cpp.dir/rule
-
-.PHONY : baxter_control_mine_generate_messages_cpp
-
-# fast build rule for target.
-baxter_control_mine_generate_messages_cpp/fast:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_cpp.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_cpp.dir/build
-.PHONY : baxter_control_mine_generate_messages_cpp/fast
-
-# Convenience name for target.
-baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_CalculateIK.dir/rule:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_CalculateIK.dir/rule
-.PHONY : baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_CalculateIK.dir/rule
-
-# Convenience name for target.
-_baxter_control_mine_generate_messages_check_deps_CalculateIK: baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_CalculateIK.dir/rule
-
-.PHONY : _baxter_control_mine_generate_messages_check_deps_CalculateIK
-
-# fast build rule for target.
-_baxter_control_mine_generate_messages_check_deps_CalculateIK/fast:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_CalculateIK.dir/build.make baxter_control_mine/CMakeFiles/_baxter_control_mine_generate_messages_check_deps_CalculateIK.dir/build
-.PHONY : _baxter_control_mine_generate_messages_check_deps_CalculateIK/fast
-
-# Convenience name for target.
-baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_nodejs.dir/rule:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_nodejs.dir/rule
-.PHONY : baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-baxter_control_mine_generate_messages_nodejs: baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_nodejs.dir/rule
-
-.PHONY : baxter_control_mine_generate_messages_nodejs
-
-# fast build rule for target.
-baxter_control_mine_generate_messages_nodejs/fast:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_nodejs.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_nodejs.dir/build
-.PHONY : baxter_control_mine_generate_messages_nodejs/fast
 
 # Convenience name for target.
 baxter_control_mine/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule:
@@ -1681,64 +1501,49 @@ baxter_core_msgs_generate_messages_py/fast:
 .PHONY : baxter_core_msgs_generate_messages_py/fast
 
 # Convenience name for target.
-baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_eus.dir/rule:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_eus.dir/rule
-.PHONY : baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_eus.dir/rule
+baxter_control_mine/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
+.PHONY : baxter_control_mine/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-baxter_control_mine_generate_messages_eus: baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_eus.dir/rule
+std_msgs_generate_messages_nodejs: baxter_control_mine/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
 
-.PHONY : baxter_control_mine_generate_messages_eus
+.PHONY : std_msgs_generate_messages_nodejs
 
 # fast build rule for target.
-baxter_control_mine_generate_messages_eus/fast:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_eus.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_mine_generate_messages_eus.dir/build
-.PHONY : baxter_control_mine_generate_messages_eus/fast
+std_msgs_generate_messages_nodejs/fast:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_control_mine/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make baxter_control_mine/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
+.PHONY : std_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
-baxter_control_mine/CMakeFiles/actionlib_generate_messages_py.dir/rule:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/actionlib_generate_messages_py.dir/rule
-.PHONY : baxter_control_mine/CMakeFiles/actionlib_generate_messages_py.dir/rule
+baxter_control_mine/CMakeFiles/baxter_control_node.dir/rule:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/baxter_control_node.dir/rule
+.PHONY : baxter_control_mine/CMakeFiles/baxter_control_node.dir/rule
 
 # Convenience name for target.
-actionlib_generate_messages_py: baxter_control_mine/CMakeFiles/actionlib_generate_messages_py.dir/rule
+baxter_control_node: baxter_control_mine/CMakeFiles/baxter_control_node.dir/rule
 
-.PHONY : actionlib_generate_messages_py
+.PHONY : baxter_control_node
 
 # fast build rule for target.
-actionlib_generate_messages_py/fast:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_control_mine/CMakeFiles/actionlib_generate_messages_py.dir/build.make baxter_control_mine/CMakeFiles/actionlib_generate_messages_py.dir/build
-.PHONY : actionlib_generate_messages_py/fast
+baxter_control_node/fast:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_node.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_node.dir/build
+.PHONY : baxter_control_node/fast
 
 # Convenience name for target.
-baxter_control_mine/CMakeFiles/baxter_control_mine_geneus.dir/rule:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/baxter_control_mine_geneus.dir/rule
-.PHONY : baxter_control_mine/CMakeFiles/baxter_control_mine_geneus.dir/rule
+baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+.PHONY : baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-baxter_control_mine_geneus: baxter_control_mine/CMakeFiles/baxter_control_mine_geneus.dir/rule
+std_msgs_generate_messages_lisp: baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
 
-.PHONY : baxter_control_mine_geneus
+.PHONY : std_msgs_generate_messages_lisp
 
 # fast build rule for target.
-baxter_control_mine_geneus/fast:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_mine_geneus.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_mine_geneus.dir/build
-.PHONY : baxter_control_mine_geneus/fast
-
-# Convenience name for target.
-baxter_control_mine/CMakeFiles/baxter_control_mine_genlisp.dir/rule:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/baxter_control_mine_genlisp.dir/rule
-.PHONY : baxter_control_mine/CMakeFiles/baxter_control_mine_genlisp.dir/rule
-
-# Convenience name for target.
-baxter_control_mine_genlisp: baxter_control_mine/CMakeFiles/baxter_control_mine_genlisp.dir/rule
-
-.PHONY : baxter_control_mine_genlisp
-
-# fast build rule for target.
-baxter_control_mine_genlisp/fast:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_mine_genlisp.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_mine_genlisp.dir/build
-.PHONY : baxter_control_mine_genlisp/fast
+std_msgs_generate_messages_lisp/fast:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
+.PHONY : std_msgs_generate_messages_lisp/fast
 
 src/baxter_movegroup.o: src/baxter_movegroup.cpp.o
 
@@ -1883,11 +1688,6 @@ help:
 	@echo "... depend"
 	@echo "... install"
 	@echo "... rebuild_cache"
-	@echo "... install/local"
-	@echo "... install/strip"
-	@echo "... test_node"
-	@echo "... rviz_converter_node"
-	@echo "... baxter_control_mine_genpy"
 	@echo "... visualization_msgs_generate_messages_cpp"
 	@echo "... shape_msgs_generate_messages_lisp"
 	@echo "... trajectory_msgs_generate_messages_cpp"
@@ -1896,19 +1696,16 @@ help:
 	@echo "... moveit_ros_planning_gencfg"
 	@echo "... visualization_msgs_generate_messages_eus"
 	@echo "... actionlib_msgs_generate_messages_lisp"
-	@echo "... _baxter_control_mine_generate_messages_check_deps_PositionCommandMine"
 	@echo "... actionlib_msgs_generate_messages_eus"
 	@echo "... actionlib_generate_messages_lisp"
+	@echo "... actionlib_generate_messages_py"
 	@echo "... go_to_goal_server"
 	@echo "... actionlib_msgs_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_eus"
-	@echo "... baxter_control_mine_gennodejs"
 	@echo "... actionlib_msgs_generate_messages_nodejs"
-	@echo "... baxter_control_node"
-	@echo "... std_msgs_generate_messages_nodejs"
-	@echo "... baxter_control_mine_generate_messages_lisp"
 	@echo "... visualization_msgs_generate_messages_py"
 	@echo "... shape_msgs_generate_messages_py"
+	@echo "... test_node"
 	@echo "... baxter_core_msgs_generate_messages_cpp"
 	@echo "... roscpp_generate_messages_py"
 	@echo "... tf_generate_messages_nodejs"
@@ -1917,10 +1714,9 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_eus"
 	@echo "... shape_msgs_generate_messages_cpp"
 	@echo "... list_install_components"
-	@echo "... calculate_ik_server"
 	@echo "... sensor_msgs_generate_messages_py"
+	@echo "... calculate_ik_server"
 	@echo "... roscpp_generate_messages_nodejs"
-	@echo "... baxter_control_mine_generate_messages_py"
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
 	@echo "... moveit_msgs_generate_messages_cpp"
 	@echo "... shape_msgs_generate_messages_nodejs"
@@ -1928,6 +1724,7 @@ help:
 	@echo "... geometry_msgs_generate_messages_nodejs"
 	@echo "... geometry_msgs_generate_messages_eus"
 	@echo "... roscpp_generate_messages_cpp"
+	@echo "... rviz_converter_node"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... object_recognition_msgs_generate_messages_lisp"
 	@echo "... graph_msgs_generate_messages_cpp"
@@ -1943,25 +1740,19 @@ help:
 	@echo "... std_msgs_generate_messages_eus"
 	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... geometry_msgs_generate_messages_lisp"
-	@echo "... edit_cache"
-	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... visualization_msgs_generate_messages_nodejs"
 	@echo "... sensor_msgs_generate_messages_lisp"
 	@echo "... object_recognition_msgs_generate_messages_py"
-	@echo "... baxter_control_mine_gencpp"
 	@echo "... tf2_msgs_generate_messages_py"
-	@echo "... baxter_control_mine_generate_messages"
 	@echo "... moveit_msgs_generate_messages_lisp"
 	@echo "... tf_generate_messages_lisp"
 	@echo "... moveit_msgs_generate_messages_nodejs"
 	@echo "... moveit_msgs_generate_messages_py"
-	@echo "... baxter_control_mine_generate_messages_cpp"
-	@echo "... _baxter_control_mine_generate_messages_check_deps_CalculateIK"
-	@echo "... baxter_control_mine_generate_messages_nodejs"
 	@echo "... trajectory_msgs_generate_messages_eus"
 	@echo "... trajectory_msgs_generate_messages_lisp"
 	@echo "... trajectory_msgs_generate_messages_nodejs"
+	@echo "... install/local"
 	@echo "... trajectory_msgs_generate_messages_py"
 	@echo "... graph_msgs_generate_messages_lisp"
 	@echo "... actionlib_generate_messages_nodejs"
@@ -1989,10 +1780,11 @@ help:
 	@echo "... baxter_core_msgs_generate_messages_nodejs"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... baxter_core_msgs_generate_messages_py"
-	@echo "... baxter_control_mine_generate_messages_eus"
-	@echo "... actionlib_generate_messages_py"
-	@echo "... baxter_control_mine_geneus"
-	@echo "... baxter_control_mine_genlisp"
+	@echo "... std_msgs_generate_messages_nodejs"
+	@echo "... baxter_control_node"
+	@echo "... install/strip"
+	@echo "... std_msgs_generate_messages_lisp"
+	@echo "... edit_cache"
 	@echo "... src/baxter_movegroup.o"
 	@echo "... src/baxter_movegroup.i"
 	@echo "... src/baxter_movegroup.s"

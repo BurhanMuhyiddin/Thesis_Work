@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/lar/ros/baxter_ws/devel/include/baxter_core_msgs/SolvePositionIK.h
+/home/lar/ros/test_ws/devel/include/baxter_core_msgs/SolvePositionIK.h
 ros/service_traits.h
 -
 baxter_core_msgs/SolvePositionIKRequest.h
@@ -14,7 +14,7 @@ baxter_core_msgs/SolvePositionIKRequest.h
 baxter_core_msgs/SolvePositionIKResponse.h
 -
 
-/home/lar/ros/baxter_ws/devel/include/baxter_core_msgs/SolvePositionIKRequest.h
+/home/lar/ros/test_ws/devel/include/baxter_core_msgs/SolvePositionIKRequest.h
 string
 -
 vector
@@ -34,7 +34,7 @@ geometry_msgs/PoseStamped.h
 sensor_msgs/JointState.h
 -
 
-/home/lar/ros/baxter_ws/devel/include/baxter_core_msgs/SolvePositionIKResponse.h
+/home/lar/ros/test_ws/devel/include/baxter_core_msgs/SolvePositionIKResponse.h
 string
 -
 vector
@@ -52,15 +52,15 @@ ros/message_operations.h
 sensor_msgs/JointState.h
 -
 
-/home/lar/ros/test_ws/devel/include/baxter_control_mine/CalculateIK.h
+/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/CalculateIK.h
 ros/service_traits.h
 -
-baxter_control_mine/CalculateIKRequest.h
+baxter_msgs_mine/CalculateIKRequest.h
 -
-baxter_control_mine/CalculateIKResponse.h
+baxter_msgs_mine/CalculateIKResponse.h
 -
 
-/home/lar/ros/test_ws/devel/include/baxter_control_mine/CalculateIKRequest.h
+/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/CalculateIKRequest.h
 string
 -
 vector
@@ -78,7 +78,7 @@ ros/message_operations.h
 geometry_msgs/Pose.h
 -
 
-/home/lar/ros/test_ws/devel/include/baxter_control_mine/CalculateIKResponse.h
+/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/CalculateIKResponse.h
 string
 -
 vector
@@ -99,7 +99,7 @@ sensor_msgs/JointState.h
 /home/lar/ros/test_ws/src/baxter_control_mine/src/calculate_ik_server.cpp
 ros/ros.h
 -
-baxter_control_mine/CalculateIK.h
+baxter_msgs_mine/CalculateIK.h
 -
 geometry_msgs/Pose.h
 -

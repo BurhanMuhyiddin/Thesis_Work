@@ -516,24 +516,6 @@ baxter_common/baxter_description_old/preinstall:
 .PHONY : baxter_common/baxter_description_old/preinstall
 
 #=============================================================================
-# Directory level rules for directory baxter_moveit_config
-
-# Convenience name for "all" pass in the directory.
-baxter_moveit_config/all:
-
-.PHONY : baxter_moveit_config/all
-
-# Convenience name for "clean" pass in the directory.
-baxter_moveit_config/clean:
-
-.PHONY : baxter_moveit_config/clean
-
-# Convenience name for "preinstall" pass in the directory.
-baxter_moveit_config/preinstall:
-
-.PHONY : baxter_moveit_config/preinstall
-
-#=============================================================================
 # Directory level rules for directory baxter/baxter_sdk
 
 # Convenience name for "all" pass in the directory.
@@ -588,24 +570,6 @@ baxter_ssh/baxter_ssh/preinstall:
 .PHONY : baxter_ssh/baxter_ssh/preinstall
 
 #=============================================================================
-# Directory level rules for directory left_arm_moveit
-
-# Convenience name for "all" pass in the directory.
-left_arm_moveit/all:
-
-.PHONY : left_arm_moveit/all
-
-# Convenience name for "clean" pass in the directory.
-left_arm_moveit/clean:
-
-.PHONY : left_arm_moveit/clean
-
-# Convenience name for "preinstall" pass in the directory.
-left_arm_moveit/preinstall:
-
-.PHONY : left_arm_moveit/preinstall
-
-#=============================================================================
 # Directory level rules for directory baxter_common/rethink_ee_description
 
 # Convenience name for "all" pass in the directory.
@@ -622,6 +586,24 @@ baxter_common/rethink_ee_description/clean:
 baxter_common/rethink_ee_description/preinstall:
 
 .PHONY : baxter_common/rethink_ee_description/preinstall
+
+#=============================================================================
+# Directory level rules for directory baxter_moveit_config
+
+# Convenience name for "all" pass in the directory.
+baxter_moveit_config/all:
+
+.PHONY : baxter_moveit_config/all
+
+# Convenience name for "clean" pass in the directory.
+baxter_moveit_config/clean:
+
+.PHONY : baxter_moveit_config/clean
+
+# Convenience name for "preinstall" pass in the directory.
+baxter_moveit_config/preinstall:
+
+.PHONY : baxter_moveit_config/preinstall
 
 #=============================================================================
 # Directory level rules for directory ros_control/ros_control

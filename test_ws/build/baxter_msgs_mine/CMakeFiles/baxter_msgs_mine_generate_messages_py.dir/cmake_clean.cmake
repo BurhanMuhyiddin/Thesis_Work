@@ -7,7 +7,10 @@ file(REMOVE_RECURSE
   "/home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToPointResult.py"
   "/home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToPointGoal.py"
   "/home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToPointActionResult.py"
+  "/home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_PositionCommandMine.py"
+  "/home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_CalculateIK.py"
   "/home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/__init__.py"
+  "/home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/__init__.py"
 )
 
 # Per-language clean rules from dependency scanning.

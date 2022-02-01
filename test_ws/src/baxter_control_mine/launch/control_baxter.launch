@@ -1,9 +1,5 @@
 <launch>
-
     <node name="rviz_converter_node" pkg="baxter_control_mine" type="rviz_converter_node" />
 
-    <include file="$(find baxter_moveit_config)/launch/demo.launch" />
     <node name="baxter_control_node" pkg="baxter_control_mine" type="baxter_control_node"  output="screen"/>
-    <!-- <node name="test_node" pkg="baxter_control_mine" type="test_node" output="screen"/> -->
-    
 </launch>

@@ -5,4 +5,4 @@ PROJECT_CATKIN_DEPENDS = "".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "".split(';') if "" != "" else []
 PROJECT_NAME = "baxter_description"
 PROJECT_SPACE_DIR = "/home/lar/ros/baxter_ws/install"
-PROJECT_VERSION = "1.0.1"
+PROJECT_VERSION = "1.2.0"

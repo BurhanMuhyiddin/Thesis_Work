@@ -6,6 +6,6 @@
 # testing this directory and lists subdirectories to be tested as well.
 subdirs(gtest)
 subdirs(baxter_description)
-subdirs(baxter_moveit_config)
+subdirs(rethink_ee_description)
 subdirs(baxter_control_mine)
 subdirs(baxter_msgs_mine)

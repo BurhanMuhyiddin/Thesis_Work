@@ -13,15 +13,19 @@
 
 #include <vector>
 
-#include "baxter_control_mine/PositionCommandMine.h"
+#include "baxter_msgs_mine/PositionCommandMine.h"
 
 class BaxterControl
 {
 public:
-  BaxterControl(const std::string &move_group_name, ros::NodeHandle *n) : PLANNING_GROUP(move_group_name)
+  BaxterControl(const std::string &move_group_name) : PLANNING_GROUP(move_group_name), spinner(2)
   {
+    spinner.start();
+
+    ROS_INFO("BaxterHomeWorkServer: Has been initiated...");
+
     move_group_interface_ptr = new moveit::planning_interface::MoveGroupInterface(PLANNING_GROUP);
-    service = n->advertiseService("command_position", &BaxterControl::command_position_clb, this);
+    command_position_service = nh.advertiseService("/command_position", &BaxterControl::command_position_clb, this);
 
     add_object_to_the_scene();
 
@@ -33,47 +37,51 @@ public:
   ~BaxterControl()
   {
     delete move_group_interface_ptr;
+    ros::shutdown();
   }
 
   void add_object_to_the_scene();
 
   void configure_planner();
 
-  bool command_position_clb(baxter_control_mine::PositionCommandMineRequest &req,
-                            baxter_control_mine::PositionCommandMineResponse &res);
+  bool command_position_clb(baxter_msgs_mine::PositionCommandMineRequest &req,
+                            baxter_msgs_mine::PositionCommandMineResponse &res);
 
 private:
-  moveit::planning_interface::MoveGroupInterface *move_group_interface_ptr;
-  ros::ServiceServer service;
   const std::string PLANNING_GROUP;
+
+  ros::NodeHandle nh;
+  ros::AsyncSpinner spinner; // we need two threads, the second one for execution of the trajectory in callback
+  ros::ServiceServer command_position_service;
+  moveit::planning_interface::MoveGroupInterface *move_group_interface_ptr;
 };
 
-bool BaxterControl::command_position_clb(baxter_control_mine::PositionCommandMineRequest &req,
-                            baxter_control_mine::PositionCommandMineResponse &res)
+bool BaxterControl::command_position_clb(baxter_msgs_mine::PositionCommandMineRequest &req,
+                            baxter_msgs_mine::PositionCommandMineResponse &res)
 {
   if (req.position_command == "home")
   {
-    ROS_INFO("HOME is set as desired position...");
+    ROS_INFO("BaxterHomeWorkServer: HOME is set as desired position...");
     std::vector<double> home_joint_values{0.6919, 0.0467, 0.0, 1.0495, 0.0, 0.8456, 0.0};
     move_group_interface_ptr->setJointValueTarget(home_joint_values);
   }
   else if (req.position_command == "work")
   {
-    ROS_INFO("WORK is set as desired position...");
+    ROS_INFO("BaxterHomeWorkServer: WORK is set as desired position...");
     std::vector<double> work_joint_values{-0.561, -0.6201, 0.0, 0.683, 0.0, 0.906, 0.0};
     move_group_interface_ptr->setJointValueTarget(work_joint_values);
   }
 
-  ROS_INFO("Planning started...");
+  ROS_INFO("BaxterHomeWorkServer: Planning started...");
   moveit::planning_interface::MoveGroupInterface::Plan my_plan;
   bool success = (move_group_interface_ptr->plan(my_plan) == moveit::planning_interface::MoveItErrorCode::SUCCESS);
-  ROS_INFO("Planning finished successfully...");
+  ROS_INFO("BaxterHomeWorkServer: Planning finished successfully...");
 
   if (success)
   {
-    ROS_INFO("Trajectory is being executed...");
+    ROS_INFO("BaxterHomeWorkServer: Trajectory is being executed...");
     move_group_interface_ptr->execute(my_plan);
-    ROS_INFO("Trajectory has been executed successfully...");
+    ROS_INFO("BaxterHomeWorkServer: Trajectory has been executed successfully...");
   }
   
   res.success = success;
@@ -81,18 +89,17 @@ bool BaxterControl::command_position_clb(baxter_control_mine::PositionCommandMin
   return true;
 }
 
-
 void BaxterControl::add_object_to_the_scene()
 {
   moveit::planning_interface::PlanningSceneInterface planning_scene_interface;
-  
+
   const robot_state::JointModelGroup* joint_model_group = move_group_interface_ptr->getCurrentState()->getJointModelGroup(PLANNING_GROUP);
   
   namespace rvt = rviz_visual_tools;
   moveit_visual_tools::MoveItVisualTools visual_tools("base");
   visual_tools.deleteAllMarkers();
 
-  ROS_INFO("Table object is being added...");
+  ROS_INFO("BaxterHomeWorkServer: Table object is being added...");
 
   moveit_msgs::CollisionObject collision_object;
   collision_object.header.frame_id = move_group_interface_ptr->getPlanningFrame();
@@ -135,17 +142,15 @@ void BaxterControl::configure_planner()
   move_group_interface_ptr->setPlannerId("RRT");
   move_group_interface_ptr->setPlanningTime(5.0);
   move_group_interface_ptr->setNumPlanningAttempts(10);
+
+  ROS_INFO("BaxterHomeWorkServer: Planneer has been configured...");
 }
 
 int main(int argc, char** argv)
 {
   ros::init(argc, argv, "baxter_controller");
-  ros::NodeHandle n;
 
-  ros::AsyncSpinner spinner(2); // we need two threads, the second one for execution of the trajectory in callback
-  spinner.start();
-
-  BaxterControl bc("left_arm", &n);
+  BaxterControl bc("left_arm");
 
   ros::waitForShutdown();
 

@@ -23,9 +23,12 @@ class main():
         self.gtp_cl.wait_for_server(rospy.Duration(15))
 
         self.waypoints = list()
-        self.waypoints.append(Pose(Point(0.908972, 1.10398, 0.320976), Quaternion(-0.270599, 0.653281, 0.270599, 0.653281))) # straight position
-        self.waypoints.append(Pose(Point(0.106153, 0.708761, -0.384312), Quaternion(-0.661702, 0.726757, -0.124059, -0.136325))) # home position
-        self.waypoints.append(Pose(Point(1.03692, 0.480976, 0.203003), Quaternion(-0.106929, 0.949026, 0.0331254, 0.294651))) # work position
+        
+        self.waypoints.append(Pose(Point(1.0, 0.30976, 0.203003), Quaternion(0, 0, 0, 1))) # straight position
+        self.waypoints.append(Pose(Point(0.53692, 0.20976, 0.203003), Quaternion(0, 0, 0, 1)))
+        self.waypoints.append(Pose(Point(1.23692, 0.20976, 0.203003), Quaternion(0, 0, 0, 1)))
+        # self.waypoints.append(Pose(Point(0.82211, -0.124098, 0.0843648), Quaternion(-0.359069, 0.902704, -0.178893, 0.155538))) # home position
+        # self.waypoints.append(Pose(Point(0.908972, 1.10398, 0.320976), Quaternion(-0.270599, 0.653281, 0.270599, 0.653281))) # work position
         pose_points = (('straight', self.waypoints[0]),
                         ('home', self.waypoints[1]),
                         ('work', self.waypoints[2]))
@@ -43,8 +46,8 @@ class main():
 
         sm_move_robot = StateMachine(outcomes=['succeeded', 'aborted', 'preempted'])
         with sm_move_robot:
-            StateMachine.add("GO_TO_HOME_POSE", move_robot_states['home'], transitions={"succeeded":"GO_TO_STRAIGHT_POSE", "aborted":"", "preempted":""})
             StateMachine.add("GO_TO_STRAIGHT_POSE", move_robot_states['straight'], transitions={"succeeded":"GO_TO_WORK_POSE", "aborted":"", "preempted":""})
+            StateMachine.add("GO_TO_HOME_POSE", move_robot_states['home'], transitions={"succeeded":"GO_TO_STRAIGHT_POSE", "aborted":"", "preempted":""})
             StateMachine.add("GO_TO_WORK_POSE", move_robot_states['work'], transitions={"succeeded":"GO_TO_HOME_POSE", "aborted":"", "preempted":""})
 
         sm_outcome = sm_move_robot.execute()
@@ -53,7 +56,7 @@ class main():
 
     def move_base_result_cb(self, userdata, status, result):
         if status == actionlib.GoalStatus.SUCCEEDED:
-            rospy.sleep(5)
+            rospy.sleep(10)
 
 
 if __name__ == '__main__':

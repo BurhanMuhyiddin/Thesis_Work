@@ -1,6 +1,6 @@
 #include <ros/ros.h>
 
-#include <baxter_control_mine/CalculateIK.h>
+#include <baxter_msgs_mine/CalculateIK.h>
 
 #include <geometry_msgs/Pose.h>
 #include <geometry_msgs/PoseStamped.h>
@@ -16,25 +16,24 @@
 class CalculateIK
 {
 public:
-    CalculateIK()
+    CalculateIK(const std::string &limb_) : limb{limb_}
     {   
-        ik_service = _nh.advertiseService("/calculate_ik", &CalculateIK::calculate_ik_cb, this);
+        ik_service = nh.advertiseService("/calculate_ik", &CalculateIK::calculate_ik_cb, this);
     }
 
-    bool calculate_ik_cb(baxter_control_mine::CalculateIK::Request &req, baxter_control_mine::CalculateIK::Response &res);
+    bool calculate_ik_cb(baxter_msgs_mine::CalculateIK::Request &req, baxter_msgs_mine::CalculateIK::Response &res);
 
 private:
-    ros::NodeHandle _nh;
+    ros::NodeHandle nh;
     ros::ServiceServer ik_service;
+    const std::string limb;
 };
 
-bool CalculateIK::calculate_ik_cb(baxter_control_mine::CalculateIK::Request &req, baxter_control_mine::CalculateIK::Response &res)
+bool CalculateIK::calculate_ik_cb(baxter_msgs_mine::CalculateIK::Request &req, baxter_msgs_mine::CalculateIK::Response &res)
 {
-    const std::string limb = "left";
+    std::string ns = "ExternalTools/" + limb + "/PositionKinematicsNode/IKService"; // use IK for specified limb
 
-    std::string ns = "ExternalTools/" + limb + "/PositionKinematicsNode/IKService";
-
-    ros::ServiceClient iksvc = _nh.serviceClient<baxter_core_msgs::SolvePositionIK>(ns);
+    ros::ServiceClient iksvc = nh.serviceClient<baxter_core_msgs::SolvePositionIK>(ns);
 
     baxter_core_msgs::SolvePositionIK ikreq;
 
@@ -90,7 +89,7 @@ int main(int argc, char **argv)
 {
     ros::init(argc, argv, "calculate_ik_server");
 
-    CalculateIK cIK;
+    CalculateIK cIK("left");
 
     ros::spin();
 

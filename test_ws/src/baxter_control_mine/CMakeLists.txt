@@ -1,8 +1,12 @@
 cmake_minimum_required(VERSION 3.0.2)
 project(baxter_control_mine)
 
+## Compile as C++11, supported in ROS Kinetic and newer
 add_compile_options(-std=c++11)
 
+## Find catkin macros and libraries
+## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
+## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
@@ -13,28 +17,19 @@ find_package(catkin REQUIRED COMPONENTS
   moveit_visual_tools
   rviz_visual_tools
   baxter_core_msgs
-  message_generation
-)
-
-
-add_service_files(FILES
-  PositionCommandMine.srv
-  CalculateIK.srv
 )
 
 find_package(Eigen3 REQUIRED)
 
-generate_messages(DEPENDENCIES
-  std_msgs
-  sensor_msgs
-  geometry_msgs
+catkin_package(
+#  INCLUDE_DIRS include
+#  LIBRARIES baxter_control_mine
+#  CATKIN_DEPENDS roscpp rospy std_msgs
+#  DEPENDS system_lib
 )
 
-catkin_package(
-  CATKIN_DEPENDS
-  message_runtime)
-
 include_directories(
+# include
   ${catkin_INCLUDE_DIRS}
   ${Boost_INCLUDE_DIR}
   ${EIGEN3_INCLUDE_DIRS}

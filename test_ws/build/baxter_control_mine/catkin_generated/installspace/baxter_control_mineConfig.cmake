@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(baxter_control_mine_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "include " STREQUAL " ")
+if(NOT " " STREQUAL " ")
   set(baxter_control_mine_INCLUDE_DIRS "")
-  set(_include_dirs "include")
+  set(_include_dirs "")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT " " STREQUAL " ")
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/lar/ros/test_ws/install/lib;/home/lar/ros/test_ws/devel/lib;/home/lar/ros/baxter_ws/devel/lib;/opt/ros/kinetic/lib)
+    foreach(path /home/lar/ros/test_ws/install/lib;/home/lar/ros/test_ws/devel/lib;/opt/ros/kinetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
@@ -177,7 +177,7 @@ foreach(library ${libraries})
   endif()
 endforeach()
 
-set(baxter_control_mine_EXPORTED_TARGETS "baxter_control_mine_generate_messages_cpp;baxter_control_mine_generate_messages_eus;baxter_control_mine_generate_messages_lisp;baxter_control_mine_generate_messages_nodejs;baxter_control_mine_generate_messages_py")
+set(baxter_control_mine_EXPORTED_TARGETS "")
 # create dummy targets for exported code generation targets to make life of users easier
 foreach(t ${baxter_control_mine_EXPORTED_TARGETS})
   if(NOT TARGET ${t})
@@ -185,7 +185,7 @@ foreach(t ${baxter_control_mine_EXPORTED_TARGETS})
   endif()
 endforeach()
 
-set(depends "message_runtime")
+set(depends "")
 foreach(depend ${depends})
   string(REPLACE " " ";" depend_list ${depend})
   # the package name of the dependency must be kept in a unique variable so that it is not overwritten in recursive calls
@@ -214,7 +214,7 @@ foreach(depend ${depends})
   list(APPEND baxter_control_mine_EXPORTED_TARGETS ${${baxter_control_mine_dep}_EXPORTED_TARGETS})
 endforeach()
 
-set(pkg_cfg_extras "baxter_control_mine-msg-extras.cmake")
+set(pkg_cfg_extras "")
 foreach(extra ${pkg_cfg_extras})
   if(NOT IS_ABSOLUTE ${extra})
     set(extra ${baxter_control_mine_DIR}/${extra})
