@@ -1,2 +1,0 @@
-baxter_control_mine:baxter_description:baxter_msgs_mine:rethink_ee_description
--DCATKIN_DEVEL_PREFIX=/home/lar/ros/test_ws/devel -DCMAKE_INSTALL_PREFIX=/home/lar/ros/test_ws/install -G Unix Makefiles

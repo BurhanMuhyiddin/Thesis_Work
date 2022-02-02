@@ -1,8 +1,0 @@
-prefix=/home/lar/ros/test_ws/install
-
-Name: baxter_control_mine
-Description: Description of baxter_control_mine
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

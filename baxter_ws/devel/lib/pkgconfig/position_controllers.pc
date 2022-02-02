@@ -1,8 +1,0 @@
-prefix=/home/lar/ros/baxter_ws/devel
-
-Name: position_controllers
-Description: Description of position_controllers
-Version: 0.8.1
-Cflags: -I/home/lar/ros/baxter_ws/src/ros_controllers/position_controllers/include
-Libs: -L${prefix}/lib -lposition_controllers
-Requires: controller_interface forward_command_controller
