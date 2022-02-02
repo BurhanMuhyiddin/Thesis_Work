@@ -1,0 +1,5 @@
+<launch>
+    <node name="rviz_converter_node" pkg="baxter_control_mine" type="rviz_converter_node" />
+
+    <node name="baxter_control_node" pkg="baxter_control_mine" type="baxter_control_node"  output="screen"/>
+</launch>

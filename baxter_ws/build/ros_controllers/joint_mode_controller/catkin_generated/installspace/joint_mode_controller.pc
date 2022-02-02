@@ -1,0 +1,8 @@
+prefix=/home/lar/ros/baxter_ws/install
+
+Name: joint_mode_controller
+Description: Description of joint_mode_controller
+Version: 0.5.4
+Cflags: 
+Libs: -L${prefix}/lib -ljoint_mode_controller
+Requires: controller_interface hardware_interface pluginlib roscpp
