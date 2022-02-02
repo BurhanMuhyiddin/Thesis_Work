@@ -20,6 +20,7 @@ find_package(catkin REQUIRED COMPONENTS
 add_service_files(FILES
   PositionCommandMine.srv
   CalculateIK.srv
+  ProcessImage.srv
 )
 
 ## Generate actions in the 'action' folder

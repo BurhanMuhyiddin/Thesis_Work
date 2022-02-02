@@ -89,6 +89,17 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -121,17 +132,6 @@ install/strip: preinstall
 install/strip/fast: install/strip
 
 .PHONY : install/strip/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -736,6 +736,21 @@ object_recognition_msgs_generate_messages_lisp/fast:
 .PHONY : object_recognition_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
+baxter_control_mine/CMakeFiles/image_processing_server.dir/rule:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/image_processing_server.dir/rule
+.PHONY : baxter_control_mine/CMakeFiles/image_processing_server.dir/rule
+
+# Convenience name for target.
+image_processing_server: baxter_control_mine/CMakeFiles/image_processing_server.dir/rule
+
+.PHONY : image_processing_server
+
+# fast build rule for target.
+image_processing_server/fast:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_control_mine/CMakeFiles/image_processing_server.dir/build.make baxter_control_mine/CMakeFiles/image_processing_server.dir/build
+.PHONY : image_processing_server/fast
+
+# Convenience name for target.
 baxter_control_mine/CMakeFiles/graph_msgs_generate_messages_cpp.dir/rule:
 	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/graph_msgs_generate_messages_cpp.dir/rule
 .PHONY : baxter_control_mine/CMakeFiles/graph_msgs_generate_messages_cpp.dir/rule
@@ -929,6 +944,21 @@ geometry_msgs_generate_messages_lisp: baxter_control_mine/CMakeFiles/geometry_ms
 geometry_msgs_generate_messages_lisp/fast:
 	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_control_mine/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make baxter_control_mine/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
 .PHONY : geometry_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+.PHONY : baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+std_msgs_generate_messages_lisp: baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : std_msgs_generate_messages_lisp
+
+# fast build rule for target.
+std_msgs_generate_messages_lisp/fast:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
+.PHONY : std_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 baxter_control_mine/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule:
@@ -1530,21 +1560,6 @@ baxter_control_node/fast:
 	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_control_mine/CMakeFiles/baxter_control_node.dir/build.make baxter_control_mine/CMakeFiles/baxter_control_node.dir/build
 .PHONY : baxter_control_node/fast
 
-# Convenience name for target.
-baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-.PHONY : baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_lisp: baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : std_msgs_generate_messages_lisp
-
-# fast build rule for target.
-std_msgs_generate_messages_lisp/fast:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make baxter_control_mine/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
-.PHONY : std_msgs_generate_messages_lisp/fast
-
 src/baxter_movegroup.o: src/baxter_movegroup.cpp.o
 
 .PHONY : src/baxter_movegroup.o
@@ -1625,6 +1640,33 @@ src/go_to_goal_server.s: src/go_to_goal_server.cpp.s
 src/go_to_goal_server.cpp.s:
 	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_control_mine/CMakeFiles/go_to_goal_server.dir/build.make baxter_control_mine/CMakeFiles/go_to_goal_server.dir/src/go_to_goal_server.cpp.s
 .PHONY : src/go_to_goal_server.cpp.s
+
+src/image_processing_server.o: src/image_processing_server.cpp.o
+
+.PHONY : src/image_processing_server.o
+
+# target to build an object file
+src/image_processing_server.cpp.o:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_control_mine/CMakeFiles/image_processing_server.dir/build.make baxter_control_mine/CMakeFiles/image_processing_server.dir/src/image_processing_server.cpp.o
+.PHONY : src/image_processing_server.cpp.o
+
+src/image_processing_server.i: src/image_processing_server.cpp.i
+
+.PHONY : src/image_processing_server.i
+
+# target to preprocess a source file
+src/image_processing_server.cpp.i:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_control_mine/CMakeFiles/image_processing_server.dir/build.make baxter_control_mine/CMakeFiles/image_processing_server.dir/src/image_processing_server.cpp.i
+.PHONY : src/image_processing_server.cpp.i
+
+src/image_processing_server.s: src/image_processing_server.cpp.s
+
+.PHONY : src/image_processing_server.s
+
+# target to generate assembly for a file
+src/image_processing_server.cpp.s:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_control_mine/CMakeFiles/image_processing_server.dir/build.make baxter_control_mine/CMakeFiles/image_processing_server.dir/src/image_processing_server.cpp.s
+.PHONY : src/image_processing_server.cpp.s
 
 src/rviz_to_rrobot.o: src/rviz_to_rrobot.cpp.o
 
@@ -1727,6 +1769,7 @@ help:
 	@echo "... rviz_converter_node"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... object_recognition_msgs_generate_messages_lisp"
+	@echo "... image_processing_server"
 	@echo "... graph_msgs_generate_messages_cpp"
 	@echo "... std_msgs_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_nodejs"
@@ -1740,6 +1783,8 @@ help:
 	@echo "... std_msgs_generate_messages_eus"
 	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... geometry_msgs_generate_messages_lisp"
+	@echo "... edit_cache"
+	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... visualization_msgs_generate_messages_nodejs"
 	@echo "... sensor_msgs_generate_messages_lisp"
@@ -1783,8 +1828,6 @@ help:
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... baxter_control_node"
 	@echo "... install/strip"
-	@echo "... std_msgs_generate_messages_lisp"
-	@echo "... edit_cache"
 	@echo "... src/baxter_movegroup.o"
 	@echo "... src/baxter_movegroup.i"
 	@echo "... src/baxter_movegroup.s"
@@ -1794,6 +1837,9 @@ help:
 	@echo "... src/go_to_goal_server.o"
 	@echo "... src/go_to_goal_server.i"
 	@echo "... src/go_to_goal_server.s"
+	@echo "... src/image_processing_server.o"
+	@echo "... src/image_processing_server.i"
+	@echo "... src/image_processing_server.s"
 	@echo "... src/rviz_to_rrobot.o"
 	@echo "... src/rviz_to_rrobot.i"
 	@echo "... src/rviz_to_rrobot.s"

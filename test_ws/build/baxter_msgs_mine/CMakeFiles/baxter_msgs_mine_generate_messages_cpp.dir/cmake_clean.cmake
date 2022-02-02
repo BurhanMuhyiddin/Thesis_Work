@@ -9,6 +9,7 @@ file(REMOVE_RECURSE
   "/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointActionResult.h"
   "/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/PositionCommandMine.h"
   "/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/CalculateIK.h"
+  "/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/ProcessImage.h"
 )
 
 # Per-language clean rules from dependency scanning.

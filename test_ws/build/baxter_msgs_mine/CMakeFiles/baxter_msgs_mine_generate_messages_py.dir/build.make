@@ -62,6 +62,7 @@ baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py: /home/lar/ros
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToPointActionResult.py
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_PositionCommandMine.py
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_CalculateIK.py
+baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_ProcessImage.py
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/__init__.py
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/__init__.py
 
@@ -157,6 +158,13 @@ baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py: /home/lar/ros
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating Python code from SRV baxter_msgs_mine/CalculateIK"
 	cd /home/lar/ros/test_ws/build/baxter_msgs_mine && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/lar/ros/test_ws/src/baxter_msgs_mine/srv/CalculateIK.srv -Ibaxter_msgs_mine:/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -p baxter_msgs_mine -o /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv
 
+/home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_ProcessImage.py: /opt/ros/kinetic/lib/genpy/gensrv_py.py
+/home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_ProcessImage.py: /home/lar/ros/test_ws/src/baxter_msgs_mine/srv/ProcessImage.srv
+/home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_ProcessImage.py: /opt/ros/kinetic/share/sensor_msgs/msg/Image.msg
+/home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_ProcessImage.py: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating Python code from SRV baxter_msgs_mine/ProcessImage"
+	cd /home/lar/ros/test_ws/build/baxter_msgs_mine && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/lar/ros/test_ws/src/baxter_msgs_mine/srv/ProcessImage.srv -Ibaxter_msgs_mine:/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -p baxter_msgs_mine -o /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv
+
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/__init__.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/__init__.py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToPointAction.py
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/__init__.py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToPointActionFeedback.py
@@ -167,7 +175,8 @@ baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py: /home/lar/ros
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/__init__.py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToPointActionResult.py
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/__init__.py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_PositionCommandMine.py
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/__init__.py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_CalculateIK.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating Python msg __init__.py for baxter_msgs_mine"
+/home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/__init__.py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_ProcessImage.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating Python msg __init__.py for baxter_msgs_mine"
 	cd /home/lar/ros/test_ws/build/baxter_msgs_mine && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg --initpy
 
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/__init__.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
@@ -180,7 +189,8 @@ baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py: /home/lar/ros
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/__init__.py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToPointActionResult.py
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/__init__.py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_PositionCommandMine.py
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/__init__.py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_CalculateIK.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating Python srv __init__.py for baxter_msgs_mine"
+/home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/__init__.py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_ProcessImage.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Generating Python srv __init__.py for baxter_msgs_mine"
 	cd /home/lar/ros/test_ws/build/baxter_msgs_mine && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv --initpy
 
 baxter_msgs_mine_generate_messages_py: baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py
@@ -193,6 +203,7 @@ baxter_msgs_mine_generate_messages_py: /home/lar/ros/test_ws/devel/lib/python2.7
 baxter_msgs_mine_generate_messages_py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToPointActionResult.py
 baxter_msgs_mine_generate_messages_py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_PositionCommandMine.py
 baxter_msgs_mine_generate_messages_py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_CalculateIK.py
+baxter_msgs_mine_generate_messages_py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_ProcessImage.py
 baxter_msgs_mine_generate_messages_py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/__init__.py
 baxter_msgs_mine_generate_messages_py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/__init__.py
 baxter_msgs_mine_generate_messages_py: baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py.dir/build.make

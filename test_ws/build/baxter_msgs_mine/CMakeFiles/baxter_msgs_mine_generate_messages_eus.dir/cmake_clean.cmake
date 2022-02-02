@@ -9,6 +9,7 @@ file(REMOVE_RECURSE
   "/home/lar/ros/test_ws/devel/share/roseus/ros/baxter_msgs_mine/msg/GoToPointActionResult.l"
   "/home/lar/ros/test_ws/devel/share/roseus/ros/baxter_msgs_mine/srv/PositionCommandMine.l"
   "/home/lar/ros/test_ws/devel/share/roseus/ros/baxter_msgs_mine/srv/CalculateIK.l"
+  "/home/lar/ros/test_ws/devel/share/roseus/ros/baxter_msgs_mine/srv/ProcessImage.l"
   "/home/lar/ros/test_ws/devel/share/roseus/ros/baxter_msgs_mine/manifest.l"
 )
 
