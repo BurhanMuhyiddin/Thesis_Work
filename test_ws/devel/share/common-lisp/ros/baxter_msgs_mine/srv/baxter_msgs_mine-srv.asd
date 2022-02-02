@@ -10,4 +10,6 @@
     (:file "_package_CalculateIK" :depends-on ("_package"))
     (:file "PositionCommandMine" :depends-on ("_package_PositionCommandMine"))
     (:file "_package_PositionCommandMine" :depends-on ("_package"))
+    (:file "ProcessImage" :depends-on ("_package_ProcessImage"))
+    (:file "_package_ProcessImage" :depends-on ("_package"))
   ))

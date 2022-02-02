@@ -37,6 +37,7 @@ ab0a582c273ac4d271c9f37834f10f99 /home/lar/ros/test_ws/devel/include/baxter_msgs
 19a6251b5383a234d458c8e2c3aefdc4 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointGoal.h
 7f190f24cd3bdc137b90c0d9b0a6e612 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointResult.h
 3d3a44bb47db47532dc2912c0656e010 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/PositionCommandMine.h
+eb2906bb7634b91638870b0168de92ba /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/ProcessImage.h
 2271b59e6f4ca62695ce82cc8f2f802f /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_core_msgs/msg/_AnalogIOState.py
 6f3f5fb067c133edeb44e5f5fcc440a3 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_core_msgs/msg/_AnalogIOStates.py
 6f88f17f4a2863b6bd5cc12450f96824 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_core_msgs/msg/_AnalogOutputCommand.py
@@ -78,6 +79,7 @@ e600facc1a7d97e46c5965e12b433aef /home/lar/ros/test_ws/devel/lib/python2.7/dist-
 24690aa2d43be3d9aa37c10f3fa7f59b /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/__init__.py
 dd89018e99c547795f453e5bfe99bb23 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_CalculateIK.py
 a686e6b97e0154402a83263ca51907f9 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_PositionCommandMine.py
+7e6aa404501110dd1f0c07449fd3453a /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_ProcessImage.py
 e96d03b63b1b92071b02dcff7cba087b /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/__init__.py
 56afbf020142b1b6cd9ed911c484d2c3 /home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_core_msgs/msg/AnalogIOState.lisp
 3e2adeed3ecbdbb19a7e4c1713e7de14 /home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_core_msgs/msg/AnalogIOStates.lisp
@@ -117,6 +119,7 @@ ab8ddf9f195f6987894dcb63fab390ac /home/lar/ros/test_ws/devel/share/common-lisp/r
 6e4ec386235b3c3788c22ee2c740c392 /home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/msg/GoToPointResult.lisp
 c1adcf602bd7f26be8d1bf872d338584 /home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv/CalculateIK.lisp
 2f329b03cbb58b6cbfbe609fa65899d0 /home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv/PositionCommandMine.lisp
+5c9aa7c80a312283051fee90b8548503 /home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv/ProcessImage.lisp
 aa4616bd7a85698c54a8ee1eb1a32bb1 /home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_core_msgs/msg/AnalogIOState.js
 ec4c9b5e5c461bcb8748ee11b71be946 /home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_core_msgs/msg/AnalogIOStates.js
 66f03330d1f5501a8838dd4bed1a7411 /home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_core_msgs/msg/AnalogOutputCommand.js
@@ -155,6 +158,7 @@ a27435fb56cf2cb9a0ce3facbc0a8079 /home/lar/ros/test_ws/devel/share/gennodejs/ros
 9544c97edfd82d3e9116b427a8f5ca79 /home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_msgs_mine/msg/GoToPointResult.js
 bb27ad129c9ce171d8eea422ee34bb64 /home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_msgs_mine/srv/CalculateIK.js
 fdc26bb319ee220bc980ab79c61e8187 /home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_msgs_mine/srv/PositionCommandMine.js
+f3e971dbc306d346baff236a4d211190 /home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_msgs_mine/srv/ProcessImage.js
 1ec5e1477ac323e7e77a518252aef8f4 /home/lar/ros/test_ws/devel/share/roseus/ros/baxter_core_msgs/manifest.l
 438c0cf75934fab1ca42ecef4773c5d4 /home/lar/ros/test_ws/devel/share/roseus/ros/baxter_core_msgs/msg/AnalogIOState.l
 f48851e6151eac430815aca252777205 /home/lar/ros/test_ws/devel/share/roseus/ros/baxter_core_msgs/msg/AnalogIOStates.l
@@ -195,6 +199,7 @@ aa94404a623523923c9d0a2dafd38942 /home/lar/ros/test_ws/devel/share/roseus/ros/ba
 284b68149f02807ca9a1d4a8debde8f5 /home/lar/ros/test_ws/devel/share/roseus/ros/baxter_msgs_mine/msg/GoToPointResult.l
 6c0921d897582f7da8f68fbba484bc3e /home/lar/ros/test_ws/devel/share/roseus/ros/baxter_msgs_mine/srv/CalculateIK.l
 d716c3550374556574dbc54e8cd7349e /home/lar/ros/test_ws/devel/share/roseus/ros/baxter_msgs_mine/srv/PositionCommandMine.l
+a9499feef1ca19628f15e68a9aa55a5a /home/lar/ros/test_ws/devel/share/roseus/ros/baxter_msgs_mine/srv/ProcessImage.l
 7fbd8831de212e18a835103449d03bc4 CMakeFiles/clean_test_results
 b107f41343488c5b6ad2d5c40b14e956 baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_CalculateIK
 db0c470c499c1ddecd6982ef802862ed baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointAction
@@ -205,6 +210,7 @@ a6f8cc765ac9387db1f0015d605280d7 baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_g
 2207877b54692af6224c321daaa158ad baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal
 0f61b4d7a160d2c0acda7d9eb9d6ff3e baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointResult
 874619c003499d9eb7c58f4a4fbc0495 baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_PositionCommandMine
+0b2576718a9a2fed5cbb8a82bd01982a baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_ProcessImage
 71b7bb06ee17e027ab0aa315b0659b94 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp
 71b7bb06ee17e027ab0aa315b0659b94 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_eus
 71b7bb06ee17e027ab0aa315b0659b94 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_lisp

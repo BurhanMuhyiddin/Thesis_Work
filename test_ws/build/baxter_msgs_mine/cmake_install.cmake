@@ -36,6 +36,7 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/baxter_msgs_mine/srv" TYPE FILE FILES
     "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/PositionCommandMine.srv"
     "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/CalculateIK.srv"
+    "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/ProcessImage.srv"
     )
 endif()
 

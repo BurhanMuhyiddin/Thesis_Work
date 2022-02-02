@@ -49,3 +49,6 @@ target_link_libraries(go_to_goal_server ${catkin_LIBRARIES})
 
 add_executable(calculate_ik_server src/calculate_ik_server.cpp)
 target_link_libraries(calculate_ik_server ${catkin_LIBRARIES})
+
+add_executable(image_processing_server src/image_processing_server.cpp)
+target_link_libraries(image_processing_server ${catkin_LIBRARIES})

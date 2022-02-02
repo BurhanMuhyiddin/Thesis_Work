@@ -3,12 +3,11 @@
 import rospy
 import smach
 from smach import State, StateMachine
-from smach_ros import SimpleActionState, IntrospectionServer
+from smach_ros import SimpleActionState
 
 from collections import OrderedDict
 
 import actionlib
-from actionlib import GoalStatus
 
 from geometry_msgs.msg import Pose, Point, Quaternion, Twist
 
