@@ -1,0 +1,8 @@
+prefix=/home/lar/ros/baxter_ws/install
+
+Name: baxter_ssh
+Description: Description of baxter_ssh
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
