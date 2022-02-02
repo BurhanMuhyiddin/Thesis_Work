@@ -24,7 +24,8 @@ class main():
         self.gtp_cl.wait_for_server(rospy.Duration(15))
 
         self.waypoints = list()
-        self.waypoints.append(Pose(Point(0.797655, 0.412112, 0.374372), Quaternion(-0.102185, 0.989582, 0.0104224, 0.10088))) 
+        self.waypoints.append(Pose(Point(0.823456, 0.293838, 0.376693), Quaternion(0.0287752, 0.994138, 0.0235979, 0.101508))) 
+        # self.waypoints.append(Pose(Point(0.797655, 0.412112, 0.374372), Quaternion(-0.102185, 0.989582, 0.0104224, 0.10088))) 
         self.waypoints.append(Pose(Point(0.712625, -0.091887, 0.335984), Quaternion(0.0983495, 0.989932, 0.030586, 0.0970911))) 
         self.waypoints.append(Pose(Point(0.760158, -0.0818765, 0.101024), Quaternion(0.0985908, 0.989925, 0.0304949, 0.0969431)))
         self.waypoints.append(Pose(Point(0.624597, 0.777129, 0.354848), Quaternion(-0.10181, 0.98961, 0.0104501, 0.100985)))

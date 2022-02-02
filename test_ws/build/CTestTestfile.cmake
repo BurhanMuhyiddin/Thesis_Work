@@ -7,5 +7,5 @@
 subdirs(gtest)
 subdirs(baxter_description)
 subdirs(rethink_ee_description)
-subdirs(baxter_control_mine)
 subdirs(baxter_msgs_mine)
+subdirs(baxter_control_mine)
