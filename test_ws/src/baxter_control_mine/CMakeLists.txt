@@ -17,14 +17,17 @@ find_package(catkin REQUIRED COMPONENTS
   moveit_visual_tools
   rviz_visual_tools
   baxter_core_msgs
+  cv_bridge
+  image_transport
 )
 
 find_package(Eigen3 REQUIRED)
+find_package(OpenCV REQUIRED)
 
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES baxter_control_mine
-#  CATKIN_DEPENDS roscpp rospy std_msgs
+  CATKIN_DEPENDS roscpp rospy std_msgs cv_bridge image_transport sensor_msgs
 #  DEPENDS system_lib
 )
 
@@ -52,3 +55,6 @@ target_link_libraries(calculate_ik_server ${catkin_LIBRARIES})
 
 add_executable(image_processing_server src/image_processing_server.cpp)
 target_link_libraries(image_processing_server ${catkin_LIBRARIES})
+
+add_executable(stream_from_camera src/stream_from_camera.cpp)
+target_link_libraries(stream_from_camera ${OpenCV_LIBS} ${catkin_LIBRARIES})

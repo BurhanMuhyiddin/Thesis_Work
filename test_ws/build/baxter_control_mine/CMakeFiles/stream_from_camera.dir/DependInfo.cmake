@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/lar/ros/test_ws/src/baxter_control_mine/src/rviz_to_rrobot.cpp" "/home/lar/ros/test_ws/build/baxter_control_mine/CMakeFiles/rviz_converter_node.dir/src/rviz_to_rrobot.cpp.o"
+  "/home/lar/ros/test_ws/src/baxter_control_mine/src/stream_from_camera.cpp" "/home/lar/ros/test_ws/build/baxter_control_mine/CMakeFiles/stream_from_camera.dir/src/stream_from_camera.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
