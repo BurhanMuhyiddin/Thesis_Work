@@ -1,8 +1,0 @@
-prefix=/home/lar/ros/baxter_ws/install
-
-Name: baxter_state_publisher
-Description: Description of baxter_state_publisher
-Version: 1.10.2
-Cflags: -I${prefix}/include -I/opt/ros/kinetic/share/orocos_kdl/../../include -I/usr/include/eigen3
-Libs: -L${prefix}/lib -lbaxter_state_publisher_solver /opt/ros/kinetic/lib/liborocos-kdl.so.1.3.2
-Requires: roscpp rosconsole rostime tf tf_conversions kdl_parser
