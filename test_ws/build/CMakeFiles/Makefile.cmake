@@ -400,7 +400,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_eus.dir/DependInfo.cmake"
   "baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_geneus.dir/DependInfo.cmake"
   "baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_lisp.dir/DependInfo.cmake"
-  "baxter_control_mine/CMakeFiles/stream_from_camera.dir/DependInfo.cmake"
   "baxter_control_mine/CMakeFiles/calculate_ik_server.dir/DependInfo.cmake"
   "baxter_control_mine/CMakeFiles/test_node.dir/DependInfo.cmake"
   "baxter_control_mine/CMakeFiles/rviz_converter_node.dir/DependInfo.cmake"

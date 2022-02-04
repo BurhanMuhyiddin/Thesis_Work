@@ -23,9 +23,15 @@ class main():
         self.gtp_cl = actionlib.SimpleActionClient("/go_to_goal", GoToPointAction)
         self.gtp_cl.wait_for_server(rospy.Duration(15))
 
+        self.image_sub = rospy.Subscriber("/cameras/left_hand_camera/image",Image,self.image_clb)
+
+        self.current_image = None
+
+        self.extracted_features = []
+
         self.waypoints = list()
-        self.waypoints.append(Pose(Point(0.823456, 0.293838, 0.376693), Quaternion(0.0287752, 0.994138, 0.0235979, 0.101508))) 
-        # self.waypoints.append(Pose(Point(0.797655, 0.412112, 0.374372), Quaternion(-0.102185, 0.989582, 0.0104224, 0.10088))) 
+        self.waypoints.append(Pose(Point(0.821231, 0.238061, 0.369946), Quaternion(0.0411739, 0.994043, 0.0261063, 0.0974731)))
+        # self.waypoints.append(Pose(Point(0.823456, 0.293838, 0.376693), Quaternion(0.0287752, 0.994138, 0.0235979, 0.101508))) 
         self.waypoints.append(Pose(Point(0.712625, -0.091887, 0.335984), Quaternion(0.0983495, 0.989932, 0.030586, 0.0970911))) 
         self.waypoints.append(Pose(Point(0.760158, -0.0818765, 0.101024), Quaternion(0.0985908, 0.989925, 0.0304949, 0.0969431)))
         self.waypoints.append(Pose(Point(0.624597, 0.777129, 0.354848), Quaternion(-0.10181, 0.98961, 0.0104501, 0.100985)))
@@ -55,7 +61,10 @@ class main():
                                     transitions={'succeeded' : 'PROCESS_IMAGE', 'preempted' : '', 'aborted' : ''}, 
                                     remapping={'grabbed_image' : 'img_data', 'reset' : 'grab_data'})
 
-            smach.StateMachine.add('PROCESS_IMAGE', smach_ros.ServiceState('/process_img', ProcessImage, request_cb = self.get_image_cb, input_keys=['img_to_be_processed']), 
+            smach.StateMachine.add('PROCESS_IMAGE', smach_ros.ServiceState('/process_img', ProcessImage, 
+                                    request_cb = self.get_image_cb,
+                                    response_cb = self.process_image_result_cb, 
+                                    input_keys=['img_to_be_processed']), 
                                     transitions={'succeeded' : 'PICK_POSITION'}, 
                                     remapping={'img_to_be_processed' : 'img_data'})
 
@@ -84,6 +93,14 @@ class main():
 
         rospy.spin()
 
+    def image_clb(self, data):
+        self.current_image = data # update current image regularly
+
+    def process_image_result_cb(self, ud, result):
+        # get extracted features from result
+        self.extracted_features = result.extracted_features
+        rospy.loginfo(self.extracted_features)
+
     def get_image_cb(self, ud, request):
             # subscribe to the topic that publishes image and send it as a request
             # img_to_be_processed = ProcessImageRequest()
@@ -97,12 +114,14 @@ class main():
         if status == actionlib.GoalStatus.SUCCEEDED:
             # take picture (I simulate it by creating new image for now)
             # send picture to process image service state
-            image = Image()
-            image.width = 2
-            image.height = 2
-            image.data = [255, 255, 255, 255]
+            # image = Image()
+            # image.width = 2
+            # image.height = 2
+            # image.data = [255, 255, 255, 255]
 
-            ud.grabbed_image = image
+            while self.current_image is None: # loop until you get valid image
+                continue
+            ud.grabbed_image = self.current_image
             ud.reset = False
 
             rospy.sleep(1.0)

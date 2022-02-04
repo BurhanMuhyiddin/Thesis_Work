@@ -959,19 +959,6 @@ baxter_msgs_mine_generate_messages_lisp/fast:
 .PHONY : baxter_msgs_mine_generate_messages_lisp/fast
 
 #=============================================================================
-# Target rules for targets named stream_from_camera
-
-# Build rule for target.
-stream_from_camera: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 stream_from_camera
-.PHONY : stream_from_camera
-
-# fast build rule for target.
-stream_from_camera/fast:
-	$(MAKE) -f baxter_control_mine/CMakeFiles/stream_from_camera.dir/build.make baxter_control_mine/CMakeFiles/stream_from_camera.dir/build
-.PHONY : stream_from_camera/fast
-
-#=============================================================================
 # Target rules for targets named calculate_ik_server
 
 # Build rule for target.
@@ -1864,7 +1851,6 @@ help:
 	@echo "... baxter_msgs_mine_generate_messages_eus"
 	@echo "... baxter_msgs_mine_geneus"
 	@echo "... baxter_msgs_mine_generate_messages_lisp"
-	@echo "... stream_from_camera"
 	@echo "... calculate_ik_server"
 	@echo "... test_node"
 	@echo "... rviz_converter_node"

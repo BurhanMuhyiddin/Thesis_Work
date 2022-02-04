@@ -105,7 +105,6 @@
 /home/lar/ros/test_ws/build/baxter_control_mine/CMakeFiles/install.dir
 /home/lar/ros/test_ws/build/baxter_control_mine/CMakeFiles/edit_cache.dir
 /home/lar/ros/test_ws/build/baxter_control_mine/CMakeFiles/install/strip.dir
-/home/lar/ros/test_ws/build/baxter_control_mine/CMakeFiles/stream_from_camera.dir
 /home/lar/ros/test_ws/build/baxter_control_mine/CMakeFiles/calculate_ik_server.dir
 /home/lar/ros/test_ws/build/baxter_control_mine/CMakeFiles/test_node.dir
 /home/lar/ros/test_ws/build/baxter_control_mine/CMakeFiles/rviz_converter_node.dir

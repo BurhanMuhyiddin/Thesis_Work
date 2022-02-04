@@ -2232,7 +2232,6 @@ clean: baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_lisp.dir/c
 # Directory level rules for directory baxter_control_mine
 
 # Convenience name for "all" pass in the directory.
-baxter_control_mine/all: baxter_control_mine/CMakeFiles/stream_from_camera.dir/all
 baxter_control_mine/all: baxter_control_mine/CMakeFiles/calculate_ik_server.dir/all
 baxter_control_mine/all: baxter_control_mine/CMakeFiles/test_node.dir/all
 baxter_control_mine/all: baxter_control_mine/CMakeFiles/rviz_converter_node.dir/all
@@ -2243,7 +2242,6 @@ baxter_control_mine/all: baxter_control_mine/CMakeFiles/image_processing_server.
 .PHONY : baxter_control_mine/all
 
 # Convenience name for "clean" pass in the directory.
-baxter_control_mine/clean: baxter_control_mine/CMakeFiles/stream_from_camera.dir/clean
 baxter_control_mine/clean: baxter_control_mine/CMakeFiles/calculate_ik_server.dir/clean
 baxter_control_mine/clean: baxter_control_mine/CMakeFiles/test_node.dir/clean
 baxter_control_mine/clean: baxter_control_mine/CMakeFiles/rviz_converter_node.dir/clean
@@ -2316,43 +2314,6 @@ baxter_control_mine/preinstall:
 .PHONY : baxter_control_mine/preinstall
 
 #=============================================================================
-# Target rules for target baxter_control_mine/CMakeFiles/stream_from_camera.dir
-
-# All Build rule for target.
-baxter_control_mine/CMakeFiles/stream_from_camera.dir/all:
-	$(MAKE) -f baxter_control_mine/CMakeFiles/stream_from_camera.dir/build.make baxter_control_mine/CMakeFiles/stream_from_camera.dir/depend
-	$(MAKE) -f baxter_control_mine/CMakeFiles/stream_from_camera.dir/build.make baxter_control_mine/CMakeFiles/stream_from_camera.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=75,76 "Built target stream_from_camera"
-.PHONY : baxter_control_mine/CMakeFiles/stream_from_camera.dir/all
-
-# Include target in all.
-all: baxter_control_mine/CMakeFiles/stream_from_camera.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-baxter_control_mine/CMakeFiles/stream_from_camera.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/stream_from_camera.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lar/ros/test_ws/build/CMakeFiles 0
-.PHONY : baxter_control_mine/CMakeFiles/stream_from_camera.dir/rule
-
-# Convenience name for target.
-stream_from_camera: baxter_control_mine/CMakeFiles/stream_from_camera.dir/rule
-
-.PHONY : stream_from_camera
-
-# clean rule for target.
-baxter_control_mine/CMakeFiles/stream_from_camera.dir/clean:
-	$(MAKE) -f baxter_control_mine/CMakeFiles/stream_from_camera.dir/build.make baxter_control_mine/CMakeFiles/stream_from_camera.dir/clean
-.PHONY : baxter_control_mine/CMakeFiles/stream_from_camera.dir/clean
-
-# clean rule for target.
-clean: baxter_control_mine/CMakeFiles/stream_from_camera.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
 # Target rules for target baxter_control_mine/CMakeFiles/calculate_ik_server.dir
 
 # All Build rule for target.
@@ -2396,7 +2357,7 @@ clean: baxter_control_mine/CMakeFiles/calculate_ik_server.dir/clean
 baxter_control_mine/CMakeFiles/test_node.dir/all:
 	$(MAKE) -f baxter_control_mine/CMakeFiles/test_node.dir/build.make baxter_control_mine/CMakeFiles/test_node.dir/depend
 	$(MAKE) -f baxter_control_mine/CMakeFiles/test_node.dir/build.make baxter_control_mine/CMakeFiles/test_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=77,78 "Built target test_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=75,76 "Built target test_node"
 .PHONY : baxter_control_mine/CMakeFiles/test_node.dir/all
 
 # Include target in all.

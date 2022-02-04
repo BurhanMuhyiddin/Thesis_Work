@@ -9,7 +9,7 @@
 class RvizToRobot
 {
 public:
-    RvizToRobot(const float &timeout) : desired_timeout(timeout), spinner(2)
+    RvizToRobot(const float &timeout) : spinner(2)
     {
         spinner.start();
 
@@ -21,9 +21,7 @@ public:
         sub_check_status = nh.subscribe("/move_group/status", 10, &RvizToRobot::check_status_cb, this);
         sub_joint_state = nh.subscribe("/move_group/fake_controller_joint_states", 10, &RvizToRobot::get_joint_states_fake_cb, this);
 
-        std_msgs::Float64 timeout_msg;
-        timeout_msg.data = desired_timeout;
-        joint_command_timeout_pub.publish(timeout_msg);
+        timeout_msg.data = timeout;
 
         ROS_INFO("RvizToRobot: Timeout has been set. Ready to accept commands...");
     }
@@ -37,7 +35,6 @@ public:
     void get_joint_states_fake_cb(const sensor_msgs::JointState &msg);
 
 private:
-    const float desired_timeout;
     bool flag = false;
 
     ros::NodeHandle nh;
@@ -46,12 +43,15 @@ private:
     ros::Subscriber sub_check_status;
     ros::Publisher left_pub;
     ros::Publisher joint_command_timeout_pub;
+    std_msgs::Float64 timeout_msg;
 };
 
 void RvizToRobot::check_status_cb(const actionlib_msgs::GoalStatusArray &msg)
 {
     if (!msg.status_list.empty())
     {
+        joint_command_timeout_pub.publish(timeout_msg);
+
         if(!flag)
         {
             flag = true;

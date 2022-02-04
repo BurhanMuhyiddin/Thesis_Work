@@ -166,21 +166,6 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-baxter_control_mine/CMakeFiles/stream_from_camera.dir/rule:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/stream_from_camera.dir/rule
-.PHONY : baxter_control_mine/CMakeFiles/stream_from_camera.dir/rule
-
-# Convenience name for target.
-stream_from_camera: baxter_control_mine/CMakeFiles/stream_from_camera.dir/rule
-
-.PHONY : stream_from_camera
-
-# fast build rule for target.
-stream_from_camera/fast:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_control_mine/CMakeFiles/stream_from_camera.dir/build.make baxter_control_mine/CMakeFiles/stream_from_camera.dir/build
-.PHONY : stream_from_camera/fast
-
-# Convenience name for target.
 baxter_control_mine/CMakeFiles/calculate_ik_server.dir/rule:
 	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/calculate_ik_server.dir/rule
 .PHONY : baxter_control_mine/CMakeFiles/calculate_ik_server.dir/rule
@@ -1260,33 +1245,6 @@ src/rviz_to_rrobot.cpp.s:
 	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_control_mine/CMakeFiles/rviz_converter_node.dir/build.make baxter_control_mine/CMakeFiles/rviz_converter_node.dir/src/rviz_to_rrobot.cpp.s
 .PHONY : src/rviz_to_rrobot.cpp.s
 
-src/stream_from_camera.o: src/stream_from_camera.cpp.o
-
-.PHONY : src/stream_from_camera.o
-
-# target to build an object file
-src/stream_from_camera.cpp.o:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_control_mine/CMakeFiles/stream_from_camera.dir/build.make baxter_control_mine/CMakeFiles/stream_from_camera.dir/src/stream_from_camera.cpp.o
-.PHONY : src/stream_from_camera.cpp.o
-
-src/stream_from_camera.i: src/stream_from_camera.cpp.i
-
-.PHONY : src/stream_from_camera.i
-
-# target to preprocess a source file
-src/stream_from_camera.cpp.i:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_control_mine/CMakeFiles/stream_from_camera.dir/build.make baxter_control_mine/CMakeFiles/stream_from_camera.dir/src/stream_from_camera.cpp.i
-.PHONY : src/stream_from_camera.cpp.i
-
-src/stream_from_camera.s: src/stream_from_camera.cpp.s
-
-.PHONY : src/stream_from_camera.s
-
-# target to generate assembly for a file
-src/stream_from_camera.cpp.s:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_control_mine/CMakeFiles/stream_from_camera.dir/build.make baxter_control_mine/CMakeFiles/stream_from_camera.dir/src/stream_from_camera.cpp.s
-.PHONY : src/stream_from_camera.cpp.s
-
 src/test_service.o: src/test_service.cpp.o
 
 .PHONY : src/test_service.o
@@ -1324,7 +1282,6 @@ help:
 	@echo "... install"
 	@echo "... edit_cache"
 	@echo "... install/strip"
-	@echo "... stream_from_camera"
 	@echo "... calculate_ik_server"
 	@echo "... test_node"
 	@echo "... rviz_converter_node"
@@ -1406,9 +1363,6 @@ help:
 	@echo "... src/rviz_to_rrobot.o"
 	@echo "... src/rviz_to_rrobot.i"
 	@echo "... src/rviz_to_rrobot.s"
-	@echo "... src/stream_from_camera.o"
-	@echo "... src/stream_from_camera.i"
-	@echo "... src/stream_from_camera.s"
 	@echo "... src/test_service.o"
 	@echo "... src/test_service.i"
 	@echo "... src/test_service.s"

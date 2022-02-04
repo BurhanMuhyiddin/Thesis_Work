@@ -4,7 +4,9 @@
 
     <node name="smach_viewer" pkg="smach_viewer" type="smach_viewer.py"/>
 
-    <node name="image_processing_server" pkg="baxter_control_mine" type="image_processing_server" output="screen"/>
+    <!-- <node name="image_processing_server" pkg="baxter_control_mine" type="image_processing_server" output="screen"/> -->
+
+    <node name="process_image_server" pkg="baxter_control_mine" type="process_image_server.py"/>
 
     <node name="baxter_fsm" pkg="baxter_control_mine" type="baxter_fsm.py" output="screen"/>
 
