@@ -124,7 +124,7 @@ class main():
             ud.grabbed_image = self.current_image
             ud.reset = False
 
-            rospy.sleep(1.0)
+            rospy.sleep(2.0)
 
     # def work_state_clb(self, ud, status, result):
     #     if status == actionlib.GoalStatus.SUCCEEDED:

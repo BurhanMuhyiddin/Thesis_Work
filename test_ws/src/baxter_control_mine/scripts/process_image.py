@@ -25,11 +25,16 @@ class image_converter:
         except CvBridgeError as e:
             print(e)
 
-        diff = cv_image - self.background
+        img1 = cv2.GaussianBlur(cv_image, (5, 5), 0)
+        img2 = cv2.GaussianBlur(self.background, (5, 5), 0)
+
+        # diff = cv_image - self.background
+
+        diff = np.abs(img1 - img2)
 
         gray_img = cv2.cvtColor(diff, cv2.COLOR_BGR2GRAY)
 
-        gray_img = cv2.GaussianBlur(gray_img,(5,5),0)
+        # gray_img = cv2.GaussianBlur(gray_img,(5,5),0)
 
         # thresholded_img = cv2.adaptiveThreshold(gray_img, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY,7, 11)
         _, thresholded_img = cv2.threshold(gray_img,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)

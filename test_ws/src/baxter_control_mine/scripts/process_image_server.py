@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 
-from concurrent.futures import process
 import rospy
 import cv2
-from cv_bridge import CvBridge, CvBridgeError
+from cv_bridge import CvBridge
+from image_geometry import PinholeCameraModel
 import numpy as np
 
-from sensor_msgs.msg import Image
+from sensor_msgs.msg import CameraInfo
 
 from baxter_msgs_mine.srv import ProcessImage, ProcessImageResponse
 
@@ -16,19 +16,32 @@ class ProcessImageSrv:
 
         self.bridge = CvBridge()
 
+        self.cam_model = PinholeCameraModel()
+
         self.process_img_server = rospy.Service('/process_img', ProcessImage, self.process_image_clb)
+        
+        self.cam_info_sub = rospy.Subscriber("/cameras/left_hand_camera/camera_info", CameraInfo, self.cam_info_clb)
+
+        self.cam_info = None
+
         rospy.loginfo("ProcessImage server has been initiated...")
 
         self.background = cv2.imread("/home/lar/Desktop/background.png")
 
+    def cam_info_clb(self, data):
+        self.cam_info = data
+
     def process_image_clb(self, req):
         cv_image = self.bridge.imgmsg_to_cv2(req.img, "bgr8")
 
-        diff = cv_image - self.background
+        img1 = cv2.GaussianBlur(cv_image, (5, 5), 0)
+        img2 = cv2.GaussianBlur(self.background, (5, 5), 0)
+
+        diff = np.abs(img1 - img2)
 
         gray_img = cv2.cvtColor(diff, cv2.COLOR_BGR2GRAY)
 
-        gray_img = cv2.GaussianBlur(gray_img,(5,5),0)
+        # gray_img = cv2.GaussianBlur(gray_img,(5,5),0)
 
         _, thresholded_img = cv2.threshold(gray_img,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)
         
@@ -49,7 +62,7 @@ class ProcessImageSrv:
         extracted_features = []
 
         for contour in contours:
-            if cv2.contourArea(contour) > 200 and cv2.contourArea(contour) < 1000:
+            if cv2.contourArea(contour) > 200 and cv2.contourArea(contour) < 2000:
                 mask = np.zeros(cv_image.shape[:2], np.uint8)
                 cv2.drawContours(mask, [contour], -1, (255, 255, 255), thickness=cv2.FILLED)
                 mean_img = cv2.mean(cv_image, mask=mask)
@@ -66,6 +79,19 @@ class ProcessImageSrv:
                         extracted_features.append(cy)
 
                         break
+
+        cx = int(extracted_features[0])
+        cy = int(extracted_features[1])
+
+        while (self.cam_info == None):
+            continue
+
+        self.cam_model.fromCameraInfo(self.cam_info)
+
+        res = self.cam_model.projectPixelTo3dRay((cx, cy))
+
+        extracted_features.append(res(0))
+        extracted_features.append(res(1))
 
         return ProcessImageResponse(extracted_features=extracted_features, success=True)
         
