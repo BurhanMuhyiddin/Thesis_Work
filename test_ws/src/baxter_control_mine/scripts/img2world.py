@@ -32,13 +32,17 @@ class IMG2WORLD:
 
         self.cam_info = None
 
-        self.desiredPix = (520, 200)
+        self.desiredPix = (581, 323)
 
         self.sf = "left_hand_camera_axis"
         self.tf = "base"
 
         self.tf_buffer = tf2_ros.Buffer(rospy.Duration(100.0))  # tf buffer length
         self.tf_listener = tf2_ros.TransformListener(self.tf_buffer)
+
+        self.table_dist = -0.1538229
+
+        self.flag = False
 
         self.rate = rospy.Rate(1.0)
 
@@ -54,27 +58,20 @@ class IMG2WORLD:
         if self.cam_info != None:
             self.cam_model.fromCameraInfo(self.cam_info)
 
-            res = list(self.cam_model.projectPixelTo3dRay(self.desiredPix))
-            # res[:] = [x / res[2] for x in res]
-
-            # # print(res)
-
-            x = res[0]
-            y = res[1]
-            z = 0.335984
-
             try:
 
                 transform = self.tf_buffer.lookup_transform(self.tf, self.sf, rospy.Time(0))
 
+                depth = abs(transform.transform.translation.z - self.table_dist)
+
                 # gl = Pose(Point(x, y, z), Quaternion(0.0983495, 0.989932, 0.030586, 0.0970911))
 
-                ps = PointStamped()
-                ps.header.stamp = rospy.Time(0)
-                ps.header.frame_id = 'left_hand_camera_axis'
-                ps.point.x = x
-                ps.point.y = y
-                ps.point.z = z
+                # ps = PointStamped()
+                # ps.header.stamp = rospy.Time(0)
+                # ps.header.frame_id = 'left_hand_camera_axis'
+                # ps.point.x = x
+                # ps.point.y = y
+                # ps.point.z = z
 
 
 
@@ -85,26 +82,60 @@ class IMG2WORLD:
                 # goal_stamped.pose = gl
 
 
+                # point_transformed = tf2_geometry_msgs.do_transform_point(ps, transform)
+                # pp = Pose()
+                # pp.position.x = ps.point.x
+                # pp.position.y = ps.point.y 
+                # pp.position.z = z
+                # pp.orientation.x = 0.0411739
+                # pp.orientation.y = 0.994043
+                # pp.orientation.z = 0.0261063
+                # pp.orientation.w = 0.0974731
+                # print(pp)
+
+                px = self.desiredPix[0]
+                py = self.desiredPix[1]
+
+                cx = self.cam_model.cx()
+                cy = self.cam_model.cy()
+                fx = self.cam_model.fx()
+                fy = self.cam_model.fy()
+
+                x = depth * (px - cx) / fx
+                y = depth * (py - cy) / fy
+                z = depth
+
+                print((x, y, z))
+
+                ps = PointStamped()
+                ps.header.stamp = rospy.Time(0)
+                ps.header.frame_id = 'left_hand_camera_axis'
+                ps.point.x = x
+                ps.point.y = y
+                ps.point.z = 0.0612
+
                 point_transformed = tf2_geometry_msgs.do_transform_point(ps, transform)
                 pp = Pose()
                 pp.position.x = ps.point.x
-                pp.position.y = ps.point.y
-                pp.position.z = ps.point.z
-                pp.orientation.x = 0
-                pp.orientation.y = 0
-                pp.orientation.z = 0
-                pp.orientation.w = 1.0
-                print(pp)
+                pp.position.y = ps.point.y 
+                pp.position.z = 0.0612
+                pp.orientation.x = 0.0411739
+                pp.orientation.y = 0.994043
+                pp.orientation.z = 0.0261063
+                pp.orientation.w = 0.0974731
+                # print(pp)
+                if not self.flag:
+                    self.gtp_cl.send_goal(GoToPointGoal(pp))
 
-                self.gtp_cl.send_goal(GoToPointGoal(pp))
+                    self.gtp_cl.wait_for_result()
 
-                self.gtp_cl.wait_for_result()
+                    self.flag = True
             except (tf2_ros.LookupException, tf2_ros.ConnectivityException, tf2_ros.ExtrapolationException):
                 self.rate.sleep()
                 pass
 
-        cv2.imshow("mouseRGB", cv_image)
-        cv2.waitKey(3)
+        # cv2.imshow("mouseRGB", cv_image)
+        # cv2.waitKey(3)
 
 def main():
     rospy.init_node('image_converter')
