@@ -68,14 +68,14 @@ class main():
                                     transitions={'succeeded' : 'PICK_POSITION'}, 
                                     remapping={'img_to_be_processed' : 'img_data'})
 
-            smach.StateMachine.add('PICK_POSITION', SimpleActionState("/go_to_goal", GoToPointAction, goal=GoToPointGoal(self.pose_points['pick_pos']),
+            smach.StateMachine.add('PICK_POSITION', SimpleActionState("/go_to_goal", GoToPointAction, goal=self.pick_pos_goal_clb,
                                                                                             outcomes=['succeeded', 'preempted', 'aborted', 'grasped'],
                                                                                             result_cb=self.pick_position_state_clb,
                                                                                             input_keys=['is_grasp']),
                                     transitions={'succeeded' : 'APPROACH', 'preempted' : '', 'aborted' : '', 'grasped' : 'TABLE_TOP'},
                                     remapping={'is_grasp' : 'grab_data'})
 
-            smach.StateMachine.add('APPROACH', SimpleActionState("/go_to_goal", GoToPointAction, goal=GoToPointGoal(self.pose_points['app_pick']),
+            smach.StateMachine.add('APPROACH', SimpleActionState("/go_to_goal", GoToPointAction, goal=self.approach_pos_goal_clb,
                                                                                             outcomes=['succeeded', 'preempted', 'aborted'],
                                                                                             result_cb=self.approach_state_clb),
                                     transitions={'succeeded' : 'GRASP', 'preempted' : '', 'aborted' : ''})
@@ -92,6 +92,25 @@ class main():
         outcome = sm.execute()
 
         rospy.spin()
+
+    def pick_pos_goal_clb(self, ud, goal):
+        pp = self.pose_points['work']
+        pp.position.x = self.extracted_features[0]
+        pp.position.y = self.extracted_features[1] 
+
+        return pp
+
+    def approach_pos_goal_clb(self, ud, goal):
+        ap = Pose()
+        ap.position.x = self.extracted_features[0]
+        ap.position.y = self.extracted_features[1] 
+        ap.position.z = 0.0012
+        ap.orientation.x = 0.017546
+        ap.orientation.y = 0.994616
+        ap.orientation.z = 0.0223233
+        ap.orientation.w = 0.0996664
+
+        return ap
 
     def image_clb(self, data):
         self.current_image = data # update current image regularly

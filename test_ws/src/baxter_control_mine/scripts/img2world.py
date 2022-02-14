@@ -56,7 +56,7 @@ class IMG2WORLD:
 
         if self.cam_info != None:
             self.cam_model.fromCameraInfo(self.cam_info)
-
+            
             try:
                 transform = self.tf_buffer.lookup_transform(self.tf, self.sf, rospy.Time(0))
 
@@ -72,15 +72,15 @@ class IMG2WORLD:
 
                 # K = self.cam_model.intrinsicMatrix()
 
-                cx = self.cam_model.cx()
-                cy = self.cam_model.cy()
-                fx = self.cam_model.fx()
-                fy = self.cam_model.fy()
-                
                 # cx = K[0,2]
                 # cy = K[1,2]
                 # fx = K[0,0]
                 # fy = K[1,1]
+
+                cx = self.cam_model.cx()
+                cy = self.cam_model.cy()
+                fx = self.cam_model.fx()
+                fy = self.cam_model.fy()
 
                 x = depth * (px - cx) / fx
                 y = depth * (py - cy) / fy
