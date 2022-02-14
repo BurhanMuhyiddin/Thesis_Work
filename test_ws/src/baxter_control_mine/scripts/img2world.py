@@ -31,7 +31,7 @@ class IMG2WORLD:
 
         self.cam_info = None
 
-        self.desiredPix = (277, 381)
+        self.desiredPix = (347, 393)
 
         self.sf = "left_hand_camera"
         self.tf = "base"
@@ -58,7 +58,6 @@ class IMG2WORLD:
             self.cam_model.fromCameraInfo(self.cam_info)
 
             try:
-
                 transform = self.tf_buffer.lookup_transform(self.tf, self.sf, rospy.Time(0))
 
                 depth = abs(transform.transform.translation.z - self.table_dist)
@@ -66,14 +65,22 @@ class IMG2WORLD:
                 px = self.desiredPix[0]
                 py = self.desiredPix[1]
 
-                #try to include distortion also
+                res = self.cam_model.rectifyPoint(self.desiredPix)
 
-                K = self.cam_model.intrinsicMatrix()
+                px = res[0]
+                py = res[1]
+
+                # K = self.cam_model.intrinsicMatrix()
+
+                cx = self.cam_model.cx()
+                cy = self.cam_model.cy()
+                fx = self.cam_model.fx()
+                fy = self.cam_model.fy()
                 
-                cx = K[0,2]
-                cy = K[1,2]
-                fx = K[0,0]
-                fy = K[1,1]
+                # cx = K[0,2]
+                # cy = K[1,2]
+                # fx = K[0,0]
+                # fy = K[1,1]
 
                 x = depth * (px - cx) / fx
                 y = depth * (py - cy) / fy
@@ -90,7 +97,7 @@ class IMG2WORLD:
                 pp = Pose()
                 pp.position.x = point_transformed.point.x
                 pp.position.y = point_transformed.point.y 
-                pp.position.z = 0.0612
+                pp.position.z = 0.0012
                 pp.orientation.x = 0.017546
                 pp.orientation.y = 0.994616
                 pp.orientation.z = 0.0223233
