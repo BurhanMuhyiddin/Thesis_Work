@@ -12,8 +12,12 @@ class image_converter:
 
         self.image_sub = rospy.Subscriber("/cameras/left_hand_camera/image",Image,self.callback)
 
-        # get background image
-        self.background = cv2.imread("/home/lar/Desktop/background.png")
+        self.low_H = 57
+        self.low_S = 0
+        self.low_V = 0
+        self.high_H = 132
+        self.high_S = 255
+        self.high_V = 255
 
     def callback(self,data):
         try:
@@ -21,14 +25,45 @@ class image_converter:
         except CvBridgeError as e:
             print(e)
 
-        img1 = cv2.GaussianBlur(cv_image, (5, 5), 0)
-        img2 = cv2.GaussianBlur(self.background, (5, 5), 0)
+        hsv_img = cv2.cvtColor(cv_image, cv2.COLOR_BGR2HSV)
+        hsv_img = cv2.GaussianBlur(hsv_img, (5, 5), 0)
+        thresholded_img = cv2.inRange(hsv_img, (self.low_H, self.low_S, self.low_V), (self.high_H, self.high_S, self.high_V))
+        
+        gray_img = cv2.cvtColor(hsv_img, cv2.COLOR_BGR2GRAY)
+        gray_img = cv2.GaussianBlur(gray_img, (5, 5), 0)
+        _, thresholded_img_otsu = cv2.threshold(gray_img,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)
+        thresholded_img_otsu = cv2.bitwise_not(thresholded_img_otsu)
 
-        # diff = cv_image - self.background
+        thresholded_img = cv2.bitwise_or(thresholded_img,thresholded_img_otsu)
 
-        diff = np.abs(img1 - img2)
+        kernel = cv2.getStructuringElement(cv2.MORPH_RECT,(3,3))
 
-        cv2.imshow("Diff window", diff)
+        thresholded_img = cv2.erode(thresholded_img, kernel, iterations=3)
+
+        thresholded_img = cv2.dilate(thresholded_img, kernel, iterations=3)
+
+        thresholded_img = cv2.bitwise_not(thresholded_img)
+
+        _, contours, _ = cv2.findContours(image=thresholded_img, mode=cv2.RETR_TREE, method=cv2.CHAIN_APPROX_NONE)
+
+        for contour in contours:
+            if cv2.contourArea(contour) > 500 and cv2.contourArea(contour) < 2000:
+                cv2.drawContours(cv_image, [contour], -1, (255, 255, 255), thickness=cv2.FILLED)
+                    
+                # if mean_img[0] < 100.0 and mean_img[1] < 100.0 and mean_img[2] < 100.0 and cv2.arcLength(contour,True) < 300:
+                #     M = cv2.moments(contour)
+                #     if M['m00'] != 0:
+                #         # cx = int(M['m10']/M['m00'])
+                #         # cy = int(M['m01']/M['m00'])
+
+                #         cx = M['m10']/M['m00']
+                #         cy = M['m01']/M['m00']
+
+                #         self.uv = (cx, cy)
+                #         break
+
+        # cv2.imshow("Diff window", diff)
+        cv2.imshow("Thresholded img", thresholded_img)
         cv2.imshow("Image window", cv_image)
         cv2.waitKey(3)
 
