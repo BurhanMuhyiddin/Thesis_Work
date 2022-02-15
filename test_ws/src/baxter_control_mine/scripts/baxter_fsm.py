@@ -38,6 +38,8 @@ class main():
 
         self.current_image = None
 
+        self.gripper_position = 0.0
+
         self.extracted_features = []
 
         self.waypoints = list()
@@ -60,36 +62,44 @@ class main():
         sm.userdata.img_data = Image()
 
         with sm:
+            
+            # change reset of grab_data from top to place state
 
             smach.StateMachine.add('TABLE_TOP', SimpleActionState("/go_to_goal", GoToPointAction, goal=GoToPointGoal(self.pose_points['work']), 
                                                                                             result_cb=self.table_top_result_cb,
-                                                                                            output_keys=['grabbed_image', 'reset']),
+                                                                                            output_keys=['grabbed_image']),
                                     transitions={'succeeded' : 'PROCESS_IMAGE', 'preempted' : '', 'aborted' : ''}, 
-                                    remapping={'grabbed_image' : 'img_data', 'reset' : 'grab_data'})
+                                    remapping={'grabbed_image' : 'img_data'})
 
-            smach.StateMachine.add('PROCESS_IMAGE', smach_ros.ServiceState('/process_img', ProcessImage, 
+            smach.StateMachine.add('PROCESS_IMAGE', smach_ros.ServiceState('/process_img', ProcessImage,
+                                    outcomes=['succeeded', 'grasped'],
                                     request_cb = self.get_image_cb,
                                     response_cb = self.process_image_result_cb,
-                                    input_keys=['img_to_be_processed']), 
-                                    transitions={'succeeded' : 'PICK_POSITION'}, 
-                                    remapping={'img_to_be_processed' : 'img_data'})
+                                    input_keys=['img_to_be_processed', 'is_grasp']), 
+                                    transitions={'succeeded' : 'PICK_POSITION', 'grasped' : 'PLACE_POSITION'}, 
+                                    remapping={'img_to_be_processed' : 'img_data', 'is_grasp' : 'grab_data'})
 
             smach.StateMachine.add('PICK_POSITION', SimpleActionState("/go_to_goal", GoToPointAction, goal_cb=self.pick_pos_goal_clb,
-                                                                                            outcomes=['succeeded', 'preempted', 'aborted', 'grasped'],
-                                                                                            result_cb=self.pick_position_state_clb,
-                                                                                            input_keys=['is_grasp']),
-                                    transitions={'succeeded' : 'APPROACH', 'preempted' : '', 'aborted' : '', 'grasped' : 'TABLE_TOP'},
-                                    remapping={'is_grasp' : 'grab_data'})
-
-            smach.StateMachine.add('APPROACH', SimpleActionState("/go_to_goal", GoToPointAction, goal_cb=self.approach_pos_goal_clb,
                                                                                             outcomes=['succeeded', 'preempted', 'aborted'],
-                                                                                            result_cb=self.approach_state_clb),
+                                                                                            result_cb=self.pick_pos_state_clb),
                                     transitions={'succeeded' : 'GRASP', 'preempted' : '', 'aborted' : ''})
+
 
             smach.StateMachine.add('GRASP', SimpleActionState("/robot/end_effector/left_gripper/gripper_action", GripperCommandAction, goal_cb=self.gripper_goal_cb, 
                                                                                             result_cb=self.grasp_state_clb,
                                                                                             output_keys=['grasped']), 
-                                    transitions={'succeeded' : 'PICK_POSITION', 'preempted' : '', 'aborted' : ''}, 
+                                    transitions={'succeeded' : 'TABLE_TOP', 'preempted' : '', 'aborted' : ''}, 
+                                    remapping={'grasped' : 'grab_data'})
+
+            smach.StateMachine.add('PLACE_POSITION', SimpleActionState("/go_to_goal", GoToPointAction, goal_cb=self.place_pos_goal_clb,
+                                                                                            outcomes=['succeeded', 'preempted', 'aborted'],
+                                                                                            result_cb=self.place_pos_state_clb),
+                                    transitions={'succeeded' : 'RELEASE', 'preempted' : '', 'aborted' : ''})
+
+            smach.StateMachine.add('RELEASE', SimpleActionState("/robot/end_effector/left_gripper/gripper_action", GripperCommandAction, goal_cb=self.gripper_goal_cb, 
+                                                                                            result_cb=self.release_state_clb,
+                                                                                            output_keys=['grasped']), 
+                                    transitions={'succeeded' : 'TABLE_TOP', 'preempted' : '', 'aborted' : ''}, 
                                     remapping={'grasped' : 'grab_data'})
 
         self.sis = smach_ros.IntrospectionServer('server_name', sm, '/SM_ROOT')
@@ -99,33 +109,42 @@ class main():
 
         rospy.spin()
 
-        # goal callbacks
+    # goal callbacks
 
     def gripper_goal_cb(self, ud, goal):
 
         gg = GripperCommandGoal()
-        gg.command.position = 20.0
+        gg.command.position = self.gripper_position
 
         return gg
 
     def pick_pos_goal_clb(self, ud, goal):
-        pp = self.pose_points['work']
+        pp = Pose()
         pp.position.x = self.extracted_features[0]
         pp.position.y = self.extracted_features[1] 
+        pp.position.z = 0.0060
+        pp.orientation.x = 0.017546
+        pp.orientation.y = 0.994616
+        pp.orientation.z = 0.0223233
+        pp.orientation.w = 0.0996664
+
+        self.gripper_position = 30.0
 
         return GoToPointGoal(pp)
 
-    def approach_pos_goal_clb(self, ud, goal):
-        ap = Pose()
-        ap.position.x = self.extracted_features[0]
-        ap.position.y = self.extracted_features[1] 
-        ap.position.z = 0.0060
-        ap.orientation.x = 0.017546
-        ap.orientation.y = 0.994616
-        ap.orientation.z = 0.0223233
-        ap.orientation.w = 0.0996664
+    def place_pos_goal_clb(self, ud, goal):
+        pp = Pose()
+        pp.position.x = self.extracted_features[0]
+        pp.position.y = self.extracted_features[1] 
+        pp.position.z = 0.0060
+        pp.orientation.x = 0.017546
+        pp.orientation.y = 0.994616
+        pp.orientation.z = 0.0223233
+        pp.orientation.w = 0.0996664
 
-        return GoToPointGoal(ap)
+        self.gripper_position = 100.0
+
+        return GoToPointGoal(pp)
 
     # subscriber callbacks
 
@@ -138,7 +157,12 @@ class main():
         # return img_to_be_processed
         im_req = ProcessImageRequest()
         im_req.img = ud.img_to_be_processed
-        im_req.color = "red"
+        if ud.is_grasp == False:
+            im_req.color = "red"
+        else:
+            im_req.color = "blue"
+
+        print(im_req.color)
 
         return im_req
 
@@ -147,6 +171,11 @@ class main():
     def process_image_result_cb(self, ud, result):
         # get extracted features from result
         self.extracted_features = result.extracted_features
+
+        if ud.is_grasp == False:
+            return 'succeeded'
+        else:
+            return 'grasped'
         # rospy.loginfo(self.extracted_features)
 
     def table_top_result_cb(self, ud, status, result):
@@ -154,35 +183,30 @@ class main():
             # take picture (I simulate it by creating new image for now)
             # send picture to process image service state
 
-            gripper_reset_goal = GripperCommandGoal()
-            gripper_reset_goal.command.position = 100.0
-            self.gripper_cl.send_goal(gripper_reset_goal)
-            self.gripper_cl.wait_for_result()
-
             while self.current_image is None: # loop until you get valid image
                 continue
             ud.grabbed_image = self.current_image
-            ud.reset = False
 
             rospy.sleep(2.0)
 
     # state callbacks
     
-    def pick_position_state_clb(self, ud, status, result):
+    def pick_pos_state_clb(self, ud, status, result):
         if status == actionlib.GoalStatus.SUCCEEDED:
             rospy.sleep(1.0)
-            if ud.is_grasp == True:
-                return 'grasped'
-            else:
-                return 'succeeded'
 
-    def approach_state_clb(self, ud, status, result):
+    def place_pos_state_clb(self, ud, status, result):
         if status == actionlib.GoalStatus.SUCCEEDED:
             rospy.sleep(1.0)
 
     def grasp_state_clb(self, ud, status, result):
         if status == actionlib.GoalStatus.SUCCEEDED:
             ud.grasped = True
+            rospy.sleep(1.0)
+
+    def release_state_clb(self, ud, status, result):
+        if status == actionlib.GoalStatus.SUCCEEDED:
+            ud.grasped = False
             rospy.sleep(1.0)
         
 if __name__ == '__main__':
