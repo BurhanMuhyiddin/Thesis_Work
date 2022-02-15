@@ -54,22 +54,12 @@ class main():
                 ('app_place', self.waypoints[4]))
 
         self.pose_points = OrderedDict(pose_points)
-
-        self.gripper_close_cmd = GripperCommandGoal()
-        self.gripper_close_cmd.command.position = 50.0 # close half
-        self.gripper_open_cmd = GripperCommandActionGoal()
-        self.gripper_open_cmd.goal.command.position = 0.0 # close half
         
         sm = smach.StateMachine(outcomes=['succeeded', 'preempted', 'aborted'])
         sm.userdata.grab_data = False
         sm.userdata.img_data = Image()
 
         with sm:
-            # smach.StateMachine.add('WORK', SimpleActionState("/go_to_goal", GoToPointAction, goal=GoToPointGoal(self.pose_points['work']), 
-            #                                                                                 result_cb=self.work_state_clb,
-            #                                                                                 output_keys=['reset']),
-            #                         transitions={'succeeded':'TABLE_TOP', 'aborted':'', 'preempted':''},
-            #                         remapping={'reset' : 'sm_data'})
 
             smach.StateMachine.add('TABLE_TOP', SimpleActionState("/go_to_goal", GoToPointAction, goal=GoToPointGoal(self.pose_points['work']), 
                                                                                             result_cb=self.table_top_result_cb,
@@ -79,7 +69,7 @@ class main():
 
             smach.StateMachine.add('PROCESS_IMAGE', smach_ros.ServiceState('/process_img', ProcessImage, 
                                     request_cb = self.get_image_cb,
-                                    response_cb = self.process_image_result_cb, 
+                                    response_cb = self.process_image_result_cb,
                                     input_keys=['img_to_be_processed']), 
                                     transitions={'succeeded' : 'PICK_POSITION'}, 
                                     remapping={'img_to_be_processed' : 'img_data'})
@@ -109,17 +99,14 @@ class main():
 
         rospy.spin()
 
+        # goal callbacks
+
     def gripper_goal_cb(self, ud, goal):
-        # hd = Header()
-        # g_id = GoalID()
-        # gg = GripperCommandGoal()
-        # gg.command.position = 50.0
 
         gg = GripperCommandGoal()
         gg.command.position = 20.0
 
         return gg
-
 
     def pick_pos_goal_clb(self, ud, goal):
         pp = self.pose_points['work']
@@ -140,31 +127,37 @@ class main():
 
         return GoToPointGoal(ap)
 
+    # subscriber callbacks
+
     def image_clb(self, data):
         self.current_image = data # update current image regularly
+
+    # request callbacks
+
+    def get_image_cb(self, ud, request):
+        # return img_to_be_processed
+        im_req = ProcessImageRequest()
+        im_req.img = ud.img_to_be_processed
+        im_req.color = "red"
+
+        return im_req
+
+    # result callbacks
 
     def process_image_result_cb(self, ud, result):
         # get extracted features from result
         self.extracted_features = result.extracted_features
-        rospy.loginfo(self.extracted_features)
-
-    def get_image_cb(self, ud, request):
-            # subscribe to the topic that publishes image and send it as a request
-            # img_to_be_processed = ProcessImageRequest()
-            # img_to_be_processed.img.height = 2
-            # img_to_be_processed.img.width = 2
-            # img_to_be_processed.img.data = [100, 250, 125, 63] # between 0-255
-            # return img_to_be_processed
-            return ud.img_to_be_processed
+        # rospy.loginfo(self.extracted_features)
 
     def table_top_result_cb(self, ud, status, result):
         if status == actionlib.GoalStatus.SUCCEEDED:
             # take picture (I simulate it by creating new image for now)
             # send picture to process image service state
-            # image = Image()
-            # image.width = 2
-            # image.height = 2
-            # image.data = [255, 255, 255, 255]
+
+            gripper_reset_goal = GripperCommandGoal()
+            gripper_reset_goal.command.position = 100.0
+            self.gripper_cl.send_goal(gripper_reset_goal)
+            self.gripper_cl.wait_for_result()
 
             while self.current_image is None: # loop until you get valid image
                 continue
@@ -173,14 +166,7 @@ class main():
 
             rospy.sleep(2.0)
 
-    # def work_state_clb(self, ud, status, result):
-    #     if status == actionlib.GoalStatus.SUCCEEDED:
-    #         ud.reset = False
-    #         rospy.sleep(1.0)
-
-    def table_top_state_clb(self, ud, status, result):
-        if status == actionlib.GoalStatus.SUCCEEDED:
-            rospy.sleep(1.0)
+    # state callbacks
     
     def pick_position_state_clb(self, ud, status, result):
         if status == actionlib.GoalStatus.SUCCEEDED:
@@ -199,7 +185,6 @@ class main():
             ud.grasped = True
             rospy.sleep(1.0)
         
-
 if __name__ == '__main__':
     m = main()
 
