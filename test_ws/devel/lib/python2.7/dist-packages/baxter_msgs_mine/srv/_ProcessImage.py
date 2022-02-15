@@ -10,10 +10,11 @@ import sensor_msgs.msg
 import std_msgs.msg
 
 class ProcessImageRequest(genpy.Message):
-  _md5sum = "b4274f524cc812fc54ca8ebeeda2deb2"
+  _md5sum = "e75c78a8f163c65c84591aca62aa6a05"
   _type = "baxter_msgs_mine/ProcessImageRequest"
   _has_header = False  # flag to mark the presence of a Header object
   _full_text = """sensor_msgs/Image img
+string color
 
 ================================================================================
 MSG: sensor_msgs/Image
@@ -63,8 +64,8 @@ time stamp
 # 1: global frame
 string frame_id
 """
-  __slots__ = ['img']
-  _slot_types = ['sensor_msgs/Image']
+  __slots__ = ['img','color']
+  _slot_types = ['sensor_msgs/Image','string']
 
   def __init__(self, *args, **kwds):
     """
@@ -74,7 +75,7 @@ string frame_id
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       img
+       img,color
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -85,8 +86,11 @@ string frame_id
       # message fields cannot be None, assign default values for those that are
       if self.img is None:
         self.img = sensor_msgs.msg.Image()
+      if self.color is None:
+        self.color = ''
     else:
       self.img = sensor_msgs.msg.Image()
+      self.color = ''
 
   def _get_types(self):
     """
@@ -125,6 +129,12 @@ string frame_id
         buff.write(struct.Struct('<I%sB'%length).pack(length, *_x))
       else:
         buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
+      _x = self.color
+      length = len(_x)
+      if python3 or type(_x) == unicode:
+        _x = _x.encode('utf-8')
+        length = len(_x)
+      buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -174,6 +184,15 @@ string frame_id
       start = end
       end += length
       self.img.data = str[start:end]
+      start = end
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      start = end
+      end += length
+      if python3:
+        self.color = str[start:end].decode('utf-8', 'rosmsg')
+      else:
+        self.color = str[start:end]
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -211,6 +230,12 @@ string frame_id
         buff.write(struct.Struct('<I%sB'%length).pack(length, *_x))
       else:
         buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
+      _x = self.color
+      length = len(_x)
+      if python3 or type(_x) == unicode:
+        _x = _x.encode('utf-8')
+        length = len(_x)
+      buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -261,6 +286,15 @@ string frame_id
       start = end
       end += length
       self.img.data = str[start:end]
+      start = end
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      start = end
+      end += length
+      if python3:
+        self.color = str[start:end].decode('utf-8', 'rosmsg')
+      else:
+        self.color = str[start:end]
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -430,6 +464,6 @@ def _get_struct_B():
     return _struct_B
 class ProcessImage(object):
   _type          = 'baxter_msgs_mine/ProcessImage'
-  _md5sum = '0cd5eb6edb4597d1c4c00f6581a4729b'
+  _md5sum = 'a2769d8280b8b55343740f821071be39'
   _request_class  = ProcessImageRequest
   _response_class = ProcessImageResponse

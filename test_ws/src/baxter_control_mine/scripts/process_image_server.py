@@ -28,13 +28,8 @@ class ProcessImageSrv:
         self.cam_info = None
         self.uv = None
 
-        # for red color
-        self.low_H = 57
-        self.low_S = 0
-        self.low_V = 0
-        self.high_H = 132
-        self.high_S = 255
-        self.high_V = 255
+        self.red_range = {'low_H' : 57, 'low_S' : 0, 'low_V' : 0, 'high_H' : 132, 'high_S' : 255, 'high_V' : 255}
+        self.blu_range = {'low_H' : 0, 'low_S' : 0, 'low_V' : 0, 'high_H' : 105, 'high_S' : 255, 'high_V' : 255}
 
         self.tf_buffer = tf2_ros.Buffer(rospy.Duration(100.0))
         self.tf_listener = tf2_ros.TransformListener(self.tf_buffer)
@@ -50,10 +45,17 @@ class ProcessImageSrv:
 
     def process_image_clb(self, req):
         cv_image = self.bridge.imgmsg_to_cv2(req.img, "bgr8")
-
         hsv_img = cv2.cvtColor(cv_image, cv2.COLOR_BGR2HSV)
         hsv_img = cv2.GaussianBlur(hsv_img, (5, 5), 0)
-        thresholded_img = cv2.inRange(hsv_img, (self.low_H, self.low_S, self.low_V), (self.high_H, self.high_S, self.high_V))
+
+        clr = req.color
+
+        if clr == 'red':
+            thresholded_img = cv2.inRange(hsv_img, (self.red_range['low_H'], self.red_range['low_S'], self.red_range['low_V']), 
+                                                    (self.red_range['high_H'], self.red_range['high_S'], self.red_range['high_V']))
+        elif clr == 'blue':
+            thresholded_img = cv2.inRange(hsv_img, (self.blu_range['low_H'], self.blu_range['low_S'], self.blu_range['low_V']), 
+                                                    (self.blu_range['high_H'], self.blu_range['high_S'], self.blu_range['high_V']))
         
         gray_img = cv2.cvtColor(hsv_img, cv2.COLOR_BGR2GRAY)
         gray_img = cv2.GaussianBlur(gray_img, (5, 5), 0)
@@ -73,7 +75,16 @@ class ProcessImageSrv:
         extracted_features = []
 
         for contour in contours:
-            if cv2.contourArea(contour) > 500 and cv2.contourArea(contour) < 2000:
+            if clr == 'red':
+                min_area = 500
+                max_area = 2000
+                max_arcLng = 99999999
+            elif clr == 'blue':
+                min_area = 500
+                max_area = 2000
+                max_arcLng = 300
+
+            if cv2.contourArea(contour) > min_area and cv2.contourArea(contour) < max_area and cv2.arcLength(contour,True) < max_arcLng:
                 M = cv2.moments(contour)
                 if M['m00'] != 0:
                     cx = M['m10'] / M['m00']

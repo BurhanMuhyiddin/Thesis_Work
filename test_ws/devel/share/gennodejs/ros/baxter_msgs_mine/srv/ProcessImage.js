@@ -23,6 +23,7 @@ class ProcessImageRequest {
     if (initObj === null) {
       // initObj === null is a special case for deserialization where we don't initialize fields
       this.img = null;
+      this.color = null;
     }
     else {
       if (initObj.hasOwnProperty('img')) {
@@ -31,6 +32,12 @@ class ProcessImageRequest {
       else {
         this.img = new sensor_msgs.msg.Image();
       }
+      if (initObj.hasOwnProperty('color')) {
+        this.color = initObj.color
+      }
+      else {
+        this.color = '';
+      }
     }
   }
 
@@ -38,6 +45,8 @@ class ProcessImageRequest {
     // Serializes a message object of type ProcessImageRequest
     // Serialize message field [img]
     bufferOffset = sensor_msgs.msg.Image.serialize(obj.img, buffer, bufferOffset);
+    // Serialize message field [color]
+    bufferOffset = _serializer.string(obj.color, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -47,13 +56,16 @@ class ProcessImageRequest {
     let data = new ProcessImageRequest(null);
     // Deserialize message field [img]
     data.img = sensor_msgs.msg.Image.deserialize(buffer, bufferOffset);
+    // Deserialize message field [color]
+    data.color = _deserializer.string(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
     let length = 0;
     length += sensor_msgs.msg.Image.getMessageSize(object.img);
-    return length;
+    length += object.color.length;
+    return length + 4;
   }
 
   static datatype() {
@@ -63,13 +75,14 @@ class ProcessImageRequest {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return 'b4274f524cc812fc54ca8ebeeda2deb2';
+    return 'e75c78a8f163c65c84591aca62aa6a05';
   }
 
   static messageDefinition() {
     // Returns full string definition for message
     return `
     sensor_msgs/Image img
+    string color
     
     ================================================================================
     MSG: sensor_msgs/Image
@@ -133,6 +146,13 @@ class ProcessImageRequest {
     }
     else {
       resolved.img = new sensor_msgs.msg.Image()
+    }
+
+    if (msg.color !== undefined) {
+      resolved.color = msg.color;
+    }
+    else {
+      resolved.color = ''
     }
 
     return resolved;
@@ -234,6 +254,6 @@ class ProcessImageResponse {
 module.exports = {
   Request: ProcessImageRequest,
   Response: ProcessImageResponse,
-  md5sum() { return '0cd5eb6edb4597d1c4c00f6581a4729b'; },
+  md5sum() { return 'a2769d8280b8b55343740f821071be39'; },
   datatype() { return 'baxter_msgs_mine/ProcessImage'; }
 };
