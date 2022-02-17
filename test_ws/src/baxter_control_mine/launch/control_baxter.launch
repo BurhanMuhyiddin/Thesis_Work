@@ -3,8 +3,8 @@
 
     <node name="baxter_control_node" pkg="baxter_control_mine" type="baxter_control_node"  output="screen"/>
 
-    <node name="calculate_ik_server" pkg="baxter_control_mine" type="calculate_ik_server" />
+    <!-- <node name="calculate_ik_server" pkg="baxter_control_mine" type="calculate_ik_server" /> -->
 
-    <node name="go_to_goal_server" pkg="baxter_control_mine" type="go_to_goal_server" />
+    <!-- <node name="go_to_goal_server" pkg="baxter_control_mine" type="go_to_goal_server" /> -->
 
 </launch>
