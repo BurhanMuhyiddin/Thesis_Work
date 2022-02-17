@@ -24,15 +24,17 @@
 
 (defclass baxter_msgs_mine::CalculateIKRequest
   :super ros::object
-  :slots (_desired_pose ))
+  :slots (_desired_pose _limb ))
 
 (defmethod baxter_msgs_mine::CalculateIKRequest
   (:init
    (&key
     ((:desired_pose __desired_pose) (instance geometry_msgs::Pose :init))
+    ((:limb __limb) "")
     )
    (send-super :init)
    (setq _desired_pose __desired_pose)
+   (setq _limb (string __limb))
    self)
   (:desired_pose
    (&rest __desired_pose)
@@ -41,11 +43,16 @@
      (progn
        (if __desired_pose (setq _desired_pose (car __desired_pose)))
        _desired_pose)))
+  (:limb
+   (&optional __limb)
+   (if __limb (setq _limb __limb)) _limb)
   (:serialization-length
    ()
    (+
     ;; geometry_msgs/Pose _desired_pose
     (send _desired_pose :serialization-length)
+    ;; string _limb
+    4 (length _limb)
     ))
   (:serialize
    (&optional strm)
@@ -53,12 +60,16 @@
               (make-string-output-stream (send self :serialization-length)))))
      ;; geometry_msgs/Pose _desired_pose
        (send _desired_pose :serialize s)
+     ;; string _limb
+       (write-long (length _limb) s) (princ _limb s)
      ;;
      (if (null strm) (get-output-stream-string s))))
   (:deserialize
    (buf &optional (ptr- 0))
    ;; geometry_msgs/Pose _desired_pose
      (send _desired_pose :deserialize buf ptr-) (incf ptr- (send _desired_pose :serialization-length))
+   ;; string _limb
+     (let (n) (setq n (sys::peek buf ptr- :integer)) (incf ptr- 4) (setq _limb (subseq buf ptr- (+ ptr- n))) (incf ptr- n))
    ;;
    self)
   )
@@ -116,7 +127,7 @@
   :super ros::object
   :slots ())
 
-(setf (get baxter_msgs_mine::CalculateIK :md5sum-) "bb5eb49bd79b58929d3000cf4f10e460")
+(setf (get baxter_msgs_mine::CalculateIK :md5sum-) "b26a58bf1f4e5c6080161e53a8d5614f")
 (setf (get baxter_msgs_mine::CalculateIK :datatype-) "baxter_msgs_mine/CalculateIK")
 (setf (get baxter_msgs_mine::CalculateIK :request) baxter_msgs_mine::CalculateIKRequest)
 (setf (get baxter_msgs_mine::CalculateIK :response) baxter_msgs_mine::CalculateIKResponse)
@@ -124,10 +135,11 @@
 (defmethod baxter_msgs_mine::CalculateIKRequest
   (:response () (instance baxter_msgs_mine::CalculateIKResponse :init)))
 
-(setf (get baxter_msgs_mine::CalculateIKRequest :md5sum-) "bb5eb49bd79b58929d3000cf4f10e460")
+(setf (get baxter_msgs_mine::CalculateIKRequest :md5sum-) "b26a58bf1f4e5c6080161e53a8d5614f")
 (setf (get baxter_msgs_mine::CalculateIKRequest :datatype-) "baxter_msgs_mine/CalculateIKRequest")
 (setf (get baxter_msgs_mine::CalculateIKRequest :definition-)
       "geometry_msgs/Pose desired_pose
+string limb
 
 ================================================================================
 MSG: geometry_msgs/Pose
@@ -201,10 +213,11 @@ time stamp
 string frame_id
 ")
 
-(setf (get baxter_msgs_mine::CalculateIKResponse :md5sum-) "bb5eb49bd79b58929d3000cf4f10e460")
+(setf (get baxter_msgs_mine::CalculateIKResponse :md5sum-) "b26a58bf1f4e5c6080161e53a8d5614f")
 (setf (get baxter_msgs_mine::CalculateIKResponse :datatype-) "baxter_msgs_mine/CalculateIKResponse")
 (setf (get baxter_msgs_mine::CalculateIKResponse :definition-)
       "geometry_msgs/Pose desired_pose
+string limb
 
 ================================================================================
 MSG: geometry_msgs/Pose
@@ -280,6 +293,6 @@ string frame_id
 
 
 
-(provide :baxter_msgs_mine/CalculateIK "bb5eb49bd79b58929d3000cf4f10e460")
+(provide :baxter_msgs_mine/CalculateIK "b26a58bf1f4e5c6080161e53a8d5614f")
 
 

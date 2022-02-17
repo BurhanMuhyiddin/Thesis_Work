@@ -16,9 +16,11 @@
 class CalculateIK
 {
 public:
-    CalculateIK(const std::string &limb_) : limb{limb_}
-    {   
+    CalculateIK()
+    {
         ik_service = nh.advertiseService("/calculate_ik", &CalculateIK::calculate_ik_cb, this);
+
+        ROS_INFO("Calculate_ik: Service server has been started...");
     }
 
     bool calculate_ik_cb(baxter_msgs_mine::CalculateIK::Request &req, baxter_msgs_mine::CalculateIK::Response &res);
@@ -26,11 +28,11 @@ public:
 private:
     ros::NodeHandle nh;
     ros::ServiceServer ik_service;
-    const std::string limb;
 };
 
 bool CalculateIK::calculate_ik_cb(baxter_msgs_mine::CalculateIK::Request &req, baxter_msgs_mine::CalculateIK::Response &res)
 {
+    std::string limb = std::move(req.limb);
     std::string ns = "ExternalTools/" + limb + "/PositionKinematicsNode/IKService"; // use IK for specified limb
 
     ros::ServiceClient iksvc = nh.serviceClient<baxter_core_msgs::SolvePositionIK>(ns);
@@ -89,7 +91,7 @@ int main(int argc, char **argv)
 {
     ros::init(argc, argv, "calculate_ik_server");
 
-    CalculateIK cIK("left");
+    CalculateIK cIK;
 
     ros::spin();
 
