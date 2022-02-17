@@ -40,7 +40,7 @@ template<>
 struct MD5Sum< ::baxter_msgs_mine::CalculateIK > {
   static const char* value()
   {
-    return "bb5eb49bd79b58929d3000cf4f10e460";
+    return "b26a58bf1f4e5c6080161e53a8d5614f";
   }
 
   static const char* value(const ::baxter_msgs_mine::CalculateIK&) { return value(); }

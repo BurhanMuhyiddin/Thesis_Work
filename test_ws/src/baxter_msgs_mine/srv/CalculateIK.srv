@@ -1,3 +1,4 @@
 geometry_msgs/Pose desired_pose
+string limb
 ---
 sensor_msgs/JointState[] joints

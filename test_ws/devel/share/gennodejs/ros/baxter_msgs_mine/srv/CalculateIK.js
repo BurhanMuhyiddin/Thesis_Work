@@ -24,6 +24,7 @@ class CalculateIKRequest {
     if (initObj === null) {
       // initObj === null is a special case for deserialization where we don't initialize fields
       this.desired_pose = null;
+      this.limb = null;
     }
     else {
       if (initObj.hasOwnProperty('desired_pose')) {
@@ -32,6 +33,12 @@ class CalculateIKRequest {
       else {
         this.desired_pose = new geometry_msgs.msg.Pose();
       }
+      if (initObj.hasOwnProperty('limb')) {
+        this.limb = initObj.limb
+      }
+      else {
+        this.limb = '';
+      }
     }
   }
 
@@ -39,6 +46,8 @@ class CalculateIKRequest {
     // Serializes a message object of type CalculateIKRequest
     // Serialize message field [desired_pose]
     bufferOffset = geometry_msgs.msg.Pose.serialize(obj.desired_pose, buffer, bufferOffset);
+    // Serialize message field [limb]
+    bufferOffset = _serializer.string(obj.limb, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -48,11 +57,15 @@ class CalculateIKRequest {
     let data = new CalculateIKRequest(null);
     // Deserialize message field [desired_pose]
     data.desired_pose = geometry_msgs.msg.Pose.deserialize(buffer, bufferOffset);
+    // Deserialize message field [limb]
+    data.limb = _deserializer.string(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
-    return 56;
+    let length = 0;
+    length += object.limb.length;
+    return length + 60;
   }
 
   static datatype() {
@@ -62,13 +75,14 @@ class CalculateIKRequest {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '0538590fc0be5b737b11f5be6e5b1759';
+    return '844bd63424146f6f878285d0c03bbeb2';
   }
 
   static messageDefinition() {
     // Returns full string definition for message
     return `
     geometry_msgs/Pose desired_pose
+    string limb
     
     ================================================================================
     MSG: geometry_msgs/Pose
@@ -106,6 +120,13 @@ class CalculateIKRequest {
     }
     else {
       resolved.desired_pose = new geometry_msgs.msg.Pose()
+    }
+
+    if (msg.limb !== undefined) {
+      resolved.limb = msg.limb;
+    }
+    else {
+      resolved.limb = ''
     }
 
     return resolved;
@@ -249,6 +270,6 @@ class CalculateIKResponse {
 module.exports = {
   Request: CalculateIKRequest,
   Response: CalculateIKResponse,
-  md5sum() { return 'bb5eb49bd79b58929d3000cf4f10e460'; },
+  md5sum() { return 'b26a58bf1f4e5c6080161e53a8d5614f'; },
   datatype() { return 'baxter_msgs_mine/CalculateIK'; }
 };
