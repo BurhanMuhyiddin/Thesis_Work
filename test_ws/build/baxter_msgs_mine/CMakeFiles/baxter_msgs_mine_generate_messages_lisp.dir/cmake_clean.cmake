@@ -7,6 +7,7 @@ file(REMOVE_RECURSE
   "/home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/msg/GoToPointResult.lisp"
   "/home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/msg/GoToPointGoal.lisp"
   "/home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/msg/GoToPointActionResult.lisp"
+  "/home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv/GetCurrentJointStates.lisp"
   "/home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv/PositionCommandMine.lisp"
   "/home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv/CalculateIK.lisp"
   "/home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv/ProcessImage.lisp"
