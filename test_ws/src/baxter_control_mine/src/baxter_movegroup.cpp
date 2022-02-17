@@ -62,13 +62,14 @@ bool BaxterControl::command_position_clb(baxter_msgs_mine::PositionCommandMineRe
   if (req.position_command == "home")
   {
     ROS_INFO("BaxterHomeWorkServer: HOME is set as desired position...");
-    std::vector<double> home_joint_values{0.6919, 0.0467, 0.0, 1.0495, 0.0, 0.8456, 0.0};
+    std::vector<double> home_joint_values{0.9192379871403342, -0.31139809994073897, 0.10162622719740866, 1.495247772991307, -0.03259709174256504, 0.31254858553165304, -0.1917475984856767, -0.6622962051695274, -0.7535680620487095, -0.07017962104575767, 1.687378866673955, -0.05714078434873166, 0.5595194923812047, 0.045252433242619704};
+    // std::vector<double> home_joint_values{-0.561, -0.6201, 0.0, 0.683, 0.0, 0.906, 0.0, 0.5797, -1.0470, 0.0000, 0.8735, 0.0000, 1.5705, 0.0000};
     move_group_interface_ptr->setJointValueTarget(home_joint_values);
   }
   else if (req.position_command == "work")
   {
     ROS_INFO("BaxterHomeWorkServer: WORK is set as desired position...");
-    std::vector<double> work_joint_values{-0.561, -0.6201, 0.0, 0.683, 0.0, 0.906, 0.0};
+    std::vector<double> work_joint_values{-0.561, -0.6201, 0.0, 0.683, 0.0, 0.906, 0.0, 0.5797, -1.0470, 0.0000, 0.8735, 0.0000, 1.5705, 0.0000};
     move_group_interface_ptr->setJointValueTarget(work_joint_values);
   }
 
@@ -77,7 +78,7 @@ bool BaxterControl::command_position_clb(baxter_msgs_mine::PositionCommandMineRe
   bool success = (move_group_interface_ptr->plan(my_plan) == moveit::planning_interface::MoveItErrorCode::SUCCESS);
   ROS_INFO("BaxterHomeWorkServer: Planning finished successfully...");
 
-  if (success)
+  if (true)
   {
     ROS_INFO("BaxterHomeWorkServer: Trajectory is being executed...");
     move_group_interface_ptr->execute(my_plan);
@@ -150,7 +151,7 @@ int main(int argc, char** argv)
 {
   ros::init(argc, argv, "baxter_controller");
 
-  BaxterControl bc("left_arm");
+  BaxterControl bc("both_arms");
 
   ros::waitForShutdown();
 

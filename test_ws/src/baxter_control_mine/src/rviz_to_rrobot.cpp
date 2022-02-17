@@ -16,7 +16,10 @@ public:
         ROS_INFO("RvizToRobot: Has been initiated...");
 
         left_pub = nh.advertise<baxter_core_msgs::JointCommand>("/robot/limb/left/joint_command", 1);
-        joint_command_timeout_pub = nh.advertise<std_msgs::Float64 >("/robot/limb/left/joint_command_timeout", 1);
+        right_pub = nh.advertise<baxter_core_msgs::JointCommand>("/robot/limb/right/joint_command", 1);
+
+        left_arm_joint_command_timeout_pub = nh.advertise<std_msgs::Float64 >("/robot/limb/left/joint_command_timeout", 1);
+        right_arm_joint_command_timeout_pub = nh.advertise<std_msgs::Float64 >("/robot/limb/right/joint_command_timeout", 1);
 
         sub_check_status = nh.subscribe("/move_group/status", 10, &RvizToRobot::check_status_cb, this);
         sub_joint_state = nh.subscribe("/move_group/fake_controller_joint_states", 10, &RvizToRobot::get_joint_states_fake_cb, this);
@@ -42,7 +45,9 @@ private:
     ros::Subscriber sub_joint_state;
     ros::Subscriber sub_check_status;
     ros::Publisher left_pub;
-    ros::Publisher joint_command_timeout_pub;
+    ros::Publisher right_pub;
+    ros::Publisher left_arm_joint_command_timeout_pub;
+    ros::Publisher right_arm_joint_command_timeout_pub;
     std_msgs::Float64 timeout_msg;
 };
 
@@ -50,7 +55,8 @@ void RvizToRobot::check_status_cb(const actionlib_msgs::GoalStatusArray &msg)
 {
     if (!msg.status_list.empty())
     {
-        joint_command_timeout_pub.publish(timeout_msg);
+        left_arm_joint_command_timeout_pub.publish(timeout_msg);
+        right_arm_joint_command_timeout_pub.publish(timeout_msg);
 
         if(!flag)
         {
@@ -63,23 +69,38 @@ void RvizToRobot::get_joint_states_fake_cb(const sensor_msgs::JointState &msg)
 {
     if (flag)
     {
-        baxter_core_msgs::JointCommand ref;
-        ref.mode = 1; // 1 for position mode, 2 for velocity mode
-        ref.command.resize(7);
+        baxter_core_msgs::JointCommand left_arm_ref;
+        baxter_core_msgs::JointCommand right_arm_ref;
+
+        left_arm_ref.mode = 1; // 1 for position mode, 2 for velocity mode
+        right_arm_ref.mode = 1; // 1 for position mode, 2 for velocity mode
+
+        left_arm_ref.command.resize(7);
+        right_arm_ref.command.resize(7);
 
         for(int i=0;i<7;i++){
-            ref.command[i] = msg.position[i];
+            left_arm_ref.command[i] = msg.position[i];
+            right_arm_ref.command[i] = msg.position[i+7];
         }
 
-        ref.names.push_back("left_e0");
-        ref.names.push_back("left_e1");
-        ref.names.push_back("left_s0");
-        ref.names.push_back("left_s1");
-        ref.names.push_back("left_w0");
-        ref.names.push_back("left_w1");
-        ref.names.push_back("left_w2");
+        left_arm_ref.names.push_back("left_e0");
+        left_arm_ref.names.push_back("left_e1");
+        left_arm_ref.names.push_back("left_s0");
+        left_arm_ref.names.push_back("left_s1");
+        left_arm_ref.names.push_back("left_w0");
+        left_arm_ref.names.push_back("left_w1");
+        left_arm_ref.names.push_back("left_w2");
 
-        left_pub.publish(ref);
+        right_arm_ref.names.push_back("right_e0");
+        right_arm_ref.names.push_back("right_e1");
+        right_arm_ref.names.push_back("right_s0");
+        right_arm_ref.names.push_back("right_s1");
+        right_arm_ref.names.push_back("right_w0");
+        right_arm_ref.names.push_back("right_w1");
+        right_arm_ref.names.push_back("right_w2");
+
+        left_pub.publish(left_arm_ref);
+        right_pub.publish(right_arm_ref);
     }
 }
 
