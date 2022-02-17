@@ -5,6 +5,9 @@ baxter_control_mine/CMakeFiles/go_to_goal_server.dir/src/go_to_goal_server.cpp.o
  /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/CalculateIK.h
  /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/CalculateIKRequest.h
  /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/CalculateIKResponse.h
+ /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GetCurrentJointStates.h
+ /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GetCurrentJointStatesRequest.h
+ /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GetCurrentJointStatesResponse.h
  /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointAction.h
  /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointActionFeedback.h
  /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointActionGoal.h

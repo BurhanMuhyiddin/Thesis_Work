@@ -21,6 +21,7 @@ add_service_files(FILES
   PositionCommandMine.srv
   CalculateIK.srv
   ProcessImage.srv
+  GetCurrentJointStates.srv
 )
 
 ## Generate actions in the 'action' folder

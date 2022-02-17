@@ -37,6 +37,7 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
     "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/PositionCommandMine.srv"
     "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/CalculateIK.srv"
     "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/ProcessImage.srv"
+    "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/GetCurrentJointStates.srv"
     )
 endif()
 

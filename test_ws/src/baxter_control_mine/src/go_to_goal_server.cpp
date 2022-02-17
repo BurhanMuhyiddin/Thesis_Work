@@ -17,6 +17,8 @@
 
 #include <baxter_msgs_mine/CalculateIK.h>
 
+#include <baxter_msgs_mine/GetCurrentJointStates.h>
+
 class GoToGoal
 {
 public:
@@ -28,6 +30,8 @@ public:
         spinner.start();
 
         as.start();
+
+
         ROS_INFO("GoToGoalActionServer: Simple Action Server has been started...");
     }
 
@@ -51,23 +55,50 @@ void GoToGoal::onGoal(const baxter_msgs_mine::GoToPointGoalConstPtr &goal)
 {
     ROS_INFO("GoToGoalActionServer: Goal received...");
 
-    // solve inverse kinematics
+    // get current joint states   (left: e0, e1, s0, s1, w0, w1, w2   right: e0, e1, s0, s1, w0, w1, w2)
+
+    ros::ServiceClient jointStateClt = nh.serviceClient<baxter_msgs_mine::GetCurrentJointStates>("/get_current_joint_states");
+
+    baxter_msgs_mine::GetCurrentJointStates gcjSsrv;
+
+    sensor_msgs::JointState cjs;
+
+    if (jointStateClt.call(gcjSsrv))
+    {
+        cjs = std::move(gcjSsrv.response.joint_state);
+    }
+
+    // solve inverse kinematics   (left/right s0, s1, e0, e1, w0, w1, w2)
     ros::ServiceClient cIKsc = nh.serviceClient<baxter_msgs_mine::CalculateIK>("/calculate_ik");
 
     baxter_msgs_mine::CalculateIK cIKsrv;
+    cIKsrv.request.limb = goal->limb;
     cIKsrv.request.desired_pose = goal->desired_pose;
-
-    sensor_msgs::JointState jv;
 
     if (cIKsc.call(cIKsrv))
     {
-        jv = cIKsrv.response.joints.front();
+        sensor_msgs::JointState jv = std::move(cIKsrv.response.joints.front());
+
+        if (goal->limb == "right")
+        {
+            for (int i = 0; i < 7; i++)
+            {
+                cjs.position[i+7] = jv.position[i];
+            }
+        }
+        else
+        {
+            for (int i = 0; i < 7; i++)
+            {
+                cjs.position[i] = jv.position[i];
+            }
+        }
     }
 
     // plan trajectory to the desired joint values
     moveit::planning_interface::MoveGroupInterface move_group_interface(PLANNING_GROUP);
 
-    move_group_interface.setJointValueTarget(jv);
+    move_group_interface.setJointValueTarget(cjs);
 
     ROS_INFO("GoToGoalActionServer: Planning started...");
     moveit::planning_interface::MoveGroupInterface::Plan my_plan;
@@ -102,7 +133,7 @@ int main(int argc, char **argv)
 {
     ros::init(argc, argv, "go_to_goal_server_node");
 
-    GoToGoal gTg("left_arm");
+    GoToGoal gTg("both_arms");
 
     ros::waitForShutdown();
 

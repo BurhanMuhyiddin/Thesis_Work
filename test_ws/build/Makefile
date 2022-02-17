@@ -335,6 +335,19 @@ baxter_msgs_mine_genlisp/fast:
 .PHONY : baxter_msgs_mine_genlisp/fast
 
 #=============================================================================
+# Target rules for targets named baxter_msgs_mine_generate_messages_lisp
+
+# Build rule for target.
+baxter_msgs_mine_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine_generate_messages_lisp
+.PHONY : baxter_msgs_mine_generate_messages_lisp
+
+# fast build rule for target.
+baxter_msgs_mine_generate_messages_lisp/fast:
+	$(MAKE) -f baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_lisp.dir/build.make baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_lisp.dir/build
+.PHONY : baxter_msgs_mine_generate_messages_lisp/fast
+
+#=============================================================================
 # Target rules for targets named rosgraph_msgs_generate_messages_nodejs
 
 # Build rule for target.
@@ -476,32 +489,6 @@ roscpp_generate_messages_cpp: cmake_check_build_system
 roscpp_generate_messages_cpp/fast:
 	$(MAKE) -f baxter_msgs_mine/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make baxter_msgs_mine/CMakeFiles/roscpp_generate_messages_cpp.dir/build
 .PHONY : roscpp_generate_messages_cpp/fast
-
-#=============================================================================
-# Target rules for targets named _baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal
-
-# Build rule for target.
-_baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal
-.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal
-
-# fast build rule for target.
-_baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal/fast:
-	$(MAKE) -f baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal.dir/build.make baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal.dir/build
-.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal/fast
-
-#=============================================================================
-# Target rules for targets named geometry_msgs_generate_messages_eus
-
-# Build rule for target.
-geometry_msgs_generate_messages_eus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_eus
-.PHONY : geometry_msgs_generate_messages_eus
-
-# fast build rule for target.
-geometry_msgs_generate_messages_eus/fast:
-	$(MAKE) -f baxter_msgs_mine/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make baxter_msgs_mine/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
-.PHONY : geometry_msgs_generate_messages_eus/fast
 
 #=============================================================================
 # Target rules for targets named actionlib_msgs_generate_messages_nodejs
@@ -842,6 +829,45 @@ _baxter_msgs_mine_generate_messages_check_deps_GoToPointActionFeedback/fast:
 .PHONY : _baxter_msgs_mine_generate_messages_check_deps_GoToPointActionFeedback/fast
 
 #=============================================================================
+# Target rules for targets named _baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal
+
+# Build rule for target.
+_baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal
+.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal
+
+# fast build rule for target.
+_baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal/fast:
+	$(MAKE) -f baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal.dir/build.make baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal.dir/build
+.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal/fast
+
+#=============================================================================
+# Target rules for targets named geometry_msgs_generate_messages_eus
+
+# Build rule for target.
+geometry_msgs_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_eus
+.PHONY : geometry_msgs_generate_messages_eus
+
+# fast build rule for target.
+geometry_msgs_generate_messages_eus/fast:
+	$(MAKE) -f baxter_msgs_mine/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make baxter_msgs_mine/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
+.PHONY : geometry_msgs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named _baxter_msgs_mine_generate_messages_check_deps_GetCurrentJointStates
+
+# Build rule for target.
+_baxter_msgs_mine_generate_messages_check_deps_GetCurrentJointStates: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _baxter_msgs_mine_generate_messages_check_deps_GetCurrentJointStates
+.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GetCurrentJointStates
+
+# fast build rule for target.
+_baxter_msgs_mine_generate_messages_check_deps_GetCurrentJointStates/fast:
+	$(MAKE) -f baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GetCurrentJointStates.dir/build.make baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GetCurrentJointStates.dir/build
+.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GetCurrentJointStates/fast
+
+#=============================================================================
 # Target rules for targets named _baxter_msgs_mine_generate_messages_check_deps_GoToPointResult
 
 # Build rule for target.
@@ -946,17 +972,17 @@ baxter_msgs_mine_geneus/fast:
 .PHONY : baxter_msgs_mine_geneus/fast
 
 #=============================================================================
-# Target rules for targets named baxter_msgs_mine_generate_messages_lisp
+# Target rules for targets named get_current_joint_states_server
 
 # Build rule for target.
-baxter_msgs_mine_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine_generate_messages_lisp
-.PHONY : baxter_msgs_mine_generate_messages_lisp
+get_current_joint_states_server: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 get_current_joint_states_server
+.PHONY : get_current_joint_states_server
 
 # fast build rule for target.
-baxter_msgs_mine_generate_messages_lisp/fast:
-	$(MAKE) -f baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_lisp.dir/build.make baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_lisp.dir/build
-.PHONY : baxter_msgs_mine_generate_messages_lisp/fast
+get_current_joint_states_server/fast:
+	$(MAKE) -f baxter_control_mine/CMakeFiles/get_current_joint_states_server.dir/build.make baxter_control_mine/CMakeFiles/get_current_joint_states_server.dir/build
+.PHONY : get_current_joint_states_server/fast
 
 #=============================================================================
 # Target rules for targets named calculate_ik_server
@@ -1803,6 +1829,7 @@ help:
 	@echo "... baxter_msgs_mine_gennodejs"
 	@echo "... baxter_msgs_mine_generate_messages_nodejs"
 	@echo "... baxter_msgs_mine_genlisp"
+	@echo "... baxter_msgs_mine_generate_messages_lisp"
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_nodejs"
@@ -1814,8 +1841,6 @@ help:
 	@echo "... actionlib_msgs_generate_messages_py"
 	@echo "... baxter_msgs_mine_generate_messages_py"
 	@echo "... roscpp_generate_messages_cpp"
-	@echo "... _baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal"
-	@echo "... geometry_msgs_generate_messages_eus"
 	@echo "... actionlib_msgs_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_eus"
 	@echo "... roscpp_generate_messages_lisp"
@@ -1842,6 +1867,9 @@ help:
 	@echo "... baxter_msgs_mine_generate_messages"
 	@echo "... baxter_msgs_mine_genpy"
 	@echo "... _baxter_msgs_mine_generate_messages_check_deps_GoToPointActionFeedback"
+	@echo "... _baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal"
+	@echo "... geometry_msgs_generate_messages_eus"
+	@echo "... _baxter_msgs_mine_generate_messages_check_deps_GetCurrentJointStates"
 	@echo "... _baxter_msgs_mine_generate_messages_check_deps_GoToPointResult"
 	@echo "... _baxter_msgs_mine_generate_messages_check_deps_CalculateIK"
 	@echo "... _baxter_msgs_mine_generate_messages_check_deps_GoToPointAction"
@@ -1850,7 +1878,7 @@ help:
 	@echo "... baxter_msgs_mine_generate_messages_cpp"
 	@echo "... baxter_msgs_mine_generate_messages_eus"
 	@echo "... baxter_msgs_mine_geneus"
-	@echo "... baxter_msgs_mine_generate_messages_lisp"
+	@echo "... get_current_joint_states_server"
 	@echo "... calculate_ik_server"
 	@echo "... test_node"
 	@echo "... rviz_converter_node"
