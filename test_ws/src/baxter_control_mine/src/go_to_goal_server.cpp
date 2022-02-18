@@ -55,18 +55,25 @@ void GoToGoal::onGoal(const baxter_msgs_mine::GoToPointGoalConstPtr &goal)
 {
     ROS_INFO("GoToGoalActionServer: Goal received...");
 
-    // get current joint states   (left: e0, e1, s0, s1, w0, w1, w2   right: e0, e1, s0, s1, w0, w1, w2)
-
-    ros::ServiceClient jointStateClt = nh.serviceClient<baxter_msgs_mine::GetCurrentJointStates>("/get_current_joint_states");
-
-    baxter_msgs_mine::GetCurrentJointStates gcjSsrv;
-
     sensor_msgs::JointState cjs;
 
-    if (jointStateClt.call(gcjSsrv))
-    {
-        cjs = std::move(gcjSsrv.response.joint_state);
-    }
+    cjs.name.resize(14);
+    cjs.position.resize(14);
+
+    cjs.name[0] = "left_s0";
+    cjs.name[1] = "left_s1";
+    cjs.name[2] = "left_e0";
+    cjs.name[3] = "left_e1";
+    cjs.name[4] = "left_w0";
+    cjs.name[5] = "left_w1";
+    cjs.name[6] = "left_w2";
+    cjs.name[7] = "right_s0";
+    cjs.name[8] = "right_s1";
+    cjs.name[9] = "right_e0";
+    cjs.name[10] = "right_e1";
+    cjs.name[11] = "right_w0";
+    cjs.name[12] = "right_w1";
+    cjs.name[13] = "right_w2";
 
     // solve inverse kinematics   (left/right s0, s1, e0, e1, w0, w1, w2)
     ros::ServiceClient cIKsc = nh.serviceClient<baxter_msgs_mine::CalculateIK>("/calculate_ik");
@@ -79,21 +86,29 @@ void GoToGoal::onGoal(const baxter_msgs_mine::GoToPointGoalConstPtr &goal)
     {
         sensor_msgs::JointState jv = std::move(cIKsrv.response.joints.front());
 
-        if (goal->limb == "right")
+        if (goal->limb == "right") // if we move just right arm, then make position of left arm as zero, because it will be set as velocity mode later
         {
             for (int i = 0; i < 7; i++)
             {
+                cjs.position[i] = 0.0000;
                 cjs.position[i+7] = jv.position[i];
+
+                ros::param::set("/limb", "right"); // set parameter limb as right, so we know which arm to move
             }
         }
-        else
+        else // if we move just left arm, then make position of right arm as zero, because it will be set as velocity mode later
         {
             for (int i = 0; i < 7; i++)
             {
                 cjs.position[i] = jv.position[i];
+                cjs.position[i+7] = 0.0000;
+
+                ros::param::set("/limb", "left"); // set parameter limb as left, so we know which arm to move
             }
         }
     }
+
+    ROS_INFO("GoToGoalActionServer: Planning started...");
 
     // plan trajectory to the desired joint values
     moveit::planning_interface::MoveGroupInterface move_group_interface(PLANNING_GROUP);

@@ -81,6 +81,7 @@ bool BaxterControl::command_position_clb(baxter_msgs_mine::PositionCommandMineRe
   if (true)
   {
     ROS_INFO("BaxterHomeWorkServer: Trajectory is being executed...");
+    ros::param::set("/limb", "both"); // set parameter limb as both, to move both arms
     move_group_interface_ptr->execute(my_plan);
     ROS_INFO("BaxterHomeWorkServer: Trajectory has been executed successfully...");
   }
