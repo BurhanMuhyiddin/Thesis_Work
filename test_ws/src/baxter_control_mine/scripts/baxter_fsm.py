@@ -44,45 +44,45 @@ class main():
 
         self.waypoints = list()
         self.waypoints.append(Pose(Point(0.821231, 0.238061, 0.369946), Quaternion(0.0411739, 0.994043, 0.0261063, 0.0974731)))
-        # self.waypoints.append(Pose(Point(0.823456, 0.293838, 0.376693), Quaternion(0.0287752, 0.994138, 0.0235979, 0.101508))) 
-        self.waypoints.append(Pose(Point(0.712625, -0.091887, 0.335984), Quaternion(0.0983495, 0.989932, 0.030586, 0.0970911))) 
-        self.waypoints.append(Pose(Point(0.760158, -0.0818765, 0.101024), Quaternion(0.0985908, 0.989925, 0.0304949, 0.0969431)))
-        self.waypoints.append(Pose(Point(0.624597, 0.777129, 0.354848), Quaternion(-0.10181, 0.98961, 0.0104501, 0.100985)))
-        self.waypoints.append(Pose(Point(0.642795, 0.781149, 0.0765355), Quaternion(-0.101961, 0.989605, 0.0107294, 0.10085)))
-        pose_points = (('work', self.waypoints[0]),
-                ('pick_pos', self.waypoints[1]),
-                ('app_pick', self.waypoints[2]),
-                ('place_pos', self.waypoints[3]),
-                ('app_place', self.waypoints[4]))
+        self.waypoints.append(Pose(Point(0.738407, -0.202405, 0.393372), Quaternion(-0.197444, 0.976507, 0.0220792, 0.0834445)))
 
+        pose_points = (('work_left', self.waypoints[0]),
+                       ('work_right', self.waypoints[1]))
         self.pose_points = OrderedDict(pose_points)
         
         sm = smach.StateMachine(outcomes=['succeeded', 'preempted', 'aborted'])
         sm.userdata.grab_data = False
         sm.userdata.img_data = Image()
+        sm.userdata.color_data = "yellow"
 
         with sm:
             
-            # change reset of grab_data from top to place state
+            smach.StateMachine.add('TABLE_TOP_RIGHT', SimpleActionState("/go_to_goal", GoToPointAction, goal=GoToPointGoal(self.pose_points['work_right'], "right"), 
+                                                                                            result_cb=self.table_top_right_result_cb,
+                                                                                            output_keys=['grabbed_image', 'obj_color']),
+                                    transitions={'succeeded' : 'PROCESS_IMAGE', 'preempted' : '', 'aborted' : ''}, 
+                                    remapping={'grabbed_image' : 'img_data', 'obj_color' : 'color_data'})
 
-            smach.StateMachine.add('TABLE_TOP', SimpleActionState("/go_to_goal", GoToPointAction, goal=GoToPointGoal(self.pose_points['work']), 
-                                                                                            result_cb=self.table_top_result_cb,
+            smach.StateMachine.add('TABLE_TOP_LEFT', SimpleActionState("/go_to_goal", GoToPointAction, goal=GoToPointGoal(self.pose_points['work_left'], "left"), 
+                                                                                            result_cb=self.table_top_left_result_cb,
                                                                                             output_keys=['grabbed_image']),
                                     transitions={'succeeded' : 'PROCESS_IMAGE', 'preempted' : '', 'aborted' : ''}, 
                                     remapping={'grabbed_image' : 'img_data'})
 
             smach.StateMachine.add('PROCESS_IMAGE', smach_ros.ServiceState('/process_img', ProcessImage,
-                                    outcomes=['succeeded', 'grasped'],
-                                    request_cb = self.get_image_cb,
-                                    response_cb = self.process_image_result_cb,
-                                    input_keys=['img_to_be_processed', 'is_grasp']), 
-                                    transitions={'succeeded' : 'PICK_POSITION', 'grasped' : 'PLACE_POSITION'}, 
-                                    remapping={'img_to_be_processed' : 'img_data', 'is_grasp' : 'grab_data'})
+                                                                                            outcomes=['pick_obj', 'place_obj'],
+                                                                                            request_cb = self.get_image_cb,
+                                                                                            response_cb = self.process_image_result_cb,
+                                                                                            input_keys=['img_to_be_processed', 'is_grasped', 'obj_color']),
+                                    transitions={'pick_obj' : 'PICK_POSITION', 'place_obj' : 'PLACE_POSITION'}, 
+                                    remapping={'img_to_be_processed' : 'img_data', 'is_grasped' : 'grab_data', 'obj_color' : 'color_data'})
 
             smach.StateMachine.add('PICK_POSITION', SimpleActionState("/go_to_goal", GoToPointAction, goal_cb=self.pick_pos_goal_clb,
                                                                                             outcomes=['succeeded', 'preempted', 'aborted'],
-                                                                                            result_cb=self.pick_pos_state_clb),
-                                    transitions={'succeeded' : 'GRASP', 'preempted' : '', 'aborted' : ''})
+                                                                                            result_cb=self.pick_pos_state_clb,
+                                                                                            input_keys=['obj_color']),
+                                    transitions={'succeeded' : 'GRASP', 'preempted' : '', 'aborted' : ''},
+                                    remapping={'obj_color' : 'color_data'})
 
 
             smach.StateMachine.add('GRASP', SimpleActionState("/robot/end_effector/left_gripper/gripper_action", GripperCommandAction, goal_cb=self.gripper_goal_cb, 
@@ -128,9 +128,14 @@ class main():
         pp.orientation.z = 0.0223233
         pp.orientation.w = 0.0996664
 
+        if ud.obj_color == "yellow": # right should be moved only when color is yellow
+            limb = "right"
+        else:                        # otherwise, move left
+            limb = "left"
+
         self.gripper_position = 30.0
 
-        return GoToPointGoal(pp)
+        return GoToPointGoal(pp, limb)
 
     def place_pos_goal_clb(self, ud, goal):
         pp = Pose()
@@ -144,7 +149,7 @@ class main():
 
         self.gripper_position = 100.0
 
-        return GoToPointGoal(pp)
+        return GoToPointGoal(pp, "left")
 
     # subscriber callbacks
 
@@ -157,12 +162,9 @@ class main():
         # return img_to_be_processed
         im_req = ProcessImageRequest()
         im_req.img = ud.img_to_be_processed
-        if ud.is_grasp == False:
-            im_req.color = "red"
-        else:
-            im_req.color = "blue"
+        im_req.color = ud.obj_color
 
-        print(im_req.color)
+        # print(im_req.color)
 
         return im_req
 
@@ -172,20 +174,39 @@ class main():
         # get extracted features from result
         self.extracted_features = result.extracted_features
 
-        if ud.is_grasp == False:
-            return 'succeeded'
+        if ud.is_grasp == True:
+            return 'place_obj'
         else:
-            return 'grasped'
+            return 'pick_obj'
         # rospy.loginfo(self.extracted_features)
 
-    def table_top_result_cb(self, ud, status, result):
+    def table_top_right_result_cb(self, ud, status, result):
         if status == actionlib.GoalStatus.SUCCEEDED:
             # take picture (I simulate it by creating new image for now)
             # send picture to process image service state
 
             while self.current_image is None: # loop until you get valid image
                 continue
+
             ud.grabbed_image = self.current_image
+            ud.obj_color = "yellow" # set color to be detected as yellow
+
+            rospy.sleep(2.0)
+
+    def table_top_left_result_cb(self, ud, status, result):
+        if status == actionlib.GoalStatus.SUCCEEDED:
+            # take picture (I simulate it by creating new image for now)
+            # send picture to process image service state
+
+            while self.current_image is None: # loop until you get valid image
+                continue
+            
+            ud.grabbed_image = self.current_image
+
+            if ud.is_grasp == False:
+                ud.obj_color = "red" # set color to be detected as red before grasping
+            else:
+                ud.obj_color = "blue" # set color to be detected as blue after grasping
 
             rospy.sleep(2.0)
 

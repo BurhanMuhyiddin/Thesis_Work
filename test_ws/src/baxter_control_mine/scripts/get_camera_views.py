@@ -10,12 +10,12 @@ class image_converter:
     def __init__(self):
         self.bridge = CvBridge()
 
-        self.image_sub = rospy.Subscriber("/cameras/left_hand_camera/image",Image,self.callback)
+        self.image_sub = rospy.Subscriber("/cameras/right_hand_camera/image",Image,self.callback)
 
-        self.low_H = 0
+        self.low_H = 30
         self.low_S = 0
         self.low_V = 0
-        self.high_H = 105
+        self.high_H = 180
         self.high_S = 255
         self.high_V = 255
 
@@ -47,7 +47,7 @@ class image_converter:
         _, contours, _ = cv2.findContours(image=thresholded_img, mode=cv2.RETR_TREE, method=cv2.CHAIN_APPROX_NONE)
 
         for contour in contours:
-            if cv2.contourArea(contour) > 1000 and cv2.contourArea(contour) < 2000 and cv2.arcLength(contour,True) < 300:
+            if cv2.contourArea(contour) > 1000: #and cv2.contourArea(contour) < 3000: #or cv2.arcLength(contour,True) < 300:
                 # pass
                 cv2.drawContours(cv_image, [contour], -1, (255, 255, 255), thickness=cv2.FILLED)
                     
