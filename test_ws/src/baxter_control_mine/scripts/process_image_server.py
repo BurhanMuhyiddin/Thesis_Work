@@ -30,6 +30,7 @@ class ProcessImageSrv:
 
         self.red_range = {'low_H' : 57, 'low_S' : 0, 'low_V' : 0, 'high_H' : 132, 'high_S' : 255, 'high_V' : 255}
         self.blu_range = {'low_H' : 0, 'low_S' : 0, 'low_V' : 0, 'high_H' : 105, 'high_S' : 255, 'high_V' : 255}
+        self.yel_range = {'low_H' : 30, 'low_S' : 0, 'low_V' : 0, 'high_H' : 180, 'high_S' : 255, 'high_V' : 255}
 
         self.tf_buffer = tf2_ros.Buffer(rospy.Duration(100.0))
         self.tf_listener = tf2_ros.TransformListener(self.tf_buffer)
@@ -56,6 +57,9 @@ class ProcessImageSrv:
         elif clr == 'blue':
             thresholded_img = cv2.inRange(hsv_img, (self.blu_range['low_H'], self.blu_range['low_S'], self.blu_range['low_V']), 
                                                     (self.blu_range['high_H'], self.blu_range['high_S'], self.blu_range['high_V']))
+        elif clr == 'yellow':
+            thresholded_img = cv2.inRange(hsv_img, (self.yel_range['low_H'], self.yel_range['low_S'], self.yel_range['low_V']), 
+                                                    (self.yel_range['high_H'], self.yel_range['high_S'], self.yel_range['high_V']))
         
         gray_img = cv2.cvtColor(hsv_img, cv2.COLOR_BGR2GRAY)
         gray_img = cv2.GaussianBlur(gray_img, (5, 5), 0)
@@ -83,6 +87,10 @@ class ProcessImageSrv:
                 min_area = 500
                 max_area = 2000
                 max_arcLng = 300
+            elif clr == 'yellow':
+                min_area = 1000
+                max_area = 99999999
+                max_arcLng = 99999999
 
             if cv2.contourArea(contour) > min_area and cv2.contourArea(contour) < max_area and cv2.arcLength(contour,True) < max_arcLng:
                 M = cv2.moments(contour)
