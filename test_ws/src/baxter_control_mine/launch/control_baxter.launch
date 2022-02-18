@@ -5,8 +5,6 @@
 
     <node name="calculate_ik_server" pkg="baxter_control_mine" type="calculate_ik_server" />
 
-    <node name="get_current_joint_states_server" pkg="baxter_control_mine" type="get_current_joint_states_server"/>
-
     <node name="go_to_goal_server" pkg="baxter_control_mine" type="go_to_goal_server" output="screen"/>
 
 </launch>

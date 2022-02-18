@@ -72,15 +72,46 @@ void RvizToRobot::get_joint_states_fake_cb(const sensor_msgs::JointState &msg)
         baxter_core_msgs::JointCommand left_arm_ref;
         baxter_core_msgs::JointCommand right_arm_ref;
 
-        left_arm_ref.mode = 1; // 1 for position mode, 2 for velocity mode
-        right_arm_ref.mode = 1; // 1 for position mode, 2 for velocity mode
+        std::string limb;
+
+        ros::param::get("/limb", limb);
 
         left_arm_ref.command.resize(7);
         right_arm_ref.command.resize(7);
 
-        for(int i=0;i<7;i++){
-            left_arm_ref.command[i] = msg.position[i];
-            right_arm_ref.command[i] = msg.position[i+7];
+        if (limb == "left") // if limb is left, then make right as velocity mode, because its positions have been set as zero before, so it will
+                            // not move. Only left arm will move. The same logic for right and both arms.
+        {
+            left_arm_ref.mode = 1.0;
+            right_arm_ref.mode = 2.0;
+
+            for(int i = 0; i < 7; i++)
+            {
+                left_arm_ref.command[i] = msg.position[i];
+                right_arm_ref.command[i] = 0.0000;
+            }
+        }
+        else if (limb == "right")
+        {
+            left_arm_ref.mode = 2.0;
+            right_arm_ref.mode = 1.0;
+
+            for(int i = 0; i < 7; i++)
+            {
+                left_arm_ref.command[i] = 0.0000;
+                right_arm_ref.command[i] = msg.position[i+7];
+            }
+        }
+        else if (limb == "both")
+        {
+            left_arm_ref.mode = 1.0;
+            right_arm_ref.mode = 1.0;
+
+            for(int i = 0; i < 7; i++)
+            {
+                left_arm_ref.command[i] = msg.position[i];
+                right_arm_ref.command[i] = msg.position[i+7];
+            }
         }
 
         left_arm_ref.names.push_back("left_e0");
