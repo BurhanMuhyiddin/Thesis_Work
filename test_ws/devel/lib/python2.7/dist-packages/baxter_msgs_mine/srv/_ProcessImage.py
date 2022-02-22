@@ -10,11 +10,12 @@ import sensor_msgs.msg
 import std_msgs.msg
 
 class ProcessImageRequest(genpy.Message):
-  _md5sum = "e75c78a8f163c65c84591aca62aa6a05"
+  _md5sum = "cdaf8587a43a19caa15d83076f59736b"
   _type = "baxter_msgs_mine/ProcessImageRequest"
   _has_header = False  # flag to mark the presence of a Header object
   _full_text = """sensor_msgs/Image img
 string color
+string limb
 
 ================================================================================
 MSG: sensor_msgs/Image
@@ -64,8 +65,8 @@ time stamp
 # 1: global frame
 string frame_id
 """
-  __slots__ = ['img','color']
-  _slot_types = ['sensor_msgs/Image','string']
+  __slots__ = ['img','color','limb']
+  _slot_types = ['sensor_msgs/Image','string','string']
 
   def __init__(self, *args, **kwds):
     """
@@ -75,7 +76,7 @@ string frame_id
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       img,color
+       img,color,limb
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -88,9 +89,12 @@ string frame_id
         self.img = sensor_msgs.msg.Image()
       if self.color is None:
         self.color = ''
+      if self.limb is None:
+        self.limb = ''
     else:
       self.img = sensor_msgs.msg.Image()
       self.color = ''
+      self.limb = ''
 
   def _get_types(self):
     """
@@ -130,6 +134,12 @@ string frame_id
       else:
         buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       _x = self.color
+      length = len(_x)
+      if python3 or type(_x) == unicode:
+        _x = _x.encode('utf-8')
+        length = len(_x)
+      buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
+      _x = self.limb
       length = len(_x)
       if python3 or type(_x) == unicode:
         _x = _x.encode('utf-8')
@@ -193,6 +203,15 @@ string frame_id
         self.color = str[start:end].decode('utf-8', 'rosmsg')
       else:
         self.color = str[start:end]
+      start = end
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      start = end
+      end += length
+      if python3:
+        self.limb = str[start:end].decode('utf-8', 'rosmsg')
+      else:
+        self.limb = str[start:end]
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -231,6 +250,12 @@ string frame_id
       else:
         buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       _x = self.color
+      length = len(_x)
+      if python3 or type(_x) == unicode:
+        _x = _x.encode('utf-8')
+        length = len(_x)
+      buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
+      _x = self.limb
       length = len(_x)
       if python3 or type(_x) == unicode:
         _x = _x.encode('utf-8')
@@ -295,6 +320,15 @@ string frame_id
         self.color = str[start:end].decode('utf-8', 'rosmsg')
       else:
         self.color = str[start:end]
+      start = end
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      start = end
+      end += length
+      if python3:
+        self.limb = str[start:end].decode('utf-8', 'rosmsg')
+      else:
+        self.limb = str[start:end]
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -464,6 +498,6 @@ def _get_struct_B():
     return _struct_B
 class ProcessImage(object):
   _type          = 'baxter_msgs_mine/ProcessImage'
-  _md5sum = 'a2769d8280b8b55343740f821071be39'
+  _md5sum = '8ddaef76372bb3744b202ff9f1b2b0db'
   _request_class  = ProcessImageRequest
   _response_class = ProcessImageResponse

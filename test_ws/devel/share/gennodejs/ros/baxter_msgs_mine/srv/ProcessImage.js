@@ -24,6 +24,7 @@ class ProcessImageRequest {
       // initObj === null is a special case for deserialization where we don't initialize fields
       this.img = null;
       this.color = null;
+      this.limb = null;
     }
     else {
       if (initObj.hasOwnProperty('img')) {
@@ -38,6 +39,12 @@ class ProcessImageRequest {
       else {
         this.color = '';
       }
+      if (initObj.hasOwnProperty('limb')) {
+        this.limb = initObj.limb
+      }
+      else {
+        this.limb = '';
+      }
     }
   }
 
@@ -47,6 +54,8 @@ class ProcessImageRequest {
     bufferOffset = sensor_msgs.msg.Image.serialize(obj.img, buffer, bufferOffset);
     // Serialize message field [color]
     bufferOffset = _serializer.string(obj.color, buffer, bufferOffset);
+    // Serialize message field [limb]
+    bufferOffset = _serializer.string(obj.limb, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -58,6 +67,8 @@ class ProcessImageRequest {
     data.img = sensor_msgs.msg.Image.deserialize(buffer, bufferOffset);
     // Deserialize message field [color]
     data.color = _deserializer.string(buffer, bufferOffset);
+    // Deserialize message field [limb]
+    data.limb = _deserializer.string(buffer, bufferOffset);
     return data;
   }
 
@@ -65,7 +76,8 @@ class ProcessImageRequest {
     let length = 0;
     length += sensor_msgs.msg.Image.getMessageSize(object.img);
     length += object.color.length;
-    return length + 4;
+    length += object.limb.length;
+    return length + 8;
   }
 
   static datatype() {
@@ -75,7 +87,7 @@ class ProcessImageRequest {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return 'e75c78a8f163c65c84591aca62aa6a05';
+    return 'cdaf8587a43a19caa15d83076f59736b';
   }
 
   static messageDefinition() {
@@ -83,6 +95,7 @@ class ProcessImageRequest {
     return `
     sensor_msgs/Image img
     string color
+    string limb
     
     ================================================================================
     MSG: sensor_msgs/Image
@@ -153,6 +166,13 @@ class ProcessImageRequest {
     }
     else {
       resolved.color = ''
+    }
+
+    if (msg.limb !== undefined) {
+      resolved.limb = msg.limb;
+    }
+    else {
+      resolved.limb = ''
     }
 
     return resolved;
@@ -254,6 +274,6 @@ class ProcessImageResponse {
 module.exports = {
   Request: ProcessImageRequest,
   Response: ProcessImageResponse,
-  md5sum() { return 'a2769d8280b8b55343740f821071be39'; },
+  md5sum() { return '8ddaef76372bb3744b202ff9f1b2b0db'; },
   datatype() { return 'baxter_msgs_mine/ProcessImage'; }
 };

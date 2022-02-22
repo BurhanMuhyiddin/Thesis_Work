@@ -6,7 +6,7 @@
 
     <!-- <node name="image_processing_server" pkg="baxter_control_mine" type="image_processing_server" output="screen"/> -->
 
-    <node name="process_image_server" pkg="baxter_control_mine" type="process_image_server.py"/>
+    <node name="process_image_server" pkg="baxter_control_mine" type="process_image_server.py" output="screen"/>
 
     <node name="baxter_fsm" pkg="baxter_control_mine" type="baxter_fsm.py" output="screen"/>
 
