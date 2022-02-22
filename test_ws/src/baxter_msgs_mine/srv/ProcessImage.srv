@@ -1,5 +1,6 @@
 sensor_msgs/Image img
 string color
+string limb
 ---
 float64[] extracted_features
 bool success

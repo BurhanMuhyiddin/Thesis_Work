@@ -26,11 +26,13 @@ struct ProcessImageRequest_
 
   ProcessImageRequest_()
     : img()
-    , color()  {
+    , color()
+    , limb()  {
     }
   ProcessImageRequest_(const ContainerAllocator& _alloc)
     : img(_alloc)
-    , color(_alloc)  {
+    , color(_alloc)
+    , limb(_alloc)  {
   (void)_alloc;
     }
 
@@ -41,6 +43,9 @@ struct ProcessImageRequest_
 
    typedef std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other >  _color_type;
   _color_type color;
+
+   typedef std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other >  _limb_type;
+  _limb_type limb;
 
 
 
@@ -120,12 +125,12 @@ struct MD5Sum< ::baxter_msgs_mine::ProcessImageRequest_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "e75c78a8f163c65c84591aca62aa6a05";
+    return "cdaf8587a43a19caa15d83076f59736b";
   }
 
   static const char* value(const ::baxter_msgs_mine::ProcessImageRequest_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xe75c78a8f163c65cULL;
-  static const uint64_t static_value2 = 0x84591aca62aa6a05ULL;
+  static const uint64_t static_value1 = 0xcdaf8587a43a19caULL;
+  static const uint64_t static_value2 = 0xa15d83076f59736bULL;
 };
 
 template<class ContainerAllocator>
@@ -146,6 +151,7 @@ struct Definition< ::baxter_msgs_mine::ProcessImageRequest_<ContainerAllocator> 
   {
     return "sensor_msgs/Image img\n\
 string color\n\
+string limb\n\
 \n\
 ================================================================================\n\
 MSG: sensor_msgs/Image\n\
@@ -214,6 +220,7 @@ namespace serialization
     {
       stream.next(m.img);
       stream.next(m.color);
+      stream.next(m.limb);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -237,6 +244,8 @@ struct Printer< ::baxter_msgs_mine::ProcessImageRequest_<ContainerAllocator> >
     Printer< ::sensor_msgs::Image_<ContainerAllocator> >::stream(s, indent + "  ", v.img);
     s << indent << "color: ";
     Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.color);
+    s << indent << "limb: ";
+    Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.limb);
   }
 };
 

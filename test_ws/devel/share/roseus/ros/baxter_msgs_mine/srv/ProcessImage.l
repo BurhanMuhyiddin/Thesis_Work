@@ -22,17 +22,19 @@
 
 (defclass baxter_msgs_mine::ProcessImageRequest
   :super ros::object
-  :slots (_img _color ))
+  :slots (_img _color _limb ))
 
 (defmethod baxter_msgs_mine::ProcessImageRequest
   (:init
    (&key
     ((:img __img) (instance sensor_msgs::Image :init))
     ((:color __color) "")
+    ((:limb __limb) "")
     )
    (send-super :init)
    (setq _img __img)
    (setq _color (string __color))
+   (setq _limb (string __limb))
    self)
   (:img
    (&rest __img)
@@ -44,6 +46,9 @@
   (:color
    (&optional __color)
    (if __color (setq _color __color)) _color)
+  (:limb
+   (&optional __limb)
+   (if __limb (setq _limb __limb)) _limb)
   (:serialization-length
    ()
    (+
@@ -51,6 +56,8 @@
     (send _img :serialization-length)
     ;; string _color
     4 (length _color)
+    ;; string _limb
+    4 (length _limb)
     ))
   (:serialize
    (&optional strm)
@@ -60,6 +67,8 @@
        (send _img :serialize s)
      ;; string _color
        (write-long (length _color) s) (princ _color s)
+     ;; string _limb
+       (write-long (length _limb) s) (princ _limb s)
      ;;
      (if (null strm) (get-output-stream-string s))))
   (:deserialize
@@ -68,6 +77,8 @@
      (send _img :deserialize buf ptr-) (incf ptr- (send _img :serialization-length))
    ;; string _color
      (let (n) (setq n (sys::peek buf ptr- :integer)) (incf ptr- 4) (setq _color (subseq buf ptr- (+ ptr- n))) (incf ptr- n))
+   ;; string _limb
+     (let (n) (setq n (sys::peek buf ptr- :integer)) (incf ptr- 4) (setq _limb (subseq buf ptr- (+ ptr- n))) (incf ptr- n))
    ;;
    self)
   )
@@ -132,7 +143,7 @@
   :super ros::object
   :slots ())
 
-(setf (get baxter_msgs_mine::ProcessImage :md5sum-) "a2769d8280b8b55343740f821071be39")
+(setf (get baxter_msgs_mine::ProcessImage :md5sum-) "8ddaef76372bb3744b202ff9f1b2b0db")
 (setf (get baxter_msgs_mine::ProcessImage :datatype-) "baxter_msgs_mine/ProcessImage")
 (setf (get baxter_msgs_mine::ProcessImage :request) baxter_msgs_mine::ProcessImageRequest)
 (setf (get baxter_msgs_mine::ProcessImage :response) baxter_msgs_mine::ProcessImageResponse)
@@ -140,11 +151,12 @@
 (defmethod baxter_msgs_mine::ProcessImageRequest
   (:response () (instance baxter_msgs_mine::ProcessImageResponse :init)))
 
-(setf (get baxter_msgs_mine::ProcessImageRequest :md5sum-) "a2769d8280b8b55343740f821071be39")
+(setf (get baxter_msgs_mine::ProcessImageRequest :md5sum-) "8ddaef76372bb3744b202ff9f1b2b0db")
 (setf (get baxter_msgs_mine::ProcessImageRequest :datatype-) "baxter_msgs_mine/ProcessImageRequest")
 (setf (get baxter_msgs_mine::ProcessImageRequest :definition-)
       "sensor_msgs/Image img
 string color
+string limb
 
 ================================================================================
 MSG: sensor_msgs/Image
@@ -198,11 +210,12 @@ float64[] extracted_features
 bool success
 ")
 
-(setf (get baxter_msgs_mine::ProcessImageResponse :md5sum-) "a2769d8280b8b55343740f821071be39")
+(setf (get baxter_msgs_mine::ProcessImageResponse :md5sum-) "8ddaef76372bb3744b202ff9f1b2b0db")
 (setf (get baxter_msgs_mine::ProcessImageResponse :datatype-) "baxter_msgs_mine/ProcessImageResponse")
 (setf (get baxter_msgs_mine::ProcessImageResponse :definition-)
       "sensor_msgs/Image img
 string color
+string limb
 
 ================================================================================
 MSG: sensor_msgs/Image
@@ -258,6 +271,6 @@ bool success
 
 
 
-(provide :baxter_msgs_mine/ProcessImage "a2769d8280b8b55343740f821071be39")
+(provide :baxter_msgs_mine/ProcessImage "8ddaef76372bb3744b202ff9f1b2b0db")
 
 

@@ -3,6 +3,8 @@
           IMG
           COLOR-VAL
           COLOR
+          LIMB-VAL
+          LIMB
           EXTRACTED_FEATURES-VAL
           EXTRACTED_FEATURES
           SUCCESS-VAL

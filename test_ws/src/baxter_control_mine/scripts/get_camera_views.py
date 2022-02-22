@@ -12,10 +12,14 @@ class image_converter:
 
         self.image_sub = rospy.Subscriber("/cameras/right_hand_camera/image",Image,self.callback)
 
-        self.low_H = 30
-        self.low_S = 0
+        # for blue: 104, 66, 0, 135, 255, 255
+        # for red: 0, 65, 0, 18, 255, 255
+        # for yellow: 20, 69, 0, 29, 255, 255
+
+        self.low_H = 20
+        self.low_S = 69
         self.low_V = 0
-        self.high_H = 180
+        self.high_H = 29
         self.high_S = 255
         self.high_V = 255
 
@@ -34,20 +38,28 @@ class image_converter:
         _, thresholded_img_otsu = cv2.threshold(gray_img,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)
         thresholded_img_otsu = cv2.bitwise_not(thresholded_img_otsu)
 
-        thresholded_img = cv2.bitwise_or(thresholded_img,thresholded_img_otsu)
+        # thresholded_img = cv2.bitwise_xor(thresholded_img,thresholded_img_otsu)
 
         kernel = cv2.getStructuringElement(cv2.MORPH_RECT,(3,3))
 
-        thresholded_img = cv2.erode(thresholded_img, kernel, iterations=3)
+        thresholded_img = cv2.morphologyEx(thresholded_img, cv2.MORPH_OPEN, kernel)
+        # thresholded_img = cv2.erode(thresholded_img, kernel, iterations=3)
 
         thresholded_img = cv2.dilate(thresholded_img, kernel, iterations=3)
 
         thresholded_img = cv2.bitwise_not(thresholded_img)
 
+        thresholded_img = cv2.bitwise_or(thresholded_img,thresholded_img_otsu)
+
         _, contours, _ = cv2.findContours(image=thresholded_img, mode=cv2.RETR_TREE, method=cv2.CHAIN_APPROX_NONE)
 
+        min_area = 200
+        max_area = 5000
+        min_arcLng = 500
+
         for contour in contours:
-            if cv2.contourArea(contour) > 1000: #and cv2.contourArea(contour) < 3000: #or cv2.arcLength(contour,True) < 300:
+            
+            if cv2.contourArea(contour) > min_area and cv2.contourArea(contour) < max_area: #and cv2.arcLength(contour,True) < max_arcLng:
                 # pass
                 cv2.drawContours(cv_image, [contour], -1, (255, 255, 255), thickness=cv2.FILLED)
                     
@@ -64,7 +76,7 @@ class image_converter:
                 #         break
 
         # cv2.imshow("Diff window", diff)
-        cv2.imshow("Thresholded img", thresholded_img)
+        # cv2.imshow("Thresholded img", thresholded_img)
         cv2.imshow("Image window", cv_image)
         cv2.waitKey(3)
 
