@@ -348,6 +348,19 @@ baxter_msgs_mine_generate_messages_lisp/fast:
 .PHONY : baxter_msgs_mine_generate_messages_lisp/fast
 
 #=============================================================================
+# Target rules for targets named baxter_msgs_mine_geneus
+
+# Build rule for target.
+baxter_msgs_mine_geneus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine_geneus
+.PHONY : baxter_msgs_mine_geneus
+
+# fast build rule for target.
+baxter_msgs_mine_geneus/fast:
+	$(MAKE) -f baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_geneus.dir/build.make baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_geneus.dir/build
+.PHONY : baxter_msgs_mine_geneus/fast
+
+#=============================================================================
 # Target rules for targets named rosgraph_msgs_generate_messages_nodejs
 
 # Build rule for target.
@@ -894,6 +907,19 @@ _baxter_msgs_mine_generate_messages_check_deps_CalculateIK/fast:
 .PHONY : _baxter_msgs_mine_generate_messages_check_deps_CalculateIK/fast
 
 #=============================================================================
+# Target rules for targets named _baxter_msgs_mine_generate_messages_check_deps_CheckCrossing
+
+# Build rule for target.
+_baxter_msgs_mine_generate_messages_check_deps_CheckCrossing: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _baxter_msgs_mine_generate_messages_check_deps_CheckCrossing
+.PHONY : _baxter_msgs_mine_generate_messages_check_deps_CheckCrossing
+
+# fast build rule for target.
+_baxter_msgs_mine_generate_messages_check_deps_CheckCrossing/fast:
+	$(MAKE) -f baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_CheckCrossing.dir/build.make baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_CheckCrossing.dir/build
+.PHONY : _baxter_msgs_mine_generate_messages_check_deps_CheckCrossing/fast
+
+#=============================================================================
 # Target rules for targets named _baxter_msgs_mine_generate_messages_check_deps_GoToPointAction
 
 # Build rule for target.
@@ -957,19 +983,6 @@ baxter_msgs_mine_generate_messages_eus: cmake_check_build_system
 baxter_msgs_mine_generate_messages_eus/fast:
 	$(MAKE) -f baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_eus.dir/build.make baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_eus.dir/build
 .PHONY : baxter_msgs_mine_generate_messages_eus/fast
-
-#=============================================================================
-# Target rules for targets named baxter_msgs_mine_geneus
-
-# Build rule for target.
-baxter_msgs_mine_geneus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine_geneus
-.PHONY : baxter_msgs_mine_geneus
-
-# fast build rule for target.
-baxter_msgs_mine_geneus/fast:
-	$(MAKE) -f baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_geneus.dir/build.make baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_geneus.dir/build
-.PHONY : baxter_msgs_mine_geneus/fast
 
 #=============================================================================
 # Target rules for targets named get_current_joint_states_server
@@ -1830,6 +1843,7 @@ help:
 	@echo "... baxter_msgs_mine_generate_messages_nodejs"
 	@echo "... baxter_msgs_mine_genlisp"
 	@echo "... baxter_msgs_mine_generate_messages_lisp"
+	@echo "... baxter_msgs_mine_geneus"
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_nodejs"
@@ -1872,12 +1886,12 @@ help:
 	@echo "... _baxter_msgs_mine_generate_messages_check_deps_GetCurrentJointStates"
 	@echo "... _baxter_msgs_mine_generate_messages_check_deps_GoToPointResult"
 	@echo "... _baxter_msgs_mine_generate_messages_check_deps_CalculateIK"
+	@echo "... _baxter_msgs_mine_generate_messages_check_deps_CheckCrossing"
 	@echo "... _baxter_msgs_mine_generate_messages_check_deps_GoToPointAction"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... _baxter_msgs_mine_generate_messages_check_deps_GoToPointActionResult"
 	@echo "... baxter_msgs_mine_generate_messages_cpp"
 	@echo "... baxter_msgs_mine_generate_messages_eus"
-	@echo "... baxter_msgs_mine_geneus"
 	@echo "... get_current_joint_states_server"
 	@echo "... calculate_ik_server"
 	@echo "... test_node"

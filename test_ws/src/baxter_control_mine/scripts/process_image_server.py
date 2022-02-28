@@ -57,7 +57,7 @@ class ProcessImageSrv:
 
         clr = req.color
 
-        rospy.loginfo(clr)
+        rospy.loginfo("ProcessImage server: " + clr)
 
         if clr == 'red':
             thresholded_img = cv2.inRange(hsv_img, (self.red_range['low_H'], self.red_range['low_S'], self.red_range['low_V']), 
@@ -83,7 +83,7 @@ class ProcessImageSrv:
 
         _, contours, _ = cv2.findContours(image=thresholded_img, mode=cv2.RETR_TREE, method=cv2.CHAIN_APPROX_NONE)
 
-        rospy.loginfo(len(contours))
+        # rospy.loginfo(len(contours))
 
         extracted_features = []
 
@@ -101,7 +101,7 @@ class ProcessImageSrv:
                 max_area = 5000
                 max_arcLng = 99999999
 
-            rospy.loginfo(cv2.contourArea(contour))
+            # rospy.loginfo(cv2.contourArea(contour))
 
             if cv2.contourArea(contour) > min_area and cv2.contourArea(contour) < max_area: #and cv2.arcLength(contour,True) < max_arcLng:
                 # cv2.drawContours(cv_image, [contour], -1, (255, 255, 255), thickness=cv2.FILLED)
@@ -128,7 +128,7 @@ class ProcessImageSrv:
 
         self.sf = req.limb + "_hand_camera"
 
-        rospy.loginfo(self.uv)
+        # rospy.loginfo(self.uv)
 
         while not rospy.is_shutdown():
             try:

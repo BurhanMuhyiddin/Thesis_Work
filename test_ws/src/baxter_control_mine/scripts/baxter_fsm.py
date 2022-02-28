@@ -15,6 +15,7 @@ from std_msgs.msg import Header
 from actionlib_msgs.msg import GoalID
 
 from baxter_msgs_mine.srv import ProcessImage, ProcessImageRequest
+from baxter_msgs_mine.srv import CheckCrossing, CheckCrossingRequest
 
 from baxter_msgs_mine.msg import GoToPointAction
 from baxter_msgs_mine.msg import GoToPointGoal
@@ -45,9 +46,12 @@ class main():
 
         self.extracted_features = []
 
+        self.stage = 0
+
         self.waypoints = list()
-        self.waypoints.append(Pose(Point(0.66398, 0.334738, 0.512868), Quaternion(-0.0472679, 0.997461, -0.00951615, 0.0524047)))
+        # self.waypoints.append(Pose(Point(0.66398, 0.334738, 0.512868), Quaternion(-0.0472679, 0.997461, -0.00951615, 0.0524047)))
         # self.waypoints.append(Pose(Point(0.821231, 0.238061, 0.369946), Quaternion(0.0411739, 0.994043, 0.0261063, 0.0974731)))
+        self.waypoints.append(Pose(Point(0.712783, 0.294493, 0.43211), Quaternion(-0.0178776, 0.994369, 0.040816, 0.0961492)))
         # self.waypoints.append(Pose(Point(0.738407, -0.202405, 0.393372), Quaternion(-0.197444, 0.976507, 0.0220792, 0.0834445)))
         self.waypoints.append(Pose(Point(0.690706, -0.300684, 0.545849), Quaternion(-0.0117947, 0.991489, 0.0648684, 0.112261)))
 
@@ -63,13 +67,27 @@ class main():
 
         with sm:
             
-            smach.StateMachine.add('TABLE_TOP_RIGHT', SimpleActionState("/go_to_goal", GoToPointAction, goal=GoToPointGoal(self.pose_points['work_right'], "right"), 
+            smach.StateMachine.add('HOME', SimpleActionState("/go_to_goal", GoToPointAction, goal=GoToPointGoal([self.pose_points['work_left'], self.pose_points['work_right']], "both"), 
+                                                                                            result_cb=self.home_result_cb,
+                                                                                            output_keys=['obj_color', 'is_grasped']),
+                                    transitions={'succeeded' : 'CHECK_CROSSING', 'preempted' : '', 'aborted' : ''},
+                                    remapping={'obj_color' : 'color_data', 'is_grasped' : 'grab_data'})
+
+            smach.StateMachine.add('CHECK_CROSSING', smach_ros.ServiceState('/check_crossing', CheckCrossing,
+                                                                                            outcomes=['operate_left', 'operate_right'],
+                                                                                            request_cb = self.check_crossing_request_cb,
+                                                                                            response_cb = self.check_crossing_result_cb,
+                                                                                            input_keys=['obj_color']),
+                                    transitions={'operate_left' : 'TABLE_TOP_LEFT', 'operate_right' : 'TABLE_TOP_RIGHT'},
+                                    remapping={'obj_color' : 'color_data'})
+                                    
+            smach.StateMachine.add('TABLE_TOP_RIGHT', SimpleActionState("/go_to_goal", GoToPointAction, goal=GoToPointGoal([self.pose_points['work_right']], "right"), 
                                                                                             result_cb=self.table_top_right_result_cb,
                                                                                             output_keys=['grabbed_image', 'obj_color', 'limb_name', 'is_grasped']),
                                     transitions={'succeeded' : 'PROCESS_IMAGE', 'preempted' : '', 'aborted' : ''}, 
                                     remapping={'grabbed_image' : 'img_data', 'obj_color' : 'color_data', 'limb_name' : 'limb_data', 'is_grasped' : 'grab_data'})
 
-            smach.StateMachine.add('TABLE_TOP_LEFT', SimpleActionState("/go_to_goal", GoToPointAction, goal=GoToPointGoal(self.pose_points['work_left'], "left"), 
+            smach.StateMachine.add('TABLE_TOP_LEFT', SimpleActionState("/go_to_goal", GoToPointAction, goal=GoToPointGoal([self.pose_points['work_left']], "left"), 
                                                                                             result_cb=self.table_top_left_result_cb,
                                                                                             input_keys=['is_grasped'],
                                                                                             output_keys=['grabbed_image', 'obj_color', 'limb_name']),
@@ -93,11 +111,12 @@ class main():
 
 
             smach.StateMachine.add('GRASP', SimpleActionState("/robot/end_effector/left_gripper/gripper_action", GripperCommandAction, goal_cb=self.gripper_goal_cb, 
+                                                                                            outcomes=['operate_left', 'operate_right'],
                                                                                             result_cb=self.grasp_state_clb,
                                                                                             input_keys=['limb_name'],
-                                                                                            output_keys=['is_grasped']), 
-                                    transitions={'succeeded' : 'TABLE_TOP_LEFT', 'preempted' : '', 'aborted' : ''}, 
-                                    remapping={'is_grasped' : 'grab_data', 'limb_name' : 'limb_data'})
+                                                                                            output_keys=['is_grasped', 'obj_color']), 
+                                    transitions={'operate_left' : 'TABLE_TOP_LEFT', 'operate_right' : 'TABLE_TOP_RIGHT'}, 
+                                    remapping={'is_grasped' : 'grab_data', 'limb_name' : 'limb_data', 'obj_color' : 'color_data'})
 
             smach.StateMachine.add('PLACE_POSITION', SimpleActionState("/go_to_goal", GoToPointAction, goal_cb=self.place_pos_goal_clb,
                                                                                             outcomes=['succeeded', 'preempted', 'aborted'],
@@ -109,7 +128,7 @@ class main():
             smach.StateMachine.add('RELEASE', SimpleActionState("/robot/end_effector/left_gripper/gripper_action", GripperCommandAction, goal_cb=self.gripper_goal_cb, 
                                                                                             result_cb=self.release_state_clb,
                                                                                             output_keys=['is_grasped']), 
-                                    transitions={'succeeded' : 'TABLE_TOP_RIGHT', 'preempted' : '', 'aborted' : ''}, 
+                                    transitions={'succeeded' : 'HOME', 'preempted' : '', 'aborted' : ''}, 
                                     remapping={'is_grasped' : 'grab_data'})
 
         self.sis = smach_ros.IntrospectionServer('server_name', sm, '/SM_ROOT')
@@ -131,7 +150,7 @@ class main():
     def pick_pos_goal_clb(self, ud, goal):
         pp = Pose()
         pp.position.x = self.extracted_features[0]
-        pp.position.y = self.extracted_features[1] 
+        pp.position.y = self.extracted_features[1]
         pp.position.z = 0.0060
         pp.orientation.x = 0.017546
         pp.orientation.y = 0.994616
@@ -140,7 +159,7 @@ class main():
 
         self.gripper_position = 30.0
 
-        return GoToPointGoal(pp, ud.limb_name)
+        return GoToPointGoal([pp], ud.limb_name)
 
     def place_pos_goal_clb(self, ud, goal):
         pp = Pose()
@@ -154,7 +173,7 @@ class main():
 
         self.gripper_position = 100.0
 
-        return GoToPointGoal(pp, ud.limb_name)
+        return GoToPointGoal([pp], ud.limb_name)
 
     # subscriber callbacks
 
@@ -164,6 +183,12 @@ class main():
         self.current_image_right = data # update current image regularly
 
     # request callbacks
+
+    def check_crossing_request_cb(self, ud, request):
+        cc_req = CheckCrossingRequest()
+        cc_req.color = ud.obj_color
+
+        return cc_req
 
     def get_image_cb(self, ud, request):
         # return img_to_be_processed
@@ -178,15 +203,30 @@ class main():
 
     # result callbacks
 
+    def home_result_cb(self, ud, status, result):
+        if status == actionlib.GoalStatus.SUCCEEDED:
+            ud.is_grasped = 0
+            self.stage = 0
+            ud.obj_color = "yellow"
+            rospy.sleep(1.0)
+
     def process_image_result_cb(self, ud, result):
         # get extracted features from result
         self.extracted_features = result.extracted_features
 
-        if ud.is_grasped > 0: # if object is grasped, then place it
-            return 'place_obj'
-        else:               # otherwise, pick it
+        if self.stage == 0 or self.stage == 1:
             return 'pick_obj'
+        else:
+            return 'place_obj'
         # rospy.loginfo(self.extracted_features)
+
+    def check_crossing_result_cb(self, ud, result):
+        limb = result.limb
+
+        if limb == "left":
+            return "operate_left"
+        else:
+            return "operate_right"
 
     def table_top_right_result_cb(self, ud, status, result):
         if status == actionlib.GoalStatus.SUCCEEDED:
@@ -197,9 +237,7 @@ class main():
                 continue
 
             ud.grabbed_image = self.current_image_right
-            ud.obj_color = "yellow" # set color to be detected as yellow
             ud.limb_name = "right"
-            ud.is_grasped = 0 # int his case table_top_right is home state, but in future, create home state and reset everything in that state
 
             rospy.sleep(2.0)
 
@@ -213,11 +251,6 @@ class main():
             
             ud.grabbed_image = self.current_image_left
             ud.limb_name = "left"
-
-            if ud.is_grasped == 1:
-                ud.obj_color = "blue"
-            else:
-                ud.obj_color = "red"
 
             rospy.sleep(2.0)
 
@@ -233,11 +266,25 @@ class main():
 
     def grasp_state_clb(self, ud, status, result):
         if status == actionlib.GoalStatus.SUCCEEDED:
+            temp = self.stage
+            self.stage = self.stage + 1
+
             if ud.limb_name == "left":
                 ud.is_grasped = 1
+                if temp == 0:
+                    ud.obj_color = "red"
+                    return "operate_right"
+                else:
+                    ud.obj_color = "blue"
+                    return "operate_left"
             else:
                 ud.is_grasped = 0 # because we don't grasp with two
-            rospy.sleep(1.0)
+                if temp == 0:
+                    ud.obj_color = "red"
+                    return "operate_left"
+                else:
+                    ud.obj_color = "blue"
+                    return "operate_right"
 
     def release_state_clb(self, ud, status, result):
         if status == actionlib.GoalStatus.SUCCEEDED:
