@@ -63,6 +63,7 @@ baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_nodejs: /home/lar
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_nodejs: /home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_msgs_mine/srv/GetCurrentJointStates.js
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_nodejs: /home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_msgs_mine/srv/PositionCommandMine.js
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_nodejs: /home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_msgs_mine/srv/CalculateIK.js
+baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_nodejs: /home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_msgs_mine/srv/CheckCrossing.js
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_nodejs: /home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_msgs_mine/srv/ProcessImage.js
 
 
@@ -164,11 +165,16 @@ baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_nodejs: /home/lar
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating Javascript code from baxter_msgs_mine/CalculateIK.srv"
 	cd /home/lar/ros/test_ws/build/baxter_msgs_mine && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/lar/ros/test_ws/src/baxter_msgs_mine/srv/CalculateIK.srv -Ibaxter_msgs_mine:/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -p baxter_msgs_mine -o /home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_msgs_mine/srv
 
+/home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_msgs_mine/srv/CheckCrossing.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
+/home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_msgs_mine/srv/CheckCrossing.js: /home/lar/ros/test_ws/src/baxter_msgs_mine/srv/CheckCrossing.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating Javascript code from baxter_msgs_mine/CheckCrossing.srv"
+	cd /home/lar/ros/test_ws/build/baxter_msgs_mine && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/lar/ros/test_ws/src/baxter_msgs_mine/srv/CheckCrossing.srv -Ibaxter_msgs_mine:/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -p baxter_msgs_mine -o /home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_msgs_mine/srv
+
 /home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_msgs_mine/srv/ProcessImage.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
 /home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_msgs_mine/srv/ProcessImage.js: /home/lar/ros/test_ws/src/baxter_msgs_mine/srv/ProcessImage.srv
 /home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_msgs_mine/srv/ProcessImage.js: /opt/ros/kinetic/share/sensor_msgs/msg/Image.msg
 /home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_msgs_mine/srv/ProcessImage.js: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating Javascript code from baxter_msgs_mine/ProcessImage.srv"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Generating Javascript code from baxter_msgs_mine/ProcessImage.srv"
 	cd /home/lar/ros/test_ws/build/baxter_msgs_mine && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/lar/ros/test_ws/src/baxter_msgs_mine/srv/ProcessImage.srv -Ibaxter_msgs_mine:/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -p baxter_msgs_mine -o /home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_msgs_mine/srv
 
 baxter_msgs_mine_generate_messages_nodejs: baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_nodejs
@@ -182,6 +188,7 @@ baxter_msgs_mine_generate_messages_nodejs: /home/lar/ros/test_ws/devel/share/gen
 baxter_msgs_mine_generate_messages_nodejs: /home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_msgs_mine/srv/GetCurrentJointStates.js
 baxter_msgs_mine_generate_messages_nodejs: /home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_msgs_mine/srv/PositionCommandMine.js
 baxter_msgs_mine_generate_messages_nodejs: /home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_msgs_mine/srv/CalculateIK.js
+baxter_msgs_mine_generate_messages_nodejs: /home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_msgs_mine/srv/CheckCrossing.js
 baxter_msgs_mine_generate_messages_nodejs: /home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_msgs_mine/srv/ProcessImage.js
 baxter_msgs_mine_generate_messages_nodejs: baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_nodejs.dir/build.make
 

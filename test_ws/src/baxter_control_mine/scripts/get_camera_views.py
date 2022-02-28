@@ -10,7 +10,7 @@ class image_converter:
     def __init__(self):
         self.bridge = CvBridge()
 
-        self.image_sub = rospy.Subscriber("/cameras/right_hand_camera/image",Image,self.callback)
+        self.image_sub = rospy.Subscriber("/cameras/left_hand_camera/image",Image,self.callback)
 
         # for blue: 104, 66, 0, 135, 255, 255
         # for red: 0, 65, 0, 18, 255, 255

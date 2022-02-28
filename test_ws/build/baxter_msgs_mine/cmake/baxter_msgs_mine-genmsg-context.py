@@ -1,7 +1,7 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
 messages_str = "/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToPointAction.msg;/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToPointActionGoal.msg;/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToPointActionResult.msg;/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToPointActionFeedback.msg;/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToPointGoal.msg;/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToPointResult.msg;/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToPointFeedback.msg"
-services_str = "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/PositionCommandMine.srv;/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/CalculateIK.srv;/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/ProcessImage.srv;/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/GetCurrentJointStates.srv"
+services_str = "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/PositionCommandMine.srv;/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/CalculateIK.srv;/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/ProcessImage.srv;/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/GetCurrentJointStates.srv;/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/CheckCrossing.srv"
 pkg_name = "baxter_msgs_mine"
 dependencies_str = "actionlib_msgs;std_msgs;geometry_msgs;sensor_msgs"
 langs = "gencpp;geneus;genlisp;gennodejs;genpy"

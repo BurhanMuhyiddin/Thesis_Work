@@ -57,8 +57,12 @@ void GoToGoal::onGoal(const baxter_msgs_mine::GoToPointGoalConstPtr &goal)
 
     sensor_msgs::JointState cjs;
 
+    ROS_INFO("GoToGoalActionServer: Hello..");
+
     cjs.name.resize(14);
     cjs.position.resize(14);
+
+    ROS_INFO("GoToGoalActionServer: Hello....");
 
     cjs.name[0] = "left_s0";
     cjs.name[1] = "left_s1";
@@ -75,35 +79,73 @@ void GoToGoal::onGoal(const baxter_msgs_mine::GoToPointGoalConstPtr &goal)
     cjs.name[12] = "right_w1";
     cjs.name[13] = "right_w2";
 
+    ROS_INFO("GoToGoalActionServer: Hello.......");
+
     // solve inverse kinematics   (left/right s0, s1, e0, e1, w0, w1, w2)
-    ros::ServiceClient cIKsc = nh.serviceClient<baxter_msgs_mine::CalculateIK>("/calculate_ik");
+    ros::ServiceClient cIKsc_L = nh.serviceClient<baxter_msgs_mine::CalculateIK>("/calculate_ik");
+    ros::ServiceClient cIKsc_R = nh.serviceClient<baxter_msgs_mine::CalculateIK>("/calculate_ik");
 
-    baxter_msgs_mine::CalculateIK cIKsrv;
-    cIKsrv.request.limb = goal->limb;
-    cIKsrv.request.desired_pose = goal->desired_pose;
+    baxter_msgs_mine::CalculateIK cIKsrv_L;
+    baxter_msgs_mine::CalculateIK cIKsrv_R;
 
-    if (cIKsc.call(cIKsrv))
+    if (goal->limb == "left")
     {
-        sensor_msgs::JointState jv = std::move(cIKsrv.response.joints.front());
+        cIKsrv_L.request.limb = goal->limb;
+        cIKsrv_L.request.desired_pose = goal->desired_pose[0];
 
-        if (goal->limb == "right") // if we move just right arm, then make position of left arm as zero, because it will be set as velocity mode later
+        if (cIKsc_L.call(cIKsrv_L))
         {
+            ROS_INFO(cIKsrv_L.response.joints.empty())
+            sensor_msgs::JointState jv_L = std::move(cIKsrv_L.response.joints.front());
+
             for (int i = 0; i < 7; i++)
             {
-                cjs.position[i] = 0.0000;
-                cjs.position[i+7] = jv.position[i];
-
-                ros::param::set("/limb", "right"); // set parameter limb as right, so we know which arm to move
-            }
-        }
-        else // if we move just left arm, then make position of right arm as zero, because it will be set as velocity mode later
-        {
-            for (int i = 0; i < 7; i++)
-            {
-                cjs.position[i] = jv.position[i];
+                cjs.position[i] = jv_L.position[i];
                 cjs.position[i+7] = 0.0000;
 
                 ros::param::set("/limb", "left"); // set parameter limb as left, so we know which arm to move
+            }
+        }
+    }
+    else if (goal->limb == "right")
+    {
+        cIKsrv_R.request.limb = goal->limb;
+        cIKsrv_R.request.desired_pose = goal->desired_pose[0];
+
+        if (cIKsc_R.call(cIKsrv_R))
+        {
+            sensor_msgs::JointState jv_R = std::move(cIKsrv_R.response.joints.front());
+
+            if (goal->limb == "right") // if we move just right arm, then make position of left arm as zero, because it will be set as velocity mode later
+            {
+                for (int i = 0; i < 7; i++)
+                {
+                    cjs.position[i] = 0.0000;
+                    cjs.position[i+7] = jv_R.position[i];
+
+                    ros::param::set("/limb", "right"); // set parameter limb as right, so we know which arm to move
+                }
+            }
+        }
+    }
+    else
+    {
+        cIKsrv_L.request.limb = "left";
+        cIKsrv_L.request.desired_pose = goal->desired_pose[0];
+        cIKsrv_R.request.limb = "right";
+        cIKsrv_R.request.desired_pose = goal->desired_pose[1];
+
+        if (cIKsc_L.call(cIKsrv_L) && cIKsc_R.call(cIKsrv_R))
+        {
+            sensor_msgs::JointState jv_L = std::move(cIKsrv_L.response.joints.front());
+            sensor_msgs::JointState jv_R = std::move(cIKsrv_R.response.joints.front());
+
+            for (int i = 0; i < 7; i++)
+            {
+                cjs.position[i] = jv_L.position[i];
+                cjs.position[i+7] = jv_R.position[i];
+
+                ros::param::set("/limb", "both"); // set parameter limb as both, so we know which arm to move
             }
         }
     }
@@ -138,7 +180,8 @@ void GoToGoal::onGoal(const baxter_msgs_mine::GoToPointGoalConstPtr &goal)
     {
         ROS_INFO("GoToGoalActionServer: Trajectory is being executed...");
         move_group_interface.execute(my_plan);
-        result.final_pose = goal->desired_pose;
+        result.final_pose.push_back(std::move(goal->desired_pose[0]));
+        result.final_pose.push_back(std::move(goal->desired_pose[1]));
         as.setSucceeded(result);
         ROS_INFO("GoToGoalActionServer: Trajectory has been executed successfully...");
     }

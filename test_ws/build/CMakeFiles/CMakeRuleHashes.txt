@@ -29,6 +29,7 @@ e63416769b863faefcd89cae546af9a3 /home/lar/ros/test_ws/devel/include/baxter_core
 af520b41e8b979ce25616724acdf8d9e /home/lar/ros/test_ws/devel/include/baxter_core_msgs/SolvePositionIK.h
 62a4c07dd805273354d307617596c9f7 /home/lar/ros/test_ws/devel/include/baxter_core_msgs/URDFConfiguration.h
 7b0ba9820967461711b75deba00b4d93 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/CalculateIK.h
+b206b84885713dcfa0b08dd6d45f78a8 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/CheckCrossing.h
 2a6540b6a9855a2c4afc3be881592a78 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GetCurrentJointStates.h
 f7db87180bd44ce5bd85e196d4f046c6 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointAction.h
 37a0b5fedf48a6c728da56b715209ed9 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointActionFeedback.h
@@ -79,6 +80,7 @@ e600facc1a7d97e46c5965e12b433aef /home/lar/ros/test_ws/devel/lib/python2.7/dist-
 52b500a4b2cbf5d8db8cd1d17bedf718 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToPointResult.py
 24690aa2d43be3d9aa37c10f3fa7f59b /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/__init__.py
 dd89018e99c547795f453e5bfe99bb23 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_CalculateIK.py
+6e98a67d5ec590dada088341a6763552 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_CheckCrossing.py
 b4740a6a394267e0fdcd5b625c7c2fb6 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_GetCurrentJointStates.py
 a686e6b97e0154402a83263ca51907f9 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_PositionCommandMine.py
 7e6aa404501110dd1f0c07449fd3453a /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_ProcessImage.py
@@ -120,6 +122,7 @@ cb3d8b723d25a432c89d9f7b45760015 /home/lar/ros/test_ws/devel/share/common-lisp/r
 ab8ddf9f195f6987894dcb63fab390ac /home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/msg/GoToPointGoal.lisp
 6e4ec386235b3c3788c22ee2c740c392 /home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/msg/GoToPointResult.lisp
 c1adcf602bd7f26be8d1bf872d338584 /home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv/CalculateIK.lisp
+65ae9a74ac836c990b09af8511fe1faf /home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv/CheckCrossing.lisp
 e78fdbaef21c1fc8199b13a3b0e9156b /home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv/GetCurrentJointStates.lisp
 2f329b03cbb58b6cbfbe609fa65899d0 /home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv/PositionCommandMine.lisp
 5c9aa7c80a312283051fee90b8548503 /home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv/ProcessImage.lisp
@@ -160,6 +163,7 @@ a27435fb56cf2cb9a0ce3facbc0a8079 /home/lar/ros/test_ws/devel/share/gennodejs/ros
 2313020109894e6cb7f101a7cce8253e /home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_msgs_mine/msg/GoToPointGoal.js
 9544c97edfd82d3e9116b427a8f5ca79 /home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_msgs_mine/msg/GoToPointResult.js
 bb27ad129c9ce171d8eea422ee34bb64 /home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_msgs_mine/srv/CalculateIK.js
+784cbf3e9408a4d38c20578d6ee5fe83 /home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_msgs_mine/srv/CheckCrossing.js
 cf0ee0a20101e3eb89cb9512c31f055a /home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_msgs_mine/srv/GetCurrentJointStates.js
 fdc26bb319ee220bc980ab79c61e8187 /home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_msgs_mine/srv/PositionCommandMine.js
 f3e971dbc306d346baff236a4d211190 /home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_msgs_mine/srv/ProcessImage.js
@@ -202,11 +206,13 @@ aa94404a623523923c9d0a2dafd38942 /home/lar/ros/test_ws/devel/share/roseus/ros/ba
 3dd445d32f7bc97462ae2586cc37ae70 /home/lar/ros/test_ws/devel/share/roseus/ros/baxter_msgs_mine/msg/GoToPointGoal.l
 284b68149f02807ca9a1d4a8debde8f5 /home/lar/ros/test_ws/devel/share/roseus/ros/baxter_msgs_mine/msg/GoToPointResult.l
 6c0921d897582f7da8f68fbba484bc3e /home/lar/ros/test_ws/devel/share/roseus/ros/baxter_msgs_mine/srv/CalculateIK.l
+87308dea9f6d8f19f080dffec4b6e1b8 /home/lar/ros/test_ws/devel/share/roseus/ros/baxter_msgs_mine/srv/CheckCrossing.l
 a92684ba3ed6de3c5eed630c5354add9 /home/lar/ros/test_ws/devel/share/roseus/ros/baxter_msgs_mine/srv/GetCurrentJointStates.l
 d716c3550374556574dbc54e8cd7349e /home/lar/ros/test_ws/devel/share/roseus/ros/baxter_msgs_mine/srv/PositionCommandMine.l
 a9499feef1ca19628f15e68a9aa55a5a /home/lar/ros/test_ws/devel/share/roseus/ros/baxter_msgs_mine/srv/ProcessImage.l
 7fbd8831de212e18a835103449d03bc4 CMakeFiles/clean_test_results
 b107f41343488c5b6ad2d5c40b14e956 baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_CalculateIK
+c28411d36957cad66c096a5b31c8aca2 baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_CheckCrossing
 cb756f14049426dd617801cd1ea07156 baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GetCurrentJointStates
 db0c470c499c1ddecd6982ef802862ed baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointAction
 23427c60d7505cc6f0c982d0f012c28c baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointActionFeedback

@@ -1,9 +1,9 @@
 #goal
-geometry_msgs/Pose desired_pose
+geometry_msgs/Pose[] desired_pose
 string limb
 ---
 #result
-geometry_msgs/Pose final_pose
+geometry_msgs/Pose[] final_pose
 ---
 #feedback
 geometry_msgs/Pose current_pose

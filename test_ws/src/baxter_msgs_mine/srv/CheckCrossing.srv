@@ -1,0 +1,4 @@
+string color
+---
+string limb
+bool success
