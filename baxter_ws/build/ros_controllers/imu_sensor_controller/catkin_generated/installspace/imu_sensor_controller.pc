@@ -1,8 +1,0 @@
-prefix=/home/lar/ros/baxter_ws/install
-
-Name: imu_sensor_controller
-Description: Description of imu_sensor_controller
-Version: 0.8.1
-Cflags: -I${prefix}/include
-Libs: -L${prefix}/lib -limu_sensor_controller
-Requires: controller_interface hardware_interface sensor_msgs realtime_tools
