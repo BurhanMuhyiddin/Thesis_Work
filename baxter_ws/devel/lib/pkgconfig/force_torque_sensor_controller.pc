@@ -1,8 +1,0 @@
-prefix=/home/lar/ros/baxter_ws/devel
-
-Name: force_torque_sensor_controller
-Description: Description of force_torque_sensor_controller
-Version: 0.8.1
-Cflags: -I/home/lar/ros/baxter_ws/src/ros_controllers/force_torque_sensor_controller/include
-Libs: -L${prefix}/lib -lforce_torque_sensor_controller
-Requires: controller_interface hardware_interface geometry_msgs realtime_tools

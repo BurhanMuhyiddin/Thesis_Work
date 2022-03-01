@@ -1,8 +1,0 @@
-prefix=/home/lar/ros/baxter_ws/devel
-
-Name: baxter_description_old
-Description: Description of baxter_description_old
-Version: 1.2.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
