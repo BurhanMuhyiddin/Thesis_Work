@@ -1,8 +1,0 @@
-prefix=/home/lar/ros/baxter_ws/install
-
-Name: move_rt
-Description: Description of move_rt
-Version: 0.0.0
-Cflags: -I${prefix}/include
-Libs: -L${prefix}/lib -lmove_rt
-Requires: roscpp rospy std_msgs tf tf2 tf2_bullet tf2_ros tf2_geometry_msgs tf2_kdl tf2_msgs control_msgs moveit_core message_runtime moveit_ros_planning_interface
