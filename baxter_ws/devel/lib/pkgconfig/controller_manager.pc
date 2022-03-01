@@ -1,8 +1,0 @@
-prefix=/home/lar/ros/baxter_ws/devel
-
-Name: controller_manager
-Description: Description of controller_manager
-Version: 0.8.2
-Cflags: -I/home/lar/ros/baxter_ws/src/ros_control/controller_manager/include
-Libs: -L${prefix}/lib -lcontroller_manager
-Requires: controller_interface controller_manager_msgs hardware_interface realtime_tools pluginlib
