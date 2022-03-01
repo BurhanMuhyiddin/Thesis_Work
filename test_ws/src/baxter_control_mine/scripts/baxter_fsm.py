@@ -43,10 +43,9 @@ class main():
         self.current_image_right = None
 
         self.gripper_position = 0.0
+        self.stage = 0
 
         self.extracted_features = []
-
-        self.stage = 0
 
         self.waypoints = list()
         # self.waypoints.append(Pose(Point(0.66398, 0.334738, 0.512868), Quaternion(-0.0472679, 0.997461, -0.00951615, 0.0524047)))
@@ -58,9 +57,9 @@ class main():
         pose_points = (('work_left', self.waypoints[0]),
                        ('work_right', self.waypoints[1]))
         self.pose_points = OrderedDict(pose_points)
-        
+
+        # start to create state machine
         sm = smach.StateMachine(outcomes=['succeeded', 'preempted', 'aborted'])
-        sm.userdata.grab_data = 0 # 0: none of the arms grasped | 1: left arm grasped | 2: right arm grasped
         sm.userdata.img_data = Image()
         sm.userdata.color_data = "yellow"
         sm.userdata.limb_data = "right"
@@ -69,9 +68,9 @@ class main():
             
             smach.StateMachine.add('HOME', SimpleActionState("/go_to_goal", GoToPointAction, goal=GoToPointGoal([self.pose_points['work_left'], self.pose_points['work_right']], "both"), 
                                                                                             result_cb=self.home_result_cb,
-                                                                                            output_keys=['obj_color', 'is_grasped']),
+                                                                                            output_keys=['obj_color']),
                                     transitions={'succeeded' : 'CHECK_CROSSING', 'preempted' : '', 'aborted' : ''},
-                                    remapping={'obj_color' : 'color_data', 'is_grasped' : 'grab_data'})
+                                    remapping={'obj_color' : 'color_data'})
 
             smach.StateMachine.add('CHECK_CROSSING', smach_ros.ServiceState('/check_crossing', CheckCrossing,
                                                                                             request_cb = self.check_crossing_request_cb,

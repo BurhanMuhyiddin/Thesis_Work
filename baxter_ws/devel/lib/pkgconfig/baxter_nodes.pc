@@ -1,0 +1,8 @@
+prefix=/home/lar/ros/baxter_ws/devel
+
+Name: baxter_nodes
+Description: Description of baxter_nodes
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
