@@ -1,3 +1,4 @@
+from ._CameraDebug import *
 from ._GoToPointAction import *
 from ._GoToPointActionFeedback import *
 from ._GoToPointActionGoal import *

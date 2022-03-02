@@ -46,6 +46,24 @@
     <arg name="debug" value="$(arg debug)"/>
   </include>
 
+  <!-- ******************************************************************* -->
+  <!-- <remap from="/right_arm/get_planning_scene" to="/get_planning_scene"/>
+  <remap from="/right_arm/robot_description" to="/robot_description"/>
+
+  <group ns="right_arm">  
+      <rosparam file="$(find move_rt)/config/task_arm_baxter_right_new.yaml" command="load"/>
+      <node pkg="move_rt" type="move_rt_node" name="move_rt"  output="screen"/>
+  </group>
+
+  <remap from="/left_arm/get_planning_scene" to="/get_planning_scene"/>
+  <remap from="/left_arm/robot_description" to="/robot_description"/>
+
+  <group ns="left_arm">  
+      <rosparam file="$(find move_rt)/config/task_arm_baxter_left_new.yaml" command="load"/>
+      <node pkg="move_rt" type="move_rt_node" name="move_rt"  output="screen"/>
+  </group> -->
+  <!-- ******************************************************************* -->
+
   <!-- Run Rviz and load the default config to see the state of the move_group node -->
   <include file="$(find baxter_moveit_config)/launch/moveit_rviz.launch">
     <arg name="config" value="true"/>

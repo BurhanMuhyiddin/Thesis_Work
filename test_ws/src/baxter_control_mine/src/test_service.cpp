@@ -252,17 +252,26 @@ int main(int argc, char** argv)
 
   geometry_msgs::Pose target_pose1;
 
-  target_pose1.position.x = 0.805332;
-  target_pose1.position.y = 0.677069;
-  target_pose1.position.z = 0.494229;
+  //0.712783, 0.294493, 0.43211   -0.0178776, 0.994369, 0.040816, 0.0961492
 
-  // target_pose1.orientation.x = -0.00;
-  // target_pose1.orientation.y = -0.8065;
-  // target_pose1.orientation.z = -0.00302;
-  target_pose1.orientation.w = 1;
+  target_pose1.position.x = 0.625001;//0.712783;
+  target_pose1.position.y = 0.0833;//0.294493;
+  target_pose1.position.z = -0.2142;//0.43211;
+
+  target_pose1.orientation.x = 0.2439;//-0.0178776;
+  target_pose1.orientation.y = 0.9696;//0.994369;
+  target_pose1.orientation.z = 0.0156;//0.040816;
+  target_pose1.orientation.w = 0.0011;//0.0961492;
+
+  move_group.setPoseTarget(target_pose1);
+
+  bool success = (move_group.plan(plan) == moveit::planning_interface::MoveItErrorCode::SUCCESS);
+
+  ROS_INFO("Visualizing plan 1 (pose goal) %s",success?"":"FAILED"); 
 
   ROS_INFO("Trying IK.....");
-  if(robot_state->setFromIK(joint_model_group, target_pose1)){
+  ROS_INFO("%d", robot_state->setFromIK(joint_model_group, target_pose1));
+  if(1){
     ROS_INFO("successfully retrieved IK Solution!");
     // robot_state->copyJointGroupPositions(joint_model_group, joint_values);
     // for (std::size_t i = 0; i < joint_names.size(); ++i)

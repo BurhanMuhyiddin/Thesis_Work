@@ -16,19 +16,36 @@
 class CalculateIK
 {
 public:
-    CalculateIK()
+    CalculateIK() : spinner(2)
     {
+        spinner.start();
+
         ik_service = nh.advertiseService("/calculate_ik", &CalculateIK::calculate_ik_cb, this);
+        joint_state_subs = nh.subscribe("/robot/joint_states", 10, &CalculateIK::get_current_joint_states_cb, this);
 
         ROS_INFO("Calculate_ik: Service server has been started...");
     }
 
+    ~CalculateIK() 
+    {
+        ros::shutdown();
+    }
+
     bool calculate_ik_cb(baxter_msgs_mine::CalculateIK::Request &req, baxter_msgs_mine::CalculateIK::Response &res);
+    void get_current_joint_states_cb(const sensor_msgs::JointState &msg);
 
 private:
     ros::NodeHandle nh;
+    ros::AsyncSpinner spinner;
     ros::ServiceServer ik_service;
+    ros::Subscriber joint_state_subs;
+    sensor_msgs::JointState current_joint_vals;
 };
+
+void CalculateIK::get_current_joint_states_cb(const sensor_msgs::JointState &msg)
+{
+    current_joint_vals = std::move(msg);
+}
 
 bool CalculateIK::calculate_ik_cb(baxter_msgs_mine::CalculateIK::Request &req, baxter_msgs_mine::CalculateIK::Response &res)
 {
@@ -47,7 +64,11 @@ bool CalculateIK::calculate_ik_cb(baxter_msgs_mine::CalculateIK::Request &req, b
     pose.header = hdr;
     pose.pose = req.desired_pose;
 
-    ikreq.request.pose_stamp.push_back(pose);
+    std::vector<sensor_msgs::JointState> seed_angles;
+    seed_angles.push_back(std::move(current_joint_vals));
+
+    ikreq.request.pose_stamp.push_back(std::move(pose));
+    ikreq.request.seed_angles = std::move(seed_angles);
 
     if (iksvc.call(ikreq))
     {
@@ -93,7 +114,7 @@ int main(int argc, char **argv)
 
     CalculateIK cIK;
 
-    ros::spin();
+    ros::waitForShutdown();
 
     return 0;
 }
