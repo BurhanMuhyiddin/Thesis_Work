@@ -17,6 +17,11 @@ find_package(catkin REQUIRED COMPONENTS
   sensor_msgs
 )
 
+add_message_files(
+  FILES
+  CameraDebug.msg
+)
+
 add_service_files(FILES
   PositionCommandMine.srv
   CalculateIK.srv

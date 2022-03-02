@@ -33,6 +33,10 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/baxter_msgs_mine/msg" TYPE FILE FILES "/home/lar/ros/test_ws/src/baxter_msgs_mine/msg/CameraDebug.msg")
+endif()
+
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/baxter_msgs_mine/srv" TYPE FILE FILES
     "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/PositionCommandMine.srv"
     "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/CalculateIK.srv"

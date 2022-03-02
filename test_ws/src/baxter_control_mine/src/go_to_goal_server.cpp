@@ -95,7 +95,7 @@ void GoToGoal::onGoal(const baxter_msgs_mine::GoToPointGoalConstPtr &goal)
 
         if (cIKsc_L.call(cIKsrv_L))
         {
-            ROS_INFO(cIKsrv_L.response.joints.empty())
+            // ROS_INFO(cIKsrv_L.response.joints.empty());
             sensor_msgs::JointState jv_L = std::move(cIKsrv_L.response.joints.front());
 
             for (int i = 0; i < 7; i++)

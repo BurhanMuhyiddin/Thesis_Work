@@ -7,6 +7,8 @@
                :std_msgs-msg
 )
   :components ((:file "_package")
+    (:file "CameraDebug" :depends-on ("_package_CameraDebug"))
+    (:file "_package_CameraDebug" :depends-on ("_package"))
     (:file "GoToPointAction" :depends-on ("_package_GoToPointAction"))
     (:file "_package_GoToPointAction" :depends-on ("_package"))
     (:file "GoToPointActionFeedback" :depends-on ("_package_GoToPointActionFeedback"))

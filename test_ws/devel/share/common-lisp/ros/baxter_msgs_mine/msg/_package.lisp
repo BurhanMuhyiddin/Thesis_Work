@@ -1,6 +1,8 @@
 (cl:defpackage baxter_msgs_mine-msg
   (:use )
   (:export
+   "<CAMERADEBUG>"
+   "CAMERADEBUG"
    "<GOTOPOINTACTION>"
    "GOTOPOINTACTION"
    "<GOTOPOINTACTIONFEEDBACK>"

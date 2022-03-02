@@ -6,10 +6,11 @@ from image_geometry import PinholeCameraModel
 import tf2_ros
 import tf2_geometry_msgs
 
-import numpy as np
 import cv2
 
 from sensor_msgs.msg import CameraInfo
+from sensor_msgs.msg import Image
+
 from geometry_msgs.msg import PointStamped
 
 from baxter_msgs_mine.srv import ProcessImage, ProcessImageResponse
@@ -29,6 +30,8 @@ class ProcessImageSrv:
 
         self.left_cam_info_sub = rospy.Subscriber("/cameras/left_hand_camera/camera_info", CameraInfo, self.left_cam_info_clb)
         self.right_cam_info_sub = rospy.Subscriber("/cameras/right_hand_camera/camera_info", CameraInfo, self.right_cam_info_clb)
+
+        self.processed_image_pub = rospy.Publisher("processed_image", Image, queue_size=10)
 
         self.red_range = {'low_H' : 0, 'low_S' : 65, 'low_V' : 0, 'high_H' : 18, 'high_S' : 255, 'high_V' : 255}
         self.blu_range = {'low_H' : 104, 'low_S' : 66, 'low_V' : 0, 'high_H' : 135, 'high_S' : 255, 'high_V' : 255}
@@ -104,7 +107,12 @@ class ProcessImageSrv:
             # rospy.loginfo(cv2.contourArea(contour))
 
             if cv2.contourArea(contour) > min_area and cv2.contourArea(contour) < max_area: #and cv2.arcLength(contour,True) < max_arcLng:
-                # cv2.drawContours(cv_image, [contour], -1, (255, 255, 255), thickness=cv2.FILLED)
+                cv2.drawContours(cv_image, [contour], -1, (255, 255, 255), thickness=cv2.FILLED)
+
+                # in order to debug, publish the processed image
+                image_message = self.bridge.cv2_to_imgmsg(cv_image, encoding="bgr8")
+                self.processed_image_pub.publish(image_message)
+
                 # cv2.imwrite('/home/lar/Desktop/lena_opencv_red.jpg', cv_image)
                 M = cv2.moments(contour)
                 if M['m00'] != 0:

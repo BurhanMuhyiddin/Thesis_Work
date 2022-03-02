@@ -361,6 +361,19 @@ baxter_msgs_mine_geneus/fast:
 .PHONY : baxter_msgs_mine_geneus/fast
 
 #=============================================================================
+# Target rules for targets named baxter_msgs_mine_generate_messages_eus
+
+# Build rule for target.
+baxter_msgs_mine_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine_generate_messages_eus
+.PHONY : baxter_msgs_mine_generate_messages_eus
+
+# fast build rule for target.
+baxter_msgs_mine_generate_messages_eus/fast:
+	$(MAKE) -f baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_eus.dir/build.make baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_eus.dir/build
+.PHONY : baxter_msgs_mine_generate_messages_eus/fast
+
+#=============================================================================
 # Target rules for targets named rosgraph_msgs_generate_messages_nodejs
 
 # Build rule for target.
@@ -424,6 +437,19 @@ rosgraph_msgs_generate_messages_cpp: cmake_check_build_system
 rosgraph_msgs_generate_messages_cpp/fast:
 	$(MAKE) -f baxter_msgs_mine/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make baxter_msgs_mine/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
 .PHONY : rosgraph_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named _baxter_msgs_mine_generate_messages_check_deps_CameraDebug
+
+# Build rule for target.
+_baxter_msgs_mine_generate_messages_check_deps_CameraDebug: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _baxter_msgs_mine_generate_messages_check_deps_CameraDebug
+.PHONY : _baxter_msgs_mine_generate_messages_check_deps_CameraDebug
+
+# fast build rule for target.
+_baxter_msgs_mine_generate_messages_check_deps_CameraDebug/fast:
+	$(MAKE) -f baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_CameraDebug.dir/build.make baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_CameraDebug.dir/build
+.PHONY : _baxter_msgs_mine_generate_messages_check_deps_CameraDebug/fast
 
 #=============================================================================
 # Target rules for targets named rosgraph_msgs_generate_messages_eus
@@ -970,19 +996,6 @@ baxter_msgs_mine_generate_messages_cpp: cmake_check_build_system
 baxter_msgs_mine_generate_messages_cpp/fast:
 	$(MAKE) -f baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp.dir/build.make baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp.dir/build
 .PHONY : baxter_msgs_mine_generate_messages_cpp/fast
-
-#=============================================================================
-# Target rules for targets named baxter_msgs_mine_generate_messages_eus
-
-# Build rule for target.
-baxter_msgs_mine_generate_messages_eus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine_generate_messages_eus
-.PHONY : baxter_msgs_mine_generate_messages_eus
-
-# fast build rule for target.
-baxter_msgs_mine_generate_messages_eus/fast:
-	$(MAKE) -f baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_eus.dir/build.make baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_eus.dir/build
-.PHONY : baxter_msgs_mine_generate_messages_eus/fast
 
 #=============================================================================
 # Target rules for targets named get_current_joint_states_server
@@ -1844,11 +1857,13 @@ help:
 	@echo "... baxter_msgs_mine_genlisp"
 	@echo "... baxter_msgs_mine_generate_messages_lisp"
 	@echo "... baxter_msgs_mine_geneus"
+	@echo "... baxter_msgs_mine_generate_messages_eus"
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
+	@echo "... _baxter_msgs_mine_generate_messages_check_deps_CameraDebug"
 	@echo "... rosgraph_msgs_generate_messages_eus"
 	@echo "... roscpp_generate_messages_py"
 	@echo "... roscpp_generate_messages_eus"
@@ -1891,7 +1906,6 @@ help:
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... _baxter_msgs_mine_generate_messages_check_deps_GoToPointActionResult"
 	@echo "... baxter_msgs_mine_generate_messages_cpp"
-	@echo "... baxter_msgs_mine_generate_messages_eus"
 	@echo "... get_current_joint_states_server"
 	@echo "... calculate_ik_server"
 	@echo "... test_node"
