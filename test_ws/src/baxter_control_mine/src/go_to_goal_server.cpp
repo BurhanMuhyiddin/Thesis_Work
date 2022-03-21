@@ -9,6 +9,7 @@
 
 #include <string>
 #include <vector>
+#include <map>
 
 #include <baxter_msgs_mine/GoToPointAction.h>
 #include <baxter_msgs_mine/GoToPointGoal.h>
@@ -18,6 +19,8 @@
 #include <baxter_msgs_mine/CalculateIK.h>
 
 #include <baxter_msgs_mine/GetCurrentJointStates.h>
+
+static const double THRESHOLD = 0.001;
 
 class GoToGoal
 {
@@ -31,6 +34,11 @@ public:
 
         as.start();
 
+        std::vector<double> init_left{0.712783, 0.294493, 0.43211};
+        std::vector<double> init_right{0.730668, -0.412415, 0.371713};
+
+        previous_pos["left"]  = std::move(init_left); // left arm previous pos
+        previous_pos["right"] = std::move(init_right); // right arm previous pos
 
         ROS_INFO("GoToGoalActionServer: Simple Action Server has been started...");
     }
@@ -41,9 +49,11 @@ public:
     }
 
     void onGoal(const baxter_msgs_mine::GoToPointGoalConstPtr &goal);
+    bool check_requirement(const baxter_msgs_mine::GoToPointGoalConstPtr &goal);
 
 private:
     std::string PLANNING_GROUP;
+    std::map<std::string, std::vector<double>> previous_pos;
 
     ros::NodeHandle nh;
     ros::AsyncSpinner spinner;
@@ -51,18 +61,40 @@ private:
     baxter_msgs_mine::GoToPointResult result;
 };
 
+bool GoToGoal::check_requirement(const baxter_msgs_mine::GoToPointGoalConstPtr &goal)
+{
+    std::vector<double> temp = std::move(previous_pos[goal->limb]);
+    double prev_x = temp[0];
+    double prev_y = temp[1];
+    double prev_z = temp[2];
+
+    // ROS_INFO("prev_x = %lf, prev_y = %lf, prev_z = %lf", prev_x, prev_y, prev_z);
+
+    double robot_x = goal->desired_pose[0].position.x;
+    double robot_y = goal->desired_pose[0].position.y;
+    double robot_z = goal->desired_pose[0].position.z;
+
+    // ROS_INFO("robot_x = %lf, robot_y = %lf, robot_z = %lf", robot_x, robot_y, robot_z);
+
+    double magnitude_squared = (robot_x - prev_x)*(robot_x - prev_x) + (robot_y - prev_y)*(robot_y - prev_y) + (robot_z - prev_z)*(robot_z - prev_z);
+
+    double magnitude = sqrt(magnitude_squared);
+
+    // ROS_INFO("magnitude = %lf", magnitude);
+
+    if (magnitude < THRESHOLD)
+        return false;
+    return true;
+}
+
 void GoToGoal::onGoal(const baxter_msgs_mine::GoToPointGoalConstPtr &goal)
 {
     ROS_INFO("GoToGoalActionServer: Goal received...");
 
     sensor_msgs::JointState cjs;
 
-    ROS_INFO("GoToGoalActionServer: Hello..");
-
     cjs.name.resize(14);
     cjs.position.resize(14);
-
-    ROS_INFO("GoToGoalActionServer: Hello....");
 
     cjs.name[0] = "left_s0";
     cjs.name[1] = "left_s1";
@@ -79,8 +111,6 @@ void GoToGoal::onGoal(const baxter_msgs_mine::GoToPointGoalConstPtr &goal)
     cjs.name[12] = "right_w1";
     cjs.name[13] = "right_w2";
 
-    ROS_INFO("GoToGoalActionServer: Hello.......");
-
     // solve inverse kinematics   (left/right s0, s1, e0, e1, w0, w1, w2)
     ros::ServiceClient cIKsc_L = nh.serviceClient<baxter_msgs_mine::CalculateIK>("/calculate_ik");
     ros::ServiceClient cIKsc_R = nh.serviceClient<baxter_msgs_mine::CalculateIK>("/calculate_ik");
@@ -88,42 +118,54 @@ void GoToGoal::onGoal(const baxter_msgs_mine::GoToPointGoalConstPtr &goal)
     baxter_msgs_mine::CalculateIK cIKsrv_L;
     baxter_msgs_mine::CalculateIK cIKsrv_R;
 
+    bool res = true;
+
     if (goal->limb == "left")
     {
-        cIKsrv_L.request.limb = goal->limb;
-        cIKsrv_L.request.desired_pose = goal->desired_pose[0];
+        res = check_requirement(goal);
 
-        if (cIKsc_L.call(cIKsrv_L))
+        if (res)
         {
-            // ROS_INFO(cIKsrv_L.response.joints.empty());
-            sensor_msgs::JointState jv_L = std::move(cIKsrv_L.response.joints.front());
+            cIKsrv_L.request.limb = goal->limb;
+            cIKsrv_L.request.desired_pose = goal->desired_pose[0];
 
-            for (int i = 0; i < 7; i++)
+            if (cIKsc_L.call(cIKsrv_L))
             {
-                cjs.position[i] = jv_L.position[i];
-                cjs.position[i+7] = 0.0000;
+                // ROS_INFO(cIKsrv_L.response.joints.empty());
+                sensor_msgs::JointState jv_L = std::move(cIKsrv_L.response.joints.front());
 
-                ros::param::set("/limb", "left"); // set parameter limb as left, so we know which arm to move
+                for (int i = 0; i < 7; i++)
+                {
+                    cjs.position[i] = jv_L.position[i];
+                    cjs.position[i+7] = 0.0000;
+
+                    ros::param::set("/limb", "left"); // set parameter limb as left, so we know which arm to move
+                }
             }
         }
     }
     else if (goal->limb == "right")
     {
-        cIKsrv_R.request.limb = goal->limb;
-        cIKsrv_R.request.desired_pose = goal->desired_pose[0];
+        res = check_requirement(goal);
 
-        if (cIKsc_R.call(cIKsrv_R))
+        if (res)
         {
-            sensor_msgs::JointState jv_R = std::move(cIKsrv_R.response.joints.front());
+            cIKsrv_R.request.limb = goal->limb;
+            cIKsrv_R.request.desired_pose = goal->desired_pose[0];
 
-            if (goal->limb == "right") // if we move just right arm, then make position of left arm as zero, because it will be set as velocity mode later
+            if (cIKsc_R.call(cIKsrv_R))
             {
-                for (int i = 0; i < 7; i++)
-                {
-                    cjs.position[i] = 0.0000;
-                    cjs.position[i+7] = jv_R.position[i];
+                sensor_msgs::JointState jv_R = std::move(cIKsrv_R.response.joints.front());
 
-                    ros::param::set("/limb", "right"); // set parameter limb as right, so we know which arm to move
+                if (goal->limb == "right") // if we move just right arm, then make position of left arm as zero, because it will be set as velocity mode later
+                {
+                    for (int i = 0; i < 7; i++)
+                    {
+                        cjs.position[i] = 0.0000;
+                        cjs.position[i+7] = jv_R.position[i];
+
+                        ros::param::set("/limb", "right"); // set parameter limb as right, so we know which arm to move
+                    }
                 }
             }
         }
@@ -150,40 +192,62 @@ void GoToGoal::onGoal(const baxter_msgs_mine::GoToPointGoalConstPtr &goal)
         }
     }
 
-    ROS_INFO("GoToGoalActionServer: Planning started...");
-
-    // plan trajectory to the desired joint values
-    moveit::planning_interface::MoveGroupInterface move_group_interface(PLANNING_GROUP);
-
-    move_group_interface.setJointValueTarget(cjs);
-
-    ROS_INFO("GoToGoalActionServer: Planning started...");
-    moveit::planning_interface::MoveGroupInterface::Plan my_plan;
-    bool success = (move_group_interface.plan(my_plan) == moveit::planning_interface::MoveItErrorCode::SUCCESS);
-    if (success)
-        ROS_INFO("GoToGoalActionServer: Planning finished successfully...");
-    else
-        ROS_INFO("GoToGoalActionServer: Planning failed...");
-
-
-    bool is_preempted = false;
-    // check for preemption
-    if(as.isPreemptRequested() || !ros::ok)
+    if (res)
     {
-        ROS_INFO("GoToGoalActionServer: PREEMPTED...");
-        is_preempted = true;
-        as.setPreempted();
+        ROS_INFO("GoToGoalActionServer: Planning started...");
+
+        // plan trajectory to the desired joint values
+        moveit::planning_interface::MoveGroupInterface move_group_interface(PLANNING_GROUP);
+
+        move_group_interface.setJointValueTarget(cjs);
+
+        ROS_INFO("GoToGoalActionServer: Planning started...");
+        moveit::planning_interface::MoveGroupInterface::Plan my_plan;
+        bool success = (move_group_interface.plan(my_plan) == moveit::planning_interface::MoveItErrorCode::SUCCESS);
+        if (success)
+            ROS_INFO("GoToGoalActionServer: Planning finished successfully...");
+        else
+            ROS_INFO("GoToGoalActionServer: Planning failed...");
+
+
+        bool is_preempted = false;
+        // check for preemption
+        if(as.isPreemptRequested() || !ros::ok)
+        {
+            ROS_INFO("GoToGoalActionServer: PREEMPTED...");
+            is_preempted = true;
+            as.setPreempted();
+        }
+
+        // execute the trajectory
+        if (success && !is_preempted)
+        {
+            ROS_INFO("GoToGoalActionServer: Trajectory is being executed...");
+            move_group_interface.execute(my_plan);
+            result.final_pose.push_back(std::move(goal->desired_pose[0]));
+            result.final_pose.push_back(std::move(goal->desired_pose[1]));
+
+            std::vector<double> temp{goal->desired_pose[0].position.x, 
+                                    goal->desired_pose[0].position.y, 
+                                    goal->desired_pose[0].position.z};
+            previous_pos[goal->limb] = std::move(temp);
+
+            as.setSucceeded(result);
+            ROS_INFO("GoToGoalActionServer: Trajectory has been executed successfully...");
+        }
     }
-
-    // execute the trajectory
-    if (success && !is_preempted)
+    else
     {
-        ROS_INFO("GoToGoalActionServer: Trajectory is being executed...");
-        move_group_interface.execute(my_plan);
         result.final_pose.push_back(std::move(goal->desired_pose[0]));
         result.final_pose.push_back(std::move(goal->desired_pose[1]));
+
+        std::vector<double> temp{goal->desired_pose[0].position.x, 
+                                    goal->desired_pose[0].position.y, 
+                                    goal->desired_pose[0].position.z};
+        previous_pos[goal->limb] = std::move(temp);
+
         as.setSucceeded(result);
-        ROS_INFO("GoToGoalActionServer: Trajectory has been executed successfully...");
+        ROS_INFO("GoToGoalActionServer: Trajectory is the same. So no motion...");
     }
 }
 

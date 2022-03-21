@@ -1,0 +1,8 @@
+prefix=/home/lar/ros/baxter_ws/install
+
+Name: rqt_controller_manager
+Description: Description of rqt_controller_manager
+Version: 0.8.2
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

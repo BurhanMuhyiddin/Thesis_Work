@@ -1,0 +1,8 @@
+prefix=/home/lar/ros/baxter_ws/devel
+
+Name: velocity_controllers
+Description: Description of velocity_controllers
+Version: 0.8.1
+Cflags: -I/home/lar/ros/baxter_ws/src/ros_controllers/velocity_controllers/include
+Libs: -L${prefix}/lib -lvelocity_controllers
+Requires: controller_interface forward_command_controller control_toolbox realtime_tools
