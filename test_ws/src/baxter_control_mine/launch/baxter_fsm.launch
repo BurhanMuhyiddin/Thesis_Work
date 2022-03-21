@@ -8,6 +8,7 @@
 
     <node name="process_image_server" pkg="baxter_control_mine" type="process_image_server.py" output="screen"/>
     <node name="check_crossing" pkg="baxter_control_mine" type="check_crossing.py"/>
+    <node name="debug_img_processing" pkg="baxter_control_mine" type="debug_img_processing.py"/>
 
     <node name="baxter_fsm" pkg="baxter_control_mine" type="baxter_fsm.py" output="screen"/>
 

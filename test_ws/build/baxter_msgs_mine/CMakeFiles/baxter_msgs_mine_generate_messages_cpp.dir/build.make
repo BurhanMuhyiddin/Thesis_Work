@@ -53,11 +53,18 @@ CMAKE_BINARY_DIR = /home/lar/ros/test_ws/build
 # Include the progress variables for this target.
 include baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp.dir/progress.make
 
+baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp: /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosAction.h
+baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp: /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosResult.h
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp: /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointAction.h
+baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp: /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosActionGoal.h
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp: /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointFeedback.h
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp: /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointActionFeedback.h
+baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp: /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosActionResult.h
+baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp: /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosFeedback.h
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp: /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/CameraDebug.h
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp: /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointActionGoal.h
+baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp: /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosActionFeedback.h
+baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp: /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosGoal.h
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp: /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointGoal.h
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp: /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointResult.h
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp: /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointActionResult.h
@@ -67,6 +74,27 @@ baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp: /home/lar/ro
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp: /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/CheckCrossing.h
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp: /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/ProcessImage.h
 
+
+/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosAction.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosAction.h: /home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToJointPosAction.msg
+/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosAction.h: /opt/ros/kinetic/share/actionlib_msgs/msg/GoalStatus.msg
+/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosAction.h: /home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToJointPosFeedback.msg
+/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosAction.h: /home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToJointPosActionFeedback.msg
+/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosAction.h: /home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToJointPosActionResult.msg
+/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosAction.h: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
+/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosAction.h: /home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToJointPosGoal.msg
+/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosAction.h: /opt/ros/kinetic/share/actionlib_msgs/msg/GoalID.msg
+/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosAction.h: /home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToJointPosResult.msg
+/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosAction.h: /home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToJointPosActionGoal.msg
+/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosAction.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from baxter_msgs_mine/GoToJointPosAction.msg"
+	cd /home/lar/ros/test_ws/src/baxter_msgs_mine && /home/lar/ros/test_ws/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToJointPosAction.msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/src/baxter_msgs_mine/msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -p baxter_msgs_mine -o /home/lar/ros/test_ws/devel/include/baxter_msgs_mine -e /opt/ros/kinetic/share/gencpp/cmake/..
+
+/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosResult.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosResult.h: /home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToJointPosResult.msg
+/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosResult.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from baxter_msgs_mine/GoToJointPosResult.msg"
+	cd /home/lar/ros/test_ws/src/baxter_msgs_mine && /home/lar/ros/test_ws/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToJointPosResult.msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/src/baxter_msgs_mine/msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -p baxter_msgs_mine -o /home/lar/ros/test_ws/devel/include/baxter_msgs_mine -e /opt/ros/kinetic/share/gencpp/cmake/..
 
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointAction.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointAction.h: /home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToPointAction.msg
@@ -83,8 +111,17 @@ baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp: /home/lar/ro
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointAction.h: /opt/ros/kinetic/share/actionlib_msgs/msg/GoalID.msg
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointAction.h: /opt/ros/kinetic/share/actionlib_msgs/msg/GoalStatus.msg
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointAction.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from baxter_msgs_mine/GoToPointAction.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating C++ code from baxter_msgs_mine/GoToPointAction.msg"
 	cd /home/lar/ros/test_ws/src/baxter_msgs_mine && /home/lar/ros/test_ws/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToPointAction.msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/src/baxter_msgs_mine/msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -p baxter_msgs_mine -o /home/lar/ros/test_ws/devel/include/baxter_msgs_mine -e /opt/ros/kinetic/share/gencpp/cmake/..
+
+/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosActionGoal.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosActionGoal.h: /home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToJointPosActionGoal.msg
+/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosActionGoal.h: /home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToJointPosGoal.msg
+/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosActionGoal.h: /opt/ros/kinetic/share/actionlib_msgs/msg/GoalID.msg
+/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosActionGoal.h: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
+/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosActionGoal.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating C++ code from baxter_msgs_mine/GoToJointPosActionGoal.msg"
+	cd /home/lar/ros/test_ws/src/baxter_msgs_mine && /home/lar/ros/test_ws/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToJointPosActionGoal.msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/src/baxter_msgs_mine/msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -p baxter_msgs_mine -o /home/lar/ros/test_ws/devel/include/baxter_msgs_mine -e /opt/ros/kinetic/share/gencpp/cmake/..
 
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointFeedback.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointFeedback.h: /home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToPointFeedback.msg
@@ -92,7 +129,7 @@ baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp: /home/lar/ro
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointFeedback.h: /opt/ros/kinetic/share/geometry_msgs/msg/Pose.msg
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointFeedback.h: /opt/ros/kinetic/share/geometry_msgs/msg/Point.msg
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointFeedback.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from baxter_msgs_mine/GoToPointFeedback.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating C++ code from baxter_msgs_mine/GoToPointFeedback.msg"
 	cd /home/lar/ros/test_ws/src/baxter_msgs_mine && /home/lar/ros/test_ws/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToPointFeedback.msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/src/baxter_msgs_mine/msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -p baxter_msgs_mine -o /home/lar/ros/test_ws/devel/include/baxter_msgs_mine -e /opt/ros/kinetic/share/gencpp/cmake/..
 
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointActionFeedback.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
@@ -105,13 +142,29 @@ baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp: /home/lar/ro
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointActionFeedback.h: /opt/ros/kinetic/share/actionlib_msgs/msg/GoalID.msg
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointActionFeedback.h: /opt/ros/kinetic/share/actionlib_msgs/msg/GoalStatus.msg
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointActionFeedback.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating C++ code from baxter_msgs_mine/GoToPointActionFeedback.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating C++ code from baxter_msgs_mine/GoToPointActionFeedback.msg"
 	cd /home/lar/ros/test_ws/src/baxter_msgs_mine && /home/lar/ros/test_ws/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToPointActionFeedback.msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/src/baxter_msgs_mine/msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -p baxter_msgs_mine -o /home/lar/ros/test_ws/devel/include/baxter_msgs_mine -e /opt/ros/kinetic/share/gencpp/cmake/..
+
+/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosActionResult.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosActionResult.h: /home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToJointPosActionResult.msg
+/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosActionResult.h: /home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToJointPosResult.msg
+/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosActionResult.h: /opt/ros/kinetic/share/actionlib_msgs/msg/GoalID.msg
+/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosActionResult.h: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
+/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosActionResult.h: /opt/ros/kinetic/share/actionlib_msgs/msg/GoalStatus.msg
+/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosActionResult.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating C++ code from baxter_msgs_mine/GoToJointPosActionResult.msg"
+	cd /home/lar/ros/test_ws/src/baxter_msgs_mine && /home/lar/ros/test_ws/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToJointPosActionResult.msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/src/baxter_msgs_mine/msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -p baxter_msgs_mine -o /home/lar/ros/test_ws/devel/include/baxter_msgs_mine -e /opt/ros/kinetic/share/gencpp/cmake/..
+
+/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosFeedback.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosFeedback.h: /home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToJointPosFeedback.msg
+/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosFeedback.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating C++ code from baxter_msgs_mine/GoToJointPosFeedback.msg"
+	cd /home/lar/ros/test_ws/src/baxter_msgs_mine && /home/lar/ros/test_ws/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToJointPosFeedback.msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/src/baxter_msgs_mine/msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -p baxter_msgs_mine -o /home/lar/ros/test_ws/devel/include/baxter_msgs_mine -e /opt/ros/kinetic/share/gencpp/cmake/..
 
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/CameraDebug.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/CameraDebug.h: /home/lar/ros/test_ws/src/baxter_msgs_mine/msg/CameraDebug.msg
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/CameraDebug.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating C++ code from baxter_msgs_mine/CameraDebug.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating C++ code from baxter_msgs_mine/CameraDebug.msg"
 	cd /home/lar/ros/test_ws/src/baxter_msgs_mine && /home/lar/ros/test_ws/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/lar/ros/test_ws/src/baxter_msgs_mine/msg/CameraDebug.msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/src/baxter_msgs_mine/msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -p baxter_msgs_mine -o /home/lar/ros/test_ws/devel/include/baxter_msgs_mine -e /opt/ros/kinetic/share/gencpp/cmake/..
 
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointActionGoal.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
@@ -123,8 +176,24 @@ baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp: /home/lar/ro
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointActionGoal.h: /opt/ros/kinetic/share/geometry_msgs/msg/Quaternion.msg
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointActionGoal.h: /opt/ros/kinetic/share/actionlib_msgs/msg/GoalID.msg
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointActionGoal.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating C++ code from baxter_msgs_mine/GoToPointActionGoal.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating C++ code from baxter_msgs_mine/GoToPointActionGoal.msg"
 	cd /home/lar/ros/test_ws/src/baxter_msgs_mine && /home/lar/ros/test_ws/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToPointActionGoal.msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/src/baxter_msgs_mine/msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -p baxter_msgs_mine -o /home/lar/ros/test_ws/devel/include/baxter_msgs_mine -e /opt/ros/kinetic/share/gencpp/cmake/..
+
+/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosActionFeedback.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosActionFeedback.h: /home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToJointPosActionFeedback.msg
+/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosActionFeedback.h: /home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToJointPosFeedback.msg
+/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosActionFeedback.h: /opt/ros/kinetic/share/actionlib_msgs/msg/GoalID.msg
+/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosActionFeedback.h: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
+/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosActionFeedback.h: /opt/ros/kinetic/share/actionlib_msgs/msg/GoalStatus.msg
+/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosActionFeedback.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating C++ code from baxter_msgs_mine/GoToJointPosActionFeedback.msg"
+	cd /home/lar/ros/test_ws/src/baxter_msgs_mine && /home/lar/ros/test_ws/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToJointPosActionFeedback.msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/src/baxter_msgs_mine/msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -p baxter_msgs_mine -o /home/lar/ros/test_ws/devel/include/baxter_msgs_mine -e /opt/ros/kinetic/share/gencpp/cmake/..
+
+/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosGoal.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosGoal.h: /home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToJointPosGoal.msg
+/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosGoal.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Generating C++ code from baxter_msgs_mine/GoToJointPosGoal.msg"
+	cd /home/lar/ros/test_ws/src/baxter_msgs_mine && /home/lar/ros/test_ws/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToJointPosGoal.msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/src/baxter_msgs_mine/msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -p baxter_msgs_mine -o /home/lar/ros/test_ws/devel/include/baxter_msgs_mine -e /opt/ros/kinetic/share/gencpp/cmake/..
 
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointGoal.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointGoal.h: /home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToPointGoal.msg
@@ -132,7 +201,7 @@ baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp: /home/lar/ro
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointGoal.h: /opt/ros/kinetic/share/geometry_msgs/msg/Pose.msg
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointGoal.h: /opt/ros/kinetic/share/geometry_msgs/msg/Point.msg
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointGoal.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating C++ code from baxter_msgs_mine/GoToPointGoal.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Generating C++ code from baxter_msgs_mine/GoToPointGoal.msg"
 	cd /home/lar/ros/test_ws/src/baxter_msgs_mine && /home/lar/ros/test_ws/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToPointGoal.msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/src/baxter_msgs_mine/msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -p baxter_msgs_mine -o /home/lar/ros/test_ws/devel/include/baxter_msgs_mine -e /opt/ros/kinetic/share/gencpp/cmake/..
 
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointResult.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
@@ -141,7 +210,7 @@ baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp: /home/lar/ro
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointResult.h: /opt/ros/kinetic/share/geometry_msgs/msg/Pose.msg
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointResult.h: /opt/ros/kinetic/share/geometry_msgs/msg/Point.msg
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointResult.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating C++ code from baxter_msgs_mine/GoToPointResult.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Generating C++ code from baxter_msgs_mine/GoToPointResult.msg"
 	cd /home/lar/ros/test_ws/src/baxter_msgs_mine && /home/lar/ros/test_ws/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToPointResult.msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/src/baxter_msgs_mine/msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -p baxter_msgs_mine -o /home/lar/ros/test_ws/devel/include/baxter_msgs_mine -e /opt/ros/kinetic/share/gencpp/cmake/..
 
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointActionResult.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
@@ -154,7 +223,7 @@ baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp: /home/lar/ro
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointActionResult.h: /opt/ros/kinetic/share/actionlib_msgs/msg/GoalID.msg
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointActionResult.h: /opt/ros/kinetic/share/actionlib_msgs/msg/GoalStatus.msg
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointActionResult.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating C++ code from baxter_msgs_mine/GoToPointActionResult.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Generating C++ code from baxter_msgs_mine/GoToPointActionResult.msg"
 	cd /home/lar/ros/test_ws/src/baxter_msgs_mine && /home/lar/ros/test_ws/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToPointActionResult.msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/src/baxter_msgs_mine/msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -p baxter_msgs_mine -o /home/lar/ros/test_ws/devel/include/baxter_msgs_mine -e /opt/ros/kinetic/share/gencpp/cmake/..
 
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GetCurrentJointStates.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
@@ -163,14 +232,14 @@ baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp: /home/lar/ro
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GetCurrentJointStates.h: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GetCurrentJointStates.h: /opt/ros/kinetic/share/gencpp/msg.h.template
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GetCurrentJointStates.h: /opt/ros/kinetic/share/gencpp/srv.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating C++ code from baxter_msgs_mine/GetCurrentJointStates.srv"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Generating C++ code from baxter_msgs_mine/GetCurrentJointStates.srv"
 	cd /home/lar/ros/test_ws/src/baxter_msgs_mine && /home/lar/ros/test_ws/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/lar/ros/test_ws/src/baxter_msgs_mine/srv/GetCurrentJointStates.srv -Ibaxter_msgs_mine:/home/lar/ros/test_ws/src/baxter_msgs_mine/msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -p baxter_msgs_mine -o /home/lar/ros/test_ws/devel/include/baxter_msgs_mine -e /opt/ros/kinetic/share/gencpp/cmake/..
 
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/PositionCommandMine.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/PositionCommandMine.h: /home/lar/ros/test_ws/src/baxter_msgs_mine/srv/PositionCommandMine.srv
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/PositionCommandMine.h: /opt/ros/kinetic/share/gencpp/msg.h.template
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/PositionCommandMine.h: /opt/ros/kinetic/share/gencpp/srv.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating C++ code from baxter_msgs_mine/PositionCommandMine.srv"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Generating C++ code from baxter_msgs_mine/PositionCommandMine.srv"
 	cd /home/lar/ros/test_ws/src/baxter_msgs_mine && /home/lar/ros/test_ws/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/lar/ros/test_ws/src/baxter_msgs_mine/srv/PositionCommandMine.srv -Ibaxter_msgs_mine:/home/lar/ros/test_ws/src/baxter_msgs_mine/msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -p baxter_msgs_mine -o /home/lar/ros/test_ws/devel/include/baxter_msgs_mine -e /opt/ros/kinetic/share/gencpp/cmake/..
 
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/CalculateIK.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
@@ -182,14 +251,14 @@ baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp: /home/lar/ro
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/CalculateIK.h: /opt/ros/kinetic/share/sensor_msgs/msg/JointState.msg
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/CalculateIK.h: /opt/ros/kinetic/share/gencpp/msg.h.template
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/CalculateIK.h: /opt/ros/kinetic/share/gencpp/srv.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating C++ code from baxter_msgs_mine/CalculateIK.srv"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Generating C++ code from baxter_msgs_mine/CalculateIK.srv"
 	cd /home/lar/ros/test_ws/src/baxter_msgs_mine && /home/lar/ros/test_ws/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/lar/ros/test_ws/src/baxter_msgs_mine/srv/CalculateIK.srv -Ibaxter_msgs_mine:/home/lar/ros/test_ws/src/baxter_msgs_mine/msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -p baxter_msgs_mine -o /home/lar/ros/test_ws/devel/include/baxter_msgs_mine -e /opt/ros/kinetic/share/gencpp/cmake/..
 
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/CheckCrossing.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/CheckCrossing.h: /home/lar/ros/test_ws/src/baxter_msgs_mine/srv/CheckCrossing.srv
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/CheckCrossing.h: /opt/ros/kinetic/share/gencpp/msg.h.template
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/CheckCrossing.h: /opt/ros/kinetic/share/gencpp/srv.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Generating C++ code from baxter_msgs_mine/CheckCrossing.srv"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Generating C++ code from baxter_msgs_mine/CheckCrossing.srv"
 	cd /home/lar/ros/test_ws/src/baxter_msgs_mine && /home/lar/ros/test_ws/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/lar/ros/test_ws/src/baxter_msgs_mine/srv/CheckCrossing.srv -Ibaxter_msgs_mine:/home/lar/ros/test_ws/src/baxter_msgs_mine/msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -p baxter_msgs_mine -o /home/lar/ros/test_ws/devel/include/baxter_msgs_mine -e /opt/ros/kinetic/share/gencpp/cmake/..
 
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/ProcessImage.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
@@ -198,15 +267,22 @@ baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp: /home/lar/ro
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/ProcessImage.h: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/ProcessImage.h: /opt/ros/kinetic/share/gencpp/msg.h.template
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/ProcessImage.h: /opt/ros/kinetic/share/gencpp/srv.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Generating C++ code from baxter_msgs_mine/ProcessImage.srv"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Generating C++ code from baxter_msgs_mine/ProcessImage.srv"
 	cd /home/lar/ros/test_ws/src/baxter_msgs_mine && /home/lar/ros/test_ws/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/lar/ros/test_ws/src/baxter_msgs_mine/srv/ProcessImage.srv -Ibaxter_msgs_mine:/home/lar/ros/test_ws/src/baxter_msgs_mine/msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -p baxter_msgs_mine -o /home/lar/ros/test_ws/devel/include/baxter_msgs_mine -e /opt/ros/kinetic/share/gencpp/cmake/..
 
 baxter_msgs_mine_generate_messages_cpp: baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_cpp
+baxter_msgs_mine_generate_messages_cpp: /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosAction.h
+baxter_msgs_mine_generate_messages_cpp: /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosResult.h
 baxter_msgs_mine_generate_messages_cpp: /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointAction.h
+baxter_msgs_mine_generate_messages_cpp: /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosActionGoal.h
 baxter_msgs_mine_generate_messages_cpp: /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointFeedback.h
 baxter_msgs_mine_generate_messages_cpp: /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointActionFeedback.h
+baxter_msgs_mine_generate_messages_cpp: /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosActionResult.h
+baxter_msgs_mine_generate_messages_cpp: /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosFeedback.h
 baxter_msgs_mine_generate_messages_cpp: /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/CameraDebug.h
 baxter_msgs_mine_generate_messages_cpp: /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointActionGoal.h
+baxter_msgs_mine_generate_messages_cpp: /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosActionFeedback.h
+baxter_msgs_mine_generate_messages_cpp: /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToJointPosGoal.h
 baxter_msgs_mine_generate_messages_cpp: /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointGoal.h
 baxter_msgs_mine_generate_messages_cpp: /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointResult.h
 baxter_msgs_mine_generate_messages_cpp: /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointActionResult.h

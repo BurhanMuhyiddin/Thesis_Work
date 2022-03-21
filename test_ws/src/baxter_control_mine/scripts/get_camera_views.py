@@ -16,10 +16,10 @@ class image_converter:
         # for red: 0, 65, 0, 18, 255, 255
         # for yellow: 20, 69, 0, 29, 255, 255
 
-        self.low_H = 20
-        self.low_S = 69
+        self.low_H = 0
+        self.low_S = 65
         self.low_V = 0
-        self.high_H = 29
+        self.high_H = 18
         self.high_S = 255
         self.high_V = 255
 
@@ -53,7 +53,7 @@ class image_converter:
 
         _, contours, _ = cv2.findContours(image=thresholded_img, mode=cv2.RETR_TREE, method=cv2.CHAIN_APPROX_NONE)
 
-        min_area = 200
+        min_area = 100
         max_area = 5000
         min_arcLng = 500
 

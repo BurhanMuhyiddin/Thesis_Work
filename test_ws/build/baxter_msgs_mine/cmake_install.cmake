@@ -47,7 +47,10 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/baxter_msgs_mine/action" TYPE FILE FILES "/home/lar/ros/test_ws/src/baxter_msgs_mine/action/GoToPoint.action")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/baxter_msgs_mine/action" TYPE FILE FILES
+    "/home/lar/ros/test_ws/src/baxter_msgs_mine/action/GoToPoint.action"
+    "/home/lar/ros/test_ws/src/baxter_msgs_mine/action/GoToJointPos.action"
+    )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
@@ -59,6 +62,18 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
     "/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToPointGoal.msg"
     "/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToPointResult.msg"
     "/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToPointFeedback.msg"
+    )
+endif()
+
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/baxter_msgs_mine/msg" TYPE FILE FILES
+    "/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToJointPosAction.msg"
+    "/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToJointPosActionGoal.msg"
+    "/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToJointPosActionResult.msg"
+    "/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToJointPosActionFeedback.msg"
+    "/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToJointPosGoal.msg"
+    "/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToJointPosResult.msg"
+    "/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToJointPosFeedback.msg"
     )
 endif()
 

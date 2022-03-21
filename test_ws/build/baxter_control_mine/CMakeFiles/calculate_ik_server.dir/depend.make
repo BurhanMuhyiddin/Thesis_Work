@@ -4,6 +4,9 @@
 baxter_control_mine/CMakeFiles/calculate_ik_server.dir/src/calculate_ik_server.cpp.o: /home/lar/ros/test_ws/devel/include/baxter_core_msgs/SolvePositionIK.h
 baxter_control_mine/CMakeFiles/calculate_ik_server.dir/src/calculate_ik_server.cpp.o: /home/lar/ros/test_ws/devel/include/baxter_core_msgs/SolvePositionIKRequest.h
 baxter_control_mine/CMakeFiles/calculate_ik_server.dir/src/calculate_ik_server.cpp.o: /home/lar/ros/test_ws/devel/include/baxter_core_msgs/SolvePositionIKResponse.h
+baxter_control_mine/CMakeFiles/calculate_ik_server.dir/src/calculate_ik_server.cpp.o: /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/CalculateIK.h
+baxter_control_mine/CMakeFiles/calculate_ik_server.dir/src/calculate_ik_server.cpp.o: /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/CalculateIKRequest.h
+baxter_control_mine/CMakeFiles/calculate_ik_server.dir/src/calculate_ik_server.cpp.o: /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/CalculateIKResponse.h
 baxter_control_mine/CMakeFiles/calculate_ik_server.dir/src/calculate_ik_server.cpp.o: /home/lar/ros/test_ws/src/baxter_control_mine/src/calculate_ik_server.cpp
 baxter_control_mine/CMakeFiles/calculate_ik_server.dir/src/calculate_ik_server.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Point.h
 baxter_control_mine/CMakeFiles/calculate_ik_server.dir/src/calculate_ik_server.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Pose.h

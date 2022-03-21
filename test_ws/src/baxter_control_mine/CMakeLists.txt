@@ -50,6 +50,9 @@ target_link_libraries(test_node ${catkin_LIBRARIES})
 add_executable(go_to_goal_server src/go_to_goal_server.cpp)
 target_link_libraries(go_to_goal_server ${catkin_LIBRARIES})
 
+# add_executable(go_to_joint_pos_server src/go_to_joint_pos_server.cpp)
+# target_link_libraries(go_to_joint_pos_server ${catkin_LIBRARIES})
+
 add_executable(get_current_joint_states_server src/get_current_joint_states_server.cpp)
 target_link_libraries(get_current_joint_states_server ${catkin_LIBRARIES})
 
