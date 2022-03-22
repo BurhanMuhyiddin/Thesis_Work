@@ -16,10 +16,11 @@ file(REMOVE_RECURSE
   "/home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_msgs_mine/msg/GoToPointResult.js"
   "/home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_msgs_mine/msg/GoToPointActionResult.js"
   "/home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_msgs_mine/srv/GetCurrentJointStates.js"
-  "/home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_msgs_mine/srv/PositionCommandMine.js"
+  "/home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_msgs_mine/srv/GoToGoal.js"
   "/home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_msgs_mine/srv/CalculateIK.js"
-  "/home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_msgs_mine/srv/CheckCrossing.js"
   "/home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_msgs_mine/srv/ProcessImage.js"
+  "/home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_msgs_mine/srv/PositionCommandMine.js"
+  "/home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_msgs_mine/srv/CheckCrossing.js"
 )
 
 # Per-language clean rules from dependency scanning.
