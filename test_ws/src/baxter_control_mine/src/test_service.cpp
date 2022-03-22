@@ -1,301 +1,123 @@
-// #include <ros/ros.h>
-
-// #include <geometry_msgs/Pose.h>
-// #include <geometry_msgs/PoseStamped.h>
-// #include <geometry_msgs/Point.h>
-// #include <geometry_msgs/Quaternion.h>
-
-// #include <std_msgs/Header.h>
-
-// #include <baxter_core_msgs/SolvePositionIK.h>
-// // #include <baxter_core_msgs/SolvePositionIKRequest.h>
-
-// #include <string>
-
-// bool ik_test(ros::NodeHandle &n)
-// {
-//     const std::string limb = "left";
-
-//     std::string ns = "ExternalTools/" + limb + "/PositionKinematicsNode/IKService";
-
-//     ros::ServiceClient iksvc = n.serviceClient<baxter_core_msgs::SolvePositionIK>(ns);
-
-//     baxter_core_msgs::SolvePositionIK ikreq;
-
-//     std_msgs::Header hdr;
-//     hdr.stamp = ros::Time::now();
-//     hdr.frame_id = "base";
-
-//     geometry_msgs::PoseStamped pose;
-//     pose.header = hdr;
-//     pose.pose.position.x = 1.0368; // 0.657579481614;
-//     pose.pose.position.y = 0.48103;// 0.851981417433;
-//     pose.pose.position.z = 0.2028;// 0.0388352386502;
-//     pose.pose.orientation.x = -0.10694;// -0.366894936773;
-//     pose.pose.orientation.y = 0.949063;// 0.885980397775;
-//     pose.pose.orientation.z = 0.0331717;// 0.108155782462;
-//     pose.pose.orientation.w = 0.294521;// 0.262162481772;
-
-//     ikreq.request.pose_stamp.push_back(pose);
-
-//     if (iksvc.call(ikreq))
-//     {
-//         ROS_INFO("Calculated IK...");
-//     }
-
-//     for (int i = 0; i < ikreq.response.result_type.size(); i++)
-//     {
-//         ROS_INFO("%d", ikreq.response.result_type[i]);
-//     }
-
-//     for (int i = 0; i < ikreq.response.joints.size(); i++)
-//     {
-//         for(int j = 0; j < ikreq.response.joints[i].position.size(); j++)
-//         {
-//             ROS_INFO("%f", ikreq.response.joints[i].position[j]);
-//         }
-//     }
-// }
-
-// int main(int argc, char **argv)
-// {
-//     ros::init(argc, argv, "rsdk_ik_service_client");
-//     ros::NodeHandle n;
-
-//     bool res = ik_test(n);
-
-//     ROS_INFO("res: %s", (res ? "true" : "false"));
-
-//     return 0;
-// }
-
-
-// #include <moveit/move_group_interface/move_group_interface.h>
-// #include <moveit/planning_scene_interface/planning_scene_interface.h>
-
-// #include <moveit_msgs/DisplayRobotState.h>
-// #include <moveit_msgs/DisplayTrajectory.h>
-
-// int main(int argc, char **argv)
-// {
-//     ros::init(argc, argv, "move_group_interface_tutorial");
-//     ros::NodeHandle node_handle;  
-//     ros::AsyncSpinner spinner(1);
-//     spinner.start();
-
-//     moveit::planning_interface::MoveGroupInterface group("left_arm");
-
-//     moveit::planning_interface::PlanningSceneInterface planning_scene_interface; 
-
-//     geometry_msgs::Pose target_pose1;
-//     target_pose1.orientation.w = 1.0;
-//     target_pose1.position.x = 0.805332;
-//     target_pose1.position.y = 0.677069;
-//     target_pose1.position.z = 0.494229;
-//     group.setPoseTarget(target_pose1);
-
-//     moveit::planning_interface::MoveGroupInterface::Plan my_plan;
-//     bool success = (group.plan(my_plan) == moveit::planning_interface::MoveItErrorCode::SUCCESS);
-
-//     ROS_INFO("Visualizing plan 1 (pose goal) %s",success?"":"FAILED");
-
-//     return 0;
-// }
-
-
-/*********************************************************************
- * Software License Agreement (BSD License)
- *
- *  Copyright (c) 2013, SRI International
- *  All rights reserved.
- *
- *  Redistribution and use in source and binary forms, with or without
- *  modification, are permitted provided that the following conditions
- *  are met:
- *
- *   * Redistributions of source code must retain the above copyright
- *     notice, this list of conditions and the following disclaimer.
- *   * Redistributions in binary form must reproduce the above
- *     copyright notice, this list of conditions and the following
- *     disclaimer in the documentation and/or other materials provided
- *     with the distribution.
- *   * Neither the name of SRI International nor the names of its
- *     contributors may be used to endorse or promote products derived
- *     from this software without specific prior written permission.
- *
- *  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- *  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- *  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
- *  FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- *  COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
- *  INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
- *  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
- *  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
- *  CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
- *  LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
- *  ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- *  POSSIBILITY OF SUCH DAMAGE.
- *********************************************************************/
-
-/* Author: Sachin Chitta, Dave Coleman, Mike Lautman */
+#include <ros/ros.h>
 
 #include <moveit/move_group_interface/move_group_interface.h>
 #include <moveit/planning_scene_interface/planning_scene_interface.h>
-
-
+#include <moveit_msgs/DisplayRobotState.h>
 #include <moveit_msgs/DisplayTrajectory.h>
+#include <moveit_msgs/AttachedCollisionObject.h>
+#include <moveit_msgs/CollisionObject.h>
+#include <moveit_visual_tools/moveit_visual_tools.h>
 
-#include <moveit/robot_model_loader/robot_model_loader.h>
-#include <moveit/robot_model/robot_model.h>
-#include <moveit/robot_state/robot_state.h>
-#include <tf2/LinearMath/Quaternion.h>
-#include <tf/transform_datatypes.h>
-#include <moveit_msgs/PlanningScene.h>
+#include <geometry_msgs/Pose.h>
 
+#include "baxter_msgs_mine/GoToGoal.h"
 
+#include <vector>
+#include <string>
 
+class GoToGoal
+{
+public:
+  GoToGoal() : as(2)
+  {
+    as.start();
+
+    go_to_goal_service = nh.advertiseService("/go_to_goal", &GoToGoal::go_to_goal_clb, this);
+  }
+
+  ~GoToGoal()
+  {
+    ros::shutdown();
+  }
+
+  bool go_to_goal_clb(baxter_msgs_mine::GoToGoalRequest &req,
+                            baxter_msgs_mine::GoToGoalResponse &res);
+
+private:
+  ros::NodeHandle nh;
+  ros::AsyncSpinner as;
+  ros::ServiceServer go_to_goal_service;
+};
+
+bool GoToGoal::go_to_goal_clb(baxter_msgs_mine::GoToGoalRequest &req,
+                              baxter_msgs_mine::GoToGoalResponse &res)
+{
+  // extract content of request
+  bool pos_only_ik = req.pos_only_ik;
+  const std::string limb = std::move(req.limb);
+  std::vector<geometry_msgs::Pose> goal = std::move(req.goal);
+
+  // configure moveit
+  std::string PLANNING_GROUP;
+  if (limb == "left" || limb == "right")
+  {
+    PLANNING_GROUP = std::move(limb + "_arm");
+  }
+  else // for both arms
+  {
+    PLANNING_GROUP = std::move("both_arms");
+  }
+
+  moveit::planning_interface::MoveGroupInterface move_group(PLANNING_GROUP);
+  moveit::planning_interface::PlanningSceneInterface planning_scene_interface;
+  const robot_state::JointModelGroup* joint_model_group = move_group.getCurrentState()->getJointModelGroup(PLANNING_GROUP);
+
+  // get goal positions
+  if (limb == "left" || limb == "right")
+  {
+    geometry_msgs::Pose target_pose;
+    target_pose = goal.front();
+    const std::string ee = std::move(limb + "_gripper");
+
+    if (pos_only_ik)
+    {
+      move_group.setPositionTarget(target_pose.position.x, target_pose.position.y, target_pose.position.z, ee);
+    }
+    else
+    {
+      move_group.setPoseTarget(target_pose, ee);
+    }
+  }
+  else // both arms
+  {
+    geometry_msgs::Pose target_pose_left;
+    geometry_msgs::Pose target_pose_right;
+    target_pose_left = goal[0];
+    target_pose_right = goal[1];
+    if (pos_only_ik)
+    {
+      move_group.setPositionTarget(target_pose_left.position.x, target_pose_left.position.y, target_pose_left.position.z, "left_gripper");
+      move_group.setPositionTarget(target_pose_right.position.x, target_pose_right.position.y, target_pose_right.position.z, "right_gripper");
+    }
+    else
+    {
+      move_group.setPoseTarget(target_pose_left, "left_gripper");
+      move_group.setPoseTarget(target_pose_right, "right_gripper");
+    }
+  }
+
+  // ros::param::set("/limb", limb);
+
+  moveit::planning_interface::MoveGroupInterface::Plan my_plan;
+  bool success = (move_group.plan(my_plan) == moveit::planning_interface::MoveItErrorCode::SUCCESS);
+
+  if (success)
+  {
+    move_group.execute(my_plan);
+  }
+
+  res.success = success;
+
+  return true;
+}
 
 int main(int argc, char** argv)
 {
-  ros::init(argc, argv, "arm_interface");
-  ros::NodeHandle node_handle("~");
-  ros::AsyncSpinner spinner(1);
-  spinner.start();
-  ROS_INFO("Waiting for context to come up");
-  sleep(10);
-  ROS_INFO("Starting interface...");
+  ros::init(argc, argv, "go_to_goal_service_node");
 
+  GoToGoal gg;
 
-  // BEGIN_TUTORIAL
-  //
-  // Setup
-  // ^^^^^
-  //
-  // MoveIt! operates on sets of joints called "planning groups" and stores them in an object called
-  // the `JointModelGroup`. Throughout MoveIt! the terms "planning group" and "joint model group"
-  // are used interchangably.
-
-
-
-
-  // Visualization
-  // ^^^^^^^^^^^^^
-  //
-  // The package MoveItVisualTools provides many capabilties for visualizing objects, robots,
-  // and trajectories in RViz as well as debugging tools such as step-by-step introspection of a script
-
-  // Remote control is an introspection tool that allows users to step through a high level script
-  // via buttons and keyboard shortcuts in RViz
-  // visual_tools.loadRemoteControl();
-
-  // Batch publishing is used to reduce the number of messages being sent to RViz for large visualizations
-
-  // Getting Basic Information
-  // ^^^^^^^^^^^^^^^^^^^^^^^^^
-  //
-  // We can print the name of the reference frame for this robot.
-  
-
-  static const std::string PLANNING_GROUP = "left_arm";
-
-  moveit::planning_interface::MoveGroupInterface move_group(PLANNING_GROUP);
-  robot_model_loader::RobotModelLoader robot_model_loader("robot_description");
-  robot_model::RobotModelPtr robot_model = robot_model_loader.getModel();
-/* Create a RobotState and JointModelGroup to keep track of the current robot pose and planning group*/
-  robot_state::RobotStatePtr robot_state(new robot_state::RobotState(robot_model));
-  const robot_state::JointModelGroup* joint_model_group = robot_state->getJointModelGroup(PLANNING_GROUP);
-  moveit::planning_interface::PlanningSceneInterface planning_scene_interface;
-
-//   const std::vector<std::string>& joint_names = joint_model_group->getVariableNames();
-//   std::vector<double> joint_values;
-//   std::cout << "EEF Name: " << joint_model_group->getEndEffectorName() << std::endl;
-
-  // const robot_state::JointModelGroup* joint_model_group =
-  //    move_group.getCurrentState()->getJointModelGroup("arm");
-
-  // joint_model_group->printGroupInfo();
-  // move_group.setNumPlanningAttempts(10);
-  // const double* elbow_pos = robot_state->getJointPositions("elbow_pitch_joint");
-  // std::cout << "JOINT POS OF ELBOW PITCH: " << &elbow_pos << std::endl;
-  // robot_state->copyJointGroupPositions(joint_model_group, joint_values);
-  // for (std::size_t i = 0; i < joint_names.size(); ++i)
-  // {
-  //   ROS_INFO("Joint %s: %f", joint_names[i].c_str(), joint_values[i]);
-  // }
-
-//   ROS_INFO_NAMED("tutorial", "Reference frame: %s", move_group.getPlanningFrame().c_str());
-
-//   // We can also print the name of the end-effector link for this group.
-//   ROS_INFO_NAMED("tutorial", "End effector link: %s", move_group.getEndEffectorLink().c_str());
-//   // ROS_INFO_NAMED("tutorial", "End effector link: %s", joint_model_group->getEndEffectorName().c_str());
-
-
-
-
-  /*Retrive position and orientation */
-  // while(1){
-  //   robot_pose = move_group.getCurrentPose();
-  //   current_position = robot_pose.pose;
-  //   exact_pose = current_position.position;
-  //   exact_orientation = current_position.orientation;
-    
-  //   std::cout<<"Reference frame: "<<robot_pose.header.frame_id<<std::endl;
-  //   ROS_INFO("End effector link: %s", move_group.getEndEffectorLink().c_str());
-  //   std::cout<<"Robot position : "<<exact_pose.x<<"\t"<<exact_pose.y<<"\t"<<exact_pose.z<<std::endl;
-  //   std::cout<<"Robot Orientation : "<<exact_orientation.x<<"\t"<<exact_orientation.y<<"\t"<<exact_orientation.z<<"\t"<<exact_orientation.w<< "\n" << std::endl;
-  //   sleep(3);
-  // }
-  // Start the demo
-  // ^^^^^^^^^^^^^^^^^^^^^^^^^
-
-  moveit::planning_interface::MoveGroupInterface::Plan plan;
-
-  geometry_msgs::Pose target_pose1;
-
-  //0.712783, 0.294493, 0.43211   -0.0178776, 0.994369, 0.040816, 0.0961492
-
-  target_pose1.position.x = 0.625001;//0.712783;
-  target_pose1.position.y = 0.0833;//0.294493;
-  target_pose1.position.z = -0.2142;//0.43211;
-
-  target_pose1.orientation.x = 0.2439;//-0.0178776;
-  target_pose1.orientation.y = 0.9696;//0.994369;
-  target_pose1.orientation.z = 0.0156;//0.040816;
-  target_pose1.orientation.w = 0.0011;//0.0961492;
-
-  move_group.setPoseTarget(target_pose1);
-
-  bool success = (move_group.plan(plan) == moveit::planning_interface::MoveItErrorCode::SUCCESS);
-
-  ROS_INFO("Visualizing plan 1 (pose goal) %s",success?"":"FAILED"); 
-
-  ROS_INFO("Trying IK.....");
-  ROS_INFO("%d", robot_state->setFromIK(joint_model_group, target_pose1));
-  if(1){
-    ROS_INFO("successfully retrieved IK Solution!");
-    // robot_state->copyJointGroupPositions(joint_model_group, joint_values);
-    // for (std::size_t i = 0; i < joint_names.size(); ++i)
-    // {
-    //   ROS_INFO("Joint %s: %f", joint_names[i].c_str(), joint_values[i]);
-    //   move_group.setJointValueTarget(joint_values);
-    // }
-  }
-  else{
-    ROS_ERROR("CANNOT SOLVE IK");
-  }
-//   bool success = (move_group.plan(plan) == moveit::planning_interface::MoveItErrorCode::SUCCESS);
-  // ROS_INFO("Visualizing plan 2 (joint space goal) %s",success?"":"FAILED");
-
-  // // // Now, we call the planner to compute the plan and visualize it.
-  // // // Note that we are just planning, not asking move_group
-  // // // to actually move the robot.
-  // // 
-
-  // // bool success = (move_group.plan(plan) == moveit::planning_interface::MoveItErrorCode::SUCCESS);
-
-  // // ROS_INFO_NAMED("tutorial", "Visualizing plan 1 (pose goal) %s", success ? "" : "FAILED");
-  sleep(5);
-//   move_group.execute(plan);
+  ros::waitForShutdown();
 
   return 0;
 }

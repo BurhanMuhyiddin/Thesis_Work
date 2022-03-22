@@ -69,10 +69,11 @@ baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_lisp: /home/lar/r
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_lisp: /home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/msg/GoToPointResult.lisp
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_lisp: /home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/msg/GoToPointActionResult.lisp
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_lisp: /home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv/GetCurrentJointStates.lisp
-baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_lisp: /home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv/PositionCommandMine.lisp
+baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_lisp: /home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv/GoToGoal.lisp
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_lisp: /home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv/CalculateIK.lisp
-baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_lisp: /home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv/CheckCrossing.lisp
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_lisp: /home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv/ProcessImage.lisp
+baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_lisp: /home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv/PositionCommandMine.lisp
+baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_lisp: /home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv/CheckCrossing.lisp
 
 
 /home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/msg/GoToJointPosAction.lisp: /opt/ros/kinetic/lib/genlisp/gen_lisp.py
@@ -218,10 +219,13 @@ baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_lisp: /home/lar/r
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Generating Lisp code from baxter_msgs_mine/GetCurrentJointStates.srv"
 	cd /home/lar/ros/test_ws/build/baxter_msgs_mine && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/lar/ros/test_ws/src/baxter_msgs_mine/srv/GetCurrentJointStates.srv -Ibaxter_msgs_mine:/home/lar/ros/test_ws/src/baxter_msgs_mine/msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -p baxter_msgs_mine -o /home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv
 
-/home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv/PositionCommandMine.lisp: /opt/ros/kinetic/lib/genlisp/gen_lisp.py
-/home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv/PositionCommandMine.lisp: /home/lar/ros/test_ws/src/baxter_msgs_mine/srv/PositionCommandMine.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Generating Lisp code from baxter_msgs_mine/PositionCommandMine.srv"
-	cd /home/lar/ros/test_ws/build/baxter_msgs_mine && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/lar/ros/test_ws/src/baxter_msgs_mine/srv/PositionCommandMine.srv -Ibaxter_msgs_mine:/home/lar/ros/test_ws/src/baxter_msgs_mine/msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -p baxter_msgs_mine -o /home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv
+/home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv/GoToGoal.lisp: /opt/ros/kinetic/lib/genlisp/gen_lisp.py
+/home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv/GoToGoal.lisp: /home/lar/ros/test_ws/src/baxter_msgs_mine/srv/GoToGoal.srv
+/home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv/GoToGoal.lisp: /opt/ros/kinetic/share/geometry_msgs/msg/Quaternion.msg
+/home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv/GoToGoal.lisp: /opt/ros/kinetic/share/geometry_msgs/msg/Pose.msg
+/home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv/GoToGoal.lisp: /opt/ros/kinetic/share/geometry_msgs/msg/Point.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Generating Lisp code from baxter_msgs_mine/GoToGoal.srv"
+	cd /home/lar/ros/test_ws/build/baxter_msgs_mine && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/lar/ros/test_ws/src/baxter_msgs_mine/srv/GoToGoal.srv -Ibaxter_msgs_mine:/home/lar/ros/test_ws/src/baxter_msgs_mine/msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -p baxter_msgs_mine -o /home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv
 
 /home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv/CalculateIK.lisp: /opt/ros/kinetic/lib/genlisp/gen_lisp.py
 /home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv/CalculateIK.lisp: /home/lar/ros/test_ws/src/baxter_msgs_mine/srv/CalculateIK.srv
@@ -233,17 +237,22 @@ baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_lisp: /home/lar/r
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Generating Lisp code from baxter_msgs_mine/CalculateIK.srv"
 	cd /home/lar/ros/test_ws/build/baxter_msgs_mine && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/lar/ros/test_ws/src/baxter_msgs_mine/srv/CalculateIK.srv -Ibaxter_msgs_mine:/home/lar/ros/test_ws/src/baxter_msgs_mine/msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -p baxter_msgs_mine -o /home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv
 
-/home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv/CheckCrossing.lisp: /opt/ros/kinetic/lib/genlisp/gen_lisp.py
-/home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv/CheckCrossing.lisp: /home/lar/ros/test_ws/src/baxter_msgs_mine/srv/CheckCrossing.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Generating Lisp code from baxter_msgs_mine/CheckCrossing.srv"
-	cd /home/lar/ros/test_ws/build/baxter_msgs_mine && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/lar/ros/test_ws/src/baxter_msgs_mine/srv/CheckCrossing.srv -Ibaxter_msgs_mine:/home/lar/ros/test_ws/src/baxter_msgs_mine/msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -p baxter_msgs_mine -o /home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv
-
 /home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv/ProcessImage.lisp: /opt/ros/kinetic/lib/genlisp/gen_lisp.py
 /home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv/ProcessImage.lisp: /home/lar/ros/test_ws/src/baxter_msgs_mine/srv/ProcessImage.srv
 /home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv/ProcessImage.lisp: /opt/ros/kinetic/share/sensor_msgs/msg/Image.msg
 /home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv/ProcessImage.lisp: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Generating Lisp code from baxter_msgs_mine/ProcessImage.srv"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Generating Lisp code from baxter_msgs_mine/ProcessImage.srv"
 	cd /home/lar/ros/test_ws/build/baxter_msgs_mine && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/lar/ros/test_ws/src/baxter_msgs_mine/srv/ProcessImage.srv -Ibaxter_msgs_mine:/home/lar/ros/test_ws/src/baxter_msgs_mine/msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -p baxter_msgs_mine -o /home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv
+
+/home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv/PositionCommandMine.lisp: /opt/ros/kinetic/lib/genlisp/gen_lisp.py
+/home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv/PositionCommandMine.lisp: /home/lar/ros/test_ws/src/baxter_msgs_mine/srv/PositionCommandMine.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Generating Lisp code from baxter_msgs_mine/PositionCommandMine.srv"
+	cd /home/lar/ros/test_ws/build/baxter_msgs_mine && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/lar/ros/test_ws/src/baxter_msgs_mine/srv/PositionCommandMine.srv -Ibaxter_msgs_mine:/home/lar/ros/test_ws/src/baxter_msgs_mine/msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -p baxter_msgs_mine -o /home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv
+
+/home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv/CheckCrossing.lisp: /opt/ros/kinetic/lib/genlisp/gen_lisp.py
+/home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv/CheckCrossing.lisp: /home/lar/ros/test_ws/src/baxter_msgs_mine/srv/CheckCrossing.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Generating Lisp code from baxter_msgs_mine/CheckCrossing.srv"
+	cd /home/lar/ros/test_ws/build/baxter_msgs_mine && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/lar/ros/test_ws/src/baxter_msgs_mine/srv/CheckCrossing.srv -Ibaxter_msgs_mine:/home/lar/ros/test_ws/src/baxter_msgs_mine/msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -p baxter_msgs_mine -o /home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv
 
 baxter_msgs_mine_generate_messages_lisp: baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_lisp
 baxter_msgs_mine_generate_messages_lisp: /home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/msg/GoToJointPosAction.lisp
@@ -262,10 +271,11 @@ baxter_msgs_mine_generate_messages_lisp: /home/lar/ros/test_ws/devel/share/commo
 baxter_msgs_mine_generate_messages_lisp: /home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/msg/GoToPointResult.lisp
 baxter_msgs_mine_generate_messages_lisp: /home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/msg/GoToPointActionResult.lisp
 baxter_msgs_mine_generate_messages_lisp: /home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv/GetCurrentJointStates.lisp
-baxter_msgs_mine_generate_messages_lisp: /home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv/PositionCommandMine.lisp
+baxter_msgs_mine_generate_messages_lisp: /home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv/GoToGoal.lisp
 baxter_msgs_mine_generate_messages_lisp: /home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv/CalculateIK.lisp
-baxter_msgs_mine_generate_messages_lisp: /home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv/CheckCrossing.lisp
 baxter_msgs_mine_generate_messages_lisp: /home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv/ProcessImage.lisp
+baxter_msgs_mine_generate_messages_lisp: /home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv/PositionCommandMine.lisp
+baxter_msgs_mine_generate_messages_lisp: /home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv/CheckCrossing.lisp
 baxter_msgs_mine_generate_messages_lisp: baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_lisp.dir/build.make
 
 .PHONY : baxter_msgs_mine_generate_messages_lisp

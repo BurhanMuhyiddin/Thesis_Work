@@ -16,10 +16,11 @@ file(REMOVE_RECURSE
   "/home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToPointResult.py"
   "/home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToPointActionResult.py"
   "/home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_GetCurrentJointStates.py"
-  "/home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_PositionCommandMine.py"
+  "/home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_GoToGoal.py"
   "/home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_CalculateIK.py"
-  "/home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_CheckCrossing.py"
   "/home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_ProcessImage.py"
+  "/home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_PositionCommandMine.py"
+  "/home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_CheckCrossing.py"
   "/home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/__init__.py"
   "/home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/__init__.py"
 )

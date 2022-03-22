@@ -16,10 +16,11 @@ file(REMOVE_RECURSE
   "/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointResult.h"
   "/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToPointActionResult.h"
   "/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GetCurrentJointStates.h"
-  "/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/PositionCommandMine.h"
+  "/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToGoal.h"
   "/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/CalculateIK.h"
-  "/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/CheckCrossing.h"
   "/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/ProcessImage.h"
+  "/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/PositionCommandMine.h"
+  "/home/lar/ros/test_ws/devel/include/baxter_msgs_mine/CheckCrossing.h"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -12,6 +12,8 @@
     (:file "_package_CheckCrossing" :depends-on ("_package"))
     (:file "GetCurrentJointStates" :depends-on ("_package_GetCurrentJointStates"))
     (:file "_package_GetCurrentJointStates" :depends-on ("_package"))
+    (:file "GoToGoal" :depends-on ("_package_GoToGoal"))
+    (:file "_package_GoToGoal" :depends-on ("_package"))
     (:file "PositionCommandMine" :depends-on ("_package_PositionCommandMine"))
     (:file "_package_PositionCommandMine" :depends-on ("_package"))
     (:file "ProcessImage" :depends-on ("_package_ProcessImage"))

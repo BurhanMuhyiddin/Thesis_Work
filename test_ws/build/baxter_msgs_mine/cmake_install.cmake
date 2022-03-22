@@ -43,6 +43,7 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
     "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/ProcessImage.srv"
     "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/GetCurrentJointStates.srv"
     "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/CheckCrossing.srv"
+    "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/GoToGoal.srv"
     )
 endif()
 
