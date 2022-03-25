@@ -72,48 +72,6 @@ void RvizToRobot::get_joint_states_fake_cb(const sensor_msgs::JointState &msg)
         baxter_core_msgs::JointCommand left_arm_ref;
         baxter_core_msgs::JointCommand right_arm_ref;
 
-        std::string limb;
-
-        ros::param::get("/limb", limb);
-
-        left_arm_ref.command.resize(7);
-        right_arm_ref.command.resize(7);
-
-        if (limb == "left") // if limb is left, then make right as velocity mode, because its positions have been set as zero before, so it will
-                            // not move. Only left arm will move. The same logic for right and both arms.
-        {
-            left_arm_ref.mode = 1.0;
-            right_arm_ref.mode = 2.0;
-
-            for(int i = 0; i < 7; i++)
-            {
-                left_arm_ref.command[i] = msg.position[i];
-                right_arm_ref.command[i] = 0.0000;
-            }
-        }
-        else if (limb == "right")
-        {
-            left_arm_ref.mode = 2.0;
-            right_arm_ref.mode = 1.0;
-
-            for(int i = 0; i < 7; i++)
-            {
-                left_arm_ref.command[i] = 0.0000;
-                right_arm_ref.command[i] = msg.position[i+7];
-            }
-        }
-        else if (limb == "both")
-        {
-            left_arm_ref.mode = 1.0;
-            right_arm_ref.mode = 1.0;
-
-            for(int i = 0; i < 7; i++)
-            {
-                left_arm_ref.command[i] = msg.position[i];
-                right_arm_ref.command[i] = msg.position[i+7];
-            }
-        }
-
         left_arm_ref.names.push_back("left_e0");
         left_arm_ref.names.push_back("left_e1");
         left_arm_ref.names.push_back("left_s0");
@@ -130,8 +88,51 @@ void RvizToRobot::get_joint_states_fake_cb(const sensor_msgs::JointState &msg)
         right_arm_ref.names.push_back("right_w1");
         right_arm_ref.names.push_back("right_w2");
 
-        left_pub.publish(left_arm_ref);
-        right_pub.publish(right_arm_ref);
+        if (msg.name.size() == 7)
+        {
+            // determine if message is for right or left arm
+            if (msg.name[0].find("left") != std::string::npos)
+            {
+                left_arm_ref.command.resize(7);
+                left_arm_ref.mode = 1.0; // set to position mode
+                
+                for(int i = 0; i < 7; i++)
+                {
+                    left_arm_ref.command[i] = msg.position[i];
+                }
+
+                left_pub.publish(left_arm_ref);
+            }
+            else // right arm
+            {
+                right_arm_ref.command.resize(7);
+                right_arm_ref.mode = 1.0; // set to position mode
+
+                for(int i = 0; i < 7; i++)
+                {
+                    right_arm_ref.command[i] = msg.position[i];
+                }
+
+                right_pub.publish(right_arm_ref);
+            }
+        }
+        else if (msg.name.size() == 14) // command is for both arms
+        {
+            left_arm_ref.command.resize(7);
+            right_arm_ref.command.resize(7);
+
+            left_arm_ref.mode = 1.0;
+            right_arm_ref.mode = 1.0;
+
+            for(int i = 0; i < 7; i++)
+            {
+                left_arm_ref.command[i] = msg.position[i];
+                right_arm_ref.command[i] = msg.position[i+7];
+            }
+
+            left_pub.publish(left_arm_ref);
+            right_pub.publish(right_arm_ref);
+        }
     }
 }
 
@@ -139,7 +140,7 @@ int main(int argc, char **argv)
 {
     ros::init(argc, argv, "rviz_to_robot_node");
 
-    float timeout = 30.0; // timeout for /left/jointcommand, so robot will be able to finish desired trajectory
+    float timeout = 30.0; // timeout for /left|right/jointcommand, so robot will be able to finish desired trajectory
 
     RvizToRobot rr(timeout);
 
