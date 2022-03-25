@@ -1,5 +1,6 @@
 geometry_msgs/Pose[] goal
 string limb
 bool pos_only_ik
+int8 mode
 ---
 bool success

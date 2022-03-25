@@ -63,12 +63,13 @@ class main():
             smach.StateMachine.add('HOME', smach_ros.ServiceState("/go_to_goal", GoToGoal, 
                                                                                 request_cb = self.home_request_cb,
                                                                                 response_cb = self.home_result_cb),
-                                    transitions={'succeeded' : 'CHECK_CROSSING', 'preempted' : '', 'aborted' : ''})
+                                    transitions={'succeeded' : 'CHECK_CROSSING', 'preempted' : '', 'aborted' : 'HOME'})
 
             smach.StateMachine.add('CHECK_CROSSING', smach_ros.ServiceState('/check_crossing', CheckCrossing,
+                                                                                            outcomes=['succeeded', 'aborted'],
                                                                                             request_cb = self.check_crossing_request_cb,
                                                                                             response_cb = self.check_crossing_result_cb),
-                                    transitions={'succeeded' : 'PROCESS_IMAGE'})
+                                    transitions={'succeeded' : 'PROCESS_IMAGE', 'aborted' : 'HOME'})
                                     
             # smach.StateMachine.add('TABLE_TOP_RIGHT', SimpleActionState("/go_to_goal", GoToPointAction, goal=GoToPointGoal([self.pose_points['work_right']], "right"), 
             #                                                                                 result_cb=self.table_top_right_result_cb,
@@ -83,16 +84,16 @@ class main():
             #                         remapping={'grabbed_image' : 'img_data', 'limb_name' : 'limb_data'})
 
             smach.StateMachine.add('PROCESS_IMAGE', smach_ros.ServiceState('/process_img', ProcessImage,
-                                                                                            outcomes=['pick_obj', 'place_obj'],
+                                                                                            outcomes=['pick_obj', 'place_obj', 'aborted'],
                                                                                             request_cb = self.process_img_request_clb,
                                                                                             response_cb = self.process_image_result_cb),
-                                    transitions={'pick_obj' : 'PICK_POSITION', 'place_obj' : 'PLACE_POSITION'})
+                                    transitions={'pick_obj' : 'PICK_POSITION', 'place_obj' : 'PLACE_POSITION', 'aborted' : 'HOME'})
 
             smach.StateMachine.add('PICK_POSITION', smach_ros.ServiceState("/go_to_goal", GoToGoal,
                                                                                             outcomes=['succeeded', 'preempted', 'aborted'],
                                                                                             request_cb = self.pick_pos_request_clb,
                                                                                             response_cb = self.pick_pos_result_clb),
-                                    transitions={'succeeded' : 'GRASP', 'preempted' : '', 'aborted' : ''})
+                                    transitions={'succeeded' : 'GRASP', 'preempted' : '', 'aborted' : 'HOME'})
 
             smach.StateMachine.add('GRASP', SimpleActionState("/robot/end_effector/left_gripper/gripper_action", GripperCommandAction, goal_cb=self.gripper_goal_cb, 
                                                                                             outcomes=['pick_obj', 'place_obj'],
@@ -103,7 +104,7 @@ class main():
                                                                                             outcomes=['succeeded', 'preempted', 'aborted'],
                                                                                             request_cb = self.place_pos_request_clb,
                                                                                             response_cb = self.place_pos_result_clb),
-                                    transitions={'succeeded' : 'RELEASE', 'preempted' : '', 'aborted' : ''})
+                                    transitions={'succeeded' : 'RELEASE', 'preempted' : '', 'aborted' : 'HOME'})
 
             smach.StateMachine.add('RELEASE', SimpleActionState("/robot/end_effector/left_gripper/gripper_action", GripperCommandAction, goal_cb=self.gripper_goal_cb, 
                                                                                             result_cb=self.release_state_clb), 
@@ -132,6 +133,7 @@ class main():
         gg_req.goal = [self.pose_points['work_left'], self.pose_points['work_right']]
         gg_req.limb = "both"
         gg_req.pos_only_ik = False
+        gg_req.mode = 0
 
         return gg_req
 
@@ -174,6 +176,7 @@ class main():
         gg_req.goal = [pp]
         gg_req.limb = self.limb_name
         gg_req.pos_only_ik = False
+        gg_req.mode = 0
 
         self.gripper_position = 30.0
 
@@ -201,6 +204,7 @@ class main():
         gg_req.goal = [pp]
         gg_req.limb = self.limb_name
         gg_req.pos_only_ik = False
+        gg_req.mode = 1
 
         self.gripper_position = 100.0
 
@@ -213,10 +217,16 @@ class main():
             self.stage = 0
             self.obj_color = "yellow"
             rospy.sleep(2.0)
+        else:
+            return 'aborted'
 
     def process_image_result_cb(self, ud, result):
         # get extracted features from result
         extracted_features_buff = result.extracted_features
+        
+        if len(extracted_features_buff) == 0:
+            return 'aborted'
+        
         self.extracted_features["blue"] = extracted_features_buff[0:2]
         self.extracted_features["yellow"] = extracted_features_buff[2:4]
         self.extracted_features["red"] = extracted_features_buff[4:6]
@@ -229,6 +239,9 @@ class main():
     def check_crossing_result_cb(self, ud, result):
         limb = result.limb
 
+        if not result.success:
+            return 'aborted'
+
         if limb == "left":
             self.limb_name = "left"
         else:
@@ -237,10 +250,14 @@ class main():
     def pick_pos_result_clb(self, ud, result):
         if result.success:
             rospy.sleep(1.0)
+        else:
+            return 'aborted'
 
     def place_pos_result_clb(self, ud, result):
         if result.success:
             rospy.sleep(1.0)
+        else:
+            return 'aborted'
 
     def table_top_right_result_cb(self, ud, status, result):
         if status == actionlib.GoalStatus.SUCCEEDED:

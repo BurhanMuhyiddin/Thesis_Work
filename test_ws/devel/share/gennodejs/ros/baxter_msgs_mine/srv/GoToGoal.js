@@ -25,6 +25,7 @@ class GoToGoalRequest {
       this.goal = null;
       this.limb = null;
       this.pos_only_ik = null;
+      this.mode = null;
     }
     else {
       if (initObj.hasOwnProperty('goal')) {
@@ -45,6 +46,12 @@ class GoToGoalRequest {
       else {
         this.pos_only_ik = false;
       }
+      if (initObj.hasOwnProperty('mode')) {
+        this.mode = initObj.mode
+      }
+      else {
+        this.mode = 0;
+      }
     }
   }
 
@@ -60,6 +67,8 @@ class GoToGoalRequest {
     bufferOffset = _serializer.string(obj.limb, buffer, bufferOffset);
     // Serialize message field [pos_only_ik]
     bufferOffset = _serializer.bool(obj.pos_only_ik, buffer, bufferOffset);
+    // Serialize message field [mode]
+    bufferOffset = _serializer.int8(obj.mode, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -78,6 +87,8 @@ class GoToGoalRequest {
     data.limb = _deserializer.string(buffer, bufferOffset);
     // Deserialize message field [pos_only_ik]
     data.pos_only_ik = _deserializer.bool(buffer, bufferOffset);
+    // Deserialize message field [mode]
+    data.mode = _deserializer.int8(buffer, bufferOffset);
     return data;
   }
 
@@ -85,7 +96,7 @@ class GoToGoalRequest {
     let length = 0;
     length += 56 * object.goal.length;
     length += object.limb.length;
-    return length + 9;
+    return length + 10;
   }
 
   static datatype() {
@@ -95,7 +106,7 @@ class GoToGoalRequest {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return 'cf1367366515c06da918dd2fc274c2fa';
+    return '0224c030e3d1f33270c9c833db4d1c4b';
   }
 
   static messageDefinition() {
@@ -104,6 +115,7 @@ class GoToGoalRequest {
     geometry_msgs/Pose[] goal
     string limb
     bool pos_only_ik
+    int8 mode
     
     ================================================================================
     MSG: geometry_msgs/Pose
@@ -158,6 +170,13 @@ class GoToGoalRequest {
     }
     else {
       resolved.pos_only_ik = false
+    }
+
+    if (msg.mode !== undefined) {
+      resolved.mode = msg.mode;
+    }
+    else {
+      resolved.mode = 0
     }
 
     return resolved;
@@ -238,6 +257,6 @@ class GoToGoalResponse {
 module.exports = {
   Request: GoToGoalRequest,
   Response: GoToGoalResponse,
-  md5sum() { return '020d1aceb48caf436ac8ca2d5b166385'; },
+  md5sum() { return '9ed4b1d775387f17722043ec8051bd52'; },
   datatype() { return 'baxter_msgs_mine/GoToGoal'; }
 };

@@ -48,6 +48,7 @@ bool GoToGoal::go_to_goal_clb(baxter_msgs_mine::GoToGoalRequest &req,
 
   // extract content of request
   bool pos_only_ik = req.pos_only_ik;
+  int mode = req.mode;
   const std::string limb = std::move(req.limb);
   std::vector<geometry_msgs::Pose> goal = std::move(req.goal);
 
@@ -66,6 +67,12 @@ bool GoToGoal::go_to_goal_clb(baxter_msgs_mine::GoToGoalRequest &req,
   moveit::planning_interface::PlanningSceneInterface planning_scene_interface;
   const robot_state::JointModelGroup* joint_model_group = move_group.getCurrentState()->getJointModelGroup(PLANNING_GROUP);
 
+  moveit::planning_interface::MoveGroupInterface::Plan my_plan;
+  bool success;
+
+  robot_state::RobotState start_state(*move_group.getCurrentState());
+  move_group.setStartState(start_state);
+
   // get goal positions
   if (limb == "left" || limb == "right")
   {
@@ -73,13 +80,40 @@ bool GoToGoal::go_to_goal_clb(baxter_msgs_mine::GoToGoalRequest &req,
     target_pose = goal.front();
     const std::string ee = std::move(limb + "_gripper");
 
-    if (pos_only_ik)
+    if (mode == 0)
     {
-      move_group.setPositionTarget(target_pose.position.x, target_pose.position.y, target_pose.position.z, ee);
+      if (pos_only_ik)
+      {
+        move_group.setPositionTarget(target_pose.position.x, target_pose.position.y, target_pose.position.z, ee);
+      }
+      else
+      {
+        move_group.setPoseTarget(target_pose, ee);
+      }
     }
-    else
+    else if (mode == 1) // do cartesain trajectory planning
     {
-      move_group.setPoseTarget(target_pose, ee);
+      geometry_msgs::Pose initial_pose = move_group.getCurrentPose().pose;
+
+      std::vector<geometry_msgs::Pose> waypoints;
+      waypoints.push_back(initial_pose);
+      waypoints.push_back(target_pose);
+      
+      // move_group.setMaxVelocityScalingFactor(0.1);
+
+      moveit_msgs::RobotTrajectory trajectory;
+      const double jump_threshold = 0.0;
+      const double eef_step = 0.01;
+      double fraction = move_group.computeCartesianPath(waypoints, eef_step, jump_threshold, trajectory);
+      if (fraction != -1)
+      {
+        my_plan.trajectory_ = trajectory;
+        success = true;
+      }
+      else
+      {
+        success = false;
+      }
     }
   }
   else // both arms
@@ -102,8 +136,10 @@ bool GoToGoal::go_to_goal_clb(baxter_msgs_mine::GoToGoalRequest &req,
 
   ROS_INFO("GoToGoalService: Planning has been started...");
 
-  moveit::planning_interface::MoveGroupInterface::Plan my_plan;
-  bool success = (move_group.plan(my_plan) == moveit::planning_interface::MoveItErrorCode::SUCCESS);
+  if (mode == 0)
+  {
+    success = (move_group.plan(my_plan) == moveit::planning_interface::MoveItErrorCode::SUCCESS);
+  }
 
   if (success)
   {

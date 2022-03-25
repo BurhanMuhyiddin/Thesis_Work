@@ -22,7 +22,7 @@
 
 (defclass baxter_msgs_mine::GoToGoalRequest
   :super ros::object
-  :slots (_goal _limb _pos_only_ik ))
+  :slots (_goal _limb _pos_only_ik _mode ))
 
 (defmethod baxter_msgs_mine::GoToGoalRequest
   (:init
@@ -30,11 +30,13 @@
     ((:goal __goal) (let (r) (dotimes (i 0) (push (instance geometry_msgs::Pose :init) r)) r))
     ((:limb __limb) "")
     ((:pos_only_ik __pos_only_ik) nil)
+    ((:mode __mode) 0)
     )
    (send-super :init)
    (setq _goal __goal)
    (setq _limb (string __limb))
    (setq _pos_only_ik __pos_only_ik)
+   (setq _mode (round __mode))
    self)
   (:goal
    (&rest __goal)
@@ -49,6 +51,9 @@
   (:pos_only_ik
    (&optional __pos_only_ik)
    (if __pos_only_ik (setq _pos_only_ik __pos_only_ik)) _pos_only_ik)
+  (:mode
+   (&optional __mode)
+   (if __mode (setq _mode __mode)) _mode)
   (:serialization-length
    ()
    (+
@@ -57,6 +62,8 @@
     ;; string _limb
     4 (length _limb)
     ;; bool _pos_only_ik
+    1
+    ;; int8 _mode
     1
     ))
   (:serialize
@@ -72,6 +79,8 @@
        (write-long (length _limb) s) (princ _limb s)
      ;; bool _pos_only_ik
        (if _pos_only_ik (write-byte -1 s) (write-byte 0 s))
+     ;; int8 _mode
+       (write-byte _mode s)
      ;;
      (if (null strm) (get-output-stream-string s))))
   (:deserialize
@@ -87,6 +96,9 @@
      (let (n) (setq n (sys::peek buf ptr- :integer)) (incf ptr- 4) (setq _limb (subseq buf ptr- (+ ptr- n))) (incf ptr- n))
    ;; bool _pos_only_ik
      (setq _pos_only_ik (not (= 0 (sys::peek buf ptr- :char)))) (incf ptr- 1)
+   ;; int8 _mode
+     (setq _mode (sys::peek buf ptr- :char)) (incf ptr- 1)
+     (if (> _mode 127) (setq _mode (- _mode 256)))
    ;;
    self)
   )
@@ -132,7 +144,7 @@
   :super ros::object
   :slots ())
 
-(setf (get baxter_msgs_mine::GoToGoal :md5sum-) "020d1aceb48caf436ac8ca2d5b166385")
+(setf (get baxter_msgs_mine::GoToGoal :md5sum-) "9ed4b1d775387f17722043ec8051bd52")
 (setf (get baxter_msgs_mine::GoToGoal :datatype-) "baxter_msgs_mine/GoToGoal")
 (setf (get baxter_msgs_mine::GoToGoal :request) baxter_msgs_mine::GoToGoalRequest)
 (setf (get baxter_msgs_mine::GoToGoal :response) baxter_msgs_mine::GoToGoalResponse)
@@ -140,12 +152,13 @@
 (defmethod baxter_msgs_mine::GoToGoalRequest
   (:response () (instance baxter_msgs_mine::GoToGoalResponse :init)))
 
-(setf (get baxter_msgs_mine::GoToGoalRequest :md5sum-) "020d1aceb48caf436ac8ca2d5b166385")
+(setf (get baxter_msgs_mine::GoToGoalRequest :md5sum-) "9ed4b1d775387f17722043ec8051bd52")
 (setf (get baxter_msgs_mine::GoToGoalRequest :datatype-) "baxter_msgs_mine/GoToGoalRequest")
 (setf (get baxter_msgs_mine::GoToGoalRequest :definition-)
       "geometry_msgs/Pose[] goal
 string limb
 bool pos_only_ik
+int8 mode
 
 ================================================================================
 MSG: geometry_msgs/Pose
@@ -172,12 +185,13 @@ float64 w
 bool success
 ")
 
-(setf (get baxter_msgs_mine::GoToGoalResponse :md5sum-) "020d1aceb48caf436ac8ca2d5b166385")
+(setf (get baxter_msgs_mine::GoToGoalResponse :md5sum-) "9ed4b1d775387f17722043ec8051bd52")
 (setf (get baxter_msgs_mine::GoToGoalResponse :datatype-) "baxter_msgs_mine/GoToGoalResponse")
 (setf (get baxter_msgs_mine::GoToGoalResponse :definition-)
       "geometry_msgs/Pose[] goal
 string limb
 bool pos_only_ik
+int8 mode
 
 ================================================================================
 MSG: geometry_msgs/Pose
@@ -206,6 +220,6 @@ bool success
 
 
 
-(provide :baxter_msgs_mine/GoToGoal "020d1aceb48caf436ac8ca2d5b166385")
+(provide :baxter_msgs_mine/GoToGoal "9ed4b1d775387f17722043ec8051bd52")
 
 
