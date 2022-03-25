@@ -1,13 +1,13 @@
 <launch>
-    <!-- <node name="rviz_converter_node" pkg="baxter_control_mine" type="rviz_converter_node" /> -->
+    <node name="rviz_converter_node" pkg="baxter_control_mine" type="rviz_converter_node" />
 
     <node name="baxter_control_node" pkg="baxter_control_mine" type="baxter_control_node"  output="screen"/>
 
-    <node name="test_node" pkg="baxter_control_mine" type="test_node" output="screen"/>
+    <!-- <node name="test_node" pkg="baxter_control_mine" type="test_node" output="screen"/> -->
 
     <!-- <node name="calculate_ik_server" pkg="baxter_control_mine" type="calculate_ik_server" output="screen"/> -->
 
-    <!-- <node name="go_to_goal_server" pkg="baxter_control_mine" type="go_to_goal_server" output="screen"/> -->
+    <node name="go_to_goal_server" pkg="baxter_control_mine" type="go_to_goal_server" output="screen"/>
 
     <!-- <node name="go_to_joint_pos_server" pkg="baxter_control_mine" type="go_to_joint_pos_server" output="screen"/> -->
 

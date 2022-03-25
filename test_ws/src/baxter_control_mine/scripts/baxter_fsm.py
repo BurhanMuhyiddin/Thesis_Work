@@ -17,17 +17,14 @@ from actionlib_msgs.msg import GoalID
 from baxter_msgs_mine.srv import ProcessImage, ProcessImageRequest
 from baxter_msgs_mine.srv import CheckCrossing, CheckCrossingRequest
 
-from baxter_msgs_mine.msg import GoToPointAction
-from baxter_msgs_mine.msg import GoToPointGoal
+from baxter_msgs_mine.srv import GoToGoal, GoToGoalRequest
 
 class main():
     def __init__(self):
         rospy.init_node("computer_vision_fsm_node")
 
-        gtp_cl = actionlib.SimpleActionClient("/go_to_goal", GoToPointAction)
         left_gripper_cl = actionlib.SimpleActionClient("/robot/end_effector/left_gripper/gripper_action", GripperCommandAction)
         # right_gripper_cl = actionlib.SimpleActionClient("/robot/end_effector/right_gripper/gripper_action", GripperCommandAction)
-        gtp_cl.wait_for_server(rospy.Duration(15))
         left_gripper_cl.wait_for_server(rospy.Duration(15))
         # right_gripper_cl.wait_for_server(rospy.Duration(15))
 
@@ -63,8 +60,9 @@ class main():
 
         with sm:
             
-            smach.StateMachine.add('HOME', SimpleActionState("/go_to_goal", GoToPointAction, goal=GoToPointGoal([self.pose_points['work_left'], self.pose_points['work_right']], "both"), 
-                                                                                            result_cb=self.home_result_cb),
+            smach.StateMachine.add('HOME', smach_ros.ServiceState("/go_to_goal", GoToGoal, 
+                                                                                request_cb = self.home_request_cb,
+                                                                                response_cb = self.home_result_cb),
                                     transitions={'succeeded' : 'CHECK_CROSSING', 'preempted' : '', 'aborted' : ''})
 
             smach.StateMachine.add('CHECK_CROSSING', smach_ros.ServiceState('/check_crossing', CheckCrossing,
@@ -86,24 +84,25 @@ class main():
 
             smach.StateMachine.add('PROCESS_IMAGE', smach_ros.ServiceState('/process_img', ProcessImage,
                                                                                             outcomes=['pick_obj', 'place_obj'],
-                                                                                            request_cb = self.get_image_cb,
+                                                                                            request_cb = self.process_img_request_clb,
                                                                                             response_cb = self.process_image_result_cb),
                                     transitions={'pick_obj' : 'PICK_POSITION', 'place_obj' : 'PLACE_POSITION'})
 
-            smach.StateMachine.add('PICK_POSITION', SimpleActionState("/go_to_goal", GoToPointAction, goal_cb=self.pick_pos_goal_clb,
+            smach.StateMachine.add('PICK_POSITION', smach_ros.ServiceState("/go_to_goal", GoToGoal,
                                                                                             outcomes=['succeeded', 'preempted', 'aborted'],
-                                                                                            result_cb=self.pick_pos_state_clb),
+                                                                                            request_cb = self.pick_pos_request_clb,
+                                                                                            response_cb = self.pick_pos_result_clb),
                                     transitions={'succeeded' : 'GRASP', 'preempted' : '', 'aborted' : ''})
-
 
             smach.StateMachine.add('GRASP', SimpleActionState("/robot/end_effector/left_gripper/gripper_action", GripperCommandAction, goal_cb=self.gripper_goal_cb, 
                                                                                             outcomes=['pick_obj', 'place_obj'],
                                                                                             result_cb=self.grasp_state_clb), 
                                     transitions={'pick_obj' : 'PICK_POSITION', 'place_obj' : 'PLACE_POSITION'})
 
-            smach.StateMachine.add('PLACE_POSITION', SimpleActionState("/go_to_goal", GoToPointAction, goal_cb=self.place_pos_goal_clb,
+            smach.StateMachine.add('PLACE_POSITION', smach_ros.ServiceState("/go_to_goal", GoToGoal,
                                                                                             outcomes=['succeeded', 'preempted', 'aborted'],
-                                                                                            result_cb=self.place_pos_state_clb),
+                                                                                            request_cb = self.place_pos_request_clb,
+                                                                                            response_cb = self.place_pos_result_clb),
                                     transitions={'succeeded' : 'RELEASE', 'preempted' : '', 'aborted' : ''})
 
             smach.StateMachine.add('RELEASE', SimpleActionState("/robot/end_effector/left_gripper/gripper_action", GripperCommandAction, goal_cb=self.gripper_goal_cb, 
@@ -126,49 +125,15 @@ class main():
 
         return gg
 
-    def pick_pos_goal_clb(self, ud, goal):
-        pp = Pose()
-        pp.position.x = self.extracted_features[self.obj_color][0]
-        pp.position.y = self.extracted_features[self.obj_color][1]
-        pp.position.z = 0.0060
-
-        if (self.limb_name == "left"):
-            pp.orientation.x = -0.0178776
-            pp.orientation.y = 0.994369
-            pp.orientation.z = 0.040816
-            pp.orientation.w = 0.0961492
-        else:
-            pp.orientation.x = 0.0979966
-            pp.orientation.y = 0.989636
-            pp.orientation.z = 0.0478672
-            pp.orientation.w = 0.0934108
-
-        self.gripper_position = 30.0
-
-        return GoToPointGoal([pp], self.limb_name)
-
-    def place_pos_goal_clb(self, ud, goal):
-        pp = Pose()
-        pp.position.x = self.extracted_features[self.obj_color][0]
-        pp.position.y = self.extracted_features[self.obj_color][1]
-        pp.position.z = 0.0060
-        
-        if (self.limb_name == "left"):
-            pp.orientation.x = -0.0178776
-            pp.orientation.y = 0.994369
-            pp.orientation.z = 0.040816
-            pp.orientation.w = 0.0961492
-        else:
-            pp.orientation.x = 0.0979966
-            pp.orientation.y = 0.989636
-            pp.orientation.z = 0.0478672
-            pp.orientation.w = 0.0934108
-
-        self.gripper_position = 100.0
-
-        return GoToPointGoal([pp], self.limb_name)
-
     # request callbacks
+
+    def home_request_cb(self, ud, request):
+        gg_req = GoToGoalRequest()
+        gg_req.goal = [self.pose_points['work_left'], self.pose_points['work_right']]
+        gg_req.limb = "both"
+        gg_req.pos_only_ik = False
+
+        return gg_req
 
     def check_crossing_request_cb(self, ud, request):
         cc_req = CheckCrossingRequest()
@@ -176,7 +141,7 @@ class main():
 
         return cc_req
 
-    def get_image_cb(self, ud, request):
+    def process_img_request_clb(self, ud, request):
         # return img_to_be_processed
         im_req = ProcessImageRequest()
         im_req.img = Image()
@@ -187,10 +152,64 @@ class main():
 
         return im_req
 
+    def pick_pos_request_clb(self, ud, request):
+        gg_req = GoToGoalRequest()
+
+        pp = Pose()
+        pp.position.x = self.extracted_features[self.obj_color][0]
+        pp.position.y = self.extracted_features[self.obj_color][1]
+        pp.position.z = 0.0060
+
+        if (self.limb_name == "left"):
+            pp.orientation.x = -0.0178776
+            pp.orientation.y = 0.994369
+            pp.orientation.z = 0.040816
+            pp.orientation.w = 0.0961492
+        else:
+            pp.orientation.x = 0.0979966
+            pp.orientation.y = 0.989636
+            pp.orientation.z = 0.0478672
+            pp.orientation.w = 0.0934108
+
+        gg_req.goal = [pp]
+        gg_req.limb = self.limb_name
+        gg_req.pos_only_ik = False
+
+        self.gripper_position = 30.0
+
+        return gg_req
+
+    def place_pos_request_clb(self, ud, request):
+        gg_req = GoToGoalRequest()
+
+        pp = Pose()
+        pp.position.x = self.extracted_features[self.obj_color][0]
+        pp.position.y = self.extracted_features[self.obj_color][1]
+        pp.position.z = 0.0060
+
+        if (self.limb_name == "left"):
+            pp.orientation.x = -0.0178776
+            pp.orientation.y = 0.994369
+            pp.orientation.z = 0.040816
+            pp.orientation.w = 0.0961492
+        else:
+            pp.orientation.x = 0.0979966
+            pp.orientation.y = 0.989636
+            pp.orientation.z = 0.0478672
+            pp.orientation.w = 0.0934108
+
+        gg_req.goal = [pp]
+        gg_req.limb = self.limb_name
+        gg_req.pos_only_ik = False
+
+        self.gripper_position = 100.0
+
+        return gg_req
+
     # result callbacks
 
-    def home_result_cb(self, ud, status, result):
-        if status == actionlib.GoalStatus.SUCCEEDED:
+    def home_result_cb(self, ud, result):
+        if result.success:
             self.stage = 0
             self.obj_color = "yellow"
             rospy.sleep(2.0)
@@ -215,6 +234,14 @@ class main():
         else:
             self.limb_name = "right"
 
+    def pick_pos_result_clb(self, ud, result):
+        if result.success:
+            rospy.sleep(1.0)
+
+    def place_pos_result_clb(self, ud, result):
+        if result.success:
+            rospy.sleep(1.0)
+
     def table_top_right_result_cb(self, ud, status, result):
         if status == actionlib.GoalStatus.SUCCEEDED:
 
@@ -238,14 +265,6 @@ class main():
             ud.limb_name = "left"
 
     # state callbacks
-    
-    def pick_pos_state_clb(self, ud, status, result):
-        if status == actionlib.GoalStatus.SUCCEEDED:
-            rospy.sleep(1.0)
-
-    def place_pos_state_clb(self, ud, status, result):
-        if status == actionlib.GoalStatus.SUCCEEDED:
-            rospy.sleep(1.0)
 
     def grasp_state_clb(self, ud, status, result):
         if status == actionlib.GoalStatus.SUCCEEDED:
