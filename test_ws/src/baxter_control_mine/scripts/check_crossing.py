@@ -180,17 +180,20 @@ class CheckCrossingSrv:
         print(self.get_object_coordinates("blue", "right"))
         print(self.get_object_coordinates("yellow", "right"))
 
-        blueY = self.obj_crds['blue'][1]
-        yellowY = self.obj_crds['yellow'][1]
+        if (len(self.obj_crds['blue']) != 0 and len(self.obj_crds['yellow']) != 0):
+            blueY = self.obj_crds['blue'][1]
+            yellowY = self.obj_crds['yellow'][1]
 
-        self.obj_crds.clear() # don't for get to reset
+            self.obj_crds.clear() # don't for get to reset
 
-        res = yellowY - blueY
+            res = yellowY - blueY
 
-        if res > 0:
-            return CheckCrossingResponse(limb = "left", success = True)
+            if res > 0:
+                return CheckCrossingResponse(limb = "left", success = True)
+            else:
+                return CheckCrossingResponse(limb = "right", success = True)
         else:
-            return CheckCrossingResponse(limb = "right", success = True)
+            return CheckCrossingResponse(limb = "none", success = False)
 
 def main():
     pi_server = CheckCrossingSrv()

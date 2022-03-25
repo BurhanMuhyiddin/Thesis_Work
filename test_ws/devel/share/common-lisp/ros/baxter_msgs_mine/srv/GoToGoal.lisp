@@ -21,7 +21,12 @@
     :reader pos_only_ik
     :initarg :pos_only_ik
     :type cl:boolean
-    :initform cl:nil))
+    :initform cl:nil)
+   (mode
+    :reader mode
+    :initarg :mode
+    :type cl:fixnum
+    :initform 0))
 )
 
 (cl:defclass GoToGoal-request (<GoToGoal-request>)
@@ -46,6 +51,11 @@
 (cl:defmethod pos_only_ik-val ((m <GoToGoal-request>))
   (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader baxter_msgs_mine-srv:pos_only_ik-val is deprecated.  Use baxter_msgs_mine-srv:pos_only_ik instead.")
   (pos_only_ik m))
+
+(cl:ensure-generic-function 'mode-val :lambda-list '(m))
+(cl:defmethod mode-val ((m <GoToGoal-request>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader baxter_msgs_mine-srv:mode-val is deprecated.  Use baxter_msgs_mine-srv:mode instead.")
+  (mode m))
 (cl:defmethod roslisp-msg-protocol:serialize ((msg <GoToGoal-request>) ostream)
   "Serializes a message object of type '<GoToGoal-request>"
   (cl:let ((__ros_arr_len (cl:length (cl:slot-value msg 'goal))))
@@ -62,6 +72,9 @@
     (cl:write-byte (cl:ldb (cl:byte 8 24) __ros_str_len) ostream))
   (cl:map cl:nil #'(cl:lambda (c) (cl:write-byte (cl:char-code c) ostream)) (cl:slot-value msg 'limb))
   (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:if (cl:slot-value msg 'pos_only_ik) 1 0)) ostream)
+  (cl:let* ((signed (cl:slot-value msg 'mode)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 256) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    )
 )
 (cl:defmethod roslisp-msg-protocol:deserialize ((msg <GoToGoal-request>) istream)
   "Deserializes a message object of type '<GoToGoal-request>"
@@ -84,6 +97,9 @@
       (cl:dotimes (__ros_str_idx __ros_str_len msg)
         (cl:setf (cl:char (cl:slot-value msg 'limb) __ros_str_idx) (cl:code-char (cl:read-byte istream)))))
     (cl:setf (cl:slot-value msg 'pos_only_ik) (cl:not (cl:zerop (cl:read-byte istream))))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'mode) (cl:if (cl:< unsigned 128) unsigned (cl:- unsigned 256))))
   msg
 )
 (cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql '<GoToGoal-request>)))
@@ -94,20 +110,21 @@
   "baxter_msgs_mine/GoToGoalRequest")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<GoToGoal-request>)))
   "Returns md5sum for a message object of type '<GoToGoal-request>"
-  "020d1aceb48caf436ac8ca2d5b166385")
+  "9ed4b1d775387f17722043ec8051bd52")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'GoToGoal-request)))
   "Returns md5sum for a message object of type 'GoToGoal-request"
-  "020d1aceb48caf436ac8ca2d5b166385")
+  "9ed4b1d775387f17722043ec8051bd52")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<GoToGoal-request>)))
   "Returns full string definition for message of type '<GoToGoal-request>"
-  (cl:format cl:nil "geometry_msgs/Pose[] goal~%string limb~%bool pos_only_ik~%~%================================================================================~%MSG: geometry_msgs/Pose~%# A representation of pose in free space, composed of position and orientation. ~%Point position~%Quaternion orientation~%~%================================================================================~%MSG: geometry_msgs/Point~%# This contains the position of a point in free space~%float64 x~%float64 y~%float64 z~%~%================================================================================~%MSG: geometry_msgs/Quaternion~%# This represents an orientation in free space in quaternion form.~%~%float64 x~%float64 y~%float64 z~%float64 w~%~%~%"))
+  (cl:format cl:nil "geometry_msgs/Pose[] goal~%string limb~%bool pos_only_ik~%int8 mode~%~%================================================================================~%MSG: geometry_msgs/Pose~%# A representation of pose in free space, composed of position and orientation. ~%Point position~%Quaternion orientation~%~%================================================================================~%MSG: geometry_msgs/Point~%# This contains the position of a point in free space~%float64 x~%float64 y~%float64 z~%~%================================================================================~%MSG: geometry_msgs/Quaternion~%# This represents an orientation in free space in quaternion form.~%~%float64 x~%float64 y~%float64 z~%float64 w~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'GoToGoal-request)))
   "Returns full string definition for message of type 'GoToGoal-request"
-  (cl:format cl:nil "geometry_msgs/Pose[] goal~%string limb~%bool pos_only_ik~%~%================================================================================~%MSG: geometry_msgs/Pose~%# A representation of pose in free space, composed of position and orientation. ~%Point position~%Quaternion orientation~%~%================================================================================~%MSG: geometry_msgs/Point~%# This contains the position of a point in free space~%float64 x~%float64 y~%float64 z~%~%================================================================================~%MSG: geometry_msgs/Quaternion~%# This represents an orientation in free space in quaternion form.~%~%float64 x~%float64 y~%float64 z~%float64 w~%~%~%"))
+  (cl:format cl:nil "geometry_msgs/Pose[] goal~%string limb~%bool pos_only_ik~%int8 mode~%~%================================================================================~%MSG: geometry_msgs/Pose~%# A representation of pose in free space, composed of position and orientation. ~%Point position~%Quaternion orientation~%~%================================================================================~%MSG: geometry_msgs/Point~%# This contains the position of a point in free space~%float64 x~%float64 y~%float64 z~%~%================================================================================~%MSG: geometry_msgs/Quaternion~%# This represents an orientation in free space in quaternion form.~%~%float64 x~%float64 y~%float64 z~%float64 w~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <GoToGoal-request>))
   (cl:+ 0
      4 (cl:reduce #'cl:+ (cl:slot-value msg 'goal) :key #'(cl:lambda (ele) (cl:declare (cl:ignorable ele)) (cl:+ (roslisp-msg-protocol:serialization-length ele))))
      4 (cl:length (cl:slot-value msg 'limb))
+     1
      1
 ))
 (cl:defmethod roslisp-msg-protocol:ros-message-to-list ((msg <GoToGoal-request>))
@@ -116,6 +133,7 @@
     (cl:cons ':goal (goal msg))
     (cl:cons ':limb (limb msg))
     (cl:cons ':pos_only_ik (pos_only_ik msg))
+    (cl:cons ':mode (mode msg))
 ))
 ;//! \htmlinclude GoToGoal-response.msg.html
 
@@ -156,10 +174,10 @@
   "baxter_msgs_mine/GoToGoalResponse")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<GoToGoal-response>)))
   "Returns md5sum for a message object of type '<GoToGoal-response>"
-  "020d1aceb48caf436ac8ca2d5b166385")
+  "9ed4b1d775387f17722043ec8051bd52")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'GoToGoal-response)))
   "Returns md5sum for a message object of type 'GoToGoal-response"
-  "020d1aceb48caf436ac8ca2d5b166385")
+  "9ed4b1d775387f17722043ec8051bd52")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<GoToGoal-response>)))
   "Returns full string definition for message of type '<GoToGoal-response>"
   (cl:format cl:nil "bool success~%~%~%"))

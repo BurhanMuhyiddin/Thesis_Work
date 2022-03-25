@@ -27,12 +27,14 @@ struct GoToGoalRequest_
   GoToGoalRequest_()
     : goal()
     , limb()
-    , pos_only_ik(false)  {
+    , pos_only_ik(false)
+    , mode(0)  {
     }
   GoToGoalRequest_(const ContainerAllocator& _alloc)
     : goal(_alloc)
     , limb(_alloc)
-    , pos_only_ik(false)  {
+    , pos_only_ik(false)
+    , mode(0)  {
   (void)_alloc;
     }
 
@@ -46,6 +48,9 @@ struct GoToGoalRequest_
 
    typedef uint8_t _pos_only_ik_type;
   _pos_only_ik_type pos_only_ik;
+
+   typedef int8_t _mode_type;
+  _mode_type mode;
 
 
 
@@ -125,12 +130,12 @@ struct MD5Sum< ::baxter_msgs_mine::GoToGoalRequest_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "cf1367366515c06da918dd2fc274c2fa";
+    return "0224c030e3d1f33270c9c833db4d1c4b";
   }
 
   static const char* value(const ::baxter_msgs_mine::GoToGoalRequest_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xcf1367366515c06dULL;
-  static const uint64_t static_value2 = 0xa918dd2fc274c2faULL;
+  static const uint64_t static_value1 = 0x0224c030e3d1f332ULL;
+  static const uint64_t static_value2 = 0x70c9c833db4d1c4bULL;
 };
 
 template<class ContainerAllocator>
@@ -152,6 +157,7 @@ struct Definition< ::baxter_msgs_mine::GoToGoalRequest_<ContainerAllocator> >
     return "geometry_msgs/Pose[] goal\n\
 string limb\n\
 bool pos_only_ik\n\
+int8 mode\n\
 \n\
 ================================================================================\n\
 MSG: geometry_msgs/Pose\n\
@@ -195,6 +201,7 @@ namespace serialization
       stream.next(m.goal);
       stream.next(m.limb);
       stream.next(m.pos_only_ik);
+      stream.next(m.mode);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -225,6 +232,8 @@ struct Printer< ::baxter_msgs_mine::GoToGoalRequest_<ContainerAllocator> >
     Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.limb);
     s << indent << "pos_only_ik: ";
     Printer<uint8_t>::stream(s, indent + "  ", v.pos_only_ik);
+    s << indent << "mode: ";
+    Printer<int8_t>::stream(s, indent + "  ", v.mode);
   }
 };
 
