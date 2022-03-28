@@ -18,6 +18,7 @@ from baxter_msgs_mine.srv import ProcessImage, ProcessImageRequest
 from baxter_msgs_mine.srv import CheckCrossing, CheckCrossingRequest
 
 from baxter_msgs_mine.srv import GoToGoal, GoToGoalRequest
+from baxter_msgs_mine.srv import GoToJointGoal, GoToJointGoalRequest
 
 class main():
     def __init__(self):
@@ -49,9 +50,16 @@ class main():
         self.waypoints.append(Pose(Point(0.712783, 0.294493, 0.43211), Quaternion(-0.0178776, 0.994369, 0.040816, 0.0961492)))
         # self.waypoints.append(Pose(Point(0.738407, -0.202405, 0.393372), Quaternion(-0.197444, 0.976507, 0.0220792, 0.0834445)))
         self.waypoints.append(Pose(Point(0.730668, -0.412415, 0.371713), Quaternion(0.0979966, 0.989636, 0.0478672, 0.0934108)))
+        # self.waypoints.append([-0.375441797834955, 0.99171857936792, -0.6132088199571941, -1.0062913968528313, 0.3524320860166738, 1.5163400088247314, -0.14112623248545805])
+        # self.waypoints.append([-0.009203884727312482, 1.2659176452024377, 0.6051554208207958, -1.1408982109897765, -3.0322965224524916, -1.347602122157336, 2.9640343773915907])
+
+        self.waypoints.append([-0.47016511148687934, 0.9890341129891205,-0.49931074645670215, -1.202257442505193, 0.2281796421979553,1.6428934238252781,-0.11044661672774979])
+        self.waypoints.append([0.10699515995500761, 1.2586312364599819, 0.4663301595171658,-1.2068593848688494, -3.051087787104088, -1.4327380558849765, 3.003150887482669])
 
         pose_points = (('work_left', self.waypoints[0]),
-                       ('work_right', self.waypoints[1]))
+                       ('work_right', self.waypoints[1]),
+                       ('work_left_joint', self.waypoints[2]),
+                       ('work_right_joint', self.waypoints[3]))
         self.pose_points = OrderedDict(pose_points)
 
         # start to create state machine
@@ -60,7 +68,7 @@ class main():
 
         with sm:
             
-            smach.StateMachine.add('HOME', smach_ros.ServiceState("/go_to_goal", GoToGoal, 
+            smach.StateMachine.add('HOME', smach_ros.ServiceState("/go_to_joint_goal", GoToJointGoal, 
                                                                                 request_cb = self.home_request_cb,
                                                                                 response_cb = self.home_result_cb),
                                     transitions={'succeeded' : 'CHECK_CROSSING', 'preempted' : '', 'aborted' : 'HOME'})
@@ -129,11 +137,9 @@ class main():
     # request callbacks
 
     def home_request_cb(self, ud, request):
-        gg_req = GoToGoalRequest()
-        gg_req.goal = [self.pose_points['work_left'], self.pose_points['work_right']]
+        gg_req = GoToJointGoalRequest()
+        gg_req.goal = self.pose_points['work_left_joint'] + self.pose_points['work_right_joint']
         gg_req.limb = "both"
-        gg_req.pos_only_ik = False
-        gg_req.mode = 0
 
         return gg_req
 

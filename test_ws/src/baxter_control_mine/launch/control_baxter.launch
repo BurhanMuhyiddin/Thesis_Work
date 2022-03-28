@@ -9,6 +9,6 @@
 
     <node name="go_to_goal_server" pkg="baxter_control_mine" type="go_to_goal_server" output="screen"/>
 
-    <!-- <node name="go_to_joint_pos_server" pkg="baxter_control_mine" type="go_to_joint_pos_server" output="screen"/> -->
+    <node name="go_to_joint_pos_server" pkg="baxter_control_mine" type="go_to_joint_pos_server" output="screen"/>
 
 </launch>

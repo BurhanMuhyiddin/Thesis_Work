@@ -21,6 +21,7 @@ file(REMOVE_RECURSE
   "/home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv/ProcessImage.lisp"
   "/home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv/PositionCommandMine.lisp"
   "/home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv/CheckCrossing.lisp"
+  "/home/lar/ros/test_ws/devel/share/common-lisp/ros/baxter_msgs_mine/srv/GoToJointGoal.lisp"
 )
 
 # Per-language clean rules from dependency scanning.

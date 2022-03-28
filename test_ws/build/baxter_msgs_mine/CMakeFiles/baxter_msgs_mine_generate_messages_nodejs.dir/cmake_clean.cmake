@@ -21,6 +21,7 @@ file(REMOVE_RECURSE
   "/home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_msgs_mine/srv/ProcessImage.js"
   "/home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_msgs_mine/srv/PositionCommandMine.js"
   "/home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_msgs_mine/srv/CheckCrossing.js"
+  "/home/lar/ros/test_ws/devel/share/gennodejs/ros/baxter_msgs_mine/srv/GoToJointGoal.js"
 )
 
 # Per-language clean rules from dependency scanning.

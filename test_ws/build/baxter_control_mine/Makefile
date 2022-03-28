@@ -181,6 +181,21 @@ get_current_joint_states_server/fast:
 .PHONY : get_current_joint_states_server/fast
 
 # Convenience name for target.
+baxter_control_mine/CMakeFiles/go_to_joint_pos_server.dir/rule:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/go_to_joint_pos_server.dir/rule
+.PHONY : baxter_control_mine/CMakeFiles/go_to_joint_pos_server.dir/rule
+
+# Convenience name for target.
+go_to_joint_pos_server: baxter_control_mine/CMakeFiles/go_to_joint_pos_server.dir/rule
+
+.PHONY : go_to_joint_pos_server
+
+# fast build rule for target.
+go_to_joint_pos_server/fast:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_control_mine/CMakeFiles/go_to_joint_pos_server.dir/build.make baxter_control_mine/CMakeFiles/go_to_joint_pos_server.dir/build
+.PHONY : go_to_joint_pos_server/fast
+
+# Convenience name for target.
 baxter_control_mine/CMakeFiles/calculate_ik_server.dir/rule:
 	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_control_mine/CMakeFiles/calculate_ik_server.dir/rule
 .PHONY : baxter_control_mine/CMakeFiles/calculate_ik_server.dir/rule
@@ -1233,6 +1248,33 @@ src/go_to_goal_server.cpp.s:
 	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_control_mine/CMakeFiles/go_to_goal_server.dir/build.make baxter_control_mine/CMakeFiles/go_to_goal_server.dir/src/go_to_goal_server.cpp.s
 .PHONY : src/go_to_goal_server.cpp.s
 
+src/go_to_joint_pos_server.o: src/go_to_joint_pos_server.cpp.o
+
+.PHONY : src/go_to_joint_pos_server.o
+
+# target to build an object file
+src/go_to_joint_pos_server.cpp.o:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_control_mine/CMakeFiles/go_to_joint_pos_server.dir/build.make baxter_control_mine/CMakeFiles/go_to_joint_pos_server.dir/src/go_to_joint_pos_server.cpp.o
+.PHONY : src/go_to_joint_pos_server.cpp.o
+
+src/go_to_joint_pos_server.i: src/go_to_joint_pos_server.cpp.i
+
+.PHONY : src/go_to_joint_pos_server.i
+
+# target to preprocess a source file
+src/go_to_joint_pos_server.cpp.i:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_control_mine/CMakeFiles/go_to_joint_pos_server.dir/build.make baxter_control_mine/CMakeFiles/go_to_joint_pos_server.dir/src/go_to_joint_pos_server.cpp.i
+.PHONY : src/go_to_joint_pos_server.cpp.i
+
+src/go_to_joint_pos_server.s: src/go_to_joint_pos_server.cpp.s
+
+.PHONY : src/go_to_joint_pos_server.s
+
+# target to generate assembly for a file
+src/go_to_joint_pos_server.cpp.s:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_control_mine/CMakeFiles/go_to_joint_pos_server.dir/build.make baxter_control_mine/CMakeFiles/go_to_joint_pos_server.dir/src/go_to_joint_pos_server.cpp.s
+.PHONY : src/go_to_joint_pos_server.cpp.s
+
 src/image_processing_server.o: src/image_processing_server.cpp.o
 
 .PHONY : src/image_processing_server.o
@@ -1325,6 +1367,7 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... get_current_joint_states_server"
+	@echo "... go_to_joint_pos_server"
 	@echo "... calculate_ik_server"
 	@echo "... test_node"
 	@echo "... rviz_converter_node"
@@ -1403,6 +1446,9 @@ help:
 	@echo "... src/go_to_goal_server.o"
 	@echo "... src/go_to_goal_server.i"
 	@echo "... src/go_to_goal_server.s"
+	@echo "... src/go_to_joint_pos_server.o"
+	@echo "... src/go_to_joint_pos_server.i"
+	@echo "... src/go_to_joint_pos_server.s"
 	@echo "... src/image_processing_server.o"
 	@echo "... src/image_processing_server.i"
 	@echo "... src/image_processing_server.s"
