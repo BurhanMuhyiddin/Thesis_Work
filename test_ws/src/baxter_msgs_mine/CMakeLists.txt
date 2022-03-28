@@ -29,6 +29,7 @@ add_service_files(FILES
   GetCurrentJointStates.srv
   CheckCrossing.srv
   GoToGoal.srv
+  GoToJointGoal.srv
 )
 
 ## Generate actions in the 'action' folder

@@ -286,36 +286,6 @@ baxter_msgs_mine_generate_messages_cpp/fast:
 .PHONY : baxter_msgs_mine_generate_messages_cpp/fast
 
 # Convenience name for target.
-baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosResult.dir/rule:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosResult.dir/rule
-.PHONY : baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosResult.dir/rule
-
-# Convenience name for target.
-_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosResult: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosResult.dir/rule
-
-.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GoToJointPosResult
-
-# fast build rule for target.
-_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosResult/fast:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosResult.dir/build.make baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosResult.dir/build
-.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GoToJointPosResult/fast
-
-# Convenience name for target.
-baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosGoal.dir/rule:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosGoal.dir/rule
-.PHONY : baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosGoal.dir/rule
-
-# Convenience name for target.
-_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosGoal: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosGoal.dir/rule
-
-.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GoToJointPosGoal
-
-# fast build rule for target.
-_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosGoal/fast:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosGoal.dir/build.make baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosGoal.dir/build
-.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GoToJointPosGoal/fast
-
-# Convenience name for target.
 baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosActionFeedback.dir/rule:
 	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosActionFeedback.dir/rule
 .PHONY : baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosActionFeedback.dir/rule
@@ -329,6 +299,21 @@ _baxter_msgs_mine_generate_messages_check_deps_GoToJointPosActionFeedback: baxte
 _baxter_msgs_mine_generate_messages_check_deps_GoToJointPosActionFeedback/fast:
 	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosActionFeedback.dir/build.make baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosActionFeedback.dir/build
 .PHONY : _baxter_msgs_mine_generate_messages_check_deps_GoToJointPosActionFeedback/fast
+
+# Convenience name for target.
+baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosResult.dir/rule:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosResult.dir/rule
+.PHONY : baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosResult.dir/rule
+
+# Convenience name for target.
+_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosResult: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosResult.dir/rule
+
+.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GoToJointPosResult
+
+# fast build rule for target.
+_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosResult/fast:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosResult.dir/build.make baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosResult.dir/build
+.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GoToJointPosResult/fast
 
 # Convenience name for target.
 baxter_msgs_mine/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule:
@@ -526,6 +511,51 @@ roscpp_generate_messages_cpp/fast:
 .PHONY : roscpp_generate_messages_cpp/fast
 
 # Convenience name for target.
+baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GetCurrentJointStates.dir/rule:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GetCurrentJointStates.dir/rule
+.PHONY : baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GetCurrentJointStates.dir/rule
+
+# Convenience name for target.
+_baxter_msgs_mine_generate_messages_check_deps_GetCurrentJointStates: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GetCurrentJointStates.dir/rule
+
+.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GetCurrentJointStates
+
+# fast build rule for target.
+_baxter_msgs_mine_generate_messages_check_deps_GetCurrentJointStates/fast:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GetCurrentJointStates.dir/build.make baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GetCurrentJointStates.dir/build
+.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GetCurrentJointStates/fast
+
+# Convenience name for target.
+baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal.dir/rule:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal.dir/rule
+.PHONY : baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal.dir/rule
+
+# Convenience name for target.
+_baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal.dir/rule
+
+.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal
+
+# fast build rule for target.
+_baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal/fast:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal.dir/build.make baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal.dir/build
+.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal/fast
+
+# Convenience name for target.
+baxter_msgs_mine/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+.PHONY : baxter_msgs_mine/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_eus: baxter_msgs_mine/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_eus
+
+# fast build rule for target.
+geometry_msgs_generate_messages_eus/fast:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_msgs_mine/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make baxter_msgs_mine/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
+.PHONY : geometry_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
 baxter_msgs_mine/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule:
 	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
 .PHONY : baxter_msgs_mine/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
@@ -659,6 +689,66 @@ geometry_msgs_generate_messages_lisp: baxter_msgs_mine/CMakeFiles/geometry_msgs_
 geometry_msgs_generate_messages_lisp/fast:
 	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_msgs_mine/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make baxter_msgs_mine/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
 .PHONY : geometry_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosGoal.dir/rule:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosGoal.dir/rule
+.PHONY : baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosGoal.dir/rule
+
+# Convenience name for target.
+_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosGoal: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosGoal.dir/rule
+
+.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GoToJointPosGoal
+
+# fast build rule for target.
+_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosGoal/fast:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosGoal.dir/build.make baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosGoal.dir/build
+.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GoToJointPosGoal/fast
+
+# Convenience name for target.
+baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosAction.dir/rule:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosAction.dir/rule
+.PHONY : baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosAction.dir/rule
+
+# Convenience name for target.
+_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosAction: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosAction.dir/rule
+
+.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GoToJointPosAction
+
+# fast build rule for target.
+_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosAction/fast:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosAction.dir/build.make baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosAction.dir/build
+.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GoToJointPosAction/fast
+
+# Convenience name for target.
+baxter_msgs_mine/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
+.PHONY : baxter_msgs_mine/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+actionlib_msgs_generate_messages_lisp: baxter_msgs_mine/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : actionlib_msgs_generate_messages_lisp
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_lisp/fast:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_msgs_mine/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build.make baxter_msgs_mine/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build
+.PHONY : actionlib_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointActionGoal.dir/rule:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointActionGoal.dir/rule
+.PHONY : baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointActionGoal.dir/rule
+
+# Convenience name for target.
+_baxter_msgs_mine_generate_messages_check_deps_GoToPointActionGoal: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointActionGoal.dir/rule
+
+.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GoToPointActionGoal
+
+# fast build rule for target.
+_baxter_msgs_mine_generate_messages_check_deps_GoToPointActionGoal/fast:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointActionGoal.dir/build.make baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointActionGoal.dir/build
+.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GoToPointActionGoal/fast
 
 # Convenience name for target.
 baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointActionResult.dir/rule:
@@ -901,79 +991,19 @@ _baxter_msgs_mine_generate_messages_check_deps_GoToPointActionFeedback/fast:
 .PHONY : _baxter_msgs_mine_generate_messages_check_deps_GoToPointActionFeedback/fast
 
 # Convenience name for target.
-baxter_msgs_mine/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
-.PHONY : baxter_msgs_mine/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
+baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointAction.dir/rule:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointAction.dir/rule
+.PHONY : baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointAction.dir/rule
 
 # Convenience name for target.
-actionlib_msgs_generate_messages_lisp: baxter_msgs_mine/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
+_baxter_msgs_mine_generate_messages_check_deps_GoToPointAction: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointAction.dir/rule
 
-.PHONY : actionlib_msgs_generate_messages_lisp
+.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GoToPointAction
 
 # fast build rule for target.
-actionlib_msgs_generate_messages_lisp/fast:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_msgs_mine/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build.make baxter_msgs_mine/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build
-.PHONY : actionlib_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointActionGoal.dir/rule:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointActionGoal.dir/rule
-.PHONY : baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointActionGoal.dir/rule
-
-# Convenience name for target.
-_baxter_msgs_mine_generate_messages_check_deps_GoToPointActionGoal: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointActionGoal.dir/rule
-
-.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GoToPointActionGoal
-
-# fast build rule for target.
-_baxter_msgs_mine_generate_messages_check_deps_GoToPointActionGoal/fast:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointActionGoal.dir/build.make baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointActionGoal.dir/build
-.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GoToPointActionGoal/fast
-
-# Convenience name for target.
-baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosAction.dir/rule:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosAction.dir/rule
-.PHONY : baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosAction.dir/rule
-
-# Convenience name for target.
-_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosAction: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosAction.dir/rule
-
-.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GoToJointPosAction
-
-# fast build rule for target.
-_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosAction/fast:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosAction.dir/build.make baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosAction.dir/build
-.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GoToJointPosAction/fast
-
-# Convenience name for target.
-baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointResult.dir/rule:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointResult.dir/rule
-.PHONY : baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointResult.dir/rule
-
-# Convenience name for target.
-_baxter_msgs_mine_generate_messages_check_deps_GoToPointResult: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointResult.dir/rule
-
-.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GoToPointResult
-
-# fast build rule for target.
-_baxter_msgs_mine_generate_messages_check_deps_GoToPointResult/fast:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointResult.dir/build.make baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointResult.dir/build
-.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GoToPointResult/fast
-
-# Convenience name for target.
-baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_CalculateIK.dir/rule:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_CalculateIK.dir/rule
-.PHONY : baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_CalculateIK.dir/rule
-
-# Convenience name for target.
-_baxter_msgs_mine_generate_messages_check_deps_CalculateIK: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_CalculateIK.dir/rule
-
-.PHONY : _baxter_msgs_mine_generate_messages_check_deps_CalculateIK
-
-# fast build rule for target.
-_baxter_msgs_mine_generate_messages_check_deps_CalculateIK/fast:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_CalculateIK.dir/build.make baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_CalculateIK.dir/build
-.PHONY : _baxter_msgs_mine_generate_messages_check_deps_CalculateIK/fast
+_baxter_msgs_mine_generate_messages_check_deps_GoToPointAction/fast:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointAction.dir/build.make baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointAction.dir/build
+.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GoToPointAction/fast
 
 # Convenience name for target.
 baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToJointPosActionGoal.dir/rule:
@@ -1036,64 +1066,49 @@ _baxter_msgs_mine_generate_messages_check_deps_GoToJointPosFeedback/fast:
 .PHONY : _baxter_msgs_mine_generate_messages_check_deps_GoToJointPosFeedback/fast
 
 # Convenience name for target.
-baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointAction.dir/rule:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointAction.dir/rule
-.PHONY : baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointAction.dir/rule
+baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointResult.dir/rule:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointResult.dir/rule
+.PHONY : baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointResult.dir/rule
 
 # Convenience name for target.
-_baxter_msgs_mine_generate_messages_check_deps_GoToPointAction: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointAction.dir/rule
+_baxter_msgs_mine_generate_messages_check_deps_GoToPointResult: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointResult.dir/rule
 
-.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GoToPointAction
+.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GoToPointResult
 
 # fast build rule for target.
-_baxter_msgs_mine_generate_messages_check_deps_GoToPointAction/fast:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointAction.dir/build.make baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointAction.dir/build
-.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GoToPointAction/fast
+_baxter_msgs_mine_generate_messages_check_deps_GoToPointResult/fast:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointResult.dir/build.make baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointResult.dir/build
+.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GoToPointResult/fast
 
 # Convenience name for target.
-baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal.dir/rule:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal.dir/rule
-.PHONY : baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal.dir/rule
+baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_CalculateIK.dir/rule:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_CalculateIK.dir/rule
+.PHONY : baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_CalculateIK.dir/rule
 
 # Convenience name for target.
-_baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal.dir/rule
+_baxter_msgs_mine_generate_messages_check_deps_CalculateIK: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_CalculateIK.dir/rule
 
-.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal
+.PHONY : _baxter_msgs_mine_generate_messages_check_deps_CalculateIK
 
 # fast build rule for target.
-_baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal/fast:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal.dir/build.make baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal.dir/build
-.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal/fast
+_baxter_msgs_mine_generate_messages_check_deps_CalculateIK/fast:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_CalculateIK.dir/build.make baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_CalculateIK.dir/build
+.PHONY : _baxter_msgs_mine_generate_messages_check_deps_CalculateIK/fast
 
 # Convenience name for target.
-baxter_msgs_mine/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-.PHONY : baxter_msgs_mine/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToJointGoal.dir/rule:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToJointGoal.dir/rule
+.PHONY : baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToJointGoal.dir/rule
 
 # Convenience name for target.
-geometry_msgs_generate_messages_eus: baxter_msgs_mine/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+_baxter_msgs_mine_generate_messages_check_deps_GoToJointGoal: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToJointGoal.dir/rule
 
-.PHONY : geometry_msgs_generate_messages_eus
+.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GoToJointGoal
 
 # fast build rule for target.
-geometry_msgs_generate_messages_eus/fast:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_msgs_mine/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make baxter_msgs_mine/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
-.PHONY : geometry_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GetCurrentJointStates.dir/rule:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GetCurrentJointStates.dir/rule
-.PHONY : baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GetCurrentJointStates.dir/rule
-
-# Convenience name for target.
-_baxter_msgs_mine_generate_messages_check_deps_GetCurrentJointStates: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GetCurrentJointStates.dir/rule
-
-.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GetCurrentJointStates
-
-# fast build rule for target.
-_baxter_msgs_mine_generate_messages_check_deps_GetCurrentJointStates/fast:
-	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GetCurrentJointStates.dir/build.make baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GetCurrentJointStates.dir/build
-.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GetCurrentJointStates/fast
+_baxter_msgs_mine_generate_messages_check_deps_GoToJointGoal/fast:
+	cd /home/lar/ros/test_ws/build && $(MAKE) -f baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToJointGoal.dir/build.make baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToJointGoal.dir/build
+.PHONY : _baxter_msgs_mine_generate_messages_check_deps_GoToJointGoal/fast
 
 # Help Target
 help:
@@ -1112,9 +1127,8 @@ help:
 	@echo "... baxter_msgs_mine_generate_messages_eus"
 	@echo "... baxter_msgs_mine_gencpp"
 	@echo "... baxter_msgs_mine_generate_messages_cpp"
-	@echo "... _baxter_msgs_mine_generate_messages_check_deps_GoToJointPosResult"
-	@echo "... _baxter_msgs_mine_generate_messages_check_deps_GoToJointPosGoal"
 	@echo "... _baxter_msgs_mine_generate_messages_check_deps_GoToJointPosActionFeedback"
+	@echo "... _baxter_msgs_mine_generate_messages_check_deps_GoToJointPosResult"
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_nodejs"
@@ -1130,6 +1144,9 @@ help:
 	@echo "... actionlib_msgs_generate_messages_py"
 	@echo "... baxter_msgs_mine_generate_messages_py"
 	@echo "... roscpp_generate_messages_cpp"
+	@echo "... _baxter_msgs_mine_generate_messages_check_deps_GetCurrentJointStates"
+	@echo "... _baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal"
+	@echo "... geometry_msgs_generate_messages_eus"
 	@echo "... actionlib_msgs_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_eus"
 	@echo "... roscpp_generate_messages_lisp"
@@ -1141,6 +1158,10 @@ help:
 	@echo "... install"
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_lisp"
+	@echo "... _baxter_msgs_mine_generate_messages_check_deps_GoToJointPosGoal"
+	@echo "... _baxter_msgs_mine_generate_messages_check_deps_GoToJointPosAction"
+	@echo "... actionlib_msgs_generate_messages_lisp"
+	@echo "... _baxter_msgs_mine_generate_messages_check_deps_GoToPointActionGoal"
 	@echo "... _baxter_msgs_mine_generate_messages_check_deps_GoToPointActionResult"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... geometry_msgs_generate_messages_nodejs"
@@ -1157,19 +1178,14 @@ help:
 	@echo "... baxter_msgs_mine_generate_messages"
 	@echo "... baxter_msgs_mine_genpy"
 	@echo "... _baxter_msgs_mine_generate_messages_check_deps_GoToPointActionFeedback"
-	@echo "... actionlib_msgs_generate_messages_lisp"
-	@echo "... _baxter_msgs_mine_generate_messages_check_deps_GoToPointActionGoal"
-	@echo "... _baxter_msgs_mine_generate_messages_check_deps_GoToJointPosAction"
-	@echo "... _baxter_msgs_mine_generate_messages_check_deps_GoToPointResult"
-	@echo "... _baxter_msgs_mine_generate_messages_check_deps_CalculateIK"
+	@echo "... _baxter_msgs_mine_generate_messages_check_deps_GoToPointAction"
 	@echo "... _baxter_msgs_mine_generate_messages_check_deps_GoToJointPosActionGoal"
 	@echo "... _baxter_msgs_mine_generate_messages_check_deps_CheckCrossing"
 	@echo "... _baxter_msgs_mine_generate_messages_check_deps_CameraDebug"
 	@echo "... _baxter_msgs_mine_generate_messages_check_deps_GoToJointPosFeedback"
-	@echo "... _baxter_msgs_mine_generate_messages_check_deps_GoToPointAction"
-	@echo "... _baxter_msgs_mine_generate_messages_check_deps_GoToPointGoal"
-	@echo "... geometry_msgs_generate_messages_eus"
-	@echo "... _baxter_msgs_mine_generate_messages_check_deps_GetCurrentJointStates"
+	@echo "... _baxter_msgs_mine_generate_messages_check_deps_GoToPointResult"
+	@echo "... _baxter_msgs_mine_generate_messages_check_deps_CalculateIK"
+	@echo "... _baxter_msgs_mine_generate_messages_check_deps_GoToJointGoal"
 .PHONY : help
 
 

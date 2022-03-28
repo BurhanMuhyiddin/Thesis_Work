@@ -1,61 +1,99 @@
 #include <ros/ros.h>
-#include <actionlib/server/simple_action_server.h>
-
-#include <geometry_msgs/Pose.h>
-#include <sensor_msgs/JointState.h>
 
 #include <moveit/move_group_interface/move_group_interface.h>
 #include <moveit/planning_scene_interface/planning_scene_interface.h>
+#include <moveit_msgs/DisplayRobotState.h>
+#include <moveit_msgs/DisplayTrajectory.h>
+#include <moveit_msgs/AttachedCollisionObject.h>
+#include <moveit_msgs/CollisionObject.h>
+#include <moveit_visual_tools/moveit_visual_tools.h>
 
-#include <string>
+#include <geometry_msgs/Pose.h>
+#include <sensor_msgs/JointState.h>
+#include <std_msgs/Float32.h>
+
+#include "baxter_msgs_mine/GoToJointGoal.h"
+
 #include <vector>
-
-#include <baxter_msgs_mine/GoToJointPosAction.h>
-#include <baxter_msgs_mine/GoToJointPosGoal.h>
-#include <baxter_msgs_mine/GoToJointPosResult.h>
-#include <baxter_msgs_mine/GoToJointPosFeedback.h>
+#include <string>
 
 class GoToJointGoal
 {
 public:
-    GoToJointGoal() :
-            as(nh, "/go_to_joint_goal", boost::bind(&GoToJointGoal::onGoal, this, _1), false), spinner(2)
-    {
-        spinner.start();
+  GoToJointGoal() : as(2)
+  {
+    as.start();
 
-        as.start();
+    ROS_INFO("GoToJointGoalService: GoToJointGoalService has been started...");
 
-        ROS_INFO("GoToJointGoalActionServer: Simple Action Server has been started...");
-    }
+    go_to_joint_goal_service = nh.advertiseService("/go_to_joint_goal", &GoToJointGoal::go_to_joint_goal_clb, this);
+  }
 
-    ~GoToJointGoal() 
-    {
-        ros::shutdown();
-    }
+  ~GoToJointGoal()
+  {
+    ros::shutdown();
+  }
 
-    void onGoal(const baxter_msgs_mine::GoToJointPosGoalConstPtr &goal);
+  bool go_to_joint_goal_clb(baxter_msgs_mine::GoToJointGoalRequest &req,
+                            baxter_msgs_mine::GoToJointGoalResponse &res);
 
 private:
-    ros::NodeHandle nh;
-    ros::AsyncSpinner spinner;
-    actionlib::SimpleActionServer<baxter_msgs_mine::GoToJointPosAction> as;
-    baxter_msgs_mine::GoToJointPosResult result;
-
-    std::vector<double> last_commanded_joints;
-    std::string last_moved_arm;
+  ros::NodeHandle nh;
+  ros::AsyncSpinner as;
+  ros::ServiceServer go_to_joint_goal_service;
 };
 
-void GoToJointGoal::onGoal(const baxter_msgs_mine::GoToJointPosGoalConstPtr &goal)
+bool GoToJointGoal::go_to_joint_goal_clb(baxter_msgs_mine::GoToJointGoalRequest &req,
+                              baxter_msgs_mine::GoToJointGoalResponse &res)
 {
-    ROS_INFO("GoToJointGoalActionServer: Goal received...");
+  ROS_INFO("GoToJointGoalService: Goal has been accepted...");
 
-    ROS_INFO("GoToJointGoalActionServer: Planning started...");
+  // extract content of request
+  const std::string limb = std::move(req.limb);
+//   std::vector<std_msgs::Float32> goal = std::move(req.goal);
 
-    std::string PLANNING_GROUP = "both_arms";
+  // configure moveit
+  std::string PLANNING_GROUP;
+  if (limb == "left" || limb == "right")
+  {
+    PLANNING_GROUP = std::move(limb + "_arm");
+  }
+  else // for both arms
+  {
+    PLANNING_GROUP = std::move("both_arms");
+  }
+
+  moveit::planning_interface::MoveGroupInterface move_group(PLANNING_GROUP);
+  moveit::planning_interface::PlanningSceneInterface planning_scene_interface;
+  const robot_state::JointModelGroup* joint_model_group = move_group.getCurrentState()->getJointModelGroup(PLANNING_GROUP);
+
+  moveit::planning_interface::MoveGroupInterface::Plan my_plan;
+  bool success;
+
+  // get goal positions
+  if (limb == "left" || limb == "right")
+  {
     sensor_msgs::JointState cjs;
+    cjs.name.resize(7);
+    cjs.position.resize(7);
+    cjs.name[0] = std::move(limb + "_e0");
+    cjs.name[1] = std::move(limb + "_e1");
+    cjs.name[2] = std::move(limb + "_s0");
+    cjs.name[3] = std::move(limb + "_s1");
+    cjs.name[4] = std::move(limb + "_w0");
+    cjs.name[5] = std::move(limb + "_w1");
+    cjs.name[6] = std::move(limb + "_w2");
 
-    last_commanded_joints.empty();
+    for (int i = 0; i < 7; i++)
+    {
+        cjs.position[i] = req.goal[i];
+    }
 
+    move_group.setJointValueTarget(cjs);
+  }
+  else // both arms
+  {
+    sensor_msgs::JointState cjs;
     cjs.name.resize(14);
     cjs.position.resize(14);
     cjs.name[0] = "left_e0";
@@ -73,87 +111,37 @@ void GoToJointGoal::onGoal(const baxter_msgs_mine::GoToJointPosGoalConstPtr &goa
     cjs.name[12] = "right_w1";
     cjs.name[13] = "right_w2";
 
-    if (goal->limb == "both")
+    for (int i = 0; i < 14; i++)
     {
-        ros::param::set("/limb", "both");
-
-        for (int i = 0; i < 7; i++)
-        {
-            cjs.position[i] = goal->desired_pose[i];
-            cjs.position[i+7] = goal->desired_pose[i+7];
-        }
-    }
-    else if (goal->limb == "left")
-    {
-        ros::param::set("/limb", "left");
-
-        for (int i = 0; i < 7; i++)
-        {
-            cjs.position[i] = goal->desired_pose[i];
-            cjs.position[i+7] = 0.0000;
-        }
-    }
-    else
-    {
-        ros::param::set("/limb", "right");
-
-        for (int i = 0; i < 7; i++)
-        {
-            cjs.position[i] = 0.0000;
-            cjs.position[i+7] = goal->desired_pose[i+7];
-        }
+        cjs.position[i] = req.goal[i];
     }
 
-    // plan trajectory to the desired joint values
-    moveit::planning_interface::MoveGroupInterface move_group_interface(PLANNING_GROUP);
+    move_group.setJointValueTarget(cjs);
+  }
 
-    move_group_interface.setJointValueTarget(cjs);
+  ROS_INFO("GoToJointGoalService: Planning has been started...");
 
-    ROS_INFO("GoToJointGoalActionServer: Planning started...");
-    moveit::planning_interface::MoveGroupInterface::Plan my_plan;
-    try
-    {
-        bool success = (move_group_interface.plan(my_plan) == moveit::planning_interface::MoveItErrorCode::SUCCESS);
-    }
-    except(...)
-    {
-        result.final_pose.push_back(std::move(goal->desired_pose[0]));
-        as.setSucceeded(result);
-        ROS_INFO("GoToJointGoalActionServer: Don't move the robot...");
-    }
-    if (success)
-        ROS_INFO("GoToJointGoalActionServer: Planning finished successfully...");
-    else
-        ROS_INFO("GoToJointGoalActionServer: Planning failed...");
+  success = (move_group.plan(my_plan) == moveit::planning_interface::MoveItErrorCode::SUCCESS);
 
+  if (success)
+  {
+    ROS_INFO("GoToJointGoalService: Planning finished successfully, execution has been started...");
+    
+    move_group.execute(my_plan);
+  }
 
-    bool is_preempted = false;
-    // check for preemption
-    if(as.isPreemptRequested() || !ros::ok)
-    {
-        ROS_INFO("GoToJointGoalActionServer: PREEMPTED...");
-        is_preempted = true;
-        as.setPreempted();
-    }
+  res.success = success;
 
-    // execute the trajectory
-    if (success && !is_preempted)
-    {
-        ROS_INFO("GoToJointGoalActionServer: Trajectory is being executed...");
-        move_group_interface.execute(my_plan);
-        result.final_pose.push_back(std::move(goal->desired_pose[0]));
-        as.setSucceeded(result);
-        ROS_INFO("GoToJointGoalActionServer: Trajectory has been executed successfully...");
-    }
+  return true;
 }
 
-int main(int argc, char **argv)
+int main(int argc, char** argv)
 {
-    ros::init(argc, argv, "go_to_joint_pos_server_node");
+  ros::init(argc, argv, "go_to_joint_goal_service_node");
 
-    GoToJointGoal gTJg;
+  GoToJointGoal gJg;
 
-    ros::waitForShutdown();
+  ros::waitForShutdown();
 
-    return 0;
+  return 0;
 }
