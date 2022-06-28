@@ -1,0 +1,1 @@
+/home/lar/ros/rope_ws/devel/.private/rosgraph_msgs/lib/pkgconfig/rosgraph_msgs.pc

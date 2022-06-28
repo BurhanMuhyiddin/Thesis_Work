@@ -1,0 +1,1 @@
+/home/lar/ros/rope_ws/devel/.private/genlisp/lib/python3/dist-packages/genlisp/__init__.py

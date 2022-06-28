@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "baxter_msgs_mine: 15 messages, 7 services")
+message(STATUS "baxter_msgs_mine: 16 messages, 8 services")
 
 set(MSG_I_FLAGS "-Ibaxter_msgs_mine:/home/lar/ros/test_ws/src/baxter_msgs_mine/msg;-Ibaxter_msgs_mine:/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg;-Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg;-Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg;-Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg;-Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg")
 
@@ -22,9 +22,9 @@ add_custom_target(_baxter_msgs_mine_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "baxter_msgs_mine" "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/GoToGoal.srv" "geometry_msgs/Quaternion:geometry_msgs/Pose:geometry_msgs/Point"
 )
 
-get_filename_component(_filename "/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToPointActionGoal.msg" NAME_WE)
+get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/CheckCrossing.srv" NAME_WE)
 add_custom_target(_baxter_msgs_mine_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "baxter_msgs_mine" "/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToPointActionGoal.msg" "geometry_msgs/Pose:std_msgs/Header:baxter_msgs_mine/GoToPointGoal:geometry_msgs/Point:geometry_msgs/Quaternion:actionlib_msgs/GoalID"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "baxter_msgs_mine" "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/CheckCrossing.srv" ""
 )
 
 get_filename_component(_filename "/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToPointAction.msg" NAME_WE)
@@ -32,14 +32,19 @@ add_custom_target(_baxter_msgs_mine_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "baxter_msgs_mine" "/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToPointAction.msg" "baxter_msgs_mine/GoToPointFeedback:geometry_msgs/Pose:std_msgs/Header:baxter_msgs_mine/GoToPointGoal:geometry_msgs/Point:baxter_msgs_mine/GoToPointActionFeedback:baxter_msgs_mine/GoToPointActionResult:baxter_msgs_mine/GoToPointActionGoal:geometry_msgs/Quaternion:baxter_msgs_mine/GoToPointResult:actionlib_msgs/GoalID:actionlib_msgs/GoalStatus"
 )
 
+get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/Cvt2Wrld.srv" NAME_WE)
+add_custom_target(_baxter_msgs_mine_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "baxter_msgs_mine" "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/Cvt2Wrld.srv" ""
+)
+
 get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/ProcessImage.srv" NAME_WE)
 add_custom_target(_baxter_msgs_mine_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "baxter_msgs_mine" "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/ProcessImage.srv" "sensor_msgs/Image:std_msgs/Header"
 )
 
-get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/CheckCrossing.srv" NAME_WE)
+get_filename_component(_filename "/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToPointActionGoal.msg" NAME_WE)
 add_custom_target(_baxter_msgs_mine_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "baxter_msgs_mine" "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/CheckCrossing.srv" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "baxter_msgs_mine" "/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToPointActionGoal.msg" "geometry_msgs/Pose:std_msgs/Header:baxter_msgs_mine/GoToPointGoal:geometry_msgs/Point:geometry_msgs/Quaternion:actionlib_msgs/GoalID"
 )
 
 get_filename_component(_filename "/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToJointPosGoal.msg" NAME_WE)
@@ -114,7 +119,12 @@ add_custom_target(_baxter_msgs_mine_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_msgs_mine/msg/CameraDebug.msg" NAME_WE)
 add_custom_target(_baxter_msgs_mine_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "baxter_msgs_mine" "/home/lar/ros/test_ws/src/baxter_msgs_mine/msg/CameraDebug.msg" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "baxter_msgs_mine" "/home/lar/ros/test_ws/src/baxter_msgs_mine/msg/CameraDebug.msg" "sensor_msgs/Image:std_msgs/Header"
+)
+
+get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_msgs_mine/msg/ImagePoints.msg" NAME_WE)
+add_custom_target(_baxter_msgs_mine_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "baxter_msgs_mine" "/home/lar/ros/test_ws/src/baxter_msgs_mine/msg/ImagePoints.msg" ""
 )
 
 get_filename_component(_filename "/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToPointResult.msg" NAME_WE)
@@ -184,6 +194,12 @@ _generate_msg_cpp(baxter_msgs_mine
 _generate_msg_cpp(baxter_msgs_mine
   "/home/lar/ros/test_ws/src/baxter_msgs_mine/msg/CameraDebug.msg"
   "${MSG_I_FLAGS}"
+  "/opt/ros/kinetic/share/sensor_msgs/cmake/../msg/Image.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/baxter_msgs_mine
+)
+_generate_msg_cpp(baxter_msgs_mine
+  "/home/lar/ros/test_ws/src/baxter_msgs_mine/msg/ImagePoints.msg"
+  "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/baxter_msgs_mine
 )
@@ -250,6 +266,12 @@ _generate_srv_cpp(baxter_msgs_mine
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/baxter_msgs_mine
 )
 _generate_srv_cpp(baxter_msgs_mine
+  "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/Cvt2Wrld.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/baxter_msgs_mine
+)
+_generate_srv_cpp(baxter_msgs_mine
   "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/PositionCommandMine.srv"
   "${MSG_I_FLAGS}"
   ""
@@ -282,13 +304,15 @@ add_dependencies(baxter_msgs_mine_generate_messages baxter_msgs_mine_generate_me
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/GoToGoal.srv" NAME_WE)
 add_dependencies(baxter_msgs_mine_generate_messages_cpp _baxter_msgs_mine_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToPointActionGoal.msg" NAME_WE)
+get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/CheckCrossing.srv" NAME_WE)
 add_dependencies(baxter_msgs_mine_generate_messages_cpp _baxter_msgs_mine_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToPointAction.msg" NAME_WE)
 add_dependencies(baxter_msgs_mine_generate_messages_cpp _baxter_msgs_mine_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/Cvt2Wrld.srv" NAME_WE)
+add_dependencies(baxter_msgs_mine_generate_messages_cpp _baxter_msgs_mine_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/ProcessImage.srv" NAME_WE)
 add_dependencies(baxter_msgs_mine_generate_messages_cpp _baxter_msgs_mine_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/CheckCrossing.srv" NAME_WE)
+get_filename_component(_filename "/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToPointActionGoal.msg" NAME_WE)
 add_dependencies(baxter_msgs_mine_generate_messages_cpp _baxter_msgs_mine_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToJointPosGoal.msg" NAME_WE)
 add_dependencies(baxter_msgs_mine_generate_messages_cpp _baxter_msgs_mine_generate_messages_check_deps_${_filename})
@@ -319,6 +343,8 @@ add_dependencies(baxter_msgs_mine_generate_messages_cpp _baxter_msgs_mine_genera
 get_filename_component(_filename "/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToJointPosActionFeedback.msg" NAME_WE)
 add_dependencies(baxter_msgs_mine_generate_messages_cpp _baxter_msgs_mine_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_msgs_mine/msg/CameraDebug.msg" NAME_WE)
+add_dependencies(baxter_msgs_mine_generate_messages_cpp _baxter_msgs_mine_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_msgs_mine/msg/ImagePoints.msg" NAME_WE)
 add_dependencies(baxter_msgs_mine_generate_messages_cpp _baxter_msgs_mine_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToPointResult.msg" NAME_WE)
 add_dependencies(baxter_msgs_mine_generate_messages_cpp _baxter_msgs_mine_generate_messages_check_deps_${_filename})
@@ -385,6 +411,12 @@ _generate_msg_eus(baxter_msgs_mine
 _generate_msg_eus(baxter_msgs_mine
   "/home/lar/ros/test_ws/src/baxter_msgs_mine/msg/CameraDebug.msg"
   "${MSG_I_FLAGS}"
+  "/opt/ros/kinetic/share/sensor_msgs/cmake/../msg/Image.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/baxter_msgs_mine
+)
+_generate_msg_eus(baxter_msgs_mine
+  "/home/lar/ros/test_ws/src/baxter_msgs_mine/msg/ImagePoints.msg"
+  "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/baxter_msgs_mine
 )
@@ -451,6 +483,12 @@ _generate_srv_eus(baxter_msgs_mine
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/baxter_msgs_mine
 )
 _generate_srv_eus(baxter_msgs_mine
+  "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/Cvt2Wrld.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/baxter_msgs_mine
+)
+_generate_srv_eus(baxter_msgs_mine
   "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/PositionCommandMine.srv"
   "${MSG_I_FLAGS}"
   ""
@@ -483,13 +521,15 @@ add_dependencies(baxter_msgs_mine_generate_messages baxter_msgs_mine_generate_me
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/GoToGoal.srv" NAME_WE)
 add_dependencies(baxter_msgs_mine_generate_messages_eus _baxter_msgs_mine_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToPointActionGoal.msg" NAME_WE)
+get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/CheckCrossing.srv" NAME_WE)
 add_dependencies(baxter_msgs_mine_generate_messages_eus _baxter_msgs_mine_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToPointAction.msg" NAME_WE)
 add_dependencies(baxter_msgs_mine_generate_messages_eus _baxter_msgs_mine_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/Cvt2Wrld.srv" NAME_WE)
+add_dependencies(baxter_msgs_mine_generate_messages_eus _baxter_msgs_mine_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/ProcessImage.srv" NAME_WE)
 add_dependencies(baxter_msgs_mine_generate_messages_eus _baxter_msgs_mine_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/CheckCrossing.srv" NAME_WE)
+get_filename_component(_filename "/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToPointActionGoal.msg" NAME_WE)
 add_dependencies(baxter_msgs_mine_generate_messages_eus _baxter_msgs_mine_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToJointPosGoal.msg" NAME_WE)
 add_dependencies(baxter_msgs_mine_generate_messages_eus _baxter_msgs_mine_generate_messages_check_deps_${_filename})
@@ -520,6 +560,8 @@ add_dependencies(baxter_msgs_mine_generate_messages_eus _baxter_msgs_mine_genera
 get_filename_component(_filename "/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToJointPosActionFeedback.msg" NAME_WE)
 add_dependencies(baxter_msgs_mine_generate_messages_eus _baxter_msgs_mine_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_msgs_mine/msg/CameraDebug.msg" NAME_WE)
+add_dependencies(baxter_msgs_mine_generate_messages_eus _baxter_msgs_mine_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_msgs_mine/msg/ImagePoints.msg" NAME_WE)
 add_dependencies(baxter_msgs_mine_generate_messages_eus _baxter_msgs_mine_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToPointResult.msg" NAME_WE)
 add_dependencies(baxter_msgs_mine_generate_messages_eus _baxter_msgs_mine_generate_messages_check_deps_${_filename})
@@ -586,6 +628,12 @@ _generate_msg_lisp(baxter_msgs_mine
 _generate_msg_lisp(baxter_msgs_mine
   "/home/lar/ros/test_ws/src/baxter_msgs_mine/msg/CameraDebug.msg"
   "${MSG_I_FLAGS}"
+  "/opt/ros/kinetic/share/sensor_msgs/cmake/../msg/Image.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/baxter_msgs_mine
+)
+_generate_msg_lisp(baxter_msgs_mine
+  "/home/lar/ros/test_ws/src/baxter_msgs_mine/msg/ImagePoints.msg"
+  "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/baxter_msgs_mine
 )
@@ -652,6 +700,12 @@ _generate_srv_lisp(baxter_msgs_mine
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/baxter_msgs_mine
 )
 _generate_srv_lisp(baxter_msgs_mine
+  "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/Cvt2Wrld.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/baxter_msgs_mine
+)
+_generate_srv_lisp(baxter_msgs_mine
   "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/PositionCommandMine.srv"
   "${MSG_I_FLAGS}"
   ""
@@ -684,13 +738,15 @@ add_dependencies(baxter_msgs_mine_generate_messages baxter_msgs_mine_generate_me
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/GoToGoal.srv" NAME_WE)
 add_dependencies(baxter_msgs_mine_generate_messages_lisp _baxter_msgs_mine_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToPointActionGoal.msg" NAME_WE)
+get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/CheckCrossing.srv" NAME_WE)
 add_dependencies(baxter_msgs_mine_generate_messages_lisp _baxter_msgs_mine_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToPointAction.msg" NAME_WE)
 add_dependencies(baxter_msgs_mine_generate_messages_lisp _baxter_msgs_mine_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/Cvt2Wrld.srv" NAME_WE)
+add_dependencies(baxter_msgs_mine_generate_messages_lisp _baxter_msgs_mine_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/ProcessImage.srv" NAME_WE)
 add_dependencies(baxter_msgs_mine_generate_messages_lisp _baxter_msgs_mine_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/CheckCrossing.srv" NAME_WE)
+get_filename_component(_filename "/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToPointActionGoal.msg" NAME_WE)
 add_dependencies(baxter_msgs_mine_generate_messages_lisp _baxter_msgs_mine_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToJointPosGoal.msg" NAME_WE)
 add_dependencies(baxter_msgs_mine_generate_messages_lisp _baxter_msgs_mine_generate_messages_check_deps_${_filename})
@@ -721,6 +777,8 @@ add_dependencies(baxter_msgs_mine_generate_messages_lisp _baxter_msgs_mine_gener
 get_filename_component(_filename "/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToJointPosActionFeedback.msg" NAME_WE)
 add_dependencies(baxter_msgs_mine_generate_messages_lisp _baxter_msgs_mine_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_msgs_mine/msg/CameraDebug.msg" NAME_WE)
+add_dependencies(baxter_msgs_mine_generate_messages_lisp _baxter_msgs_mine_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_msgs_mine/msg/ImagePoints.msg" NAME_WE)
 add_dependencies(baxter_msgs_mine_generate_messages_lisp _baxter_msgs_mine_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToPointResult.msg" NAME_WE)
 add_dependencies(baxter_msgs_mine_generate_messages_lisp _baxter_msgs_mine_generate_messages_check_deps_${_filename})
@@ -787,6 +845,12 @@ _generate_msg_nodejs(baxter_msgs_mine
 _generate_msg_nodejs(baxter_msgs_mine
   "/home/lar/ros/test_ws/src/baxter_msgs_mine/msg/CameraDebug.msg"
   "${MSG_I_FLAGS}"
+  "/opt/ros/kinetic/share/sensor_msgs/cmake/../msg/Image.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/baxter_msgs_mine
+)
+_generate_msg_nodejs(baxter_msgs_mine
+  "/home/lar/ros/test_ws/src/baxter_msgs_mine/msg/ImagePoints.msg"
+  "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/baxter_msgs_mine
 )
@@ -853,6 +917,12 @@ _generate_srv_nodejs(baxter_msgs_mine
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/baxter_msgs_mine
 )
 _generate_srv_nodejs(baxter_msgs_mine
+  "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/Cvt2Wrld.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/baxter_msgs_mine
+)
+_generate_srv_nodejs(baxter_msgs_mine
   "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/PositionCommandMine.srv"
   "${MSG_I_FLAGS}"
   ""
@@ -885,13 +955,15 @@ add_dependencies(baxter_msgs_mine_generate_messages baxter_msgs_mine_generate_me
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/GoToGoal.srv" NAME_WE)
 add_dependencies(baxter_msgs_mine_generate_messages_nodejs _baxter_msgs_mine_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToPointActionGoal.msg" NAME_WE)
+get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/CheckCrossing.srv" NAME_WE)
 add_dependencies(baxter_msgs_mine_generate_messages_nodejs _baxter_msgs_mine_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToPointAction.msg" NAME_WE)
 add_dependencies(baxter_msgs_mine_generate_messages_nodejs _baxter_msgs_mine_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/Cvt2Wrld.srv" NAME_WE)
+add_dependencies(baxter_msgs_mine_generate_messages_nodejs _baxter_msgs_mine_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/ProcessImage.srv" NAME_WE)
 add_dependencies(baxter_msgs_mine_generate_messages_nodejs _baxter_msgs_mine_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/CheckCrossing.srv" NAME_WE)
+get_filename_component(_filename "/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToPointActionGoal.msg" NAME_WE)
 add_dependencies(baxter_msgs_mine_generate_messages_nodejs _baxter_msgs_mine_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToJointPosGoal.msg" NAME_WE)
 add_dependencies(baxter_msgs_mine_generate_messages_nodejs _baxter_msgs_mine_generate_messages_check_deps_${_filename})
@@ -922,6 +994,8 @@ add_dependencies(baxter_msgs_mine_generate_messages_nodejs _baxter_msgs_mine_gen
 get_filename_component(_filename "/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToJointPosActionFeedback.msg" NAME_WE)
 add_dependencies(baxter_msgs_mine_generate_messages_nodejs _baxter_msgs_mine_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_msgs_mine/msg/CameraDebug.msg" NAME_WE)
+add_dependencies(baxter_msgs_mine_generate_messages_nodejs _baxter_msgs_mine_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_msgs_mine/msg/ImagePoints.msg" NAME_WE)
 add_dependencies(baxter_msgs_mine_generate_messages_nodejs _baxter_msgs_mine_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToPointResult.msg" NAME_WE)
 add_dependencies(baxter_msgs_mine_generate_messages_nodejs _baxter_msgs_mine_generate_messages_check_deps_${_filename})
@@ -988,6 +1062,12 @@ _generate_msg_py(baxter_msgs_mine
 _generate_msg_py(baxter_msgs_mine
   "/home/lar/ros/test_ws/src/baxter_msgs_mine/msg/CameraDebug.msg"
   "${MSG_I_FLAGS}"
+  "/opt/ros/kinetic/share/sensor_msgs/cmake/../msg/Image.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/baxter_msgs_mine
+)
+_generate_msg_py(baxter_msgs_mine
+  "/home/lar/ros/test_ws/src/baxter_msgs_mine/msg/ImagePoints.msg"
+  "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/baxter_msgs_mine
 )
@@ -1054,6 +1134,12 @@ _generate_srv_py(baxter_msgs_mine
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/baxter_msgs_mine
 )
 _generate_srv_py(baxter_msgs_mine
+  "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/Cvt2Wrld.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/baxter_msgs_mine
+)
+_generate_srv_py(baxter_msgs_mine
   "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/PositionCommandMine.srv"
   "${MSG_I_FLAGS}"
   ""
@@ -1086,13 +1172,15 @@ add_dependencies(baxter_msgs_mine_generate_messages baxter_msgs_mine_generate_me
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/GoToGoal.srv" NAME_WE)
 add_dependencies(baxter_msgs_mine_generate_messages_py _baxter_msgs_mine_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToPointActionGoal.msg" NAME_WE)
+get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/CheckCrossing.srv" NAME_WE)
 add_dependencies(baxter_msgs_mine_generate_messages_py _baxter_msgs_mine_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToPointAction.msg" NAME_WE)
 add_dependencies(baxter_msgs_mine_generate_messages_py _baxter_msgs_mine_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/Cvt2Wrld.srv" NAME_WE)
+add_dependencies(baxter_msgs_mine_generate_messages_py _baxter_msgs_mine_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/ProcessImage.srv" NAME_WE)
 add_dependencies(baxter_msgs_mine_generate_messages_py _baxter_msgs_mine_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/CheckCrossing.srv" NAME_WE)
+get_filename_component(_filename "/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToPointActionGoal.msg" NAME_WE)
 add_dependencies(baxter_msgs_mine_generate_messages_py _baxter_msgs_mine_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToJointPosGoal.msg" NAME_WE)
 add_dependencies(baxter_msgs_mine_generate_messages_py _baxter_msgs_mine_generate_messages_check_deps_${_filename})
@@ -1123,6 +1211,8 @@ add_dependencies(baxter_msgs_mine_generate_messages_py _baxter_msgs_mine_generat
 get_filename_component(_filename "/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToJointPosActionFeedback.msg" NAME_WE)
 add_dependencies(baxter_msgs_mine_generate_messages_py _baxter_msgs_mine_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_msgs_mine/msg/CameraDebug.msg" NAME_WE)
+add_dependencies(baxter_msgs_mine_generate_messages_py _baxter_msgs_mine_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_msgs_mine/msg/ImagePoints.msg" NAME_WE)
 add_dependencies(baxter_msgs_mine_generate_messages_py _baxter_msgs_mine_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToPointResult.msg" NAME_WE)
 add_dependencies(baxter_msgs_mine_generate_messages_py _baxter_msgs_mine_generate_messages_check_deps_${_filename})

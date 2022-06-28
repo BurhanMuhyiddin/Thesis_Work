@@ -1,0 +1,1 @@
+/home/lar/ros/rope_ws/devel/.private/process_rope_msgs/share/common-lisp/ros/process_rope_msgs/srv/process_rope_msgs-srv.asd

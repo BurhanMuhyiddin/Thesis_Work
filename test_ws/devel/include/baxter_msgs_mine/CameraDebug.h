@@ -15,6 +15,9 @@
 #include <ros/builtin_message_traits.h>
 #include <ros/message_operations.h>
 
+#include <sensor_msgs/Image.h>
+#include <sensor_msgs/Image.h>
+#include <sensor_msgs/Image.h>
 
 namespace baxter_msgs_mine
 {
@@ -24,17 +27,27 @@ struct CameraDebug_
   typedef CameraDebug_<ContainerAllocator> Type;
 
   CameraDebug_()
-    : data()  {
+    : current_img()
+    , target_img_mask()
+    , current_img_mask()  {
     }
   CameraDebug_(const ContainerAllocator& _alloc)
-    : data(_alloc)  {
+    : current_img(_alloc)
+    , target_img_mask(_alloc)
+    , current_img_mask(_alloc)  {
   (void)_alloc;
     }
 
 
 
-   typedef std::vector<float, typename ContainerAllocator::template rebind<float>::other >  _data_type;
-  _data_type data;
+   typedef  ::sensor_msgs::Image_<ContainerAllocator>  _current_img_type;
+  _current_img_type current_img;
+
+   typedef  ::sensor_msgs::Image_<ContainerAllocator>  _target_img_mask_type;
+  _target_img_mask_type target_img_mask;
+
+   typedef  ::sensor_msgs::Image_<ContainerAllocator>  _current_img_mask_type;
+  _current_img_mask_type current_img_mask;
 
 
 
@@ -114,12 +127,12 @@ struct MD5Sum< ::baxter_msgs_mine::CameraDebug_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "420cd38b6b071cd49f2970c3e2cee511";
+    return "10aed15b2704434d6ba0464fd75c0420";
   }
 
   static const char* value(const ::baxter_msgs_mine::CameraDebug_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x420cd38b6b071cd4ULL;
-  static const uint64_t static_value2 = 0x9f2970c3e2cee511ULL;
+  static const uint64_t static_value1 = 0x10aed15b2704434dULL;
+  static const uint64_t static_value2 = 0x6ba0464fd75c0420ULL;
 };
 
 template<class ContainerAllocator>
@@ -138,7 +151,56 @@ struct Definition< ::baxter_msgs_mine::CameraDebug_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "float32[] data\n\
+    return "sensor_msgs/Image current_img\n\
+sensor_msgs/Image target_img_mask\n\
+sensor_msgs/Image current_img_mask\n\
+================================================================================\n\
+MSG: sensor_msgs/Image\n\
+# This message contains an uncompressed image\n\
+# (0, 0) is at top-left corner of image\n\
+#\n\
+\n\
+Header header        # Header timestamp should be acquisition time of image\n\
+                     # Header frame_id should be optical frame of camera\n\
+                     # origin of frame should be optical center of camera\n\
+                     # +x should point to the right in the image\n\
+                     # +y should point down in the image\n\
+                     # +z should point into to plane of the image\n\
+                     # If the frame_id here and the frame_id of the CameraInfo\n\
+                     # message associated with the image conflict\n\
+                     # the behavior is undefined\n\
+\n\
+uint32 height         # image height, that is, number of rows\n\
+uint32 width          # image width, that is, number of columns\n\
+\n\
+# The legal values for encoding are in file src/image_encodings.cpp\n\
+# If you want to standardize a new string format, join\n\
+# ros-users@lists.sourceforge.net and send an email proposing a new encoding.\n\
+\n\
+string encoding       # Encoding of pixels -- channel meaning, ordering, size\n\
+                      # taken from the list of strings in include/sensor_msgs/image_encodings.h\n\
+\n\
+uint8 is_bigendian    # is this data bigendian?\n\
+uint32 step           # Full row length in bytes\n\
+uint8[] data          # actual matrix data, size is (step * rows)\n\
+\n\
+================================================================================\n\
+MSG: std_msgs/Header\n\
+# Standard metadata for higher-level stamped data types.\n\
+# This is generally used to communicate timestamped data \n\
+# in a particular coordinate frame.\n\
+# \n\
+# sequence ID: consecutively increasing ID \n\
+uint32 seq\n\
+#Two-integer timestamp that is expressed as:\n\
+# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')\n\
+# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')\n\
+# time-handling sugar is provided by the client library\n\
+time stamp\n\
+#Frame this data is associated with\n\
+# 0: no frame\n\
+# 1: global frame\n\
+string frame_id\n\
 ";
   }
 
@@ -157,7 +219,9 @@ namespace serialization
   {
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
-      stream.next(m.data);
+      stream.next(m.current_img);
+      stream.next(m.target_img_mask);
+      stream.next(m.current_img_mask);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -176,12 +240,15 @@ struct Printer< ::baxter_msgs_mine::CameraDebug_<ContainerAllocator> >
 {
   template<typename Stream> static void stream(Stream& s, const std::string& indent, const ::baxter_msgs_mine::CameraDebug_<ContainerAllocator>& v)
   {
-    s << indent << "data[]" << std::endl;
-    for (size_t i = 0; i < v.data.size(); ++i)
-    {
-      s << indent << "  data[" << i << "]: ";
-      Printer<float>::stream(s, indent + "  ", v.data[i]);
-    }
+    s << indent << "current_img: ";
+    s << std::endl;
+    Printer< ::sensor_msgs::Image_<ContainerAllocator> >::stream(s, indent + "  ", v.current_img);
+    s << indent << "target_img_mask: ";
+    s << std::endl;
+    Printer< ::sensor_msgs::Image_<ContainerAllocator> >::stream(s, indent + "  ", v.target_img_mask);
+    s << indent << "current_img_mask: ";
+    s << std::endl;
+    Printer< ::sensor_msgs::Image_<ContainerAllocator> >::stream(s, indent + "  ", v.current_img_mask);
   }
 };
 

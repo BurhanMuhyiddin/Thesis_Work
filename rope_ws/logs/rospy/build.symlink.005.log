@@ -1,0 +1,5 @@
+Linked: (/home/lar/ros/rope_ws/devel/.private/rospy/lib/python3/dist-packages/rospy/__init__.py, /home/lar/ros/rope_ws/devel/lib/python3/dist-packages/rospy/__init__.py)
+Linked: (/home/lar/ros/rope_ws/devel/.private/rospy/lib/pkgconfig/rospy.pc, /home/lar/ros/rope_ws/devel/lib/pkgconfig/rospy.pc)
+Linked: (/home/lar/ros/rope_ws/devel/.private/rospy/bin/rosconsole, /home/lar/ros/rope_ws/devel/bin/rosconsole)
+Linked: (/home/lar/ros/rope_ws/devel/.private/rospy/share/rospy/cmake/rospyConfig-version.cmake, /home/lar/ros/rope_ws/devel/share/rospy/cmake/rospyConfig-version.cmake)
+Linked: (/home/lar/ros/rope_ws/devel/.private/rospy/share/rospy/cmake/rospyConfig.cmake, /home/lar/ros/rope_ws/devel/share/rospy/cmake/rospyConfig.cmake)

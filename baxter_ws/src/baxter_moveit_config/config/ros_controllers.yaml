@@ -9,7 +9,6 @@ generic_hw_control_loop:
 # Settings for ros_control hardware interface
 hardware_interface:
   joints:
-    - world_joint
     - head_pan
     - left_s0
     - left_s1

@@ -1,0 +1,1 @@
+/home/lar/ros/rope_ws/devel/.private/roswtf/lib/python3/dist-packages/roswtf/__init__.py

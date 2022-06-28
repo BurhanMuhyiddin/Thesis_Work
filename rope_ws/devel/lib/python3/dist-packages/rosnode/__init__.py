@@ -1,0 +1,1 @@
+/home/lar/ros/rope_ws/devel/.private/rosnode/lib/python3/dist-packages/rosnode/__init__.py

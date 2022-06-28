@@ -1,0 +1,1 @@
+/home/lar/ros/rope_ws/devel/.private/rostopic/lib/python3/dist-packages/rostopic/__init__.py

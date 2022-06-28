@@ -1,0 +1,1 @@
+/home/lar/ros/rope_ws/devel/.private/rosbag_storage/lib/pkgconfig/rosbag_storage.pc

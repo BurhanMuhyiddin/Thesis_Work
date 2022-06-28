@@ -1,0 +1,8 @@
+ros_comm/rosmaster
+/home/lar/ros/rope_ws/devel/.private/rosmaster/cmake.lock /home/lar/ros/rope_ws/devel/./cmake.lock
+/home/lar/ros/rope_ws/devel/.private/rosmaster/lib/python3/dist-packages/rosmaster/__init__.py /home/lar/ros/rope_ws/devel/lib/python3/dist-packages/rosmaster/__init__.py
+/home/lar/ros/rope_ws/devel/.private/rosmaster/lib/pkgconfig/rosmaster.pc /home/lar/ros/rope_ws/devel/lib/pkgconfig/rosmaster.pc
+/home/lar/ros/rope_ws/devel/.private/rosmaster/bin/rosmaster /home/lar/ros/rope_ws/devel/bin/rosmaster
+/home/lar/ros/rope_ws/devel/.private/rosmaster/bin/cmake.lock /home/lar/ros/rope_ws/devel/bin/cmake.lock
+/home/lar/ros/rope_ws/devel/.private/rosmaster/share/rosmaster/cmake/rosmasterConfig.cmake /home/lar/ros/rope_ws/devel/share/rosmaster/cmake/rosmasterConfig.cmake
+/home/lar/ros/rope_ws/devel/.private/rosmaster/share/rosmaster/cmake/rosmasterConfig-version.cmake /home/lar/ros/rope_ws/devel/share/rosmaster/cmake/rosmasterConfig-version.cmake

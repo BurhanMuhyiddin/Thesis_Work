@@ -1,0 +1,1 @@
+/home/lar/ros/rope_ws/devel/.private/geneus/share/geneus/cmake/geneus-extras.cmake

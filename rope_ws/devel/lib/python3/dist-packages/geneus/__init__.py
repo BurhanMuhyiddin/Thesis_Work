@@ -1,0 +1,1 @@
+/home/lar/ros/rope_ws/devel/.private/geneus/lib/python3/dist-packages/geneus/__init__.py

@@ -1,0 +1,6 @@
+ros/rosbuild
+/home/lar/ros/rope_ws/devel/.private/rosbuild/cmake.lock /home/lar/ros/rope_ws/devel/./cmake.lock
+/home/lar/ros/rope_ws/devel/.private/rosbuild/lib/pkgconfig/rosbuild.pc /home/lar/ros/rope_ws/devel/lib/pkgconfig/rosbuild.pc
+/home/lar/ros/rope_ws/devel/.private/rosbuild/share/rosbuild/cmake/rosbuildConfig-version.cmake /home/lar/ros/rope_ws/devel/share/rosbuild/cmake/rosbuildConfig-version.cmake
+/home/lar/ros/rope_ws/devel/.private/rosbuild/share/rosbuild/cmake/rosbuildConfig.cmake /home/lar/ros/rope_ws/devel/share/rosbuild/cmake/rosbuildConfig.cmake
+/home/lar/ros/rope_ws/devel/.private/rosbuild/etc/catkin/profile.d/10.rosbuild.sh /home/lar/ros/rope_ws/devel/etc/catkin/profile.d/10.rosbuild.sh

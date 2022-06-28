@@ -4,6 +4,7 @@
 (defsystem "baxter_msgs_mine-msg"
   :depends-on (:roslisp-msg-protocol :roslisp-utils :actionlib_msgs-msg
                :geometry_msgs-msg
+               :sensor_msgs-msg
                :std_msgs-msg
 )
   :components ((:file "_package")
@@ -37,4 +38,6 @@
     (:file "_package_GoToPointGoal" :depends-on ("_package"))
     (:file "GoToPointResult" :depends-on ("_package_GoToPointResult"))
     (:file "_package_GoToPointResult" :depends-on ("_package"))
+    (:file "ImagePoints" :depends-on ("_package_ImagePoints"))
+    (:file "_package_ImagePoints" :depends-on ("_package"))
   ))

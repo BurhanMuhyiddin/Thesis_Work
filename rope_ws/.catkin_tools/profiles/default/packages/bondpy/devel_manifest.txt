@@ -1,0 +1,6 @@
+bond_core/bondpy
+/home/lar/ros/rope_ws/devel/.private/bondpy/cmake.lock /home/lar/ros/rope_ws/devel/./cmake.lock
+/home/lar/ros/rope_ws/devel/.private/bondpy/lib/python3/dist-packages/bondpy/__init__.py /home/lar/ros/rope_ws/devel/lib/python3/dist-packages/bondpy/__init__.py
+/home/lar/ros/rope_ws/devel/.private/bondpy/lib/pkgconfig/bondpy.pc /home/lar/ros/rope_ws/devel/lib/pkgconfig/bondpy.pc
+/home/lar/ros/rope_ws/devel/.private/bondpy/share/bondpy/cmake/bondpyConfig-version.cmake /home/lar/ros/rope_ws/devel/share/bondpy/cmake/bondpyConfig-version.cmake
+/home/lar/ros/rope_ws/devel/.private/bondpy/share/bondpy/cmake/bondpyConfig.cmake /home/lar/ros/rope_ws/devel/share/bondpy/cmake/bondpyConfig.cmake

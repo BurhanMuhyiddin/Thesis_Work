@@ -1,0 +1,1 @@
+/home/lar/ros/rope_ws/devel/.private/rosconsole/share/rosconsole/cmake/rosconsoleConfig-version.cmake

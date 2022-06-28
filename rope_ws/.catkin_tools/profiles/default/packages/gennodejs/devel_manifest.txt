@@ -1,0 +1,8 @@
+gennodejs
+/home/lar/ros/rope_ws/devel/.private/gennodejs/cmake.lock /home/lar/ros/rope_ws/devel/./cmake.lock
+/home/lar/ros/rope_ws/devel/.private/gennodejs/lib/python3/dist-packages/gennodejs/__init__.py /home/lar/ros/rope_ws/devel/lib/python3/dist-packages/gennodejs/__init__.py
+/home/lar/ros/rope_ws/devel/.private/gennodejs/lib/pkgconfig/gennodejs.pc /home/lar/ros/rope_ws/devel/lib/pkgconfig/gennodejs.pc
+/home/lar/ros/rope_ws/devel/.private/gennodejs/share/gennodejs/cmake/gennodejs-extras.cmake /home/lar/ros/rope_ws/devel/share/gennodejs/cmake/gennodejs-extras.cmake
+/home/lar/ros/rope_ws/devel/.private/gennodejs/share/gennodejs/cmake/gennodejsConfig.cmake /home/lar/ros/rope_ws/devel/share/gennodejs/cmake/gennodejsConfig.cmake
+/home/lar/ros/rope_ws/devel/.private/gennodejs/share/gennodejs/cmake/gennodejsConfig-version.cmake /home/lar/ros/rope_ws/devel/share/gennodejs/cmake/gennodejsConfig-version.cmake
+/home/lar/ros/rope_ws/devel/.private/gennodejs/etc/ros/genmsg/gennodejs /home/lar/ros/rope_ws/devel/etc/ros/genmsg/gennodejs

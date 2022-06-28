@@ -1,0 +1,8 @@
+prefix=/home/lar/ros/rope_ws/install
+
+Name: roslaunch
+Description: Description of roslaunch
+Version: 1.12.17
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

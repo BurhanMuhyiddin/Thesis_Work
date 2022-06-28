@@ -1,0 +1,1 @@
+/home/lar/ros/rope_ws/devel/.private/catkin/lib/python3/dist-packages/catkin/__init__.py

@@ -1,0 +1,12 @@
+(cl:in-package baxter_msgs_mine-msg)
+(cl:export '(SAMPLED_TARGET_POINTS-VAL
+          SAMPLED_TARGET_POINTS
+          SAMPLED_CURRENT_POINTS-VAL
+          SAMPLED_CURRENT_POINTS
+          HOLD_POINT_COORDS-VAL
+          HOLD_POINT_COORDS
+          PICK_POINT_COORDS-VAL
+          PICK_POINT_COORDS
+          PLACE_POINT_COORDS-VAL
+          PLACE_POINT_COORDS
+))

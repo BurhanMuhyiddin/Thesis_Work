@@ -1,0 +1,8 @@
+ros_comm/rosgraph
+/home/lar/ros/rope_ws/devel/.private/rosgraph/cmake.lock /home/lar/ros/rope_ws/devel/./cmake.lock
+/home/lar/ros/rope_ws/devel/.private/rosgraph/lib/python3/dist-packages/rosgraph/__init__.py /home/lar/ros/rope_ws/devel/lib/python3/dist-packages/rosgraph/__init__.py
+/home/lar/ros/rope_ws/devel/.private/rosgraph/lib/pkgconfig/rosgraph.pc /home/lar/ros/rope_ws/devel/lib/pkgconfig/rosgraph.pc
+/home/lar/ros/rope_ws/devel/.private/rosgraph/bin/rosgraph /home/lar/ros/rope_ws/devel/bin/rosgraph
+/home/lar/ros/rope_ws/devel/.private/rosgraph/bin/cmake.lock /home/lar/ros/rope_ws/devel/bin/cmake.lock
+/home/lar/ros/rope_ws/devel/.private/rosgraph/share/rosgraph/cmake/rosgraphConfig.cmake /home/lar/ros/rope_ws/devel/share/rosgraph/cmake/rosgraphConfig.cmake
+/home/lar/ros/rope_ws/devel/.private/rosgraph/share/rosgraph/cmake/rosgraphConfig-version.cmake /home/lar/ros/rope_ws/devel/share/rosgraph/cmake/rosgraphConfig-version.cmake

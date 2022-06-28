@@ -1,0 +1,6 @@
+bond_core/bondcpp
+/home/lar/ros/rope_ws/devel/.private/bondcpp/cmake.lock /home/lar/ros/rope_ws/devel/./cmake.lock
+/home/lar/ros/rope_ws/devel/.private/bondcpp/lib/libbondcpp.so /home/lar/ros/rope_ws/devel/lib/libbondcpp.so
+/home/lar/ros/rope_ws/devel/.private/bondcpp/lib/pkgconfig/bondcpp.pc /home/lar/ros/rope_ws/devel/lib/pkgconfig/bondcpp.pc
+/home/lar/ros/rope_ws/devel/.private/bondcpp/share/bondcpp/cmake/bondcppConfig-version.cmake /home/lar/ros/rope_ws/devel/share/bondcpp/cmake/bondcppConfig-version.cmake
+/home/lar/ros/rope_ws/devel/.private/bondcpp/share/bondcpp/cmake/bondcppConfig.cmake /home/lar/ros/rope_ws/devel/share/bondcpp/cmake/bondcppConfig.cmake

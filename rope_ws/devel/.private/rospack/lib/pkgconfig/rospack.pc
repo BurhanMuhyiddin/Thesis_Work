@@ -1,0 +1,8 @@
+prefix=/home/lar/ros/rope_ws/devel/.private/rospack
+
+Name: rospack
+Description: Description of rospack
+Version: 2.4.5
+Cflags: -I/home/lar/ros/rope_ws/src/rospack/include -I/usr/include
+Libs: -L${prefix}/lib -lrospack /home/lar/miniconda3/envs/rope_processing/lib/libpython3.9.so /usr/lib/x86_64-linux-gnu/libboost_filesystem.so /usr/lib/x86_64-linux-gnu/libboost_program_options.so /usr/lib/x86_64-linux-gnu/libboost_system.so /usr/lib/x86_64-linux-gnu/libtinyxml.so
+Requires: 

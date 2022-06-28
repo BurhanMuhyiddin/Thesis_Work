@@ -1,0 +1,8 @@
+prefix=/home/lar/ros/rope_ws/devel/.private/topic_tools
+
+Name: topic_tools
+Description: Description of topic_tools
+Version: 1.12.17
+Cflags: -I/home/lar/ros/rope_ws/devel/.private/topic_tools/include -I/home/lar/ros/rope_ws/src/ros_comm/topic_tools/include
+Libs: -L${prefix}/lib -ltopic_tools
+Requires: message_runtime rosconsole roscpp std_msgs xmlrpcpp

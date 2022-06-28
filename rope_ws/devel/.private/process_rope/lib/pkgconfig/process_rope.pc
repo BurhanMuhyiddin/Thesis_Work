@@ -1,0 +1,8 @@
+prefix=/home/lar/ros/rope_ws/devel/.private/process_rope
+
+Name: process_rope
+Description: Description of process_rope
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

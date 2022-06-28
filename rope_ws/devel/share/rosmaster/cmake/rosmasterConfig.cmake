@@ -1,0 +1,1 @@
+/home/lar/ros/rope_ws/devel/.private/rosmaster/share/rosmaster/cmake/rosmasterConfig.cmake

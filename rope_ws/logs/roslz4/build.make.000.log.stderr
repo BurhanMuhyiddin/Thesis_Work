@@ -1,0 +1,9 @@
+[01m[K/home/lar/ros/rope_ws/src/ros_comm/roslz4/src/lz4s.c:[m[K In function ‘[01m[KbufferToOutput[m[K’:
+[01m[K/home/lar/ros/rope_ws/src/ros_comm/roslz4/src/lz4s.c:184:3:[m[K [01;35m[Kwarning: [m[K‘[01m[KLZ4_compress_limitedOutput[m[K’ is deprecated: use LZ4_compress_default() instead [-Wdeprecated-declarations]
+   uint32_t comp_size = LZ4_compress_limitedOutput(state->buffer,
+[01;32m[K   ^[m[K
+In file included from [01m[K/home/lar/ros/rope_ws/src/ros_comm/roslz4/include/roslz4/lz4s.h:38:0[m[K,
+                 from [01m[K/home/lar/ros/rope_ws/src/ros_comm/roslz4/src/lz4s.c:35[m[K:
+[01m[K/home/lar/miniconda3/envs/rope_processing/include/lz4.h:698:75:[m[K [01;36m[Knote: [m[Kdeclared here
+ LZ4_DEPRECATED("use LZ4_compress_default() instead")       LZ4LIB_API int LZ4_compress_limitedOutput (const char* src, char* dest, int srcSize, int maxOutputSize);
+[01;32m[K                                                                           ^[m[K

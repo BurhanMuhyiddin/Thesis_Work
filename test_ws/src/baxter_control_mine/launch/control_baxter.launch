@@ -11,4 +11,6 @@
 
     <node name="go_to_joint_pos_server" pkg="baxter_control_mine" type="go_to_joint_pos_server" output="screen"/>
 
+    <node name="convert_to_world_server" pkg="baxter_control_mine" type="convert_to_world_server.py" output="screen"/> 
+
 </launch>

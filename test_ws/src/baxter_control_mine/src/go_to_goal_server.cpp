@@ -63,15 +63,21 @@ bool GoToGoal::go_to_goal_clb(baxter_msgs_mine::GoToGoalRequest &req,
     PLANNING_GROUP = std::move("both_arms");
   }
 
+  ROS_INFO("GoToGoalService: I am here 1...");
+
   moveit::planning_interface::MoveGroupInterface move_group(PLANNING_GROUP);
+  ROS_INFO("GoToGoalService: I am here 2...");
   moveit::planning_interface::PlanningSceneInterface planning_scene_interface;
   const robot_state::JointModelGroup* joint_model_group = move_group.getCurrentState()->getJointModelGroup(PLANNING_GROUP);
+  ROS_INFO("GoToGoalService: I am here 3...");
 
   moveit::planning_interface::MoveGroupInterface::Plan my_plan;
   bool success;
 
   robot_state::RobotState start_state(*move_group.getCurrentState());
+  ROS_INFO("GoToGoalService: I am here 4...");
   move_group.setStartState(start_state);
+  ROS_INFO("GoToGoalService: I am here 5...");
 
   // get goal positions
   if (limb == "left" || limb == "right")
@@ -102,7 +108,7 @@ bool GoToGoal::go_to_goal_clb(baxter_msgs_mine::GoToGoalRequest &req,
       // move_group.setMaxVelocityScalingFactor(0.1);
 
       moveit_msgs::RobotTrajectory trajectory;
-      const double jump_threshold = 0.0;
+      const double jump_threshold = 0.00;
       const double eef_step = 0.01;
       double fraction = move_group.computeCartesianPath(waypoints, eef_step, jump_threshold, trajectory);
       if (fraction != -1)
@@ -129,8 +135,10 @@ bool GoToGoal::go_to_goal_clb(baxter_msgs_mine::GoToGoalRequest &req,
     }
     else
     {
+      ROS_INFO("GoToGoalService: I am here 6...");
       move_group.setPoseTarget(target_pose_left, "left_gripper");
       move_group.setPoseTarget(target_pose_right, "right_gripper");
+      ROS_INFO("GoToGoalService: I am here 7...");
     }
   }
 
@@ -139,6 +147,7 @@ bool GoToGoal::go_to_goal_clb(baxter_msgs_mine::GoToGoalRequest &req,
   if (mode == 0)
   {
     success = (move_group.plan(my_plan) == moveit::planning_interface::MoveItErrorCode::SUCCESS);
+    ROS_INFO("GoToGoalService: I am here 8...");
   }
 
   if (success)

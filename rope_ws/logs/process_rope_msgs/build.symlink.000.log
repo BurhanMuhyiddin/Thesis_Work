@@ -1,0 +1,3 @@
+Symlinking /home/lar/ros/rope_ws/devel/lib/pkgconfig/process_rope_msgs.pc
+Symlinking /home/lar/ros/rope_ws/devel/share/process_rope_msgs/cmake/process_rope_msgsConfig.cmake
+Symlinking /home/lar/ros/rope_ws/devel/share/process_rope_msgs/cmake/process_rope_msgsConfig-version.cmake

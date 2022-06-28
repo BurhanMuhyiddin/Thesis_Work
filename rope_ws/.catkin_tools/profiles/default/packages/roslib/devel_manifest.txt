@@ -1,0 +1,9 @@
+ros/roslib
+/home/lar/ros/rope_ws/devel/.private/roslib/cmake.lock /home/lar/ros/rope_ws/devel/./cmake.lock
+/home/lar/ros/rope_ws/devel/.private/roslib/lib/libroslib.so /home/lar/ros/rope_ws/devel/lib/libroslib.so
+/home/lar/ros/rope_ws/devel/.private/roslib/lib/python3/dist-packages/roslib/__init__.py /home/lar/ros/rope_ws/devel/lib/python3/dist-packages/roslib/__init__.py
+/home/lar/ros/rope_ws/devel/.private/roslib/lib/python3/dist-packages/ros/__init__.py /home/lar/ros/rope_ws/devel/lib/python3/dist-packages/ros/__init__.py
+/home/lar/ros/rope_ws/devel/.private/roslib/lib/pkgconfig/roslib.pc /home/lar/ros/rope_ws/devel/lib/pkgconfig/roslib.pc
+/home/lar/ros/rope_ws/devel/.private/roslib/share/roslib/cmake/roslibConfig-version.cmake /home/lar/ros/rope_ws/devel/share/roslib/cmake/roslibConfig-version.cmake
+/home/lar/ros/rope_ws/devel/.private/roslib/share/roslib/cmake/roslibConfig.cmake /home/lar/ros/rope_ws/devel/share/roslib/cmake/roslibConfig.cmake
+/home/lar/ros/rope_ws/devel/.private/roslib/share/roslib/cmake/roslib-extras.cmake /home/lar/ros/rope_ws/devel/share/roslib/cmake/roslib-extras.cmake

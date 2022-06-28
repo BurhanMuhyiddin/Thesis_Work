@@ -1,0 +1,1 @@
+/home/lar/ros/rope_ws/devel/.private/trajectory_msgs/lib/python3/dist-packages/trajectory_msgs/msg/_JointTrajectory.py

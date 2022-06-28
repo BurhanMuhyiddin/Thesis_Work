@@ -1,0 +1,20 @@
+Symlinking /home/lar/ros/rope_ws/devel/lib/python2.7/dist-packages/process_rope_msgs/__init__.py
+Symlinking /home/lar/ros/rope_ws/devel/lib/python2.7/dist-packages/process_rope_msgs/srv/__init__.py
+Symlinking /home/lar/ros/rope_ws/devel/lib/python2.7/dist-packages/process_rope_msgs/srv/_SampleRope.py
+Linked: (/home/lar/ros/rope_ws/devel/.private/process_rope_msgs/lib/pkgconfig/process_rope_msgs.pc, /home/lar/ros/rope_ws/devel/lib/pkgconfig/process_rope_msgs.pc)
+Symlinking /home/lar/ros/rope_ws/devel/include/process_rope_msgs/SampleRopeRequest.h
+Symlinking /home/lar/ros/rope_ws/devel/include/process_rope_msgs/SampleRope.h
+Symlinking /home/lar/ros/rope_ws/devel/include/process_rope_msgs/SampleRopeResponse.h
+Symlinking /home/lar/ros/rope_ws/devel/share/gennodejs/ros/process_rope_msgs/_index.js
+Symlinking /home/lar/ros/rope_ws/devel/share/gennodejs/ros/process_rope_msgs/srv/SampleRope.js
+Symlinking /home/lar/ros/rope_ws/devel/share/gennodejs/ros/process_rope_msgs/srv/_index.js
+Symlinking /home/lar/ros/rope_ws/devel/share/roseus/ros/process_rope_msgs/manifest.l
+Symlinking /home/lar/ros/rope_ws/devel/share/roseus/ros/process_rope_msgs/srv/SampleRope.l
+Linked: (/home/lar/ros/rope_ws/devel/.private/process_rope_msgs/share/process_rope_msgs/cmake/process_rope_msgsConfig.cmake, /home/lar/ros/rope_ws/devel/share/process_rope_msgs/cmake/process_rope_msgsConfig.cmake)
+Linked: (/home/lar/ros/rope_ws/devel/.private/process_rope_msgs/share/process_rope_msgs/cmake/process_rope_msgsConfig-version.cmake, /home/lar/ros/rope_ws/devel/share/process_rope_msgs/cmake/process_rope_msgsConfig-version.cmake)
+Symlinking /home/lar/ros/rope_ws/devel/share/process_rope_msgs/cmake/process_rope_msgs-msg-extras.cmake
+Symlinking /home/lar/ros/rope_ws/devel/share/process_rope_msgs/cmake/process_rope_msgs-msg-paths.cmake
+Symlinking /home/lar/ros/rope_ws/devel/share/common-lisp/ros/process_rope_msgs/srv/_package_SampleRope.lisp
+Symlinking /home/lar/ros/rope_ws/devel/share/common-lisp/ros/process_rope_msgs/srv/_package.lisp
+Symlinking /home/lar/ros/rope_ws/devel/share/common-lisp/ros/process_rope_msgs/srv/process_rope_msgs-srv.asd
+Symlinking /home/lar/ros/rope_ws/devel/share/common-lisp/ros/process_rope_msgs/srv/SampleRope.lisp

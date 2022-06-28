@@ -1,0 +1,8 @@
+prefix=/home/lar/ros/rope_ws/devel/.private/rosnode
+
+Name: rosnode
+Description: Description of rosnode
+Version: 1.12.17
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

@@ -114,7 +114,7 @@ void BaxterControl::add_object_to_the_scene()
   primitive.type = primitive.BOX;
   primitive.dimensions.resize(3);
   primitive.dimensions[0] = 1.0;
-  primitive.dimensions[1] = 0.1;
+  primitive.dimensions[1] = 0.05;
   primitive.dimensions[2] = 4.0;
 
   // Define a pose for the box (specified relative to base frame)
@@ -125,7 +125,7 @@ void BaxterControl::add_object_to_the_scene()
   box_pose.orientation.z = 0.00;
   box_pose.position.x = 0.80; // this changes box's distance from robot, smaller-closer(-inf), higher-futher(+inf)  
   box_pose.position.y = -0.06;
-  box_pose.position.z = -0.1538229; // this changes box's distance from gound, smaller-closer to ground(-inf), higher-closer to the air(+inf)  
+  box_pose.position.z = -0.145; // this changes box's distance from gound, smaller-closer to ground(-inf), higher-closer to the air(+inf)  
                                             // take into account box thickness also
   collision_object.primitives.push_back(primitive);
   collision_object.primitive_poses.push_back(box_pose);

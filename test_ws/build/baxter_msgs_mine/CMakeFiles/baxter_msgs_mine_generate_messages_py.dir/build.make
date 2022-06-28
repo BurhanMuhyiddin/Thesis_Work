@@ -62,6 +62,7 @@ baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py: /home/lar/ros
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToJointPosActionResult.py
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToJointPosFeedback.py
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_CameraDebug.py
+baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_ImagePoints.py
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToPointActionGoal.py
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToJointPosActionFeedback.py
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToJointPosGoal.py
@@ -72,6 +73,7 @@ baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py: /home/lar/ros
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_GoToGoal.py
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_CalculateIK.py
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_ProcessImage.py
+baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_Cvt2Wrld.py
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_PositionCommandMine.py
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_CheckCrossing.py
 baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_GoToJointGoal.py
@@ -159,8 +161,15 @@ baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py: /home/lar/ros
 
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_CameraDebug.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_CameraDebug.py: /home/lar/ros/test_ws/src/baxter_msgs_mine/msg/CameraDebug.msg
+/home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_CameraDebug.py: /opt/ros/kinetic/share/sensor_msgs/msg/Image.msg
+/home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_CameraDebug.py: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating Python from MSG baxter_msgs_mine/CameraDebug"
 	cd /home/lar/ros/test_ws/build/baxter_msgs_mine && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/lar/ros/test_ws/src/baxter_msgs_mine/msg/CameraDebug.msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/src/baxter_msgs_mine/msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -p baxter_msgs_mine -o /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg
+
+/home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_ImagePoints.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_ImagePoints.py: /home/lar/ros/test_ws/src/baxter_msgs_mine/msg/ImagePoints.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating Python from MSG baxter_msgs_mine/ImagePoints"
+	cd /home/lar/ros/test_ws/build/baxter_msgs_mine && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/lar/ros/test_ws/src/baxter_msgs_mine/msg/ImagePoints.msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/src/baxter_msgs_mine/msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -p baxter_msgs_mine -o /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg
 
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToPointActionGoal.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToPointActionGoal.py: /home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToPointActionGoal.msg
@@ -170,7 +179,7 @@ baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py: /home/lar/ros
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToPointActionGoal.py: /opt/ros/kinetic/share/geometry_msgs/msg/Point.msg
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToPointActionGoal.py: /opt/ros/kinetic/share/geometry_msgs/msg/Quaternion.msg
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToPointActionGoal.py: /opt/ros/kinetic/share/actionlib_msgs/msg/GoalID.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating Python from MSG baxter_msgs_mine/GoToPointActionGoal"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating Python from MSG baxter_msgs_mine/GoToPointActionGoal"
 	cd /home/lar/ros/test_ws/build/baxter_msgs_mine && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToPointActionGoal.msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/src/baxter_msgs_mine/msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -p baxter_msgs_mine -o /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg
 
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToJointPosActionFeedback.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
@@ -179,12 +188,12 @@ baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py: /home/lar/ros
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToJointPosActionFeedback.py: /opt/ros/kinetic/share/actionlib_msgs/msg/GoalID.msg
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToJointPosActionFeedback.py: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToJointPosActionFeedback.py: /opt/ros/kinetic/share/actionlib_msgs/msg/GoalStatus.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating Python from MSG baxter_msgs_mine/GoToJointPosActionFeedback"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Generating Python from MSG baxter_msgs_mine/GoToJointPosActionFeedback"
 	cd /home/lar/ros/test_ws/build/baxter_msgs_mine && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToJointPosActionFeedback.msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/src/baxter_msgs_mine/msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -p baxter_msgs_mine -o /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg
 
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToJointPosGoal.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToJointPosGoal.py: /home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToJointPosGoal.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Generating Python from MSG baxter_msgs_mine/GoToJointPosGoal"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Generating Python from MSG baxter_msgs_mine/GoToJointPosGoal"
 	cd /home/lar/ros/test_ws/build/baxter_msgs_mine && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToJointPosGoal.msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/src/baxter_msgs_mine/msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -p baxter_msgs_mine -o /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg
 
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToPointGoal.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
@@ -192,7 +201,7 @@ baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py: /home/lar/ros
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToPointGoal.py: /opt/ros/kinetic/share/geometry_msgs/msg/Quaternion.msg
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToPointGoal.py: /opt/ros/kinetic/share/geometry_msgs/msg/Pose.msg
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToPointGoal.py: /opt/ros/kinetic/share/geometry_msgs/msg/Point.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Generating Python from MSG baxter_msgs_mine/GoToPointGoal"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Generating Python from MSG baxter_msgs_mine/GoToPointGoal"
 	cd /home/lar/ros/test_ws/build/baxter_msgs_mine && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToPointGoal.msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/src/baxter_msgs_mine/msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -p baxter_msgs_mine -o /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg
 
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToPointResult.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
@@ -200,7 +209,7 @@ baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py: /home/lar/ros
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToPointResult.py: /opt/ros/kinetic/share/geometry_msgs/msg/Quaternion.msg
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToPointResult.py: /opt/ros/kinetic/share/geometry_msgs/msg/Pose.msg
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToPointResult.py: /opt/ros/kinetic/share/geometry_msgs/msg/Point.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Generating Python from MSG baxter_msgs_mine/GoToPointResult"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Generating Python from MSG baxter_msgs_mine/GoToPointResult"
 	cd /home/lar/ros/test_ws/build/baxter_msgs_mine && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToPointResult.msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/src/baxter_msgs_mine/msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -p baxter_msgs_mine -o /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg
 
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToPointActionResult.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
@@ -212,14 +221,14 @@ baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py: /home/lar/ros
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToPointActionResult.py: /home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToPointResult.msg
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToPointActionResult.py: /opt/ros/kinetic/share/actionlib_msgs/msg/GoalID.msg
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToPointActionResult.py: /opt/ros/kinetic/share/actionlib_msgs/msg/GoalStatus.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Generating Python from MSG baxter_msgs_mine/GoToPointActionResult"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Generating Python from MSG baxter_msgs_mine/GoToPointActionResult"
 	cd /home/lar/ros/test_ws/build/baxter_msgs_mine && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg/GoToPointActionResult.msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/src/baxter_msgs_mine/msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -p baxter_msgs_mine -o /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg
 
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_GetCurrentJointStates.py: /opt/ros/kinetic/lib/genpy/gensrv_py.py
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_GetCurrentJointStates.py: /home/lar/ros/test_ws/src/baxter_msgs_mine/srv/GetCurrentJointStates.srv
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_GetCurrentJointStates.py: /opt/ros/kinetic/share/sensor_msgs/msg/JointState.msg
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_GetCurrentJointStates.py: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Generating Python code from SRV baxter_msgs_mine/GetCurrentJointStates"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Generating Python code from SRV baxter_msgs_mine/GetCurrentJointStates"
 	cd /home/lar/ros/test_ws/build/baxter_msgs_mine && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/lar/ros/test_ws/src/baxter_msgs_mine/srv/GetCurrentJointStates.srv -Ibaxter_msgs_mine:/home/lar/ros/test_ws/src/baxter_msgs_mine/msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -p baxter_msgs_mine -o /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv
 
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_GoToGoal.py: /opt/ros/kinetic/lib/genpy/gensrv_py.py
@@ -227,7 +236,7 @@ baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py: /home/lar/ros
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_GoToGoal.py: /opt/ros/kinetic/share/geometry_msgs/msg/Quaternion.msg
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_GoToGoal.py: /opt/ros/kinetic/share/geometry_msgs/msg/Pose.msg
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_GoToGoal.py: /opt/ros/kinetic/share/geometry_msgs/msg/Point.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Generating Python code from SRV baxter_msgs_mine/GoToGoal"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Generating Python code from SRV baxter_msgs_mine/GoToGoal"
 	cd /home/lar/ros/test_ws/build/baxter_msgs_mine && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/lar/ros/test_ws/src/baxter_msgs_mine/srv/GoToGoal.srv -Ibaxter_msgs_mine:/home/lar/ros/test_ws/src/baxter_msgs_mine/msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -p baxter_msgs_mine -o /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv
 
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_CalculateIK.py: /opt/ros/kinetic/lib/genpy/gensrv_py.py
@@ -237,29 +246,34 @@ baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py: /home/lar/ros
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_CalculateIK.py: /opt/ros/kinetic/share/geometry_msgs/msg/Pose.msg
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_CalculateIK.py: /opt/ros/kinetic/share/geometry_msgs/msg/Point.msg
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_CalculateIK.py: /opt/ros/kinetic/share/sensor_msgs/msg/JointState.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Generating Python code from SRV baxter_msgs_mine/CalculateIK"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Generating Python code from SRV baxter_msgs_mine/CalculateIK"
 	cd /home/lar/ros/test_ws/build/baxter_msgs_mine && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/lar/ros/test_ws/src/baxter_msgs_mine/srv/CalculateIK.srv -Ibaxter_msgs_mine:/home/lar/ros/test_ws/src/baxter_msgs_mine/msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -p baxter_msgs_mine -o /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv
 
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_ProcessImage.py: /opt/ros/kinetic/lib/genpy/gensrv_py.py
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_ProcessImage.py: /home/lar/ros/test_ws/src/baxter_msgs_mine/srv/ProcessImage.srv
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_ProcessImage.py: /opt/ros/kinetic/share/sensor_msgs/msg/Image.msg
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_ProcessImage.py: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Generating Python code from SRV baxter_msgs_mine/ProcessImage"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Generating Python code from SRV baxter_msgs_mine/ProcessImage"
 	cd /home/lar/ros/test_ws/build/baxter_msgs_mine && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/lar/ros/test_ws/src/baxter_msgs_mine/srv/ProcessImage.srv -Ibaxter_msgs_mine:/home/lar/ros/test_ws/src/baxter_msgs_mine/msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -p baxter_msgs_mine -o /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv
+
+/home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_Cvt2Wrld.py: /opt/ros/kinetic/lib/genpy/gensrv_py.py
+/home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_Cvt2Wrld.py: /home/lar/ros/test_ws/src/baxter_msgs_mine/srv/Cvt2Wrld.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Generating Python code from SRV baxter_msgs_mine/Cvt2Wrld"
+	cd /home/lar/ros/test_ws/build/baxter_msgs_mine && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/lar/ros/test_ws/src/baxter_msgs_mine/srv/Cvt2Wrld.srv -Ibaxter_msgs_mine:/home/lar/ros/test_ws/src/baxter_msgs_mine/msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -p baxter_msgs_mine -o /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv
 
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_PositionCommandMine.py: /opt/ros/kinetic/lib/genpy/gensrv_py.py
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_PositionCommandMine.py: /home/lar/ros/test_ws/src/baxter_msgs_mine/srv/PositionCommandMine.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Generating Python code from SRV baxter_msgs_mine/PositionCommandMine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Generating Python code from SRV baxter_msgs_mine/PositionCommandMine"
 	cd /home/lar/ros/test_ws/build/baxter_msgs_mine && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/lar/ros/test_ws/src/baxter_msgs_mine/srv/PositionCommandMine.srv -Ibaxter_msgs_mine:/home/lar/ros/test_ws/src/baxter_msgs_mine/msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -p baxter_msgs_mine -o /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv
 
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_CheckCrossing.py: /opt/ros/kinetic/lib/genpy/gensrv_py.py
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_CheckCrossing.py: /home/lar/ros/test_ws/src/baxter_msgs_mine/srv/CheckCrossing.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Generating Python code from SRV baxter_msgs_mine/CheckCrossing"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Generating Python code from SRV baxter_msgs_mine/CheckCrossing"
 	cd /home/lar/ros/test_ws/build/baxter_msgs_mine && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/lar/ros/test_ws/src/baxter_msgs_mine/srv/CheckCrossing.srv -Ibaxter_msgs_mine:/home/lar/ros/test_ws/src/baxter_msgs_mine/msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -p baxter_msgs_mine -o /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv
 
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_GoToJointGoal.py: /opt/ros/kinetic/lib/genpy/gensrv_py.py
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_GoToJointGoal.py: /home/lar/ros/test_ws/src/baxter_msgs_mine/srv/GoToJointGoal.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Generating Python code from SRV baxter_msgs_mine/GoToJointGoal"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Generating Python code from SRV baxter_msgs_mine/GoToJointGoal"
 	cd /home/lar/ros/test_ws/build/baxter_msgs_mine && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/lar/ros/test_ws/src/baxter_msgs_mine/srv/GoToJointGoal.srv -Ibaxter_msgs_mine:/home/lar/ros/test_ws/src/baxter_msgs_mine/msg -Ibaxter_msgs_mine:/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -p baxter_msgs_mine -o /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv
 
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/__init__.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
@@ -272,6 +286,7 @@ baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py: /home/lar/ros
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/__init__.py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToJointPosActionResult.py
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/__init__.py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToJointPosFeedback.py
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/__init__.py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_CameraDebug.py
+/home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/__init__.py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_ImagePoints.py
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/__init__.py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToPointActionGoal.py
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/__init__.py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToJointPosActionFeedback.py
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/__init__.py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToJointPosGoal.py
@@ -282,10 +297,11 @@ baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py: /home/lar/ros
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/__init__.py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_GoToGoal.py
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/__init__.py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_CalculateIK.py
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/__init__.py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_ProcessImage.py
+/home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/__init__.py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_Cvt2Wrld.py
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/__init__.py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_PositionCommandMine.py
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/__init__.py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_CheckCrossing.py
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/__init__.py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_GoToJointGoal.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Generating Python msg __init__.py for baxter_msgs_mine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Generating Python msg __init__.py for baxter_msgs_mine"
 	cd /home/lar/ros/test_ws/build/baxter_msgs_mine && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg --initpy
 
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/__init__.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
@@ -298,6 +314,7 @@ baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py: /home/lar/ros
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/__init__.py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToJointPosActionResult.py
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/__init__.py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToJointPosFeedback.py
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/__init__.py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_CameraDebug.py
+/home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/__init__.py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_ImagePoints.py
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/__init__.py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToPointActionGoal.py
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/__init__.py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToJointPosActionFeedback.py
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/__init__.py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToJointPosGoal.py
@@ -308,10 +325,11 @@ baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py: /home/lar/ros
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/__init__.py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_GoToGoal.py
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/__init__.py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_CalculateIK.py
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/__init__.py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_ProcessImage.py
+/home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/__init__.py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_Cvt2Wrld.py
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/__init__.py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_PositionCommandMine.py
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/__init__.py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_CheckCrossing.py
 /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/__init__.py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_GoToJointGoal.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Generating Python srv __init__.py for baxter_msgs_mine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lar/ros/test_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Generating Python srv __init__.py for baxter_msgs_mine"
 	cd /home/lar/ros/test_ws/build/baxter_msgs_mine && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv --initpy
 
 baxter_msgs_mine_generate_messages_py: baxter_msgs_mine/CMakeFiles/baxter_msgs_mine_generate_messages_py
@@ -324,6 +342,7 @@ baxter_msgs_mine_generate_messages_py: /home/lar/ros/test_ws/devel/lib/python2.7
 baxter_msgs_mine_generate_messages_py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToJointPosActionResult.py
 baxter_msgs_mine_generate_messages_py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToJointPosFeedback.py
 baxter_msgs_mine_generate_messages_py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_CameraDebug.py
+baxter_msgs_mine_generate_messages_py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_ImagePoints.py
 baxter_msgs_mine_generate_messages_py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToPointActionGoal.py
 baxter_msgs_mine_generate_messages_py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToJointPosActionFeedback.py
 baxter_msgs_mine_generate_messages_py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/msg/_GoToJointPosGoal.py
@@ -334,6 +353,7 @@ baxter_msgs_mine_generate_messages_py: /home/lar/ros/test_ws/devel/lib/python2.7
 baxter_msgs_mine_generate_messages_py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_GoToGoal.py
 baxter_msgs_mine_generate_messages_py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_CalculateIK.py
 baxter_msgs_mine_generate_messages_py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_ProcessImage.py
+baxter_msgs_mine_generate_messages_py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_Cvt2Wrld.py
 baxter_msgs_mine_generate_messages_py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_PositionCommandMine.py
 baxter_msgs_mine_generate_messages_py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_CheckCrossing.py
 baxter_msgs_mine_generate_messages_py: /home/lar/ros/test_ws/devel/lib/python2.7/dist-packages/baxter_msgs_mine/srv/_GoToJointGoal.py

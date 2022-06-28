@@ -1,0 +1,1 @@
+/home/lar/ros/rope_ws/devel/.private/diagnostic_msgs/share/roseus/ros/diagnostic_msgs/srv/AddDiagnostics.l

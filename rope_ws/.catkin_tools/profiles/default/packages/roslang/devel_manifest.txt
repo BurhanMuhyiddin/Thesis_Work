@@ -1,0 +1,5 @@
+ros/roslang
+/home/lar/ros/rope_ws/devel/.private/roslang/cmake.lock /home/lar/ros/rope_ws/devel/./cmake.lock
+/home/lar/ros/rope_ws/devel/.private/roslang/lib/pkgconfig/roslang.pc /home/lar/ros/rope_ws/devel/lib/pkgconfig/roslang.pc
+/home/lar/ros/rope_ws/devel/.private/roslang/share/roslang/cmake/roslangConfig-version.cmake /home/lar/ros/rope_ws/devel/share/roslang/cmake/roslangConfig-version.cmake
+/home/lar/ros/rope_ws/devel/.private/roslang/share/roslang/cmake/roslangConfig.cmake /home/lar/ros/rope_ws/devel/share/roslang/cmake/roslangConfig.cmake

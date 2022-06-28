@@ -1,0 +1,4 @@
+Linked: (/home/lar/ros/rope_ws/devel/.private/roscpp_serialization/lib/libroscpp_serialization.so, /home/lar/ros/rope_ws/devel/lib/libroscpp_serialization.so)
+Linked: (/home/lar/ros/rope_ws/devel/.private/roscpp_serialization/lib/pkgconfig/roscpp_serialization.pc, /home/lar/ros/rope_ws/devel/lib/pkgconfig/roscpp_serialization.pc)
+Linked: (/home/lar/ros/rope_ws/devel/.private/roscpp_serialization/share/roscpp_serialization/cmake/roscpp_serializationConfig-version.cmake, /home/lar/ros/rope_ws/devel/share/roscpp_serialization/cmake/roscpp_serializationConfig-version.cmake)
+Linked: (/home/lar/ros/rope_ws/devel/.private/roscpp_serialization/share/roscpp_serialization/cmake/roscpp_serializationConfig.cmake, /home/lar/ros/rope_ws/devel/share/roscpp_serialization/cmake/roscpp_serializationConfig.cmake)

@@ -1,0 +1,8 @@
+prefix=/home/lar/ros/rope_ws/devel/.private/rosparam
+
+Name: rosparam
+Description: Description of rosparam
+Version: 1.12.17
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

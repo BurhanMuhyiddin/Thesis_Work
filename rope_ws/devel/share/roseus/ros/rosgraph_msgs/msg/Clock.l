@@ -1,0 +1,1 @@
+/home/lar/ros/rope_ws/devel/.private/rosgraph_msgs/share/roseus/ros/rosgraph_msgs/msg/Clock.l

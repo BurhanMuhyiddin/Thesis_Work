@@ -1,0 +1,1 @@
+/home/lar/ros/rope_ws/devel/.private/pluginlib/share/pluginlib/cmake/pluginlibConfig.cmake

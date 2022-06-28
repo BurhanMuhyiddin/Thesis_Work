@@ -1,0 +1,1 @@
+/home/lar/ros/rope_ws/devel/.private/rosgraph_msgs/lib/python3/dist-packages/rosgraph_msgs/__init__.py

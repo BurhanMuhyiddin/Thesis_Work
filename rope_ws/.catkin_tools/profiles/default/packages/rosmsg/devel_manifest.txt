@@ -1,0 +1,10 @@
+ros_comm/rosmsg
+/home/lar/ros/rope_ws/devel/.private/rosmsg/cmake.lock /home/lar/ros/rope_ws/devel/./cmake.lock
+/home/lar/ros/rope_ws/devel/.private/rosmsg/lib/python3/dist-packages/rosmsg/__init__.py /home/lar/ros/rope_ws/devel/lib/python3/dist-packages/rosmsg/__init__.py
+/home/lar/ros/rope_ws/devel/.private/rosmsg/lib/pkgconfig/rosmsg.pc /home/lar/ros/rope_ws/devel/lib/pkgconfig/rosmsg.pc
+/home/lar/ros/rope_ws/devel/.private/rosmsg/bin/rossrv /home/lar/ros/rope_ws/devel/bin/rossrv
+/home/lar/ros/rope_ws/devel/.private/rosmsg/bin/rosmsg-proto /home/lar/ros/rope_ws/devel/bin/rosmsg-proto
+/home/lar/ros/rope_ws/devel/.private/rosmsg/bin/rosmsg /home/lar/ros/rope_ws/devel/bin/rosmsg
+/home/lar/ros/rope_ws/devel/.private/rosmsg/bin/cmake.lock /home/lar/ros/rope_ws/devel/bin/cmake.lock
+/home/lar/ros/rope_ws/devel/.private/rosmsg/share/rosmsg/cmake/rosmsgConfig-version.cmake /home/lar/ros/rope_ws/devel/share/rosmsg/cmake/rosmsgConfig-version.cmake
+/home/lar/ros/rope_ws/devel/.private/rosmsg/share/rosmsg/cmake/rosmsgConfig.cmake /home/lar/ros/rope_ws/devel/share/rosmsg/cmake/rosmsgConfig.cmake

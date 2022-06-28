@@ -1,0 +1,8 @@
+prefix=/home/lar/ros/rope_ws/install
+
+Name: rosunit
+Description: Description of rosunit
+Version: 1.14.6
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

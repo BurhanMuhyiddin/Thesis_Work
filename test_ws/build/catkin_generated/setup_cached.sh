@@ -8,3 +8,4 @@
 
 # modified environment variables
 export PWD='/home/lar/ros/test_ws/build'
+export PYTHONPATH='/home/lar/ros/test_ws/devel/lib/python2.7/dist-packages:/opt/ros/kinetic/lib/python2.7/dist-packages:/home/lar/ros/rope_ws/devel/lib/python3/dist-packages'

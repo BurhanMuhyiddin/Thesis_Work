@@ -1,0 +1,16 @@
+[  0%] Built target std_msgs_generate_messages_lisp
+[  0%] Built target std_msgs_generate_messages_eus
+[  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target std_msgs_generate_messages_nodejs
+[  0%] Built target std_msgs_generate_messages_cpp
+[  0%] Built target _nodelet_generate_messages_check_deps_NodeletLoad
+[  0%] Built target _nodelet_generate_messages_check_deps_NodeletUnload
+[  0%] Built target _nodelet_generate_messages_check_deps_NodeletList
+[ 12%] Built target nodelet_generate_messages_nodejs
+[ 25%] Built target nodelet_generate_messages_lisp
+[ 41%] Built target nodelet_generate_messages_py
+[ 58%] Built target nodelet_generate_messages_eus
+[ 70%] Built target nodelet_generate_messages_cpp
+[ 70%] Built target nodelet_generate_messages
+[ 91%] Built target nodeletlib
+[100%] Built target nodelet

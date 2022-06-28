@@ -1,1 +1,3 @@
-float32[] data
+sensor_msgs/Image current_img
+sensor_msgs/Image target_img_mask
+sensor_msgs/Image current_img_mask

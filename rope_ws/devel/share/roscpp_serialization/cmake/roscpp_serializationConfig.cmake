@@ -1,0 +1,1 @@
+/home/lar/ros/rope_ws/devel/.private/roscpp_serialization/share/roscpp_serialization/cmake/roscpp_serializationConfig.cmake

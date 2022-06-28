@@ -1,0 +1,8 @@
+prefix=/home/lar/ros/rope_ws/devel/.private/roscpp_traits
+
+Name: roscpp_traits
+Description: Description of roscpp_traits
+Version: 0.6.11
+Cflags: -I/home/lar/ros/rope_ws/src/roscpp_core/roscpp_traits/include
+Libs: -L${prefix}/lib 
+Requires: cpp_common rostime

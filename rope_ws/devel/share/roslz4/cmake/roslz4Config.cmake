@@ -1,0 +1,1 @@
+/home/lar/ros/rope_ws/devel/.private/roslz4/share/roslz4/cmake/roslz4Config.cmake

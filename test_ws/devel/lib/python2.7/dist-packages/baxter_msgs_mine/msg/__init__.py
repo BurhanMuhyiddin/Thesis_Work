@@ -13,3 +13,4 @@ from ._GoToPointActionResult import *
 from ._GoToPointFeedback import *
 from ._GoToPointGoal import *
 from ._GoToPointResult import *
+from ._ImagePoints import *

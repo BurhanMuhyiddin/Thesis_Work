@@ -1,0 +1,1 @@
+/home/lar/ros/rope_ws/devel/.private/roslz4/lib/pkgconfig/roslz4.pc

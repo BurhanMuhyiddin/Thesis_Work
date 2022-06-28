@@ -1,0 +1,1 @@
+/home/lar/ros/rope_ws/devel/.private/process_rope_msgs/lib/pkgconfig/process_rope_msgs.pc

@@ -1,0 +1,22 @@
+[  0%] Built target _roscpp_generate_messages_check_deps_Empty
+[  0%] Built target _roscpp_generate_messages_check_deps_GetLoggers
+[  0%] Built target _roscpp_generate_messages_check_deps_SetLoggerLevel
+[  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target _roscpp_generate_messages_check_deps_Logger
+[  0%] Built target rosgraph_msgs_generate_messages_py
+[  0%] Built target rosgraph_msgs_generate_messages_lisp
+[  0%] Built target rosgraph_msgs_generate_messages_nodejs
+[  0%] Built target rosgraph_msgs_generate_messages_eus
+[  0%] Built target std_msgs_generate_messages_eus
+[  5%] Built target roscpp_generate_messages_lisp
+[  5%] Built target std_msgs_generate_messages_lisp
+[ 11%] Built target roscpp_generate_messages_cpp
+[ 11%] Built target std_msgs_generate_messages_nodejs
+[ 11%] Built target _catkin_empty_exported_target
+[ 11%] Built target rosgraph_msgs_generate_messages_cpp
+[ 11%] Built target std_msgs_generate_messages_cpp
+[ 18%] Built target roscpp_generate_messages_eus
+[ 23%] Built target roscpp_generate_messages_nodejs
+[ 31%] Built target roscpp_generate_messages_py
+[ 31%] Built target roscpp_generate_messages
+[100%] Built target roscpp

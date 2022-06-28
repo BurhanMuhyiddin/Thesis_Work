@@ -1,0 +1,11 @@
+ros_comm/rosbag
+/home/lar/ros/rope_ws/devel/.private/rosbag/cmake.lock /home/lar/ros/rope_ws/devel/./cmake.lock
+/home/lar/ros/rope_ws/devel/.private/rosbag/lib/librosbag.so /home/lar/ros/rope_ws/devel/lib/librosbag.so
+/home/lar/ros/rope_ws/devel/.private/rosbag/lib/rosbag/record /home/lar/ros/rope_ws/devel/lib/rosbag/record
+/home/lar/ros/rope_ws/devel/.private/rosbag/lib/rosbag/play /home/lar/ros/rope_ws/devel/lib/rosbag/play
+/home/lar/ros/rope_ws/devel/.private/rosbag/lib/python3/dist-packages/rosbag/__init__.py /home/lar/ros/rope_ws/devel/lib/python3/dist-packages/rosbag/__init__.py
+/home/lar/ros/rope_ws/devel/.private/rosbag/lib/pkgconfig/rosbag.pc /home/lar/ros/rope_ws/devel/lib/pkgconfig/rosbag.pc
+/home/lar/ros/rope_ws/devel/.private/rosbag/bin/rosbag /home/lar/ros/rope_ws/devel/bin/rosbag
+/home/lar/ros/rope_ws/devel/.private/rosbag/bin/cmake.lock /home/lar/ros/rope_ws/devel/bin/cmake.lock
+/home/lar/ros/rope_ws/devel/.private/rosbag/share/rosbag/cmake/rosbagConfig.cmake /home/lar/ros/rope_ws/devel/share/rosbag/cmake/rosbagConfig.cmake
+/home/lar/ros/rope_ws/devel/.private/rosbag/share/rosbag/cmake/rosbagConfig-version.cmake /home/lar/ros/rope_ws/devel/share/rosbag/cmake/rosbagConfig-version.cmake

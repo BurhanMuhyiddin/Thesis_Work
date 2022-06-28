@@ -1,0 +1,1 @@
+/home/lar/ros/rope_ws/devel/.private/gennodejs/share/gennodejs/cmake/gennodejs-extras.cmake

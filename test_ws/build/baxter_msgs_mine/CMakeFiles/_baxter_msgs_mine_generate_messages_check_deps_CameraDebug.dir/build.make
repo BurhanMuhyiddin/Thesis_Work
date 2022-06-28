@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/lar/ros/test_ws/build
 include baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_CameraDebug.dir/progress.make
 
 baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_CameraDebug:
-	cd /home/lar/ros/test_ws/build/baxter_msgs_mine && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py baxter_msgs_mine /home/lar/ros/test_ws/src/baxter_msgs_mine/msg/CameraDebug.msg 
+	cd /home/lar/ros/test_ws/build/baxter_msgs_mine && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py baxter_msgs_mine /home/lar/ros/test_ws/src/baxter_msgs_mine/msg/CameraDebug.msg sensor_msgs/Image:std_msgs/Header
 
 _baxter_msgs_mine_generate_messages_check_deps_CameraDebug: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_CameraDebug
 _baxter_msgs_mine_generate_messages_check_deps_CameraDebug: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_CameraDebug.dir/build.make

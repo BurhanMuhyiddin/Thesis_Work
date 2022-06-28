@@ -1,0 +1,1 @@
+/home/lar/ros/rope_ws/devel/.private/diagnostic_msgs/lib/python3/dist-packages/diagnostic_msgs/msg/__init__.py

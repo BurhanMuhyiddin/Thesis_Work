@@ -1,0 +1,7 @@
+set(bondpy_SETUP_PY_SETUP_MODULE "distutils.core")
+set(bondpy_SETUP_PY_VERSION "1.8.3")
+set(bondpy_SETUP_PY_SCRIPTS "")
+set(bondpy_SETUP_PY_PACKAGES "bondpy")
+set(bondpy_SETUP_PY_PACKAGE_DIRS "python/bondpy")
+set(bondpy_SETUP_PY_MODULES "")
+set(bondpy_SETUP_PY_MODULE_DIRS "")

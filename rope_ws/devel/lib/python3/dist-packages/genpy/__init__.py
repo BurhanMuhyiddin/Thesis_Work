@@ -1,0 +1,1 @@
+/home/lar/ros/rope_ws/devel/.private/genpy/lib/python3/dist-packages/genpy/__init__.py

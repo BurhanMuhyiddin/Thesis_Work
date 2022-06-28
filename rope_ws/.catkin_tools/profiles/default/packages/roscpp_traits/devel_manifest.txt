@@ -1,0 +1,5 @@
+roscpp_core/roscpp_traits
+/home/lar/ros/rope_ws/devel/.private/roscpp_traits/cmake.lock /home/lar/ros/rope_ws/devel/./cmake.lock
+/home/lar/ros/rope_ws/devel/.private/roscpp_traits/lib/pkgconfig/roscpp_traits.pc /home/lar/ros/rope_ws/devel/lib/pkgconfig/roscpp_traits.pc
+/home/lar/ros/rope_ws/devel/.private/roscpp_traits/share/roscpp_traits/cmake/roscpp_traitsConfig.cmake /home/lar/ros/rope_ws/devel/share/roscpp_traits/cmake/roscpp_traitsConfig.cmake
+/home/lar/ros/rope_ws/devel/.private/roscpp_traits/share/roscpp_traits/cmake/roscpp_traitsConfig-version.cmake /home/lar/ros/rope_ws/devel/share/roscpp_traits/cmake/roscpp_traitsConfig-version.cmake

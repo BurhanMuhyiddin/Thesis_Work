@@ -1,0 +1,1 @@
+/home/lar/ros/rope_ws/devel/.private/trajectory_msgs/share/gennodejs/ros/trajectory_msgs/msg/MultiDOFJointTrajectory.js

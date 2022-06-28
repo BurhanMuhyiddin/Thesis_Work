@@ -1,0 +1,1 @@
+/home/lar/ros/rope_ws/devel/.private/std_srvs/share/roseus/ros/std_srvs/srv/Empty.l

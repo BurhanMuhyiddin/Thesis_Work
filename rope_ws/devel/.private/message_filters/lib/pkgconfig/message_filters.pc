@@ -1,0 +1,8 @@
+prefix=/home/lar/ros/rope_ws/devel/.private/message_filters
+
+Name: message_filters
+Description: Description of message_filters
+Version: 1.12.17
+Cflags: -I/home/lar/ros/rope_ws/src/ros_comm/message_filters/include
+Libs: -L${prefix}/lib -lmessage_filters
+Requires: roscpp xmlrpcpp rosconsole

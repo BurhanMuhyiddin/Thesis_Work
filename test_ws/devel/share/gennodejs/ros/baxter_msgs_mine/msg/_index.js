@@ -2,6 +2,7 @@
 "use strict";
 
 let CameraDebug = require('./CameraDebug.js');
+let ImagePoints = require('./ImagePoints.js');
 let GoToJointPosGoal = require('./GoToJointPosGoal.js');
 let GoToJointPosFeedback = require('./GoToJointPosFeedback.js');
 let GoToPointGoal = require('./GoToPointGoal.js');
@@ -19,6 +20,7 @@ let GoToJointPosActionResult = require('./GoToJointPosActionResult.js');
 
 module.exports = {
   CameraDebug: CameraDebug,
+  ImagePoints: ImagePoints,
   GoToJointPosGoal: GoToJointPosGoal,
   GoToJointPosFeedback: GoToJointPosFeedback,
   GoToPointGoal: GoToPointGoal,

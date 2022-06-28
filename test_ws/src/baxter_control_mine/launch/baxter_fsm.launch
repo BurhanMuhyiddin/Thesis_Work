@@ -2,14 +2,14 @@
 
     <!-- <include file="$(find baxter_control_mine)/launch/control_baxter.launch" /> -->
 
-    <node name="smach_viewer" pkg="smach_viewer" type="smach_viewer.py"/>
+    <!-- <node name="smach_viewer" pkg="smach_viewer" type="smach_viewer.py"/> -->
 
     <!-- <node name="image_processing_server" pkg="baxter_control_mine" type="image_processing_server" output="screen"/> -->
 
-    <node name="process_image_server" pkg="baxter_control_mine" type="process_image_server.py" output="screen"/>
-    <node name="check_crossing" pkg="baxter_control_mine" type="check_crossing.py"/>
+    <!-- <node name="process_image_server" pkg="baxter_control_mine" type="process_image_server.py" output="screen"/> -->
+    <!-- <node name="check_crossing" pkg="baxter_control_mine" type="check_crossing.py"/> -->
     <node name="debug_img_processing" pkg="baxter_control_mine" type="debug_img_processing.py"/>
 
-    <node name="baxter_fsm" pkg="baxter_control_mine" type="baxter_fsm.py" output="screen"/>
+    <node name="baxter_fsm_rope" pkg="baxter_control_mine" type="baxter_fsm_rope.py" output="screen"/>
 
 </launch>

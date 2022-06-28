@@ -1,0 +1,1 @@
+/home/lar/ros/rope_ws/devel/.private/rosclean/share/rosclean/cmake/roscleanConfig.cmake

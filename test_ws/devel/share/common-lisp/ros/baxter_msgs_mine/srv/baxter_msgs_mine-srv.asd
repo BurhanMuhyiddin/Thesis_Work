@@ -10,6 +10,8 @@
     (:file "_package_CalculateIK" :depends-on ("_package"))
     (:file "CheckCrossing" :depends-on ("_package_CheckCrossing"))
     (:file "_package_CheckCrossing" :depends-on ("_package"))
+    (:file "Cvt2Wrld" :depends-on ("_package_Cvt2Wrld"))
+    (:file "_package_Cvt2Wrld" :depends-on ("_package"))
     (:file "GetCurrentJointStates" :depends-on ("_package_GetCurrentJointStates"))
     (:file "_package_GetCurrentJointStates" :depends-on ("_package"))
     (:file "GoToGoal" :depends-on ("_package_GoToGoal"))

@@ -20,6 +20,7 @@ find_package(catkin REQUIRED COMPONENTS
 add_message_files(
   FILES
   CameraDebug.msg
+  ImagePoints.msg
 )
 
 add_service_files(FILES
@@ -30,6 +31,7 @@ add_service_files(FILES
   CheckCrossing.srv
   GoToGoal.srv
   GoToJointGoal.srv
+  Cvt2Wrld.srv
 )
 
 ## Generate actions in the 'action' folder

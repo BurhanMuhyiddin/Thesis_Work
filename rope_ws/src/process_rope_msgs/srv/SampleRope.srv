@@ -1,0 +1,12 @@
+char type
+string limb
+bool sample_target
+---
+float64[] sampled_target_points
+float64[] sampled_current_points
+float64[] pick_points
+float64[] pick_img_points
+float64[] place_points
+float64[] place_img_points
+string h_limb
+bool success
