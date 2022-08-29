@@ -25,11 +25,13 @@ struct GoToJointGoalRequest_
 
   GoToJointGoalRequest_()
     : goal()
-    , limb()  {
+    , limb()
+    , mode(0)  {
     }
   GoToJointGoalRequest_(const ContainerAllocator& _alloc)
     : goal(_alloc)
-    , limb(_alloc)  {
+    , limb(_alloc)
+    , mode(0)  {
   (void)_alloc;
     }
 
@@ -40,6 +42,9 @@ struct GoToJointGoalRequest_
 
    typedef std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other >  _limb_type;
   _limb_type limb;
+
+   typedef int8_t _mode_type;
+  _mode_type mode;
 
 
 
@@ -76,7 +81,7 @@ namespace message_traits
 
 
 // BOOLTRAITS {'IsFixedSize': False, 'IsMessage': True, 'HasHeader': False}
-// {'sensor_msgs': ['/opt/ros/kinetic/share/sensor_msgs/cmake/../msg'], 'geometry_msgs': ['/opt/ros/kinetic/share/geometry_msgs/cmake/../msg'], 'actionlib_msgs': ['/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg'], 'baxter_msgs_mine': ['/home/lar/ros/test_ws/src/baxter_msgs_mine/msg', '/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg'], 'std_msgs': ['/opt/ros/kinetic/share/std_msgs/cmake/../msg']}
+// {'shape_msgs': ['/opt/ros/kinetic/share/shape_msgs/cmake/../msg'], 'baxter_msgs_mine': ['/home/lar/ros/test_ws/src/baxter_msgs_mine/msg', '/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg'], 'std_msgs': ['/opt/ros/kinetic/share/std_msgs/cmake/../msg'], 'actionlib_msgs': ['/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg'], 'trajectory_msgs': ['/opt/ros/kinetic/share/trajectory_msgs/cmake/../msg'], 'sensor_msgs': ['/opt/ros/kinetic/share/sensor_msgs/cmake/../msg'], 'object_recognition_msgs': ['/opt/ros/kinetic/share/object_recognition_msgs/cmake/../msg'], 'octomap_msgs': ['/opt/ros/kinetic/share/octomap_msgs/cmake/../msg'], 'geometry_msgs': ['/opt/ros/kinetic/share/geometry_msgs/cmake/../msg'], 'moveit_msgs': ['/opt/ros/kinetic/share/moveit_msgs/cmake/../msg']}
 
 // !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
 
@@ -119,12 +124,12 @@ struct MD5Sum< ::baxter_msgs_mine::GoToJointGoalRequest_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "abf12c5072912dd978e681eff0ec8576";
+    return "84d21298ad40f4d13c6a82aad11c710e";
   }
 
   static const char* value(const ::baxter_msgs_mine::GoToJointGoalRequest_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xabf12c5072912dd9ULL;
-  static const uint64_t static_value2 = 0x78e681eff0ec8576ULL;
+  static const uint64_t static_value1 = 0x84d21298ad40f4d1ULL;
+  static const uint64_t static_value2 = 0x3c6a82aad11c710eULL;
 };
 
 template<class ContainerAllocator>
@@ -145,6 +150,7 @@ struct Definition< ::baxter_msgs_mine::GoToJointGoalRequest_<ContainerAllocator>
   {
     return "float32[] goal\n\
 string limb\n\
+int8 mode\n\
 ";
   }
 
@@ -165,6 +171,7 @@ namespace serialization
     {
       stream.next(m.goal);
       stream.next(m.limb);
+      stream.next(m.mode);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -191,6 +198,8 @@ struct Printer< ::baxter_msgs_mine::GoToJointGoalRequest_<ContainerAllocator> >
     }
     s << indent << "limb: ";
     Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.limb);
+    s << indent << "mode: ";
+    Printer<int8_t>::stream(s, indent + "  ", v.mode);
   }
 };
 

@@ -70,7 +70,7 @@ class SampleRopeSrv:
 
         kernel = cv2.getStructuringElement(cv2.MORPH_RECT,(3,3))
         res = cv2.morphologyEx(thresholded_img, cv2.MORPH_CLOSE, kernel)
-        res = cv2.dilate(res, kernel, iterations=2)
+        res = cv2.dilate(res, kernel, iterations=5)
         res = cv2.erode(res, kernel, iterations=2)
 
         contours, _ = cv2.findContours(res, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
@@ -88,24 +88,40 @@ class SampleRopeSrv:
         neighbour_offset = 2
 
         # step = m.floor((points_arr.shape[0] -1) * 1.0 / (desired_sample_num - 1) * 1.0)
-        step = m.ceil(unsampled_points_arr.shape[0] * 1.0 / (desired_sample_num) * 1.0)
+        step = m.floor( (unsampled_points_arr.shape[0]-5.0) / (desired_sample_num-2.0+1.0) )
         # rospy.loginfo(str(points_arr.shape[0]) + ", " + str(step))
 
+        # from first second point to the last second point
         if (unsampled_points_arr[0, 1] - unsampled_points_arr[-1, 1]) < 0:
-            loop_range = range(2, unsampled_points_arr.shape[0], step)
-        else:
-            loop_range = range(unsampled_points_arr.shape[0]-1, 2, -step)
+            loop_range = [2]
+            for i in range(desired_sample_num - 2):
+                loop_range.append(loop_range[i] + step)
+            loop_range.append(unsampled_points_arr.shape[0] - 3)
 
-        for j in loop_range:
-            detected_points.append(unsampled_points_arr[j, 1])
-            detected_points.append(unsampled_points_arr[j, 0])
-            if j+neighbour_offset < unsampled_points_arr.shape[0]:
-                detected_points.append(unsampled_points_arr[j+neighbour_offset, 1])
-                detected_points.append(unsampled_points_arr[j+neighbour_offset, 0])
-            else:
-                rospy.loginfo("I don't have sufficient point")
-                detected_points.append(unsampled_points_arr[j-neighbour_offset, 1])
-                detected_points.append(unsampled_points_arr[j-neighbour_offset, 0])
+            for j in loop_range:
+                detected_points.append(unsampled_points_arr[j, 1])
+                detected_points.append(unsampled_points_arr[j, 0])
+                if j+neighbour_offset < unsampled_points_arr.shape[0]:
+                    detected_points.append(unsampled_points_arr[j+neighbour_offset, 1])
+                    detected_points.append(unsampled_points_arr[j+neighbour_offset, 0])
+                else:
+                    detected_points.append(unsampled_points_arr[j-neighbour_offset, 1])
+                    detected_points.append(unsampled_points_arr[j-neighbour_offset, 0])
+        else:
+            loop_range = [unsampled_points_arr.shape[0] - 3]
+            for i in range(desired_sample_num - 2):
+                loop_range.append(loop_range[i] - step)
+            loop_range.append(2)
+
+            for j in loop_range:
+                detected_points.append(unsampled_points_arr[j, 1])
+                detected_points.append(unsampled_points_arr[j, 0])
+                if j-neighbour_offset >= 0:
+                    detected_points.append(unsampled_points_arr[j-neighbour_offset, 1])
+                    detected_points.append(unsampled_points_arr[j-neighbour_offset, 0])
+                else:
+                    detected_points.append(unsampled_points_arr[j+neighbour_offset, 1])
+                    detected_points.append(unsampled_points_arr[j+neighbour_offset, 0])
 
         return detected_points
 
@@ -113,6 +129,13 @@ class SampleRopeSrv:
         self.m.acquire()
         self.image = np.frombuffer(data.data, dtype=np.uint8).reshape(data.height, data.width, -1)
         self.m.release()
+
+    def my_signum(self, num):
+        if num < 0:
+            return -1.0
+        if num > 0:
+            return 1.0
+        return 0.0
 
     def sample_rope_clb(self, req):
         rospy.wait_for_service('/convert_wrld')
@@ -176,7 +199,7 @@ class SampleRopeSrv:
         self.processed_image_pub.publish(debug_msg)
 
         # process target and current points
-        desired_sample_num = 3
+        desired_sample_num = 4
 
         target_detected_points = self.sample_points(self.target_points, desired_sample_num)
         offset = []
@@ -205,10 +228,10 @@ class SampleRopeSrv:
                 head_x = x1
                 head_y = y1
             else:
-                place_x1 = head_x + offset[(i-1)*4]
-                place_y1 = head_y + offset[(i-1)*4+1]
-                place_x2 = head_x + offset[(i-1)*4+2]
-                place_y2 = head_y + offset[(i-1)*4+3]
+                place_x1 = head_x + offset[(i-1)*4]   #- (0.1 * offset[(i-1)*4])
+                place_y1 = head_y + offset[(i-1)*4+1] #- (0.1 * offset[(i-1)*4+1])
+                place_x2 = head_x + offset[(i-1)*4+2] #- (0.1 * offset[(i-1)*4+2])
+                place_y2 = head_y + offset[(i-1)*4+3] #- (0.1 * offset[(i-1)*4+3])
                 calculated_place_points.append(place_x1)
                 calculated_place_points.append(place_y1)
                 calculated_place_points.append(place_x2)

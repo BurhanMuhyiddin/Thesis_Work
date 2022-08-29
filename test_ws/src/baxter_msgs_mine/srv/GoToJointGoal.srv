@@ -1,4 +1,5 @@
 float32[] goal
 string limb
+int8 mode # 0: absolute, 1: relative
 ---
 bool success

@@ -40,7 +40,7 @@ template<>
 struct MD5Sum< ::baxter_msgs_mine::GoToJointGoal > {
   static const char* value()
   {
-    return "81a2c4bff10997d9f224ac63631e3d27";
+    return "aeb0d7ee84568d74897d5eaf2fae4da6";
   }
 
   static const char* value(const ::baxter_msgs_mine::GoToJointGoal&) { return value(); }

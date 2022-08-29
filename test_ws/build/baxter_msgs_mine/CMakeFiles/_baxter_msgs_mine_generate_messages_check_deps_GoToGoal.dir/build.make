@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/lar/ros/test_ws/build
 include baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToGoal.dir/progress.make
 
 baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToGoal:
-	cd /home/lar/ros/test_ws/build/baxter_msgs_mine && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py baxter_msgs_mine /home/lar/ros/test_ws/src/baxter_msgs_mine/srv/GoToGoal.srv geometry_msgs/Quaternion:geometry_msgs/Pose:geometry_msgs/Point
+	cd /home/lar/ros/test_ws/build/baxter_msgs_mine && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/kinetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py baxter_msgs_mine /home/lar/ros/test_ws/src/baxter_msgs_mine/srv/GoToGoal.srv geometry_msgs/Quaternion:geometry_msgs/Pose:geometry_msgs/Point:shape_msgs/SolidPrimitive
 
 _baxter_msgs_mine_generate_messages_check_deps_GoToGoal: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToGoal
 _baxter_msgs_mine_generate_messages_check_deps_GoToGoal: baxter_msgs_mine/CMakeFiles/_baxter_msgs_mine_generate_messages_check_deps_GoToGoal.dir/build.make

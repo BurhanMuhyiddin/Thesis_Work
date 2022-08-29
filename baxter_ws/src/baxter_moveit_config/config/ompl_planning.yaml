@@ -122,6 +122,8 @@ planner_configs:
     max_failures: 5000  # maximum consecutive failure limit. default: 5000
 left_arm:
   default_planner_config: RRTConnect
+  enforce_joint_model_state_space: true
+  # longest_valid_segment_fraction: 0.05
   planner_configs:
     - SBL
     - EST
@@ -148,6 +150,8 @@ left_arm:
     - SPARStwo
 right_arm:
   default_planner_config: RRTConnect
+  enforce_joint_model_state_space: true
+  # longest_valid_segment_fraction: 0.05
   planner_configs:
     - SBL
     - EST
@@ -174,6 +178,8 @@ right_arm:
     - SPARStwo
 both_arms:
   default_planner_config: RRTConnect
+  enforce_joint_model_state_space: true
+  # longest_valid_segment_fraction: 0.05
   planner_configs:
     - SBL
     - EST

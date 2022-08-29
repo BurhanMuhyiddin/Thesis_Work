@@ -2,7 +2,7 @@
 
 message(STATUS "baxter_msgs_mine: 16 messages, 8 services")
 
-set(MSG_I_FLAGS "-Ibaxter_msgs_mine:/home/lar/ros/test_ws/src/baxter_msgs_mine/msg;-Ibaxter_msgs_mine:/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg;-Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg;-Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg;-Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg;-Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg")
+set(MSG_I_FLAGS "-Ibaxter_msgs_mine:/home/lar/ros/test_ws/src/baxter_msgs_mine/msg;-Ibaxter_msgs_mine:/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg;-Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg;-Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg;-Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg;-Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg;-Imoveit_msgs:/opt/ros/kinetic/share/moveit_msgs/cmake/../msg;-Itrajectory_msgs:/opt/ros/kinetic/share/trajectory_msgs/cmake/../msg;-Ishape_msgs:/opt/ros/kinetic/share/shape_msgs/cmake/../msg;-Iobject_recognition_msgs:/opt/ros/kinetic/share/object_recognition_msgs/cmake/../msg;-Ioctomap_msgs:/opt/ros/kinetic/share/octomap_msgs/cmake/../msg")
 
 # Find all generators
 find_package(gencpp REQUIRED)
@@ -19,7 +19,7 @@ add_custom_target(baxter_msgs_mine_generate_messages ALL)
 
 get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/GoToGoal.srv" NAME_WE)
 add_custom_target(_baxter_msgs_mine_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "baxter_msgs_mine" "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/GoToGoal.srv" "geometry_msgs/Quaternion:geometry_msgs/Pose:geometry_msgs/Point"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "baxter_msgs_mine" "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/GoToGoal.srv" "geometry_msgs/Quaternion:geometry_msgs/Pose:geometry_msgs/Point:shape_msgs/SolidPrimitive"
 )
 
 get_filename_component(_filename "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/CheckCrossing.srv" NAME_WE)
@@ -250,7 +250,7 @@ _generate_srv_cpp(baxter_msgs_mine
 _generate_srv_cpp(baxter_msgs_mine
   "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/GoToGoal.srv"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/kinetic/share/shape_msgs/cmake/../msg/SolidPrimitive.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/baxter_msgs_mine
 )
 _generate_srv_cpp(baxter_msgs_mine
@@ -467,7 +467,7 @@ _generate_srv_eus(baxter_msgs_mine
 _generate_srv_eus(baxter_msgs_mine
   "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/GoToGoal.srv"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/kinetic/share/shape_msgs/cmake/../msg/SolidPrimitive.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/baxter_msgs_mine
 )
 _generate_srv_eus(baxter_msgs_mine
@@ -684,7 +684,7 @@ _generate_srv_lisp(baxter_msgs_mine
 _generate_srv_lisp(baxter_msgs_mine
   "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/GoToGoal.srv"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/kinetic/share/shape_msgs/cmake/../msg/SolidPrimitive.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/baxter_msgs_mine
 )
 _generate_srv_lisp(baxter_msgs_mine
@@ -901,7 +901,7 @@ _generate_srv_nodejs(baxter_msgs_mine
 _generate_srv_nodejs(baxter_msgs_mine
   "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/GoToGoal.srv"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/kinetic/share/shape_msgs/cmake/../msg/SolidPrimitive.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/baxter_msgs_mine
 )
 _generate_srv_nodejs(baxter_msgs_mine
@@ -1118,7 +1118,7 @@ _generate_srv_py(baxter_msgs_mine
 _generate_srv_py(baxter_msgs_mine
   "/home/lar/ros/test_ws/src/baxter_msgs_mine/srv/GoToGoal.srv"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/kinetic/share/shape_msgs/cmake/../msg/SolidPrimitive.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/baxter_msgs_mine
 )
 _generate_srv_py(baxter_msgs_mine
@@ -1247,6 +1247,9 @@ endif()
 if(TARGET sensor_msgs_generate_messages_cpp)
   add_dependencies(baxter_msgs_mine_generate_messages_cpp sensor_msgs_generate_messages_cpp)
 endif()
+if(TARGET moveit_msgs_generate_messages_cpp)
+  add_dependencies(baxter_msgs_mine_generate_messages_cpp moveit_msgs_generate_messages_cpp)
+endif()
 
 if(geneus_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/baxter_msgs_mine)
   # install generated code
@@ -1266,6 +1269,9 @@ if(TARGET geometry_msgs_generate_messages_eus)
 endif()
 if(TARGET sensor_msgs_generate_messages_eus)
   add_dependencies(baxter_msgs_mine_generate_messages_eus sensor_msgs_generate_messages_eus)
+endif()
+if(TARGET moveit_msgs_generate_messages_eus)
+  add_dependencies(baxter_msgs_mine_generate_messages_eus moveit_msgs_generate_messages_eus)
 endif()
 
 if(genlisp_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/baxter_msgs_mine)
@@ -1287,6 +1293,9 @@ endif()
 if(TARGET sensor_msgs_generate_messages_lisp)
   add_dependencies(baxter_msgs_mine_generate_messages_lisp sensor_msgs_generate_messages_lisp)
 endif()
+if(TARGET moveit_msgs_generate_messages_lisp)
+  add_dependencies(baxter_msgs_mine_generate_messages_lisp moveit_msgs_generate_messages_lisp)
+endif()
 
 if(gennodejs_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/baxter_msgs_mine)
   # install generated code
@@ -1306,6 +1315,9 @@ if(TARGET geometry_msgs_generate_messages_nodejs)
 endif()
 if(TARGET sensor_msgs_generate_messages_nodejs)
   add_dependencies(baxter_msgs_mine_generate_messages_nodejs sensor_msgs_generate_messages_nodejs)
+endif()
+if(TARGET moveit_msgs_generate_messages_nodejs)
+  add_dependencies(baxter_msgs_mine_generate_messages_nodejs moveit_msgs_generate_messages_nodejs)
 endif()
 
 if(genpy_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/baxter_msgs_mine)
@@ -1327,4 +1339,7 @@ if(TARGET geometry_msgs_generate_messages_py)
 endif()
 if(TARGET sensor_msgs_generate_messages_py)
   add_dependencies(baxter_msgs_mine_generate_messages_py sensor_msgs_generate_messages_py)
+endif()
+if(TARGET moveit_msgs_generate_messages_py)
+  add_dependencies(baxter_msgs_mine_generate_messages_py moveit_msgs_generate_messages_py)
 endif()

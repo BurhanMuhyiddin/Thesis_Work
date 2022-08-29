@@ -16,6 +16,7 @@
 #include <ros/message_operations.h>
 
 #include <geometry_msgs/Pose.h>
+#include <shape_msgs/SolidPrimitive.h>
 
 namespace baxter_msgs_mine
 {
@@ -27,14 +28,22 @@ struct GoToGoalRequest_
   GoToGoalRequest_()
     : goal()
     , limb()
-    , pos_only_ik(false)
-    , mode(0)  {
+    , mode(0)
+    , bounding_region()
+    , bounding_region_size(0)
+    , pos_constrained(false)
+    , orn_constrained(false)
+    , pos_only_ik(false)  {
     }
   GoToGoalRequest_(const ContainerAllocator& _alloc)
     : goal(_alloc)
     , limb(_alloc)
-    , pos_only_ik(false)
-    , mode(0)  {
+    , mode(0)
+    , bounding_region(_alloc)
+    , bounding_region_size(0)
+    , pos_constrained(false)
+    , orn_constrained(false)
+    , pos_only_ik(false)  {
   (void)_alloc;
     }
 
@@ -46,11 +55,23 @@ struct GoToGoalRequest_
    typedef std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other >  _limb_type;
   _limb_type limb;
 
-   typedef uint8_t _pos_only_ik_type;
-  _pos_only_ik_type pos_only_ik;
-
    typedef int8_t _mode_type;
   _mode_type mode;
+
+   typedef std::vector< ::shape_msgs::SolidPrimitive_<ContainerAllocator> , typename ContainerAllocator::template rebind< ::shape_msgs::SolidPrimitive_<ContainerAllocator> >::other >  _bounding_region_type;
+  _bounding_region_type bounding_region;
+
+   typedef int8_t _bounding_region_size_type;
+  _bounding_region_size_type bounding_region_size;
+
+   typedef uint8_t _pos_constrained_type;
+  _pos_constrained_type pos_constrained;
+
+   typedef uint8_t _orn_constrained_type;
+  _orn_constrained_type orn_constrained;
+
+   typedef uint8_t _pos_only_ik_type;
+  _pos_only_ik_type pos_only_ik;
 
 
 
@@ -87,7 +108,7 @@ namespace message_traits
 
 
 // BOOLTRAITS {'IsFixedSize': False, 'IsMessage': True, 'HasHeader': False}
-// {'sensor_msgs': ['/opt/ros/kinetic/share/sensor_msgs/cmake/../msg'], 'geometry_msgs': ['/opt/ros/kinetic/share/geometry_msgs/cmake/../msg'], 'actionlib_msgs': ['/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg'], 'baxter_msgs_mine': ['/home/lar/ros/test_ws/src/baxter_msgs_mine/msg', '/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg'], 'std_msgs': ['/opt/ros/kinetic/share/std_msgs/cmake/../msg']}
+// {'shape_msgs': ['/opt/ros/kinetic/share/shape_msgs/cmake/../msg'], 'baxter_msgs_mine': ['/home/lar/ros/test_ws/src/baxter_msgs_mine/msg', '/home/lar/ros/test_ws/devel/share/baxter_msgs_mine/msg'], 'std_msgs': ['/opt/ros/kinetic/share/std_msgs/cmake/../msg'], 'actionlib_msgs': ['/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg'], 'trajectory_msgs': ['/opt/ros/kinetic/share/trajectory_msgs/cmake/../msg'], 'sensor_msgs': ['/opt/ros/kinetic/share/sensor_msgs/cmake/../msg'], 'object_recognition_msgs': ['/opt/ros/kinetic/share/object_recognition_msgs/cmake/../msg'], 'octomap_msgs': ['/opt/ros/kinetic/share/octomap_msgs/cmake/../msg'], 'geometry_msgs': ['/opt/ros/kinetic/share/geometry_msgs/cmake/../msg'], 'moveit_msgs': ['/opt/ros/kinetic/share/moveit_msgs/cmake/../msg']}
 
 // !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
 
@@ -130,12 +151,12 @@ struct MD5Sum< ::baxter_msgs_mine::GoToGoalRequest_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "0224c030e3d1f33270c9c833db4d1c4b";
+    return "0630cc50545ecc68c15285867769d02d";
   }
 
   static const char* value(const ::baxter_msgs_mine::GoToGoalRequest_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x0224c030e3d1f332ULL;
-  static const uint64_t static_value2 = 0x70c9c833db4d1c4bULL;
+  static const uint64_t static_value1 = 0x0630cc50545ecc68ULL;
+  static const uint64_t static_value2 = 0xc15285867769d02dULL;
 };
 
 template<class ContainerAllocator>
@@ -156,8 +177,13 @@ struct Definition< ::baxter_msgs_mine::GoToGoalRequest_<ContainerAllocator> >
   {
     return "geometry_msgs/Pose[] goal\n\
 string limb\n\
-bool pos_only_ik\n\
 int8 mode\n\
+shape_msgs/SolidPrimitive[] bounding_region\n\
+int8 bounding_region_size\n\
+bool pos_constrained\n\
+bool orn_constrained\n\
+bool pos_only_ik\n\
+\n\
 \n\
 ================================================================================\n\
 MSG: geometry_msgs/Pose\n\
@@ -180,6 +206,51 @@ float64 x\n\
 float64 y\n\
 float64 z\n\
 float64 w\n\
+\n\
+================================================================================\n\
+MSG: shape_msgs/SolidPrimitive\n\
+# Define box, sphere, cylinder, cone \n\
+# All shapes are defined to have their bounding boxes centered around 0,0,0.\n\
+\n\
+uint8 BOX=1\n\
+uint8 SPHERE=2\n\
+uint8 CYLINDER=3\n\
+uint8 CONE=4\n\
+\n\
+# The type of the shape\n\
+uint8 type\n\
+\n\
+\n\
+# The dimensions of the shape\n\
+float64[] dimensions\n\
+\n\
+# The meaning of the shape dimensions: each constant defines the index in the 'dimensions' array\n\
+\n\
+# For the BOX type, the X, Y, and Z dimensions are the length of the corresponding\n\
+# sides of the box.\n\
+uint8 BOX_X=0\n\
+uint8 BOX_Y=1\n\
+uint8 BOX_Z=2\n\
+\n\
+\n\
+# For the SPHERE type, only one component is used, and it gives the radius of\n\
+# the sphere.\n\
+uint8 SPHERE_RADIUS=0\n\
+\n\
+\n\
+# For the CYLINDER and CONE types, the center line is oriented along\n\
+# the Z axis.  Therefore the CYLINDER_HEIGHT (CONE_HEIGHT) component\n\
+# of dimensions gives the height of the cylinder (cone).  The\n\
+# CYLINDER_RADIUS (CONE_RADIUS) component of dimensions gives the\n\
+# radius of the base of the cylinder (cone).  Cone and cylinder\n\
+# primitives are defined to be circular. The tip of the cone is\n\
+# pointing up, along +Z axis.\n\
+\n\
+uint8 CYLINDER_HEIGHT=0\n\
+uint8 CYLINDER_RADIUS=1\n\
+\n\
+uint8 CONE_HEIGHT=0\n\
+uint8 CONE_RADIUS=1\n\
 ";
   }
 
@@ -200,8 +271,12 @@ namespace serialization
     {
       stream.next(m.goal);
       stream.next(m.limb);
-      stream.next(m.pos_only_ik);
       stream.next(m.mode);
+      stream.next(m.bounding_region);
+      stream.next(m.bounding_region_size);
+      stream.next(m.pos_constrained);
+      stream.next(m.orn_constrained);
+      stream.next(m.pos_only_ik);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -230,10 +305,24 @@ struct Printer< ::baxter_msgs_mine::GoToGoalRequest_<ContainerAllocator> >
     }
     s << indent << "limb: ";
     Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.limb);
-    s << indent << "pos_only_ik: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.pos_only_ik);
     s << indent << "mode: ";
     Printer<int8_t>::stream(s, indent + "  ", v.mode);
+    s << indent << "bounding_region[]" << std::endl;
+    for (size_t i = 0; i < v.bounding_region.size(); ++i)
+    {
+      s << indent << "  bounding_region[" << i << "]: ";
+      s << std::endl;
+      s << indent;
+      Printer< ::shape_msgs::SolidPrimitive_<ContainerAllocator> >::stream(s, indent + "    ", v.bounding_region[i]);
+    }
+    s << indent << "bounding_region_size: ";
+    Printer<int8_t>::stream(s, indent + "  ", v.bounding_region_size);
+    s << indent << "pos_constrained: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.pos_constrained);
+    s << indent << "orn_constrained: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.orn_constrained);
+    s << indent << "pos_only_ik: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.pos_only_ik);
   }
 };
 

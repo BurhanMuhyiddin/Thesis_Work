@@ -20,17 +20,19 @@
 
 (defclass baxter_msgs_mine::GoToJointGoalRequest
   :super ros::object
-  :slots (_goal _limb ))
+  :slots (_goal _limb _mode ))
 
 (defmethod baxter_msgs_mine::GoToJointGoalRequest
   (:init
    (&key
     ((:goal __goal) (make-array 0 :initial-element 0.0 :element-type :float))
     ((:limb __limb) "")
+    ((:mode __mode) 0)
     )
    (send-super :init)
    (setq _goal __goal)
    (setq _limb (string __limb))
+   (setq _mode (round __mode))
    self)
   (:goal
    (&optional __goal)
@@ -38,6 +40,9 @@
   (:limb
    (&optional __limb)
    (if __limb (setq _limb __limb)) _limb)
+  (:mode
+   (&optional __mode)
+   (if __mode (setq _mode __mode)) _mode)
   (:serialization-length
    ()
    (+
@@ -45,6 +50,8 @@
     (* 4    (length _goal)) 4
     ;; string _limb
     4 (length _limb)
+    ;; int8 _mode
+    1
     ))
   (:serialize
    (&optional strm)
@@ -57,6 +64,8 @@
        )
      ;; string _limb
        (write-long (length _limb) s) (princ _limb s)
+     ;; int8 _mode
+       (write-byte _mode s)
      ;;
      (if (null strm) (get-output-stream-string s))))
   (:deserialize
@@ -70,6 +79,9 @@
      ))
    ;; string _limb
      (let (n) (setq n (sys::peek buf ptr- :integer)) (incf ptr- 4) (setq _limb (subseq buf ptr- (+ ptr- n))) (incf ptr- n))
+   ;; int8 _mode
+     (setq _mode (sys::peek buf ptr- :char)) (incf ptr- 1)
+     (if (> _mode 127) (setq _mode (- _mode 256)))
    ;;
    self)
   )
@@ -115,7 +127,7 @@
   :super ros::object
   :slots ())
 
-(setf (get baxter_msgs_mine::GoToJointGoal :md5sum-) "81a2c4bff10997d9f224ac63631e3d27")
+(setf (get baxter_msgs_mine::GoToJointGoal :md5sum-) "aeb0d7ee84568d74897d5eaf2fae4da6")
 (setf (get baxter_msgs_mine::GoToJointGoal :datatype-) "baxter_msgs_mine/GoToJointGoal")
 (setf (get baxter_msgs_mine::GoToJointGoal :request) baxter_msgs_mine::GoToJointGoalRequest)
 (setf (get baxter_msgs_mine::GoToJointGoal :response) baxter_msgs_mine::GoToJointGoalResponse)
@@ -123,26 +135,28 @@
 (defmethod baxter_msgs_mine::GoToJointGoalRequest
   (:response () (instance baxter_msgs_mine::GoToJointGoalResponse :init)))
 
-(setf (get baxter_msgs_mine::GoToJointGoalRequest :md5sum-) "81a2c4bff10997d9f224ac63631e3d27")
+(setf (get baxter_msgs_mine::GoToJointGoalRequest :md5sum-) "aeb0d7ee84568d74897d5eaf2fae4da6")
 (setf (get baxter_msgs_mine::GoToJointGoalRequest :datatype-) "baxter_msgs_mine/GoToJointGoalRequest")
 (setf (get baxter_msgs_mine::GoToJointGoalRequest :definition-)
       "float32[] goal
 string limb
+int8 mode
 ---
 bool success
 ")
 
-(setf (get baxter_msgs_mine::GoToJointGoalResponse :md5sum-) "81a2c4bff10997d9f224ac63631e3d27")
+(setf (get baxter_msgs_mine::GoToJointGoalResponse :md5sum-) "aeb0d7ee84568d74897d5eaf2fae4da6")
 (setf (get baxter_msgs_mine::GoToJointGoalResponse :datatype-) "baxter_msgs_mine/GoToJointGoalResponse")
 (setf (get baxter_msgs_mine::GoToJointGoalResponse :definition-)
       "float32[] goal
 string limb
+int8 mode
 ---
 bool success
 ")
 
 
 
-(provide :baxter_msgs_mine/GoToJointGoal "81a2c4bff10997d9f224ac63631e3d27")
+(provide :baxter_msgs_mine/GoToJointGoal "aeb0d7ee84568d74897d5eaf2fae4da6")
 
 

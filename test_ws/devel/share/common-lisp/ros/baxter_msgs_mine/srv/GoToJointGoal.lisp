@@ -16,7 +16,12 @@
     :reader limb
     :initarg :limb
     :type cl:string
-    :initform ""))
+    :initform "")
+   (mode
+    :reader mode
+    :initarg :mode
+    :type cl:fixnum
+    :initform 0))
 )
 
 (cl:defclass GoToJointGoal-request (<GoToJointGoal-request>)
@@ -36,6 +41,11 @@
 (cl:defmethod limb-val ((m <GoToJointGoal-request>))
   (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader baxter_msgs_mine-srv:limb-val is deprecated.  Use baxter_msgs_mine-srv:limb instead.")
   (limb m))
+
+(cl:ensure-generic-function 'mode-val :lambda-list '(m))
+(cl:defmethod mode-val ((m <GoToJointGoal-request>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader baxter_msgs_mine-srv:mode-val is deprecated.  Use baxter_msgs_mine-srv:mode instead.")
+  (mode m))
 (cl:defmethod roslisp-msg-protocol:serialize ((msg <GoToJointGoal-request>) ostream)
   "Serializes a message object of type '<GoToJointGoal-request>"
   (cl:let ((__ros_arr_len (cl:length (cl:slot-value msg 'goal))))
@@ -55,6 +65,9 @@
     (cl:write-byte (cl:ldb (cl:byte 8 16) __ros_str_len) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 24) __ros_str_len) ostream))
   (cl:map cl:nil #'(cl:lambda (c) (cl:write-byte (cl:char-code c) ostream)) (cl:slot-value msg 'limb))
+  (cl:let* ((signed (cl:slot-value msg 'mode)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 256) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    )
 )
 (cl:defmethod roslisp-msg-protocol:deserialize ((msg <GoToJointGoal-request>) istream)
   "Deserializes a message object of type '<GoToJointGoal-request>"
@@ -80,6 +93,9 @@
       (cl:setf (cl:slot-value msg 'limb) (cl:make-string __ros_str_len))
       (cl:dotimes (__ros_str_idx __ros_str_len msg)
         (cl:setf (cl:char (cl:slot-value msg 'limb) __ros_str_idx) (cl:code-char (cl:read-byte istream)))))
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'mode) (cl:if (cl:< unsigned 128) unsigned (cl:- unsigned 256))))
   msg
 )
 (cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql '<GoToJointGoal-request>)))
@@ -90,26 +106,28 @@
   "baxter_msgs_mine/GoToJointGoalRequest")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<GoToJointGoal-request>)))
   "Returns md5sum for a message object of type '<GoToJointGoal-request>"
-  "81a2c4bff10997d9f224ac63631e3d27")
+  "aeb0d7ee84568d74897d5eaf2fae4da6")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'GoToJointGoal-request)))
   "Returns md5sum for a message object of type 'GoToJointGoal-request"
-  "81a2c4bff10997d9f224ac63631e3d27")
+  "aeb0d7ee84568d74897d5eaf2fae4da6")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<GoToJointGoal-request>)))
   "Returns full string definition for message of type '<GoToJointGoal-request>"
-  (cl:format cl:nil "float32[] goal~%string limb~%~%~%"))
+  (cl:format cl:nil "float32[] goal~%string limb~%int8 mode~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'GoToJointGoal-request)))
   "Returns full string definition for message of type 'GoToJointGoal-request"
-  (cl:format cl:nil "float32[] goal~%string limb~%~%~%"))
+  (cl:format cl:nil "float32[] goal~%string limb~%int8 mode~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <GoToJointGoal-request>))
   (cl:+ 0
      4 (cl:reduce #'cl:+ (cl:slot-value msg 'goal) :key #'(cl:lambda (ele) (cl:declare (cl:ignorable ele)) (cl:+ 4)))
      4 (cl:length (cl:slot-value msg 'limb))
+     1
 ))
 (cl:defmethod roslisp-msg-protocol:ros-message-to-list ((msg <GoToJointGoal-request>))
   "Converts a ROS message object to a list"
   (cl:list 'GoToJointGoal-request
     (cl:cons ':goal (goal msg))
     (cl:cons ':limb (limb msg))
+    (cl:cons ':mode (mode msg))
 ))
 ;//! \htmlinclude GoToJointGoal-response.msg.html
 
@@ -150,10 +168,10 @@
   "baxter_msgs_mine/GoToJointGoalResponse")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<GoToJointGoal-response>)))
   "Returns md5sum for a message object of type '<GoToJointGoal-response>"
-  "81a2c4bff10997d9f224ac63631e3d27")
+  "aeb0d7ee84568d74897d5eaf2fae4da6")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'GoToJointGoal-response)))
   "Returns md5sum for a message object of type 'GoToJointGoal-response"
-  "81a2c4bff10997d9f224ac63631e3d27")
+  "aeb0d7ee84568d74897d5eaf2fae4da6")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<GoToJointGoal-response>)))
   "Returns full string definition for message of type '<GoToJointGoal-response>"
   (cl:format cl:nil "bool success~%~%~%"))

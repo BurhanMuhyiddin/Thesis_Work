@@ -64,6 +64,8 @@
         "typeindex": "cpp",
         "typeinfo": "cpp",
         "condition_variable": "cpp",
-        "string": "cpp"
-    }
+        "string": "cpp",
+        "random": "cpp"
+    },
+    "ros.distro": "kinetic"
 }

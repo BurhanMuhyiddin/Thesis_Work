@@ -3,6 +3,8 @@
           GOAL
           LIMB-VAL
           LIMB
+          MODE-VAL
+          MODE
           SUCCESS-VAL
           SUCCESS
 ))

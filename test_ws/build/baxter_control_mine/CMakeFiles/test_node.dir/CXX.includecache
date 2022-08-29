@@ -31,6 +31,8 @@ ros/message_operations.h
 -
 geometry_msgs/Pose.h
 -
+shape_msgs/SolidPrimitive.h
+-
 
 /home/lar/ros/test_ws/devel/include/baxter_msgs_mine/GoToGoalResponse.h
 string

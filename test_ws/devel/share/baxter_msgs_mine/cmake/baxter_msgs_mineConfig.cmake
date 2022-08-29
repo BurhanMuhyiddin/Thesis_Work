@@ -185,7 +185,7 @@ foreach(t ${baxter_msgs_mine_EXPORTED_TARGETS})
   endif()
 endforeach()
 
-set(depends "actionlib_msgs;roscpp;rospy;std_msgs;geometry_msgs;message_runtime;sensor_msgs")
+set(depends "actionlib_msgs;roscpp;rospy;std_msgs;geometry_msgs;message_runtime;sensor_msgs;moveit_msgs")
 foreach(depend ${depends})
   string(REPLACE " " ";" depend_list ${depend})
   # the package name of the dependency must be kept in a unique variable so that it is not overwritten in recursive calls

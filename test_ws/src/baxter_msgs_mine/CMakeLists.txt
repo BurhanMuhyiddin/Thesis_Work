@@ -15,6 +15,7 @@ find_package(catkin REQUIRED COMPONENTS
   geometry_msgs
   message_generation
   sensor_msgs
+  moveit_msgs
 )
 
 add_message_files(
@@ -48,6 +49,7 @@ add_service_files(FILES
    std_msgs
    geometry_msgs
    sensor_msgs
+   moveit_msgs
  )
 
 ################################################
@@ -82,7 +84,7 @@ add_service_files(FILES
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES baxter_msgs_mine
-  CATKIN_DEPENDS actionlib_msgs roscpp rospy std_msgs geometry_msgs message_runtime sensor_msgs
+  CATKIN_DEPENDS actionlib_msgs roscpp rospy std_msgs geometry_msgs message_runtime sensor_msgs moveit_msgs
 #  DEPENDS system_lib
 )
 

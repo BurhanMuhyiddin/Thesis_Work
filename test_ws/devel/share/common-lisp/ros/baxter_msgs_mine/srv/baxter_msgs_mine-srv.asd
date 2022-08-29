@@ -4,6 +4,7 @@
 (defsystem "baxter_msgs_mine-srv"
   :depends-on (:roslisp-msg-protocol :roslisp-utils :geometry_msgs-msg
                :sensor_msgs-msg
+               :shape_msgs-msg
 )
   :components ((:file "_package")
     (:file "CalculateIK" :depends-on ("_package_CalculateIK"))

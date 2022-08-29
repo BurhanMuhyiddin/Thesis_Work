@@ -128,8 +128,9 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/lar/ros/test_ws/build/gtest/cmake_install.cmake")
   include("/home/lar/ros/test_ws/build/baxter_description/cmake_install.cmake")
   include("/home/lar/ros/test_ws/build/rethink_ee_description/cmake_install.cmake")
-  include("/home/lar/ros/test_ws/build/baxter_msgs_mine/cmake_install.cmake")
+  include("/home/lar/ros/test_ws/build/baxter_core_msgs/cmake_install.cmake")
   include("/home/lar/ros/test_ws/build/baxter_control_mine/cmake_install.cmake")
+  include("/home/lar/ros/test_ws/build/baxter_msgs_mine/cmake_install.cmake")
 
 endif()
 

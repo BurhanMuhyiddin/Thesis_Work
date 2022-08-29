@@ -23,6 +23,7 @@ class GoToJointGoalRequest {
       // initObj === null is a special case for deserialization where we don't initialize fields
       this.goal = null;
       this.limb = null;
+      this.mode = null;
     }
     else {
       if (initObj.hasOwnProperty('goal')) {
@@ -37,6 +38,12 @@ class GoToJointGoalRequest {
       else {
         this.limb = '';
       }
+      if (initObj.hasOwnProperty('mode')) {
+        this.mode = initObj.mode
+      }
+      else {
+        this.mode = 0;
+      }
     }
   }
 
@@ -46,6 +53,8 @@ class GoToJointGoalRequest {
     bufferOffset = _arraySerializer.float32(obj.goal, buffer, bufferOffset, null);
     // Serialize message field [limb]
     bufferOffset = _serializer.string(obj.limb, buffer, bufferOffset);
+    // Serialize message field [mode]
+    bufferOffset = _serializer.int8(obj.mode, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -57,6 +66,8 @@ class GoToJointGoalRequest {
     data.goal = _arrayDeserializer.float32(buffer, bufferOffset, null)
     // Deserialize message field [limb]
     data.limb = _deserializer.string(buffer, bufferOffset);
+    // Deserialize message field [mode]
+    data.mode = _deserializer.int8(buffer, bufferOffset);
     return data;
   }
 
@@ -64,7 +75,7 @@ class GoToJointGoalRequest {
     let length = 0;
     length += 4 * object.goal.length;
     length += object.limb.length;
-    return length + 8;
+    return length + 9;
   }
 
   static datatype() {
@@ -74,7 +85,7 @@ class GoToJointGoalRequest {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return 'abf12c5072912dd978e681eff0ec8576';
+    return '84d21298ad40f4d13c6a82aad11c710e';
   }
 
   static messageDefinition() {
@@ -82,6 +93,7 @@ class GoToJointGoalRequest {
     return `
     float32[] goal
     string limb
+    int8 mode
     
     `;
   }
@@ -104,6 +116,13 @@ class GoToJointGoalRequest {
     }
     else {
       resolved.limb = ''
+    }
+
+    if (msg.mode !== undefined) {
+      resolved.mode = msg.mode;
+    }
+    else {
+      resolved.mode = 0
     }
 
     return resolved;
@@ -184,6 +203,6 @@ class GoToJointGoalResponse {
 module.exports = {
   Request: GoToJointGoalRequest,
   Response: GoToJointGoalResponse,
-  md5sum() { return '81a2c4bff10997d9f224ac63631e3d27'; },
+  md5sum() { return 'aeb0d7ee84568d74897d5eaf2fae4da6'; },
   datatype() { return 'baxter_msgs_mine/GoToJointGoal'; }
 };

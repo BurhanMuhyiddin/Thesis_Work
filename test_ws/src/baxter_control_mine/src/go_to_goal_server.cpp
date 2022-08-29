@@ -63,21 +63,24 @@ bool GoToGoal::go_to_goal_clb(baxter_msgs_mine::GoToGoalRequest &req,
     PLANNING_GROUP = std::move("both_arms");
   }
 
-  ROS_INFO("GoToGoalService: I am here 1...");
-
   moveit::planning_interface::MoveGroupInterface move_group(PLANNING_GROUP);
-  ROS_INFO("GoToGoalService: I am here 2...");
+  moveit::planning_interface::MoveGroupInterface move_group_left("left_arm");
   moveit::planning_interface::PlanningSceneInterface planning_scene_interface;
   const robot_state::JointModelGroup* joint_model_group = move_group.getCurrentState()->getJointModelGroup(PLANNING_GROUP);
-  ROS_INFO("GoToGoalService: I am here 3...");
+
+  // namespace rvt = rviz_visual_tools;
+  // moveit_visual_tools::MoveItVisualTools visual_tools("base");
+  // visual_tools.deleteAllMarkers();
+
+  // visual_tools.loadRemoteControl();
 
   moveit::planning_interface::MoveGroupInterface::Plan my_plan;
-  bool success;
+  bool success = false;
 
   robot_state::RobotState start_state(*move_group.getCurrentState());
-  ROS_INFO("GoToGoalService: I am here 4...");
   move_group.setStartState(start_state);
-  ROS_INFO("GoToGoalService: I am here 5...");
+  move_group.setPlanningTime(120);
+  // move_group.setNumPlanningAttempts(5);
 
   // get goal positions
   if (limb == "left" || limb == "right")
@@ -85,6 +88,82 @@ bool GoToGoal::go_to_goal_clb(baxter_msgs_mine::GoToGoalRequest &req,
     geometry_msgs::Pose target_pose;
     target_pose = goal.front();
     const std::string ee = std::move(limb + "_gripper");
+
+    moveit_msgs::Constraints test_constraints;
+    if (req.pos_constrained)
+    {
+      moveit_msgs::PositionConstraint position_constraint;
+      position_constraint.header.frame_id = "base";
+      position_constraint.link_name = move_group.getEndEffectorLink();
+      position_constraint.target_point_offset.x = 0.1;
+      position_constraint.target_point_offset.y = 0.1;
+      position_constraint.target_point_offset.z = 0.1;
+      position_constraint.weight = 1.0;
+      int size = req.bounding_region_size;
+      ROS_INFO("bounding region size = %d", size);
+      if (size == 1)
+      {
+        geometry_msgs::Pose bounding_region_pose;
+        // bounding_region_pose.position = move_group.getCurrentPose().pose.position;
+        bounding_region_pose.position = move_group_left.getCurrentPose().pose.position;
+        ROS_INFO("%f, %f, %f", bounding_region_pose.position.x, bounding_region_pose.position.y, bounding_region_pose.position.z);
+        position_constraint.constraint_region.primitive_poses.push_back(bounding_region_pose);
+        position_constraint.constraint_region.primitives.push_back(req.bounding_region[0]);
+
+        // moveit_msgs::CollisionObject collision_object;
+        // collision_object.header.frame_id = move_group.getPlanningFrame();
+        // collision_object.id = "const_cone";
+        // collision_object.primitives.push_back(req.bounding_region[0]);
+        // collision_object.primitive_poses.push_back(bounding_region_pose);
+        // collision_object.operation = collision_object.ADD;
+
+        // std::vector<moveit_msgs::CollisionObject> collision_objects;
+        // collision_objects.push_back(collision_object);
+
+        // planning_scene_interface.addCollisionObjects(collision_objects);
+        // visual_tools.trigger();
+
+        // visual_tools.publishAxis(target_pose);
+        // visual_tools.trigger();
+
+        // visual_tools.prompt("Press 'next' in the RvizVisualToolsGui window to once the collision object appears in RViz");
+
+        // moveit_msgs::OrientationConstraint orientation_constraint;
+        // orientation_constraint.header.frame_id = "base";
+        // orientation_constraint.link_name = move_group.getEndEffectorLink();
+        // orientation_constraint.orientation = move_group.getCurrentPose().pose.orientation;
+        // orientation_constraint.absolute_x_axis_tolerance = 0.8;
+        // orientation_constraint.absolute_y_axis_tolerance = 0.8;
+        // orientation_constraint.absolute_z_axis_tolerance = 0.8;
+        // test_constraints.orientation_constraints.push_back(orientation_constraint);
+      }
+      else if (size == 2)
+      {
+        geometry_msgs::Pose bounding_region_pose1, bounding_region_pose2;
+        bounding_region_pose1.position = move_group.getCurrentPose().pose.position;
+        // bounding_region_pose2.position.x = move_group.getCurrentPose().pose.position.x;
+        // bounding_region_pose2.position.y = move_group.getCurrentPose().pose.position.y;
+        // bounding_region_pose2.position.z = move_group.getCurrentPose().pose.position.z + 0.1 + 50;
+        position_constraint.constraint_region.primitive_poses.push_back(bounding_region_pose1);
+        // position_constraint.constraint_region.primitive_poses.push_back(bounding_region_pose2);
+        position_constraint.constraint_region.primitives.push_back(req.bounding_region[0]);
+        // position_constraint.constraint_region.primitives.push_back(req.bounding_region[1]);
+      }
+      test_constraints.position_constraints.push_back(position_constraint);
+    }
+    if (req.orn_constrained)
+    {
+      moveit_msgs::OrientationConstraint orientation_constraint;
+      orientation_constraint.header.frame_id = "base";
+      orientation_constraint.link_name = move_group.getEndEffectorLink();
+      orientation_constraint.orientation = move_group.getCurrentPose().pose.orientation;
+      orientation_constraint.absolute_x_axis_tolerance = 1.5;
+      orientation_constraint.absolute_y_axis_tolerance = 1.5;
+      orientation_constraint.absolute_z_axis_tolerance = 1.5;
+      test_constraints.orientation_constraints.push_back(orientation_constraint);
+    }
+    if (req.pos_constrained || req.orn_constrained)
+      move_group.setPathConstraints(test_constraints);
 
     if (mode == 0)
     {
@@ -99,6 +178,19 @@ bool GoToGoal::go_to_goal_clb(baxter_msgs_mine::GoToGoalRequest &req,
     }
     else if (mode == 1) // do cartesain trajectory planning
     {
+      // move_group.setGoalOrientationTolerance(3.14);
+      // move_group.setGoalPositionTolerance(0.01);
+      moveit_msgs::OrientationConstraint oc;
+      oc.header.frame_id = "base";
+      oc.link_name = move_group.getEndEffectorLink();
+      oc.orientation = target_pose.orientation;
+      oc.absolute_x_axis_tolerance = 1.57;
+      oc.absolute_y_axis_tolerance = 1.57;
+      oc.absolute_z_axis_tolerance = 1.57;
+      moveit_msgs::Constraints constraints;
+      constraints.orientation_constraints.push_back(oc);
+      // move_group.setPathConstraints(constraints);
+
       geometry_msgs::Pose initial_pose = move_group.getCurrentPose().pose;
 
       std::vector<geometry_msgs::Pose> waypoints;
@@ -110,11 +202,13 @@ bool GoToGoal::go_to_goal_clb(baxter_msgs_mine::GoToGoalRequest &req,
       moveit_msgs::RobotTrajectory trajectory;
       const double jump_threshold = 0.00;
       const double eef_step = 0.01;
-      double fraction = move_group.computeCartesianPath(waypoints, eef_step, jump_threshold, trajectory);
+      double fraction = move_group.computeCartesianPath(waypoints, eef_step, jump_threshold, trajectory, constraints);
       if (fraction != -1)
       {
         my_plan.trajectory_ = trajectory;
         success = true;
+        
+        ROS_INFO("%.3lf percentage of the trajectory has been executed...", fraction);
       }
       else
       {
@@ -135,10 +229,8 @@ bool GoToGoal::go_to_goal_clb(baxter_msgs_mine::GoToGoalRequest &req,
     }
     else
     {
-      ROS_INFO("GoToGoalService: I am here 6...");
       move_group.setPoseTarget(target_pose_left, "left_gripper");
       move_group.setPoseTarget(target_pose_right, "right_gripper");
-      ROS_INFO("GoToGoalService: I am here 7...");
     }
   }
 
@@ -146,8 +238,7 @@ bool GoToGoal::go_to_goal_clb(baxter_msgs_mine::GoToGoalRequest &req,
 
   if (mode == 0)
   {
-    success = (move_group.plan(my_plan) == moveit::planning_interface::MoveItErrorCode::SUCCESS);
-    ROS_INFO("GoToGoalService: I am here 8...");
+      success = (move_group.plan(my_plan) == moveit::planning_interface::MoveItErrorCode::SUCCESS);
   }
 
   if (success)

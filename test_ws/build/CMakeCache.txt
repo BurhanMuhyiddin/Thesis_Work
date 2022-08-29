@@ -278,12 +278,6 @@ actionlib_DIR:PATH=/opt/ros/kinetic/share/actionlib/cmake
 actionlib_msgs_DIR:PATH=/opt/ros/kinetic/share/actionlib_msgs/cmake
 
 //Value Computed by CMake
-baxter_common_BINARY_DIR:STATIC=/home/lar/ros/test_ws/build/baxter_common
-
-//Value Computed by CMake
-baxter_common_SOURCE_DIR:STATIC=/home/lar/ros/test_ws/src/baxter_common
-
-//Value Computed by CMake
 baxter_control_mine_BINARY_DIR:STATIC=/home/lar/ros/test_ws/build/baxter_control_mine
 
 //Value Computed by CMake
@@ -303,18 +297,6 @@ baxter_description_BINARY_DIR:STATIC=/home/lar/ros/test_ws/build/baxter_descript
 
 //Value Computed by CMake
 baxter_description_SOURCE_DIR:STATIC=/home/lar/ros/test_ws/src/baxter_description
-
-//Value Computed by CMake
-baxter_maintenance_msgs_BINARY_DIR:STATIC=/home/lar/ros/test_ws/build/baxter_maintenance_msgs
-
-//Value Computed by CMake
-baxter_maintenance_msgs_SOURCE_DIR:STATIC=/home/lar/ros/test_ws/src/baxter_maintenance_msgs
-
-//Value Computed by CMake
-baxter_moveit_config_BINARY_DIR:STATIC=/home/lar/ros/test_ws/build/baxter_moveit_config
-
-//Value Computed by CMake
-baxter_moveit_config_SOURCE_DIR:STATIC=/home/lar/ros/test_ws/src/baxter_moveit_config
 
 //Value Computed by CMake
 baxter_msgs_mine_BINARY_DIR:STATIC=/home/lar/ros/test_ws/build/baxter_msgs_mine
@@ -420,7 +402,7 @@ kdl_conversions_DIR:PATH=/opt/ros/kinetic/share/kdl_conversions/cmake
 kdl_parser_DIR:PATH=/opt/ros/kinetic/share/kdl_parser/cmake
 
 //Path to a library.
-lib:FILEPATH=/opt/ros/kinetic/lib/libcv_bridge.so
+lib:FILEPATH=/opt/ros/kinetic/lib/libxmlrpcpp.so
 
 //The directory containing a CMake configuration file for message_filters.
 message_filters_DIR:PATH=/opt/ros/kinetic/share/message_filters/cmake
@@ -662,7 +644,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=7
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=8
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

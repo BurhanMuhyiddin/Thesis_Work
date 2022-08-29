@@ -7,15 +7,21 @@ import genpy
 import struct
 
 import geometry_msgs.msg
+import shape_msgs.msg
 
 class GoToGoalRequest(genpy.Message):
-  _md5sum = "0224c030e3d1f33270c9c833db4d1c4b"
+  _md5sum = "0630cc50545ecc68c15285867769d02d"
   _type = "baxter_msgs_mine/GoToGoalRequest"
   _has_header = False  # flag to mark the presence of a Header object
   _full_text = """geometry_msgs/Pose[] goal
 string limb
-bool pos_only_ik
 int8 mode
+shape_msgs/SolidPrimitive[] bounding_region
+int8 bounding_region_size
+bool pos_constrained
+bool orn_constrained
+bool pos_only_ik
+
 
 ================================================================================
 MSG: geometry_msgs/Pose
@@ -38,9 +44,54 @@ float64 x
 float64 y
 float64 z
 float64 w
+
+================================================================================
+MSG: shape_msgs/SolidPrimitive
+# Define box, sphere, cylinder, cone 
+# All shapes are defined to have their bounding boxes centered around 0,0,0.
+
+uint8 BOX=1
+uint8 SPHERE=2
+uint8 CYLINDER=3
+uint8 CONE=4
+
+# The type of the shape
+uint8 type
+
+
+# The dimensions of the shape
+float64[] dimensions
+
+# The meaning of the shape dimensions: each constant defines the index in the 'dimensions' array
+
+# For the BOX type, the X, Y, and Z dimensions are the length of the corresponding
+# sides of the box.
+uint8 BOX_X=0
+uint8 BOX_Y=1
+uint8 BOX_Z=2
+
+
+# For the SPHERE type, only one component is used, and it gives the radius of
+# the sphere.
+uint8 SPHERE_RADIUS=0
+
+
+# For the CYLINDER and CONE types, the center line is oriented along
+# the Z axis.  Therefore the CYLINDER_HEIGHT (CONE_HEIGHT) component
+# of dimensions gives the height of the cylinder (cone).  The
+# CYLINDER_RADIUS (CONE_RADIUS) component of dimensions gives the
+# radius of the base of the cylinder (cone).  Cone and cylinder
+# primitives are defined to be circular. The tip of the cone is
+# pointing up, along +Z axis.
+
+uint8 CYLINDER_HEIGHT=0
+uint8 CYLINDER_RADIUS=1
+
+uint8 CONE_HEIGHT=0
+uint8 CONE_RADIUS=1
 """
-  __slots__ = ['goal','limb','pos_only_ik','mode']
-  _slot_types = ['geometry_msgs/Pose[]','string','bool','int8']
+  __slots__ = ['goal','limb','mode','bounding_region','bounding_region_size','pos_constrained','orn_constrained','pos_only_ik']
+  _slot_types = ['geometry_msgs/Pose[]','string','int8','shape_msgs/SolidPrimitive[]','int8','bool','bool','bool']
 
   def __init__(self, *args, **kwds):
     """
@@ -50,7 +101,7 @@ float64 w
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       goal,limb,pos_only_ik,mode
+       goal,limb,mode,bounding_region,bounding_region_size,pos_constrained,orn_constrained,pos_only_ik
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -63,15 +114,27 @@ float64 w
         self.goal = []
       if self.limb is None:
         self.limb = ''
-      if self.pos_only_ik is None:
-        self.pos_only_ik = False
       if self.mode is None:
         self.mode = 0
+      if self.bounding_region is None:
+        self.bounding_region = []
+      if self.bounding_region_size is None:
+        self.bounding_region_size = 0
+      if self.pos_constrained is None:
+        self.pos_constrained = False
+      if self.orn_constrained is None:
+        self.orn_constrained = False
+      if self.pos_only_ik is None:
+        self.pos_only_ik = False
     else:
       self.goal = []
       self.limb = ''
-      self.pos_only_ik = False
       self.mode = 0
+      self.bounding_region = []
+      self.bounding_region_size = 0
+      self.pos_constrained = False
+      self.orn_constrained = False
+      self.pos_only_ik = False
 
   def _get_types(self):
     """
@@ -100,8 +163,19 @@ float64 w
         _x = _x.encode('utf-8')
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
+      _x = self.mode
+      buff.write(_get_struct_b().pack(_x))
+      length = len(self.bounding_region)
+      buff.write(_struct_I.pack(length))
+      for val1 in self.bounding_region:
+        _x = val1.type
+        buff.write(_get_struct_B().pack(_x))
+        length = len(val1.dimensions)
+        buff.write(_struct_I.pack(length))
+        pattern = '<%sd'%length
+        buff.write(struct.Struct(pattern).pack(*val1.dimensions))
       _x = self
-      buff.write(_get_struct_Bb().pack(_x.pos_only_ik, _x.mode))
+      buff.write(_get_struct_b3B().pack(_x.bounding_region_size, _x.pos_constrained, _x.orn_constrained, _x.pos_only_ik))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -114,6 +188,8 @@ float64 w
     try:
       if self.goal is None:
         self.goal = None
+      if self.bounding_region is None:
+        self.bounding_region = None
       end = 0
       start = end
       end += 4
@@ -141,10 +217,33 @@ float64 w
         self.limb = str[start:end].decode('utf-8', 'rosmsg')
       else:
         self.limb = str[start:end]
+      start = end
+      end += 1
+      (self.mode,) = _get_struct_b().unpack(str[start:end])
+      start = end
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      self.bounding_region = []
+      for i in range(0, length):
+        val1 = shape_msgs.msg.SolidPrimitive()
+        start = end
+        end += 1
+        (val1.type,) = _get_struct_B().unpack(str[start:end])
+        start = end
+        end += 4
+        (length,) = _struct_I.unpack(str[start:end])
+        pattern = '<%sd'%length
+        start = end
+        s = struct.Struct(pattern)
+        end += s.size
+        val1.dimensions = s.unpack(str[start:end])
+        self.bounding_region.append(val1)
       _x = self
       start = end
-      end += 2
-      (_x.pos_only_ik, _x.mode,) = _get_struct_Bb().unpack(str[start:end])
+      end += 4
+      (_x.bounding_region_size, _x.pos_constrained, _x.orn_constrained, _x.pos_only_ik,) = _get_struct_b3B().unpack(str[start:end])
+      self.pos_constrained = bool(self.pos_constrained)
+      self.orn_constrained = bool(self.orn_constrained)
       self.pos_only_ik = bool(self.pos_only_ik)
       return self
     except struct.error as e:
@@ -173,8 +272,19 @@ float64 w
         _x = _x.encode('utf-8')
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
+      _x = self.mode
+      buff.write(_get_struct_b().pack(_x))
+      length = len(self.bounding_region)
+      buff.write(_struct_I.pack(length))
+      for val1 in self.bounding_region:
+        _x = val1.type
+        buff.write(_get_struct_B().pack(_x))
+        length = len(val1.dimensions)
+        buff.write(_struct_I.pack(length))
+        pattern = '<%sd'%length
+        buff.write(val1.dimensions.tostring())
       _x = self
-      buff.write(_get_struct_Bb().pack(_x.pos_only_ik, _x.mode))
+      buff.write(_get_struct_b3B().pack(_x.bounding_region_size, _x.pos_constrained, _x.orn_constrained, _x.pos_only_ik))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -188,6 +298,8 @@ float64 w
     try:
       if self.goal is None:
         self.goal = None
+      if self.bounding_region is None:
+        self.bounding_region = None
       end = 0
       start = end
       end += 4
@@ -215,10 +327,33 @@ float64 w
         self.limb = str[start:end].decode('utf-8', 'rosmsg')
       else:
         self.limb = str[start:end]
+      start = end
+      end += 1
+      (self.mode,) = _get_struct_b().unpack(str[start:end])
+      start = end
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      self.bounding_region = []
+      for i in range(0, length):
+        val1 = shape_msgs.msg.SolidPrimitive()
+        start = end
+        end += 1
+        (val1.type,) = _get_struct_B().unpack(str[start:end])
+        start = end
+        end += 4
+        (length,) = _struct_I.unpack(str[start:end])
+        pattern = '<%sd'%length
+        start = end
+        s = struct.Struct(pattern)
+        end += s.size
+        val1.dimensions = numpy.frombuffer(str[start:end], dtype=numpy.float64, count=length)
+        self.bounding_region.append(val1)
       _x = self
       start = end
-      end += 2
-      (_x.pos_only_ik, _x.mode,) = _get_struct_Bb().unpack(str[start:end])
+      end += 4
+      (_x.bounding_region_size, _x.pos_constrained, _x.orn_constrained, _x.pos_only_ik,) = _get_struct_b3B().unpack(str[start:end])
+      self.pos_constrained = bool(self.pos_constrained)
+      self.orn_constrained = bool(self.orn_constrained)
       self.pos_only_ik = bool(self.pos_only_ik)
       return self
     except struct.error as e:
@@ -240,12 +375,24 @@ def _get_struct_4d():
     if _struct_4d is None:
         _struct_4d = struct.Struct("<4d")
     return _struct_4d
-_struct_Bb = None
-def _get_struct_Bb():
-    global _struct_Bb
-    if _struct_Bb is None:
-        _struct_Bb = struct.Struct("<Bb")
-    return _struct_Bb
+_struct_B = None
+def _get_struct_B():
+    global _struct_B
+    if _struct_B is None:
+        _struct_B = struct.Struct("<B")
+    return _struct_B
+_struct_b = None
+def _get_struct_b():
+    global _struct_b
+    if _struct_b is None:
+        _struct_b = struct.Struct("<b")
+    return _struct_b
+_struct_b3B = None
+def _get_struct_b3B():
+    global _struct_b3B
+    if _struct_b3B is None:
+        _struct_b3B = struct.Struct("<b3B")
+    return _struct_b3B
 # This Python file uses the following encoding: utf-8
 """autogenerated by genpy from baxter_msgs_mine/GoToGoalResponse.msg. Do not edit."""
 import codecs
@@ -361,6 +508,6 @@ def _get_struct_B():
     return _struct_B
 class GoToGoal(object):
   _type          = 'baxter_msgs_mine/GoToGoal'
-  _md5sum = '9ed4b1d775387f17722043ec8051bd52'
+  _md5sum = '04d72039529027fa74e24860cee85ab7'
   _request_class  = GoToGoalRequest
   _response_class = GoToGoalResponse

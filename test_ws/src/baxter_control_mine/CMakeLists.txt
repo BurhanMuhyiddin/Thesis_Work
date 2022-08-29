@@ -64,3 +64,6 @@ target_link_libraries(image_processing_server ${catkin_LIBRARIES})
 
 # add_executable(stream_from_camera src/stream_from_camera.cpp)
 # target_link_libraries(stream_from_camera ${OpenCV_LIBS} ${catkin_LIBRARIES})
+
+add_executable(end_effector_adjuster src/end_effector_adjuster.cpp)
+target_link_libraries(end_effector_adjuster ${catkin_LIBRARIES})

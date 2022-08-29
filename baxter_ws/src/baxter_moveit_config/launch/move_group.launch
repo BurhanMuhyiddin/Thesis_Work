@@ -23,20 +23,15 @@
   <arg name="capabilities" default=""/>
   <arg name="disable_capabilities" default=""/>
   <!-- load these non-default MoveGroup capabilities (space seperated) -->
-  <!--
-  <arg name="capabilities" value="
-                a_package/AwsomeMotionPlanningCapability
-                another_package/GraspPlanningPipeline
-                " />
-  -->
-
+  
+  <!-- <arg name="capabilities" value="
+                descartes_capability/MoveGroupDescartesPathService
+                " /> -->
+ 
   <!-- inhibit these default MoveGroup capabilities (space seperated) -->
-  <!--
-  <arg name="disable_capabilities" value="
-                move_group/MoveGroupKinematicsService
-                move_group/ClearOctomapService
-                " />
-  -->
+  <!-- <arg name="disable_capabilities" value="
+                move_group/MoveGroupCartesianPathService
+                " /> -->
 
   <!-- Planning Functionality -->
   <include ns="move_group" file="$(find baxter_moveit_config)/launch/planning_pipeline.launch.xml">

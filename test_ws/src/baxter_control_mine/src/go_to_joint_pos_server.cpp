@@ -70,6 +70,32 @@ bool GoToJointGoal::go_to_joint_goal_clb(baxter_msgs_mine::GoToJointGoalRequest 
   moveit::planning_interface::MoveGroupInterface::Plan my_plan;
   bool success;
 
+  std::vector<double> current_joint_values = std::move(move_group.getCurrentJointValues());
+  // s0 s1 e0 e1 w0 w1 w2
+  // 0  1  2  3  4  5  6
+  // e0 e1 s0 s1 w0 w1 w2
+  // 2  3  0  1  4  5  6
+  double temp1 = current_joint_values[0];
+  double temp2 = current_joint_values[1];
+  current_joint_values[0] = current_joint_values[2];
+  current_joint_values[1] = current_joint_values[3];
+  current_joint_values[2] = temp1;
+  current_joint_values[3] = temp2;
+  if (current_joint_values.size() > 7)
+  {
+    double temp1 = current_joint_values[7];
+    double temp2 = current_joint_values[8];
+    current_joint_values[7] = current_joint_values[9];
+    current_joint_values[8] = current_joint_values[10];
+    current_joint_values[9] = temp1;
+    current_joint_values[10] = temp2;
+  }
+
+  for (int i = 0; i < current_joint_values.size(); i++)
+  {
+    ROS_INFO("%lf", current_joint_values[i]);
+  }
+
   // get goal positions
   if (limb == "left" || limb == "right")
   {
@@ -86,9 +112,11 @@ bool GoToJointGoal::go_to_joint_goal_clb(baxter_msgs_mine::GoToJointGoalRequest 
 
     for (int i = 0; i < 7; i++)
     {
+      if (req.mode == 0)
         cjs.position[i] = req.goal[i];
+      else
+        cjs.position[i] = current_joint_values[i] + req.goal[i];
     }
-
     move_group.setJointValueTarget(cjs);
   }
   else // both arms
@@ -113,7 +141,10 @@ bool GoToJointGoal::go_to_joint_goal_clb(baxter_msgs_mine::GoToJointGoalRequest 
 
     for (int i = 0; i < 14; i++)
     {
+      if (req.mode == 0)
         cjs.position[i] = req.goal[i];
+      else
+        cjs.position[i] = current_joint_values[i] + req.goal[i];
     }
 
     move_group.setJointValueTarget(cjs);

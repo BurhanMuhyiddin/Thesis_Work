@@ -1,6 +1,11 @@
 geometry_msgs/Pose[] goal
 string limb
-bool pos_only_ik
 int8 mode
+shape_msgs/SolidPrimitive[] bounding_region
+int8 bounding_region_size # number of bounding regions
+bool pos_constrained
+bool orn_constrained
+bool pos_only_ik
+# bool is_orn_constrained
 ---
 bool success
