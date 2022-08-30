@@ -1,8 +1,0 @@
-prefix=/home/lar/ros/baxter_ws/devel
-
-Name: descartes_utilities
-Description: Description of descartes_utilities
-Version: 0.0.1
-Cflags: -I/home/lar/ros/baxter_ws/src/descartes/descartes_utilities/include
-Libs: -L${prefix}/lib -ldescartes_utilities
-Requires: descartes_core descartes_trajectory trajectory_msgs

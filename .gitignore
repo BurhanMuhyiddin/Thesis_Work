@@ -1,7 +1,9 @@
-/build
-/devel
+/baxter_ws/build
+/baxter_ws/devel
 /rope_ws/build
 /rope_ws/devel
+/test_ws/build
+/test_ws/devel
 **/src/CMakeLists.txt
 /src/CMakeLists.txt
 /actionlib
