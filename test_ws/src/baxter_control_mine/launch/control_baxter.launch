@@ -3,6 +3,8 @@
 
     <node name="baxter_control_node" pkg="baxter_control_mine" type="baxter_control_node"  output="screen"/>
 
+    <node name="suppress_coliision_avoidance" pkg="baxter_control_mine" type="suppress_coliision_avoidance.py"/>
+
     <!-- <node name="test_node" pkg="baxter_control_mine" type="test_node" output="screen"/> -->
 
     <!-- <node name="calculate_ik_server" pkg="baxter_control_mine" type="calculate_ik_server" output="screen"/> -->
@@ -11,6 +13,6 @@
 
     <node name="go_to_joint_pos_server" pkg="baxter_control_mine" type="go_to_joint_pos_server" output="screen"/>
 
-    <node name="convert_to_world_server" pkg="baxter_control_mine" type="convert_to_world_server.py" output="screen"/> 
+    <node name="convert_to_world_server" pkg="baxter_control_mine" type="convert_to_world_server.py" output="screen"/>
 
 </launch>

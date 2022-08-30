@@ -68,6 +68,7 @@ class main():
         self.place_point = [0.0, 0.0]
 
         self.place_y_angle = 3.14
+        self.place_y_angle_change = 0.0
         self.angle_step = 0.09
 
         self.waypoints = list()
@@ -133,10 +134,10 @@ class main():
                                     transitions={'succeeded' : 'PLACE_POSITION', 'preempted' : '', 'aborted' : 'HOME_INTER'})
 
             smach.StateMachine.add('PLACE_POSITION', smach_ros.ServiceState("/go_to_goal", GoToGoal,
-                                                                                            outcomes=['succeeded', 'preempted', 'aborted'],
+                                                                                            outcomes=['adjust_angle', 'succeeded', 'preempted', 'aborted'],
                                                                                             request_cb = self.place_pos_request_clb,
                                                                                             response_cb = self.place_pos_result_clb),
-                                    transitions={'succeeded' : 'RIGHT_ARM_UP', 'preempted' : '', 'aborted' : 'PLACE_POSITION'})
+                                    transitions={'succeeded' : 'RIGHT_ARM_UP', 'adjust_angle' : 'PLACE_POSITION', 'preempted' : '', 'aborted' : 'HOME_INTER'})
 
             smach.StateMachine.add('RIGHT_ARM_UP', smach_ros.ServiceState("/go_to_goal", GoToGoal,
                                                                                             outcomes=['succeeded', 'preempted', 'aborted'],
@@ -463,16 +464,8 @@ class main():
         self.hold_point[0] = pick_points[self.index]
         self.hold_point[1] = pick_points[self.index+1]
         self.hold_angle = pick_points[self.index+2]
-        rospy.loginfo("original hold angle: " + str(self.hold_angle))
-        if -(math.pi/2) <= self.hold_angle <= 0:
-            self.hold_angle = self.hold_angle
-        elif -math.pi <= self.hold_angle <= -(math.pi/2):
-            self.hold_angle = self.hold_angle
-        elif math.pi/2 <= self.hold_angle <= math.pi:
-            self.hold_angle = self.hold_angle
-        elif 0 <= self.hold_angle <= math.pi/2:
-            self.hold_angle = self.hold_angle
-        rospy.loginfo("processed hold angle: " + str(self.hold_angle))
+        rospy.loginfo("hold angle: " + str(self.hold_angle))
+        self.hold_angle = self.hold_angle
 
         # rospy.loginfo("hold angle: " + str(self.hold_angle))
 
@@ -553,14 +546,18 @@ class main():
             self.left_gripper_cl.wait_for_result()
             rospy.sleep(2.0)
         else:
+            if self.place_y_angle_change < 1.57:
+                return 'adjust_angle'
+
             if self.place_point[0] > self.pick_point[0]:
                 step_sign = -1.0
             else:
                 step_sign = 1.0
             
             self.place_y_angle += step_sign * self.angle_step
+            self.place_y_angle_change += self.angle_step
+            rospy.loginfo("adjusted place_y_angle is: " + str(self.place_y_angle))
 
-            rospy.loginfo("angle is: " + str(self.place_y_angle))
             return 'aborted'
 
     def right_arm_up_result_clb(self, ud, result):
