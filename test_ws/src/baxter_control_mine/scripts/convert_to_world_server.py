@@ -119,6 +119,7 @@ class ToWrldConvertSrv:
                     dx = ax2 - ax1
                     
                     angle = m.atan2(dy, dx)
+                    # angle += 0.1 * angle
 
                     rospy.loginfo("dy: " + str(dy))
                     rospy.loginfo("dx: " + str(dx))

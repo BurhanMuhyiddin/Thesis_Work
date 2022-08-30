@@ -67,6 +67,9 @@ class main():
         self.hold_angle_q = []
         self.place_point = [0.0, 0.0]
 
+        self.place_y_angle = 3.14
+        self.angle_step = 0.09
+
         self.waypoints = list()
         self.waypoints.append(Pose(Point(0.712783, 0.294493, 0.43211), Quaternion(-0.0178776, 0.994369, 0.040816, 0.0961492)))
         self.waypoints.append(Pose(Point(0.730668, -0.412415, 0.371713), Quaternion(0.0979966, 0.989636, 0.0478672, 0.0934108)))
@@ -133,7 +136,7 @@ class main():
                                                                                             outcomes=['succeeded', 'preempted', 'aborted'],
                                                                                             request_cb = self.place_pos_request_clb,
                                                                                             response_cb = self.place_pos_result_clb),
-                                    transitions={'succeeded' : 'RIGHT_ARM_UP', 'preempted' : '', 'aborted' : 'HOME_INTER'})
+                                    transitions={'succeeded' : 'RIGHT_ARM_UP', 'preempted' : '', 'aborted' : 'PLACE_POSITION'})
 
             smach.StateMachine.add('RIGHT_ARM_UP', smach_ros.ServiceState("/go_to_goal", GoToGoal,
                                                                                             outcomes=['succeeded', 'preempted', 'aborted'],
@@ -216,6 +219,7 @@ class main():
         pp_hold.position.y = self.hold_point[1]
         pp_hold.position.z = 0.06
         q_hold = quaternion_from_euler(2.7, 0.0,  self.hold_angle, 'syxz')
+
         # q_hold = quaternion_from_euler(0.7, 0.0,  self.hold_angle, 'syxz')
         self.hold_angle_q = q_hold
         pp_hold.orientation.x = q_hold[0]
@@ -227,6 +231,7 @@ class main():
         pp_pick.position.x = self.pick_point[0]
         pp_pick.position.y = self.pick_point[1]
         pp_pick.position.z = 0.06
+        self.pick_angle += 0.06 * self.pick_angle
         q_pick = quaternion_from_euler(3.14, 0.0, self.pick_angle, 'syxz')
         # q_pick = quaternion_from_euler(2.5, 0.0, self.pick_angle, 'syxz')
         self.pick_angle_q = q_pick
@@ -303,16 +308,28 @@ class main():
         pp.position.z = -0.1100
         # pp.position.z = r
 
-        # q = self.pick_angle_q
-        # # q = quaternion_from_euler(2.1, 0.0, self.pick_angle, 'syxz')
-        # pp.orientation.x = q[0]
-        # pp.orientation.y = q[1]
-        # pp.orientation.z = q[2]
-        # pp.orientation.w = q[3]
+        com_min = abs(min(self.place_point[0], self.pick_point[0]))
+        com_max = abs(max(self.place_point[0], self.pick_point[0]))
+
+        scale = com_min / com_max
+
+        if self.pick_point[0] < self.place_point:
+            self.place_y_angle -= 1.57 * (1.0 - scale)
+        else:
+            self.place_y_angle += 1.57 * (1.0 - scale)
+
+        rospy.loginfo("place_y_angle: " + str(self.place_y_angle))
+
+        q = quaternion_from_euler(self.place_y_angle, 0.0, self.pick_angle, 'syxz')
+        # q = quaternion_from_euler(2.1, 0.0, self.pick_angle, 'syxz')
+        pp.orientation.x = q[0]
+        pp.orientation.y = q[1]
+        pp.orientation.z = q[2]
+        pp.orientation.w = q[3]
 
         # rospy.loginfo("Pick point: " + str(self.pick_point[0]) + ", " + str(self.pick_point[1]))
         # rospy.loginfo("Place point: " + str(self.place_point[0]) +", " + str(self.place_point[1]))
-        rospy.loginfo("r is: " + str(r))
+        # rospy.loginfo("r is: " + str(r))
 
         bounding_region = SolidPrimitive()
         # bounding_region.type = bounding_region.SPHERE
@@ -323,12 +340,12 @@ class main():
 
         gg_req.goal = [pp]
         gg_req.limb = "right"
-        gg_req.mode = 0
+        gg_req.mode = 1
         gg_req.bounding_region = [bounding_region]
         gg_req.bounding_region_size = 1
-        gg_req.pos_constrained = True
-        gg_req.orn_constrained = True
-        gg_req.pos_only_ik = True
+        gg_req.pos_constrained = False
+        gg_req.orn_constrained = False
+        gg_req.pos_only_ik = False
 
         # rospy.set_param("is_started", True)
 
@@ -340,7 +357,14 @@ class main():
         pp = Pose()
         pp.position.x = self.place_point[0]
         pp.position.y = self.place_point[1]
-        pp.position.z = 0.06
+        pp.position.z = 0.0
+
+        q = quaternion_from_euler(self.place_y_angle, 0.0, self.pick_angle, 'syxz')
+        # q = quaternion_from_euler(2.1, 0.0, self.pick_angle, 'syxz')
+        pp.orientation.x = q[0]
+        pp.orientation.y = q[1]
+        pp.orientation.z = q[2]
+        pp.orientation.w = q[3]
 
         bounding_region1 = SolidPrimitive()
         bounding_region1.type = bounding_region1.BOX
@@ -356,12 +380,12 @@ class main():
 
         gg_req.goal = [pp]
         gg_req.limb = "right"
-        gg_req.mode = 0
+        gg_req.mode = 1
         gg_req.bounding_region = [bounding_region1, bounding_region2]
         gg_req.bounding_region_size = 2
-        gg_req.pos_constrained = True
-        gg_req.orn_constrained = True
-        gg_req.pos_only_ik = True
+        gg_req.pos_constrained = False
+        gg_req.orn_constrained = False
+        gg_req.pos_only_ik = False
 
         return gg_req
 
@@ -519,7 +543,7 @@ class main():
 
     def place_pos_result_clb(self, ud, result):
         if result.success:
-            rospy.set_param("is_started", False)
+            # rospy.set_param("is_started", False)
             # release left and right gripper
             gripper_goal = GripperCommandGoal()
             gripper_goal.command.position = 100.0
@@ -527,8 +551,16 @@ class main():
             self.right_gripper_cl.wait_for_result()
             self.left_gripper_cl.send_goal(gripper_goal)
             self.left_gripper_cl.wait_for_result()
-            rospy.sleep(1.0)
+            rospy.sleep(2.0)
         else:
+            if self.place_point[0] > self.pick_point[0]:
+                step_sign = -1.0
+            else:
+                step_sign = 1.0
+            
+            self.place_y_angle += step_sign * self.angle_step
+
+            rospy.loginfo("angle is: " + str(self.place_y_angle))
             return 'aborted'
 
     def right_arm_up_result_clb(self, ud, result):

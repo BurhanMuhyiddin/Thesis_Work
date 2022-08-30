@@ -184,9 +184,9 @@ bool GoToGoal::go_to_goal_clb(baxter_msgs_mine::GoToGoalRequest &req,
       oc.header.frame_id = "base";
       oc.link_name = move_group.getEndEffectorLink();
       oc.orientation = target_pose.orientation;
-      oc.absolute_x_axis_tolerance = 1.57;
-      oc.absolute_y_axis_tolerance = 1.57;
-      oc.absolute_z_axis_tolerance = 1.57;
+      oc.absolute_x_axis_tolerance = 3.14;
+      oc.absolute_y_axis_tolerance = 3.14;
+      oc.absolute_z_axis_tolerance = 0.1;
       moveit_msgs::Constraints constraints;
       constraints.orientation_constraints.push_back(oc);
       // move_group.setPathConstraints(constraints);
@@ -200,10 +200,10 @@ bool GoToGoal::go_to_goal_clb(baxter_msgs_mine::GoToGoalRequest &req,
       // move_group.setMaxVelocityScalingFactor(0.1);
 
       moveit_msgs::RobotTrajectory trajectory;
-      const double jump_threshold = 0.00;
+      const double jump_threshold = 0.0;
       const double eef_step = 0.01;
-      double fraction = move_group.computeCartesianPath(waypoints, eef_step, jump_threshold, trajectory, constraints);
-      if (fraction != -1)
+      double fraction = move_group.computeCartesianPath(waypoints, eef_step, jump_threshold, trajectory);
+      if (fraction != -1 && fraction >= 0.9)
       {
         my_plan.trajectory_ = trajectory;
         success = true;

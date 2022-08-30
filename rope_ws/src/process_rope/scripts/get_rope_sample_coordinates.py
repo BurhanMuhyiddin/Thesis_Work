@@ -145,7 +145,7 @@ class SampleRopeSrv:
 
         if sample_target:
             # get target image point coordinates
-            image_path = "//home//lar//ros//rope_ws//src//process_rope//target_image//target.png"
+            image_path = "//home//lar//ros//rope_ws//src//process_rope//target_image//target_2.png"
             target_img = cv2.imread(image_path, cv2.IMREAD_COLOR)
             while True:
                 res_target, biggest_contour_target = self.preprocess_image(target_img)
@@ -228,10 +228,10 @@ class SampleRopeSrv:
                 head_x = x1
                 head_y = y1
             else:
-                place_x1 = head_x + offset[(i-1)*4]   #- (0.1 * offset[(i-1)*4])
-                place_y1 = head_y + offset[(i-1)*4+1] #- (0.1 * offset[(i-1)*4+1])
-                place_x2 = head_x + offset[(i-1)*4+2] #- (0.1 * offset[(i-1)*4+2])
-                place_y2 = head_y + offset[(i-1)*4+3] #- (0.1 * offset[(i-1)*4+3])
+                place_x1 = head_x + offset[(i-1)*4]   - (0.10 * offset[(i-1)*4])
+                place_y1 = head_y + offset[(i-1)*4+1] - (0.10 * offset[(i-1)*4+1])
+                place_x2 = head_x + offset[(i-1)*4+2] - (0.10 * offset[(i-1)*4+2])
+                place_y2 = head_y + offset[(i-1)*4+3] - (0.10 * offset[(i-1)*4+3])
                 calculated_place_points.append(place_x1)
                 calculated_place_points.append(place_y1)
                 calculated_place_points.append(place_x2)
