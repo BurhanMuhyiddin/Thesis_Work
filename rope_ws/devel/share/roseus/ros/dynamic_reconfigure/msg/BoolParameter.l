@@ -1,1 +1,0 @@
-/home/lar/ros/rope_ws/devel/.private/dynamic_reconfigure/share/roseus/ros/dynamic_reconfigure/msg/BoolParameter.l

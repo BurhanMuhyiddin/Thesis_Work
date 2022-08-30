@@ -1,1 +1,0 @@
-/home/lar/ros/rope_ws/devel/.private/roscpp/share/roseus/ros/roscpp/manifest.l

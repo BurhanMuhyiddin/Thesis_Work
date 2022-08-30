@@ -1,1 +1,0 @@
-/home/lar/ros/rope_ws/devel/.private/gencpp/lib/pkgconfig/gencpp.pc

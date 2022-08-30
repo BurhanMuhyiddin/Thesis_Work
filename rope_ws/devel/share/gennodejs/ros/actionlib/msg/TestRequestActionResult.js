@@ -1,1 +1,0 @@
-/home/lar/ros/rope_ws/devel/.private/actionlib/share/gennodejs/ros/actionlib/msg/TestRequestActionResult.js

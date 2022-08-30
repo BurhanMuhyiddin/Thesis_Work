@@ -1,1 +1,0 @@
-/home/lar/ros/rope_ws/devel/.private/roscreate/share/roscreate/cmake/roscreateConfig-version.cmake

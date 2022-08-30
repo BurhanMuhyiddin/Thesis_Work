@@ -1,1 +1,0 @@
-/home/lar/ros/rope_ws/devel/.private/ros_environment/etc/catkin/profile.d/1.ros_package_path.sh

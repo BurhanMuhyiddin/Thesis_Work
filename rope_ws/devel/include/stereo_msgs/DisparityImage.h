@@ -1,1 +1,0 @@
-/home/lar/ros/rope_ws/devel/.private/stereo_msgs/include/stereo_msgs/DisparityImage.h

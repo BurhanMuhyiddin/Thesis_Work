@@ -1,1 +1,0 @@
-/home/lar/ros/rope_ws/devel/.private/roswtf/share/roswtf/cmake/roswtfConfig.cmake

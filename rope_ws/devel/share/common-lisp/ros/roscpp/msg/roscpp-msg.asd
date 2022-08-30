@@ -1,1 +1,0 @@
-/home/lar/ros/rope_ws/devel/.private/roscpp/share/common-lisp/ros/roscpp/msg/roscpp-msg.asd

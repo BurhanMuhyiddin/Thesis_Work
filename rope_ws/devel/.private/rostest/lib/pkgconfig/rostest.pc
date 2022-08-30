@@ -1,8 +1,0 @@
-prefix=/home/lar/ros/rope_ws/devel/.private/rostest
-
-Name: rostest
-Description: Description of rostest
-Version: 1.12.17
-Cflags: -I/home/lar/ros/rope_ws/src/ros_comm/rostest/include -I/usr/include
-Libs: -L${prefix}/lib /usr/lib/x86_64-linux-gnu/libboost_system.so /usr/lib/x86_64-linux-gnu/libboost_thread.so /usr/lib/x86_64-linux-gnu/libboost_chrono.so /usr/lib/x86_64-linux-gnu/libboost_date_time.so /usr/lib/x86_64-linux-gnu/libboost_atomic.so /usr/lib/x86_64-linux-gnu/libpthread.so
-Requires: 

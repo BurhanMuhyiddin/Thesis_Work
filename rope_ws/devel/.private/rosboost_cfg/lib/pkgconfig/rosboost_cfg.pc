@@ -1,8 +1,0 @@
-prefix=/home/lar/ros/rope_ws/devel/.private/rosboost_cfg
-
-Name: rosboost_cfg
-Description: Description of rosboost_cfg
-Version: 1.14.6
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

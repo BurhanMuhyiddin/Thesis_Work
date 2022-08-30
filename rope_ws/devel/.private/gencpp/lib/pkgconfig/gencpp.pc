@@ -1,8 +1,0 @@
-prefix=/home/lar/ros/rope_ws/devel/.private/gencpp
-
-Name: gencpp
-Description: Description of gencpp
-Version: 0.6.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: genmsg

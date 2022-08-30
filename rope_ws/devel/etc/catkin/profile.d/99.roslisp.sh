@@ -1,1 +1,0 @@
-/home/lar/ros/rope_ws/devel/.private/roslisp/etc/catkin/profile.d/99.roslisp.sh

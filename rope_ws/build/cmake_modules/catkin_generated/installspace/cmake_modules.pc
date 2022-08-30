@@ -1,8 +1,0 @@
-prefix=/home/lar/ros/rope_ws/install
-
-Name: cmake_modules
-Description: Description of cmake_modules
-Version: 0.4.2
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

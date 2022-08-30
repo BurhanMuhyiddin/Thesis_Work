@@ -1,1 +1,0 @@
-/home/lar/ros/rope_ws/devel/.private/rosmake/lib/python3/dist-packages/rosmake/__init__.py

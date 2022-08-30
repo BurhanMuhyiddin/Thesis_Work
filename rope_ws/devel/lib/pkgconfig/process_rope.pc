@@ -1,1 +1,0 @@
-/home/lar/ros/rope_ws/devel/.private/process_rope/lib/pkgconfig/process_rope.pc

@@ -1,1 +1,0 @@
-/home/lar/ros/rope_ws/devel/.private/roslaunch/etc/catkin/profile.d/10.roslaunch.sh

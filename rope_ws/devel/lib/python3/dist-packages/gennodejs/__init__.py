@@ -1,1 +1,0 @@
-/home/lar/ros/rope_ws/devel/.private/gennodejs/lib/python3/dist-packages/gennodejs/__init__.py

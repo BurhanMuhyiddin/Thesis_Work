@@ -1,1 +1,0 @@
-/home/lar/ros/rope_ws/devel/.private/actionlib_msgs/share/roseus/ros/actionlib_msgs/manifest.l

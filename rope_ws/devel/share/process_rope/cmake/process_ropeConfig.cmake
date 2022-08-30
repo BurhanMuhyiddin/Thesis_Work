@@ -1,1 +1,0 @@
-/home/lar/ros/rope_ws/devel/.private/process_rope/share/process_rope/cmake/process_ropeConfig.cmake

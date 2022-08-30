@@ -1,1 +1,0 @@
-/home/lar/ros/rope_ws/devel/.private/visualization_msgs/include/visualization_msgs/InteractiveMarkerInit.h

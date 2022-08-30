@@ -1,1 +1,0 @@
-/home/lar/ros/rope_ws/devel/.private/std_msgs/share/std_msgs/cmake/std_msgsConfig.cmake

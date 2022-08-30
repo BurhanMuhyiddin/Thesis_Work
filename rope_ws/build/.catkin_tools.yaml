@@ -1,6 +1,0 @@
-devel_space: /home/lar/ros/rope_ws/devel
-install: false
-install_space: /home/lar/ros/rope_ws/install
-profile: default
-source_space: /home/lar/ros/rope_ws/src
-workspace: /home/lar/ros/rope_ws

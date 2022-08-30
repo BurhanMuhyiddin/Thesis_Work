@@ -1,8 +1,0 @@
-prefix=/home/lar/ros/rope_ws/devel/.private/catkin
-
-Name: catkin
-Description: Description of catkin
-Version: 0.7.29
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

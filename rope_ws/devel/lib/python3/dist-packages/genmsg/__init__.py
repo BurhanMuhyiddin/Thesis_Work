@@ -1,1 +1,0 @@
-/home/lar/ros/rope_ws/devel/.private/genmsg/lib/python3/dist-packages/genmsg/__init__.py

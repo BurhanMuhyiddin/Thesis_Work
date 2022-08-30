@@ -1,8 +1,0 @@
-prefix=/home/lar/ros/rope_ws/devel/.private/rospy
-
-Name: rospy
-Description: Description of rospy
-Version: 1.12.17
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

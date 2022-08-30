@@ -1,1 +1,0 @@
-/home/lar/ros/rope_ws/devel/.private/rosconsole/etc/catkin/profile.d/10.rosconsole.sh

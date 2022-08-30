@@ -1,8 +1,0 @@
-prefix=/home/lar/ros/rope_ws/install
-
-Name: process_rope
-Description: Description of process_rope
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

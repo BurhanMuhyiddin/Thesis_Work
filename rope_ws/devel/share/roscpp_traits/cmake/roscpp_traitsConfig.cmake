@@ -1,1 +1,0 @@
-/home/lar/ros/rope_ws/devel/.private/roscpp_traits/share/roscpp_traits/cmake/roscpp_traitsConfig.cmake

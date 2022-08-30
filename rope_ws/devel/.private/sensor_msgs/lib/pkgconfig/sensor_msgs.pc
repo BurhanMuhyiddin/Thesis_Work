@@ -1,8 +1,0 @@
-prefix=/home/lar/ros/rope_ws/devel/.private/sensor_msgs
-
-Name: sensor_msgs
-Description: Description of sensor_msgs
-Version: 1.12.7
-Cflags: -I/home/lar/ros/rope_ws/devel/.private/sensor_msgs/include -I/home/lar/ros/rope_ws/src/common_msgs/sensor_msgs/include
-Libs: -L${prefix}/lib 
-Requires: geometry_msgs message_runtime std_msgs

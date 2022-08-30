@@ -1,1 +1,0 @@
-/home/lar/ros/rope_ws/devel/.private/roslisp/share/roslisp/cmake/roslispConfig.cmake

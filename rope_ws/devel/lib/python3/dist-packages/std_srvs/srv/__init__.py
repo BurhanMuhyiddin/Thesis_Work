@@ -1,1 +1,0 @@
-/home/lar/ros/rope_ws/devel/.private/std_srvs/lib/python3/dist-packages/std_srvs/srv/__init__.py

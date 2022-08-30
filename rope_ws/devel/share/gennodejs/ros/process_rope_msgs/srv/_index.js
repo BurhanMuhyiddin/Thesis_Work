@@ -1,1 +1,0 @@
-/home/lar/ros/rope_ws/devel/.private/process_rope_msgs/share/gennodejs/ros/process_rope_msgs/srv/_index.js

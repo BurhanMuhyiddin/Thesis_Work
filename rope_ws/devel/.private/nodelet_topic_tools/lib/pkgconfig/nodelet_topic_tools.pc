@@ -1,8 +1,0 @@
-prefix=/home/lar/ros/rope_ws/devel/.private/nodelet_topic_tools
-
-Name: nodelet_topic_tools
-Description: Description of nodelet_topic_tools
-Version: 1.9.14
-Cflags: -I/home/lar/ros/rope_ws/devel/.private/nodelet_topic_tools/include -I/home/lar/ros/rope_ws/src/nodelet_core/nodelet_topic_tools/include -I/usr/include
-Libs: -L${prefix}/lib /usr/lib/x86_64-linux-gnu/libboost_thread.so /usr/lib/x86_64-linux-gnu/libboost_chrono.so /usr/lib/x86_64-linux-gnu/libboost_system.so /usr/lib/x86_64-linux-gnu/libboost_date_time.so /usr/lib/x86_64-linux-gnu/libboost_atomic.so /usr/lib/x86_64-linux-gnu/libpthread.so
-Requires: dynamic_reconfigure message_filters nodelet pluginlib roscpp

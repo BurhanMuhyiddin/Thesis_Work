@@ -1,8 +1,0 @@
-prefix=/home/lar/ros/rope_ws/devel/.private/process_rope_msgs
-
-Name: process_rope_msgs
-Description: Description of process_rope_msgs
-Version: 0.0.0
-Cflags: -I/home/lar/ros/rope_ws/devel/.private/process_rope_msgs/include
-Libs: -L${prefix}/lib 
-Requires: roscpp rospy sensor_msgs std_msgs message_runtime

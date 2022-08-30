@@ -1,1 +1,0 @@
-/home/lar/ros/rope_ws/devel/.private/roslib/lib/python3/dist-packages/ros/__init__.py

@@ -1,1 +1,0 @@
-/home/lar/ros/rope_ws/devel/.private/trajectory_msgs/share/common-lisp/ros/trajectory_msgs/msg/_package_JointTrajectoryPoint.lisp

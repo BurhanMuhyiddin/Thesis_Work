@@ -1,1 +1,0 @@
-/home/lar/ros/rope_ws/devel/.private/rosmsg/share/rosmsg/cmake/rosmsgConfig-version.cmake

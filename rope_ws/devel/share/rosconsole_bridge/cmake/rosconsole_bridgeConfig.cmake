@@ -1,1 +1,0 @@
-/home/lar/ros/rope_ws/devel/.private/rosconsole_bridge/share/rosconsole_bridge/cmake/rosconsole_bridgeConfig.cmake

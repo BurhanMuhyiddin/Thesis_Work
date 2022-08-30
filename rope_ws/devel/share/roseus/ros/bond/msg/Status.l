@@ -1,1 +1,0 @@
-/home/lar/ros/rope_ws/devel/.private/bond/share/roseus/ros/bond/msg/Status.l

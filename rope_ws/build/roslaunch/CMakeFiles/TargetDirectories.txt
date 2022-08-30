@@ -1,9 +1,0 @@
-/home/lar/ros/rope_ws/build/roslaunch/CMakeFiles/edit_cache.dir
-/home/lar/ros/rope_ws/build/roslaunch/CMakeFiles/download_extra_data.dir
-/home/lar/ros/rope_ws/build/roslaunch/CMakeFiles/rebuild_cache.dir
-/home/lar/ros/rope_ws/build/roslaunch/CMakeFiles/doxygen.dir
-/home/lar/ros/rope_ws/build/roslaunch/CMakeFiles/install.dir
-/home/lar/ros/rope_ws/build/roslaunch/CMakeFiles/list_install_components.dir
-/home/lar/ros/rope_ws/build/roslaunch/CMakeFiles/_catkin_empty_exported_target.dir
-/home/lar/ros/rope_ws/build/roslaunch/CMakeFiles/install/local.dir
-/home/lar/ros/rope_ws/build/roslaunch/CMakeFiles/install/strip.dir

@@ -1,1 +1,0 @@
-/home/lar/ros/rope_ws/devel/.private/rosbag/share/rosbag/cmake/rosbagConfig-version.cmake

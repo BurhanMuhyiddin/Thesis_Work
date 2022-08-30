@@ -1,8 +1,0 @@
-prefix=/home/lar/ros/rope_ws/devel/.private/roslz4
-
-Name: roslz4
-Description: Description of roslz4
-Version: 1.12.17
-Cflags: -I/home/lar/ros/rope_ws/src/ros_comm/roslz4/include -I/home/lar/miniconda3/envs/rope_processing/include
-Libs: -L${prefix}/lib -lroslz4 /home/lar/miniconda3/envs/rope_processing/lib/liblz4.so
-Requires: 

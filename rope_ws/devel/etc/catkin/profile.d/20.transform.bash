@@ -1,1 +1,0 @@
-/home/lar/ros/rope_ws/devel/.private/topic_tools/etc/catkin/profile.d/20.transform.bash

@@ -1,1 +1,0 @@
-/home/lar/ros/rope_ws/devel/.private/rosgraph_msgs/share/gennodejs/ros/rosgraph_msgs/msg/TopicStatistics.js

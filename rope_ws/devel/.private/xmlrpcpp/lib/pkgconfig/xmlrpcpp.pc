@@ -1,8 +1,0 @@
-prefix=/home/lar/ros/rope_ws/devel/.private/xmlrpcpp
-
-Name: xmlrpcpp
-Description: Description of xmlrpcpp
-Version: 1.12.17
-Cflags: -I/home/lar/ros/rope_ws/src/ros_comm/xmlrpcpp/include
-Libs: -L${prefix}/lib -lxmlrpcpp
-Requires: cpp_common rostime
