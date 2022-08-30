@@ -1,5 +1,5 @@
-/build
-/devel
+**/build
+**/devel
 **/src/CMakeLists.txt
 /src/CMakeLists.txt
 /actionlib
